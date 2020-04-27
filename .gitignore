@@ -1,0 +1,17 @@
+/*
+
+!LICENSE
+!README.md
+!tmux/
+!vim/
+!zsh/
+
+# vim crud
+/vim/.tmp
+/vim/.undo
+/vim/bundle
+/vim/session
+/vim/spell
+
+# tmux crud
+/tmux/plugins
