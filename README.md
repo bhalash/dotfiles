@@ -1,6 +1,11 @@
 ![Screenshot](/screenshot.png?raw=true)
 
 # Dotfiles
+All my dotfiles. This project replaces three old separate dotfile projects:
+
+- tmux: https://github.com/bhalash/tmux
+- vim:  https://github.com/bhalash/vim
+- zsh:  https://github.com/bhalash/zsh
 
 ## Setup
 
