@@ -8,3 +8,4 @@
     ~/.zshrc: zsh/zshrc
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [cd vim/bundle/coc.nvim && git checkout release, Set coc.nvim working branch]
