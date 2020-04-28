@@ -63,8 +63,8 @@ augroup themes
   if has('nvim')
     colorscheme colorsbox-stnight
   else
-    colorscheme 256_noir
+    " colorscheme 256_noir
     " colorscheme colorsbox-stnight
-    " colorscheme hybrid
+    colorscheme hybrid
   endif
 augroup END
