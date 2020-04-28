@@ -25,11 +25,17 @@ Plugin 'mkarmona/colorsbox'
 Plugin 'zefei/simple-dark'
 Plugin 'nightsense/snow'
 Plugin 'kadekillary/skull-vim'
-" Grab-bag theme.
+
+" Grab-bag, because it'll surely have a theme supported everywhere.
 Plugin 'rafi/awesome-vim-colorschemes'
 
-" Asynchronous syntax checking and linting (formerly w0rp/ale).
-Plugin 'dense-analysis/ale'
+" Tab completion.
+" Plugin 'ervandew/supertab'
+
+" Asynchronous syntax checking and linting.
+" Plugin 'dense-analysis/ale'
+" cd to folder and set branch to release after install
+Plugin 'neoclide/coc.nvim'
 
 " RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
 Plugin 'bronson/vim-trailing-whitespace'
@@ -79,15 +85,9 @@ Plugin 'tomtom/tcomment_vim'
 " Show git diffs in the gutter.
 Plugin 'airblade/vim-gitgutter'
 
-" Tabbbing...
-Plugin 'ervandew/supertab'
-
 " Status bar.
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Better search highlighting.
-" Plugin 'timakro/vim-searchant'
 
 " Syntax highlighting.
 Plugin 'sheerun/vim-polyglot'
