@@ -45,7 +45,9 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'unblevable/quick-scope'
 
 " Auto CD to project root.
-Plugin 'airblade/vim-rooter'
+" Temporarily disabled because in some Angular projects the root tsconfig.json
+" is in a subfolder.
+" Plugin 'airblade/vim-rooter'
 
 " Quickly change wrapping characters with cs<char>.
 Plugin 'tpope/vim-surround'
