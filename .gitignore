@@ -2,6 +2,10 @@
 
 !LICENSE
 !README.md
+!dotbot/
+!extensions/
+!install
+!install.conf.yaml
 !tmux/
 !vim/
 !zsh/

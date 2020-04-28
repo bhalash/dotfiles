@@ -11,8 +11,8 @@ syntax on
 " Backspace will delete.
 set backspace=indent,eol,start
 
-" Set relative numbering and toggle keybind.
-set relativenumber
+" Enable relative line numbers.
+set nu relativenumber
 
 " Open split below and to the right instead of up and to the left.
 set splitbelow splitright
@@ -25,9 +25,6 @@ set autoindent
 
 " Don't wrap lines outside of words.
 set nowrap breakindent linebreak nolist
-
-" Enable line numbers.
-set nu
 
 " Enable ruler for column count.
 set ruler
