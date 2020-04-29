@@ -23,27 +23,35 @@ unsetopt rm_star_silent
 # Enable color output.
 autoload colors && colors
 
-# Decrease lag in vim mode: This reduces the timeout between accepted keystrokes to 1ms.
-KEYTIMEOUT=1
+################################################################################
+# Vim
+################################################################################
 
-# vim mode
+# Operate zsh in vim mode.
 bindkey -v
 
-################################################################################
-# Editor
-################################################################################
+# Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
+# See: https://dougblack.io/words/zsh-vi-mode.html
+KEYTIMEOUT=1
 
+# Default vim mode to insert. Options: viins, vicmd
+# See: https://superuser.com/a/1253211/437117
+local DEFAULT_ZSH_VI_MODE=viins
+
+# Default editor to nvim if unset.
 if [[ -z "$EDITOR" ]]; then
   export EDITOR='nvim'
 fi
 
+alias vi='vim'
+
 ################################################################################
-# Tempdir
+# Set Tempdir
 ################################################################################
 
 if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
   # $TMPDIR is not declared on my Ubuntu box for some ineffable reason.
-  export TMPDIR="/var/tmp/"
+  export TMPDIR='/var/tmp/'
   mkdir -p -m 700 "${TMPDIR}"
 fi
 
@@ -65,18 +73,12 @@ function is_installed {
 # Prompt
 ################################################################################
 
-#
 # Wrap $1 in a given color, with a fallback to color 15 (white).
-#
-
 function user-prompt-color {
   echo "%F{${2:-15}}${1}%f"
 }
 
-#
-# Username prompt.
-#
-
+# Username
 function user-prompt {
   USER_PROMPT=$(user-prompt-color '%n' ${1:-246})
 
@@ -87,18 +89,12 @@ function user-prompt {
   echo "${USER_PROMPT}"
 }
 
-#
-# Hostname prompt.
-#
-
+# Hostname.
 function host-prompt {
-echo $(user-prompt-color '%m' ${1:-246})
+  echo $(user-prompt-color '%m' ${1:-246})
 }
 
-#
 # Set vi-style prompt colors.
-#
-
 function vi-prompt {
   VI_BEFORE=$(user-prompt-color '[' ${1:-246})
   VI_AFTER=$(user-prompt-color ']' ${2:-246})
@@ -109,28 +105,20 @@ function vi-prompt {
   echo "${${KEYMAP/vicmd/${VI_NORMAL}}/(main|viins)/${VI_INSERT}}"
 }
 
-#
-# Set prompt for current working directory.
-#
-
+# Ccurrent working directory.
 function dir-prompt {
   DIR_PROMPT=''
   echo $(user-prompt-color "%1~" ${1:-246})
 }
 
-#
-# Bring together all of the above elements for left and right prompts.
-#
+zle-line-init zle-keymap-select() {
+  # Set default mode when using vim keybinds.
+  zle -K $DEFAULT_ZSH_VI_MODE
 
-function mark-prompt {
+  # Set prompt per functions above. Unset right prompt.
   PROMPT="%B$(vi-prompt) $(user-prompt)@$(host-prompt):$(dir-prompt) $ %b"
   RPROMPT=""
-}
 
-mark-prompt
-
-zle-line-init zle-keymap-select() {
-  mark-prompt
   zle reset-prompt
 }
 
@@ -302,7 +290,6 @@ alias grep='grep --color=auto --exclude-dir=".git"'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
 alias shit="printf '\e[?25h'"
 alias tmux='tmux -2'
-alias vi='vim'
 
 ################################################################################
 # Load rvm
