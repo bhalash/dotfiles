@@ -1,27 +1,22 @@
-![Screenshot](/screenshot.png?raw=true)
+![Screenshot](/screenshot.png)
 
 # Dotfiles
-All my dotfiles. This project replaces three old separate dotfile projects:
+My dotfiles. 🧙 This project replaces my old separate projects:
 
-- tmux: https://github.com/bhalash/tmux
-- vim:  https://github.com/bhalash/vim
-- zsh:  https://github.com/bhalash/zsh
+- https://github.com/bhalash/tmux
+- https://github.com/bhalash/vim
+- https://github.com/bhalash/zsh
+
+vim was my primary driver for this, as I change my configuration all the time.
 
 ## Setup
+This project is managed by [Dotbot](https://github.com/anishathalye/dotbot).
 
 ```shell
-git clone --recursive https://github.com/bhalash/dotfiles
+git clone --recursive https://github.com/bhalash/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+./install
 ```
-
-## vim
-This is my current [vimrc][1], gvimrc and filetype files. Run [Vundle's](https://github.com/VundleVim/Vundle.vim) `:PluginInstall` command:
-
-```shell
-vim +PluginInstall +qall
-```
-
-### Powerline
-My vim config requires that the [patched Powerline fonts](https://github.com/powerline/fonts) be installed and your terminal configured to use them.
 
 ## License
 Copyright 2015-2020 Mark Grealish. Licensed under the GPLv3 or later.
