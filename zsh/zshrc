@@ -320,4 +320,8 @@ path+=('/usr/local/lib/node_modules')
 # Load Transient Work Configuration
 ################################################################################
 
-source "${HOME}/.zsh/work.zshrc"
+local WORK_ZSHRC="${HOME}/.zsh/work.zshrc"
+
+if [[ -f $WORK_ZSHRC ]]; then
+  source $WORK_ZSHRC
+fi

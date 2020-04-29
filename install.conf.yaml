@@ -6,6 +6,7 @@
       create: true
       path: vim
     ~/.zshrc: zsh/zshrc
+    ~/.zsh: zsh
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [cd vim/bundle/coc.nvim && git checkout release, Set coc.nvim working branch]
