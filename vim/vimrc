@@ -140,4 +140,4 @@ endif
 " External Configurations (Plugins)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-runtime plugin/plugins.vim
+runtime plugin/plugged.vim

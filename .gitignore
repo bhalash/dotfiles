@@ -2,7 +2,6 @@
 
 !LICENSE
 !README.md
-!extensions/
 !install
 !install.conf.yaml
 
@@ -16,7 +15,7 @@
 /vim/.netrwhist
 /vim/.tmp
 /vim/.undo
-/vim/bundle
+/vim/extensions
 /vim/session
 /vim/spell
 

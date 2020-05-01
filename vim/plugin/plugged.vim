@@ -4,92 +4,77 @@
 
 filetype off
 
-" Originally changed for the fractional different versions of vim I have to
-" work with, I realized that .vim and .config/nvim are the same folder: both
-" are symlinks to .dotfiles/vim. So this path shouldn't need to ever change.
-"
-" See: https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin('$HOME/.vim/bundle')
-
-" Vundle.
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('$HOME/.vim/extensions')
 
 " Colours for gvim/MacVim.
-Plugin 'mkarmona/colorsbox'
+Plug 'mkarmona/colorsbox'
 
 " Colours for terminal.
-Plugin 'zefei/simple-dark'
-Plugin 'nightsense/snow'
-Plugin 'kadekillary/skull-vim'
+Plug 'zefei/simple-dark'
+Plug 'nightsense/snow'
+Plug 'kadekillary/skull-vim'
 
 " Grab-bag, because it'll surely have a theme supported everywhere.
-Plugin 'rafi/awesome-vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 
 " Asynchronous syntax checking and linting.
-Plugin 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Asynchronous syntax checking and linting (Windows-see below).
-Plugin 'dense-analysis/ale'
-Plugin 'ervandew/supertab'
+Plug 'dense-analysis/ale'
+Plug 'ervandew/supertab'
 
 " RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
 " Provide additional text targets for di/a<char>:
 " , . ; : + - = ~ _ * # / | \ & $
-Plugin 'wellle/targets.vim'
+Plug 'wellle/targets.vim'
 
 " Provide motion keyed to gs<motion> to sort stuff.
-Plugin 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-sort-motion'
 
 " Better FfTt action.
-Plugin 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 
 " Auto CD to project root.
-Plugin 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 
 " Quickly change wrapping characters with cs<char>.
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Case-insensitive replacement
-Plugin 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 
 " Authoring (Markdown and article writing).
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
 " Quickly search for and open files in the current buffer, new split or tab.
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Grep through and open files.
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " Auto pair brackets, like.
-Plugin 'jiangmiao/auto-pairs'
-
-" Ruby and Rails utilities. Tim Pope is God. God.
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-rails'
-" Plugin 'tpope/vim-endwise'
-" Plugin 'ngmy/vim-rubocop'
+Plug 'jiangmiao/auto-pairs'
 
 " Toggle comments.
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " Show git diffs in the gutter.
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Status bar.
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Syntax highlighting.
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " HTML expansion.
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
