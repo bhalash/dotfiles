@@ -1,6 +1,7 @@
 - clean: ['~']
 - link:
     ~/.gitconfig: git/gitconfig
+    ~/.tigrc: tig/tigrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
     ~/.zsh: zsh
@@ -10,5 +11,4 @@
       path: vim
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - command: vim +PlugInstall +qall
-    stderr: true
+  - [nvim --headless +PlugInstall +qall, Installing vim/nvim plugins]
