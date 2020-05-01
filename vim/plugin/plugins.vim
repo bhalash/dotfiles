@@ -177,7 +177,7 @@ let g:RootIgnoreAgignore = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:ale_lint_on_enter	= 1
-let b:ale_fixers = { 'typescript': ['tsserver'] }
+let g:ale_echo_msg_format = '%linter%: %s'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc.nvim
