@@ -2,10 +2,12 @@
 
 !LICENSE
 !README.md
-!dotbot/
 !extensions/
 !install
 !install.conf.yaml
+
+!dotbot/
+!git/
 !tmux/
 !vim/
 !zsh/

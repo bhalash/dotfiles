@@ -1,12 +1,13 @@
 - clean: ['~']
 - link:
+    ~/.gitconfig: git/gitconfig
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
+    ~/.zsh: zsh
+    ~/.zshrc: zsh/zshrc
     ~/.config/nvim:
       create: true
       path: vim
-    ~/.zshrc: zsh/zshrc
-    ~/.zsh: zsh
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [vim +PluginInstall +qall > /dev/null, Install Vundle plugins]
