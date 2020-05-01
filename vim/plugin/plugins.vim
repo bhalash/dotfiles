@@ -4,16 +4,13 @@
 
 filetype off
 
-if has('nvim')
-  " nvim on any platform
-  set rtp+=~/.config/nvim/bundle/Vundle.vim
-  call vundle#begin('~/.config/nvim/bundle')
-else
-  " vim/windows
-  " See: https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows
-  set rtp+=$HOME/.vim/bundle/Vundle.vim
-  call vundle#begin('$HOME/.vim/bundle')
-end
+" Originally changed for the fractional different versions of vim I have to
+" work with, I realized that .vim and .config/nvim are the same folder: both
+" are symlinks to .dotfiles/vim. So this path shouldn't need to ever change.
+"
+" See: https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin('$HOME/.vim/bundle')
 
 " Vundle.
 Plugin 'VundleVim/Vundle.vim'
@@ -29,13 +26,12 @@ Plugin 'kadekillary/skull-vim'
 " Grab-bag, because it'll surely have a theme supported everywhere.
 Plugin 'rafi/awesome-vim-colorschemes'
 
-" Tab completion.
-" Plugin 'ervandew/supertab'
-
 " Asynchronous syntax checking and linting.
-" Plugin 'dense-analysis/ale'
-" cd to folder and set branch to release after install
 Plugin 'neoclide/coc.nvim'
+
+" Asynchronous syntax checking and linting (Windows-see below).
+Plugin 'dense-analysis/ale'
+Plugin 'ervandew/supertab'
 
 " RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
 Plugin 'bronson/vim-trailing-whitespace'
@@ -51,9 +47,7 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'unblevable/quick-scope'
 
 " Auto CD to project root.
-" Temporarily disabled because in some Angular projects the root tsconfig.json
-" is in a subfolder.
-" Plugin 'airblade/vim-rooter'
+Plugin 'airblade/vim-rooter'
 
 " Quickly change wrapping characters with cs<char>.
 Plugin 'tpope/vim-surround'
@@ -98,6 +92,29 @@ Plugin 'mattn/emmet-vim'
 call vundle#end()
 
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Per-OS Plugin Configuration
+"
+" This is a necessary hack. The version of vim I use on Windows for work is
+" relatively up to date, but chained to a horribly limited environment. Like the
+" system has:
+"
+"   - Only Python 2.
+"   - Only sandboxed access to an NPM mirror and so on.
+"
+" While I would prefer to use coc.nvim, it just does not work. Fallback to ale
+" and supertab is Good Enough.
+"
+" See: https://stackoverflow.com/a/6706997/1433400
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has('win32unix')
+  set rtp-=~/.vim/bundle/coc.nvim
+else
+  set rtp-=~/.vim/bundle/ale
+  set rtp-=~/.vim/bundle/supertab
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Plugin Configuration
@@ -160,3 +177,17 @@ let g:RootIgnoreAgignore = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:ale_lint_on_enter	= 1
+let b:ale_fixers = { 'typescript': ['tsserver'] }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" coc.nvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Extensions I want to keep.
+let g:coc_global_extensions = [
+      \ 'coc-css',
+      \ 'coc-html',
+      \ 'coc-json',
+      \ 'coc-marketplace',
+      \ 'coc-tsserver'
+      \ ]
