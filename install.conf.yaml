@@ -3,6 +3,7 @@
     ~/.gitconfig: git/gitconfig
     ~/.tigrc: tig/tigrc
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux
     ~/.vim: vim
     ~/.zsh: zsh
     ~/.zshrc: zsh/zshrc
