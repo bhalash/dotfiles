@@ -82,9 +82,6 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " GitGutter
 nnoremap <leader>gg :GitGutterToggle<CR>
 
-" CtrlP: Clear cache.
-nnoremap <leader>5 :CtrlPClearCache<CR>
-
 " Goyo
 nnoremap <silent><leader>go :Goyo<CR>
 
@@ -92,3 +89,7 @@ nnoremap <silent><leader>go :Goyo<CR>
 nnoremap <silent><leader>[ <Plug>(ale_previous_wrap)
 nnoremap <silent><leader>] <Plug>(ale_next_wrap)
 nnoremap <silent><leader>at :ALEToggle<CR>
+
+" fzf
+nnoremap <silent><leader>p :GFiles<CR>
+nnoremap <silent><leader>f :Files<CR>

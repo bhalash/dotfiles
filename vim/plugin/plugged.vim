@@ -50,7 +50,9 @@ Plug 'tpope/vim-abolish'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
 " Quickly search for and open files in the current buffer, new split or tab.
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Grep through and open files.
 Plug 'mileszs/ack.vim'
@@ -129,39 +131,32 @@ let g:goyo_height = 90
 let g:goyo_linenr = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP
+" fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Bind CtrlP to <leader>
-let g:ctrlp_map = '<leader>p'
-
-" Permits us to change working directory in CtrlP while vim is open.
-let g:ctrlp_working_path_mode = 0
-
-" Enable hidden files, then later ignore stuff like git folders.
-let g:ctrlp_dotfiles = 1
-
-" Override default finder to make it respect .gitignore
-let g:ctrlp_user_command = [
-      \ '.git',
-      \ 'cd %s && git ls-files . -co --exclude-standard',
-      \ 'find %s -type f'
-      \ ]
-
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ag/Ack/FZF
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:ackprg = 'ag --vimgrep'
-let g:RootIgnoreAgignore = 1
+" Match fzf.vim to colorscheme.
+" See: https://github.com/junegunn/fzf.vim/issues/581
+let g:fzf_colors = {
+      \ "fg":       ["fg", "Normal"],
+      \ "bg":       ["bg", "Normal"],
+      \ "hl":       ["fg", "IncSearch"],
+      \ "fg+":      ["fg", "CursorLine", "CursorColumn", "Normal"],
+      \ "bg+":      ["bg", "CursorLine", "CursorColumn"],
+      \ "hl+":      ["fg", "IncSearch"],
+      \ "info":     ["fg", "IncSearch"],
+      \ "border":   ["fg", "Ignore"],
+      \ "prompt":   ["fg", "Comment"],
+      \ "pointer":  ["fg", "IncSearch"],
+      \ "marker":   ["fg", "IncSearch"],
+      \ "spinner":  ["fg", "IncSearch"],
+      \ "header":   ["fg", "WildMenu"]
+      \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ale_lint_on_enter	= 1
+let g:ale_lint_on_enter  = 1
 let g:ale_echo_msg_format = '%linter%: %s'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

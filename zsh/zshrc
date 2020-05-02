@@ -34,10 +34,6 @@ bindkey -v
 # See: https://dougblack.io/words/zsh-vi-mode.html
 KEYTIMEOUT=1
 
-# Default vim mode to insert. Options: viins, vicmd
-# See: https://superuser.com/a/1253211/437117
-local DEFAULT_ZSH_VI_MODE=viins
-
 # Default editor to nvim if unset.
 if [[ -z "$EDITOR" ]]; then
   export EDITOR='nvim'
@@ -112,9 +108,6 @@ function dir-prompt {
 }
 
 zle-line-init zle-keymap-select() {
-  # Set default mode when using vim keybinds.
-  zle -K $DEFAULT_ZSH_VI_MODE
-
   # Set prompt per functions above. Unset right prompt.
   PROMPT="%B$(vi-prompt) $(user-prompt)@$(host-prompt):$(dir-prompt) $ %b"
   RPROMPT=""
@@ -262,22 +255,7 @@ fi
 # FZF Setup
 ################################################################################
 
-# fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
-
-# fzf + ag configuration
-if is_installed fzf ag; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_OPTS='
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-  '
-fi
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 ################################################################################
 # Command Aliases
