@@ -79,13 +79,13 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" GitGutter
+" vim-gitgutter
 nnoremap <leader>gg :GitGutterToggle<CR>
 
-" Goyo
+" goyo
 nnoremap <silent><leader>go :Goyo<CR>
 
-" Ale
+" ale
 nnoremap <silent><leader>[ <Plug>(ale_previous_wrap)
 nnoremap <silent><leader>] <Plug>(ale_next_wrap)
 nnoremap <silent><leader>at :ALEToggle<CR>
@@ -93,3 +93,6 @@ nnoremap <silent><leader>at :ALEToggle<CR>
 " fzf
 nnoremap <silent><leader>p :GFiles<CR>
 nnoremap <silent><leader>f :Files<CR>
+
+" vim-fugitive
+nnoremap <silent><leader>gb :Gblame<CR>

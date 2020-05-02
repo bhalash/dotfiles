@@ -63,8 +63,9 @@ Plug 'jiangmiao/auto-pairs'
 " Toggle comments.
 Plug 'tomtom/tcomment_vim'
 
-" Show git diffs in the gutter.
+" git project management
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Status bar.
 Plug 'vim-airline/vim-airline'
