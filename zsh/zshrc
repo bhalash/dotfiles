@@ -160,10 +160,17 @@ plugins=(git github history-substring-search)
 autoload -Uz compinit && compinit -u
 
 ################################################################################
-# Opt out of Homebrew Tracking
+# Homebrew
 ################################################################################
 
+# Opt out of tracking, because fuck that noise.
 export HOMEBREW_NO_ANALYTICS=1
+
+# Load Homebrew on Linux if installed.
+# See: https://docs.brew.sh/Homebrew-on-Linux
+if [[ -d /home/linuxbrew/.linuxbrew ]]; then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 ################################################################################
 # Bind <tab> to cd Command
@@ -192,33 +199,6 @@ function git-root {
   else
     echo "cd: not a git project: ${PWD}"
   fi
-}
-
-################################################################################
-# See n Biggest Files
-################################################################################
-
-function big-files {
-  local COUNT=10
-
-  if [[ $1 =~ ^[0-9]+$ ]]; then
-    local COUNT=$1
-  fi
-
-  du -axh | sort -nr | head -n $COUNT
-}
-
-################################################################################
-# Copy the Most Recent File in a Given Directory
-################################################################################
-
-function cp-last {
-  if [[ -d "$1" ]]; then
-    echo "cd: ${1}: Not a directory"
-    exit 1
-  fi
-
-  cp "${1}/$(ls -A1t $1 | head -n 1)" "$2"
 }
 
 ################################################################################
@@ -255,7 +235,8 @@ fi
 # FZF Setup
 ################################################################################
 
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_CTRL_T_COMMAND='rg --files --follow'
 
 ################################################################################
 # Command Aliases
@@ -276,7 +257,7 @@ alias tmux='tmux -2'
 path+=("${HOME}/.rvm/bin")
 
 ################################################################################
-# Node.js Init
+# Global Node.js Init
 ################################################################################
 
 path+=('/usr/local/lib/node_modules')
