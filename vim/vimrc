@@ -77,8 +77,15 @@ set incsearch smartcase hlsearch
 " Searches are assumed to be global on a line.
 set gdefault
 
-" Tabbing
-set expandtab ts=2 sw=2 sts=2
+" Tabs. Commented because I never remember.
+" tabstop: hard tabs. softtabstop: soft tabs.
+set tabstop=2 softtabstop=2
+" shiftwidth: how much to indent when tabbing.
+set shiftwidth=2
+" Use hard spaces instead of tabs.
+set expandtab
+" Attempt to figure correct indent.
+set smartindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Saving, Filesystem and History

@@ -21,6 +21,22 @@ function! s:colorsbox_patch()
   hi TabLineFill guifg=#ffffff guibg=#1d1f21 gui=underline
   hi TabLineSel guifg=#1d1f21 guibg=#ffffff
   let g:airline_theme = 'colorsbox'
+
+  let g:fzf_colors = {
+        \ "fg":       ["fg", "Normal"],
+        \ "bg":       ["bg", "Normal"],
+        \ "hl":       ["fg", "Error"],
+        \ "fg+":      ["fg", "CursorLine", "CursorColumn", "Normal"],
+        \ "bg+":      ["bg", "CursorLine", "CursorColumn"],
+        \ "hl+":      ["fg", "Error"],
+        \ "info":     ["fg", "IncSearch"],
+        \ "border":   ["fg", "Ignore"],
+        \ "prompt":   ["fg", "Comment"],
+        \ "pointer":  ["fg", "IncSearch"],
+        \ "marker":   ["fg", "IncSearch"],
+        \ "spinner":  ["fg", "IncSearch"],
+        \ "header":   ["fg", "WildMenu"]
+        \ }
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,14 +62,15 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 augroup themes
-  autocmd! ColorScheme colorsbox-stnight call s:colorsbox_patch()
   autocmd! ColorScheme 256_noir call s:noir_patch()
+  autocmd! ColorScheme colorsbox-stnight call s:colorsbox_patch()
+  autocmd! ColorScheme hybrid-stnight call s:hybrid_patch()
 
   if has('nvim')
     colorscheme colorsbox-stnight
   else
     " colorscheme 256_noir
-    " colorscheme colorsbox-stnight
-    colorscheme hybrid
+    " colorscheme hybrid
+    colorscheme colorsbox-stnight
   endif
 augroup END
