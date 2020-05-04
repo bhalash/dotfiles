@@ -66,11 +66,10 @@ augroup themes
   autocmd! ColorScheme colorsbox-stnight call s:colorsbox_patch()
   autocmd! ColorScheme hybrid-stnight call s:hybrid_patch()
 
-  if has('nvim')
-    colorscheme colorsbox-stnight
+  if has('win32unix')
+    colorscheme hybrid
   else
     " colorscheme 256_noir
-    " colorscheme hybrid
     colorscheme colorsbox-stnight
   endif
 augroup END

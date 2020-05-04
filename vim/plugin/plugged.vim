@@ -6,23 +6,9 @@ filetype off
 
 call plug#begin('$HOME/.vim/extensions')
 
-" Colours for gvim/MacVim.
-Plug 'mkarmona/colorsbox'
-
-" Colours for terminal.
-Plug 'zefei/simple-dark'
-Plug 'nightsense/snow'
-Plug 'kadekillary/skull-vim'
-
-" Grab-bag, because it'll surely have a theme supported everywhere.
-Plug 'rafi/awesome-vim-colorschemes'
-
-" Asynchronous syntax checking and linting.
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Asynchronous syntax checking and linting (Windows-see below).
-Plug 'dense-analysis/ale'
-Plug 'ervandew/supertab'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins: Common
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
 Plug 'bronson/vim-trailing-whitespace'
@@ -49,13 +35,8 @@ Plug 'tpope/vim-abolish'
 " Authoring (Markdown and article writing).
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
-" Quickly search for and open files in the current buffer, new split or tab.
-" Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 " Grep through and open files.
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 
 " Auto pair brackets, like.
 Plug 'jiangmiao/auto-pairs'
@@ -67,15 +48,50 @@ Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" Status bar.
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"HTML expansion.
+Plug 'mattn/emmet-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins: Linux/MacOS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Colorscheme.
+Plug 'andreasvc/vim-256noir'
+Plug 'mkarmona/colorsbox'
+
+" File finder.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Linting and tab completion.
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Syntax highlighting.
 Plug 'sheerun/vim-polyglot'
 
-" HTML expansion.
-Plug 'mattn/emmet-vim'
+" Status bar.
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins: Windows
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Colorscheme.
+Plug 'w0ng/vim-hybrid'
+
+" Syntax highlighting.
+Plug 'HerringtonDarkholme/yats.vim'
+
+" File finder.
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Linting and tab completion.
+Plug 'dense-analysis/ale'
+Plug 'ervandew/supertab'
+
+" Status bar.
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -98,10 +114,23 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has('win32unix')
+  " Disable Linux/MacOS
   set rtp-=~/.vim/bundle/coc.nvim
+  set rtp-=~/.vim/bundle/colorsbox
+  set rtp-=~/.vim/bundle/fzf
+  set rtp-=~/.vim/bundle/fzf.vim
+  set rtp-=~/.vim/bundle/vim-256noir
+  set rtp-=~/.vim/bundle/vim-airline
+  set rtp-=~/.vim/bundle/vim-airline-themes
+  set rtp-=~/.vim/bundle/vim-polyglot
 else
+  " Disable Windows
   set rtp-=~/.vim/bundle/ale
+  set rtp-=~/.vim/bundle/ctrlp.vim
+  set rtp-=~/.vim/bundle/lightline.vim
   set rtp-=~/.vim/bundle/supertab
+  set rtp-=~/.vim/bundle/vim-hybrid
+  set rtp-=~/.vim/bundle/yats.vim
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -152,6 +181,28 @@ let g:fzf_colors = {
       \ "spinner":  ["fg", "IncSearch"],
       \ "header":   ["fg", "WildMenu"]
       \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Keybind.
+let g:ctrlp_map = '<leader>o'
+
+" Permits us to change working directory in CtrlP while vim is open.
+let g:ctrlp_working_path_mode = 0
+
+" Enable hidden files, then later ignore stuff like git folders.
+let g:ctrlp_dotfiles = 1
+
+" Override default finder to make it respect .gitignore
+let g:ctrlp_user_command = [
+      \ '.git',
+      \ 'cd %s && git ls-files . -co --exclude-standard',
+      \ 'find %s -type f'
+      \ ]
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale
