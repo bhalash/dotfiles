@@ -59,6 +59,9 @@ nnoremap <silent><leader>c8 :set colorcolumn=80<CR>
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML.
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
+" Open terminal as full-height vertical split.
+nnoremap <leader>t :vert ter<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
