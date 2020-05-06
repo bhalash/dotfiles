@@ -58,10 +58,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Syntax highlighting.
 Plug 'sheerun/vim-polyglot'
 
-" Status bar.
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 call plug#end()
 
 filetype plugin indent on

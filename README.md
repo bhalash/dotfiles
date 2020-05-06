@@ -28,3 +28,5 @@ Copyright 2015-2020 Mark Grealish. Licensed under the GPLv3 or later.
 > You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 A copy of the license is included in the project's root directory. The file is named [LICENSE](/LICENSE).
+
+Modified [statusline.vim](/vim/autoload/statusline.vim) copyright 2020 [Emilia Simmons](https://github.com/milisims). Included under the MIT License by kind permission of the author.
