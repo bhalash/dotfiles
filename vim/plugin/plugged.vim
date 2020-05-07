@@ -58,6 +58,9 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Syntax highlighting.
 Plug 'sheerun/vim-polyglot'
 
+" Nice fast background grepping.
+Plug 'yegappan/grep'
+
 call plug#end()
 
 filetype plugin indent on
