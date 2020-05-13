@@ -66,9 +66,6 @@ nnoremap <leader>t :vert ter<CR>
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" vim-gitgutter
-nnoremap <leader>gg :GitGutterToggle<CR>
-
 " goyo
 nnoremap <silent><leader>go :Goyo<CR>
 
@@ -83,3 +80,6 @@ nnoremap <silent><leader>f :Files<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Gblame<CR>
+
+" grepper
+nnore  <silent><leader>gg :Grepper<CR>
