@@ -59,7 +59,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'sheerun/vim-polyglot'
 
 " Nice fast background grepping.
-Plug 'yegappan/grep'
+Plug 'mhinz/vim-grepper'
 
 call plug#end()
 
