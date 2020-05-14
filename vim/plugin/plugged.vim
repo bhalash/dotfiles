@@ -104,16 +104,3 @@ let g:fzf_colors = {
       \ "spinner":  ["fg", "IncSearch"],
       \ "header":   ["fg", "WildMenu"]
       \ }
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neoclide/coc.nvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Extensions I want to keep.
-let g:coc_global_extensions = [
-      \ 'coc-css',
-      \ 'coc-html',
-      \ 'coc-json',
-      \ 'coc-marketplace',
-      \ 'coc-tsserver'
-      \ ]
