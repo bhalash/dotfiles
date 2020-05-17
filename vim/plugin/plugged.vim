@@ -41,8 +41,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-"HTML expansion.
-Plug 'mattn/emmet-vim'
+" HTML expansion.
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'alvan/vim-closetag', { 'for': 'html' }
 
 " Colorscheme.
 Plug 'andreasvc/vim-256noir'
