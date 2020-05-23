@@ -48,6 +48,7 @@ Plug 'alvan/vim-closetag', { 'for': 'html' }
 " Colorscheme.
 Plug 'andreasvc/vim-256noir'
 Plug 'mkarmona/colorsbox'
+Plug 'aonemd/kuroi.vim'
 
 " File finder.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
