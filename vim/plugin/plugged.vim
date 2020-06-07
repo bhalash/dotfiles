@@ -63,9 +63,6 @@ Plug 'sheerun/vim-polyglot'
 " Nice fast background grepping.
 Plug 'mhinz/vim-grepper'
 
-" Track
-Plug 'wakatime/vim-wakatime', { 'on': 'LogWork' }
-
 call plug#end()
 
 filetype plugin indent on

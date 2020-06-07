@@ -215,6 +215,25 @@ bindkey '^H' backward-delete-char
 bindkey '^U' backward-kill-line
 
 ################################################################################
+# Foreground/Background Vim
+#
+# Stolen from Reddit, this is the Zsh equivalent of:
+#
+#   stty susp undef
+#   bind '"\C-z":"fg\015"'
+#
+# Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
+################################################################################
+
+function fg-vim {
+  fg vim 2>/dev/null
+}
+
+stty susp undef
+zle -N fg-vim
+bindkey '^z' fg-vim
+
+################################################################################
 # Grep Configuration
 ################################################################################
 
