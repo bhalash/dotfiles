@@ -59,6 +59,9 @@ nnoremap <silent><leader>c8 :set colorcolumn=80<CR>
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML.
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
+" Take visual selection and search with it.
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
