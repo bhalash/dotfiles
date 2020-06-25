@@ -15,6 +15,8 @@ Plug 'wellle/targets.vim'
 
 " Provide motion keyed to gs<motion> to sort stuff.
 Plug 'christoomey/vim-sort-motion'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
 
 " Better FfTt action.
 Plug 'unblevable/quick-scope'
