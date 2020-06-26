@@ -48,6 +48,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'alvan/vim-closetag', { 'for': 'html' }
 
 " Colorscheme.
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'andreasvc/vim-256noir'
 Plug 'mkarmona/colorsbox'
 Plug 'aonemd/kuroi.vim'
