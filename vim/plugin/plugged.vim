@@ -66,6 +66,13 @@ Plug 'sheerun/vim-polyglot'
 " Nice fast background grepping.
 Plug 'mhinz/vim-grepper'
 
+" For file navigation
+Plug 'tpope/vim-vinegar'
+
+" Because eh?
+Plug 'itchyny/lightline.vim'
+Plug 'yarisgutierrez/ayu-lightline'
+
 call plug#end()
 
 filetype plugin indent on
@@ -87,6 +94,12 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 let g:goyo_width = 170
 let g:goyo_height = 90
 let g:goyo_linenr = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline/airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline_powerline_fonts = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/fzf.vim
