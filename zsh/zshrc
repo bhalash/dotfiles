@@ -36,7 +36,7 @@ KEYTIMEOUT=1
 
 # Default editor to nvim if unset.
 if [[ -z "$EDITOR" ]]; then
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 alias vi='vim'
