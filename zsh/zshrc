@@ -264,7 +264,6 @@ export FZF_CTRL_T_COMMAND='rg --files --follow'
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
 alias bf='big-files'
 alias gr='git-root'
-alias grep='grep --color=auto --exclude-dir=".git"'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
 alias shit="printf '\e[?25h'"
 alias tmux='tmux -2'
