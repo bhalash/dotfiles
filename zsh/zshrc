@@ -4,9 +4,6 @@
 
 export TERM=xterm-256color
 
-# cd with just directory name.
-setopt autocd
-
 # Permit shorter loop syntax.
 setopt short_loops
 setopt function_arg_zero
