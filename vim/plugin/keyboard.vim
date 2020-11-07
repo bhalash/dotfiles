@@ -75,8 +75,8 @@ nnoremap <silent><leader>] <Plug>(ale_next_wrap)
 nnoremap <silent><leader>at :ALEToggle<CR>
 
 " fzf
-nnoremap <silent><leader>p :GFiles<CR>
-nnoremap <silent><leader>f :Files<CR>
+nnoremap <silent><leader>f :GFiles<CR>
+nnoremap <silent><leader>p :Files<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Gblame<CR>

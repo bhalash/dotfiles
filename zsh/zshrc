@@ -21,7 +21,7 @@ unsetopt rm_star_silent
 autoload colors && colors
 
 ################################################################################
-# Vim
+# Vim/Nvim
 ################################################################################
 
 # Operate zsh in vim mode.
@@ -33,10 +33,11 @@ KEYTIMEOUT=1
 
 # Default editor to nvim if unset.
 if [[ -z "$EDITOR" ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 ################################################################################
 # Set Tempdir
