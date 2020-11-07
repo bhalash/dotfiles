@@ -158,19 +158,6 @@ plugins=(git github history-substring-search)
 autoload -Uz compinit && compinit -u
 
 ################################################################################
-# Homebrew
-################################################################################
-
-# Opt out of tracking, because fuck that noise.
-export HOMEBREW_NO_ANALYTICS=1
-
-# Load Homebrew on Linux if installed.
-# See: https://docs.brew.sh/Homebrew-on-Linux
-if [[ -d /home/linuxbrew/.linuxbrew ]]; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-fi
-
-################################################################################
 # Bind <tab> to cd Command
 ################################################################################
 
