@@ -33,11 +33,15 @@ Plug 'tpope/vim-abolish'
 " Authoring (Markdown and article writing).
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 
+" JavaScript and JSX highlighting.
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+
 " Auto pair brackets, like.
 Plug 'jiangmiao/auto-pairs'
 
 " Toggle comments.
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 
 " git project management
 Plug 'airblade/vim-gitgutter'
