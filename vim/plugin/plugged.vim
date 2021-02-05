@@ -31,7 +31,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 
 " Authoring (Markdown and article writing).
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'junegunn/goyo.vim'
 
 " JavaScript and JSX highlighting.
 Plug 'yuezk/vim-js'
@@ -48,8 +48,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " HTML expansion.
-Plug 'mattn/emmet-vim', { 'for': 'html' }
-Plug 'alvan/vim-closetag', { 'for': 'html' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascriptreact'] }
+Plug 'alvan/vim-closetag', { 'for': ['html', 'javascriptreact'] }
 
 " Colorscheme.
 Plug 'rafi/awesome-vim-colorschemes'
@@ -66,9 +66,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Syntax highlighting.
 Plug 'sheerun/vim-polyglot'
-
-" Nice fast background grepping.
-Plug 'mhinz/vim-grepper'
 
 " For file navigation
 Plug 'tpope/vim-vinegar'

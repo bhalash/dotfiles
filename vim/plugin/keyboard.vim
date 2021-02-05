@@ -69,13 +69,8 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 " goyo
 nnoremap <silent><leader>go :Goyo<CR>
 
-" ale
-nnoremap <silent><leader>[ <Plug>(ale_previous_wrap)
-nnoremap <silent><leader>] <Plug>(ale_next_wrap)
-nnoremap <silent><leader>at :ALEToggle<CR>
-
 " fzf
-nnoremap <silent><leader>f :GFiles<CR>
+nnoremap <silent><leader>f :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
 
 " vim-fugitive
