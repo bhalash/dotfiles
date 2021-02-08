@@ -48,8 +48,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " HTML expansion.
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascriptreact'] }
-Plug 'alvan/vim-closetag', { 'for': ['html', 'javascriptreact'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascriptreact'] }
+Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'javascriptreact'] }
 
 " Colorscheme.
 Plug 'rafi/awesome-vim-colorschemes'
@@ -92,8 +92,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " junegunn/goyo.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:goyo_width = 170
-let g:goyo_height = 90
+let g:goyo_width = 120
+let g:goyo_height = 100
 let g:goyo_linenr = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

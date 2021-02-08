@@ -67,7 +67,7 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " goyo
-nnoremap <silent><leader>go :Goyo<CR>
+nnoremap <silent><leader>gy :Goyo<CR>
 
 " fzf
 nnoremap <silent><leader>f :Rg<CR>
@@ -75,6 +75,3 @@ nnoremap <silent><leader>p :Files<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Gblame<CR>
-
-" grepper
-nnore  <silent><leader>gg :Grepper<CR>
