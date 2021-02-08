@@ -80,9 +80,7 @@ function user-prompt {
     FG=9 # red for root :p
   fi
 
-  if [[ -v SSH_CLIENT ]] || [[ $(id -u) == 0 ]]; then
-    echo $(prompt-color '%n@%m ' $FG $BG)
-  fi
+  echo $(prompt-color '%n@%m ' $FG $BG)
 }
 
 function dir-prompt {
@@ -103,7 +101,7 @@ zle-line-init zle-keymap-select() {
   # Set prompt per functions above. Unset right prompt.
   # PROMPT="$(mode-prompt)$(user-prompt)$(dir-prompt) $ %b"
   PROMPT="$(user-prompt)$(dir-prompt)$(mode-prompt) %b"
-  RPROMPT=''
+  RPROMPT=""
   zle reset-prompt
 }
 
