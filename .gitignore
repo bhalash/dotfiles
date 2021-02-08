@@ -16,6 +16,7 @@
 /vim/.netrwhist
 /vim/.tmp
 /vim/.undo
+/vim/bundle/*
 /vim/extensions
 /vim/session
 /vim/spell

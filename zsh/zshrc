@@ -50,66 +50,60 @@ if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
 fi
 
 ################################################################################
-# Test Executable Existence
-################################################################################
-
-function is_installed {
-  for PROGRAM in "$@"; do
-    if [[ $(which $PROGRAM > /dev/null 2>&1; echo $?) != 0 ]]; then
-      return 1
-    fi
-  done
-
-  return 0
-}
-
-################################################################################
 # Prompt
 ################################################################################
 
-# Wrap $1 in a given color, with a fallback to color 15 (white).
-function user-prompt-color {
-  echo "%F{${2:-15}}${1}%f"
+# Wrap $1 in given colors. Done for (perosnal) readability.
+# See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
+# See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+function prompt-color {
+  local CONTENT=$1
+  local FG=${2:-15} # fallback white
+  local BG=${3:-0}  # fallback black
+  echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k"
 }
 
-# Username
+# Separate Segments
+function segment-separator {
+  local SEGMENT_SEPARATOR=$'\ue0b0'
+  local BG=${1:-0}
+  local FG=${2:-15}
+  echo $(prompt-color $SEGMENT_SEPARATOR $FG $BG)
+}
+
+# Show prompt for remote (SSH) or root user.
 function user-prompt {
-  USER_PROMPT=$(user-prompt-color '%n' ${1:-246})
+  local FG=15
+  # local BG=23
 
   if [[ $(id -u) == 0 ]]; then
-    USER_PROMPT=$(user-prompt-color '%n' ${2:-15})
+    FG=9 # red for root :p
   fi
 
-  echo "${USER_PROMPT}"
+  if [[ -v SSH_CLIENT ]] || [[ $(id -u) == 0 ]]; then
+    echo $(prompt-color '%n@%m ' $FG $BG)
+  fi
 }
 
-# Hostname.
-function host-prompt {
-  echo $(user-prompt-color '%m' ${1:-246})
-}
-
-# Set vi-style prompt colors.
-function vi-prompt {
-  VI_BEFORE=$(user-prompt-color '[' ${1:-246})
-  VI_AFTER=$(user-prompt-color ']' ${2:-246})
-
-  VI_NORMAL="${VI_BEFORE}$(user-prompt-color n ${3:-15})${VI_AFTER}"
-  VI_INSERT="${VI_BEFORE}$(user-prompt-color i ${3:-15})${VI_AFTER}"
-
-  echo "${${KEYMAP/vicmd/${VI_NORMAL}}/(main|viins)/${VI_INSERT}}"
-}
-
-# Ccurrent working directory.
 function dir-prompt {
-  DIR_PROMPT=''
-  echo $(user-prompt-color "%1~" ${1:-246})
+  local FG=15
+  # local BG=15
+  echo $(prompt-color '%1~ ' $FG $BG)
+}
+
+function mode-prompt {
+  local FG=15
+  # local BG=64
+  local MODE_NORMAL=$(prompt-color '>' $FG $BG)
+  local MODE_INSERT=$(prompt-color '$' $FG $BG)
+  echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
 }
 
 zle-line-init zle-keymap-select() {
   # Set prompt per functions above. Unset right prompt.
-  PROMPT="%B$(vi-prompt) $(user-prompt)@$(host-prompt):$(dir-prompt) $ %b"
-  RPROMPT=""
-
+  # PROMPT="$(mode-prompt)$(user-prompt)$(dir-prompt) $ %b"
+  PROMPT="$(user-prompt)$(dir-prompt)$(mode-prompt) %b"
+  RPROMPT=''
   zle reset-prompt
 }
 
@@ -211,7 +205,7 @@ bindkey '^U' backward-kill-line
 ################################################################################
 
 function fg-vim {
-  fg vim 2>/dev/null
+  fg nvim 2>/dev/null
 }
 
 stty susp undef
@@ -244,7 +238,7 @@ local FZF_PATH="${HOME}/.fzf.zsh"
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND='rg --files --follow'
 
-if [[ -f $FZF_PATH ]]; then
+if [[ -f $FZF_PATH ]] && [[ -d '/home/linuxbrew' ]]; then
   source $FZF_PATH
 fi
 
