@@ -236,7 +236,7 @@ local FZF_PATH="${HOME}/.fzf.zsh"
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND='rg --files --follow'
 
-if [[ -f $FZF_PATH ]] && [[ -d '/home/linuxbrew' ]]; then
+if [[ -f $FZF_PATH ]]; then
   source $FZF_PATH
 fi
 
