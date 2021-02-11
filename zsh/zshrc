@@ -244,8 +244,11 @@ fi
 # Load Transient Work Configuration
 ################################################################################
 
-local WORK_ZSHRC="${HOME}/.zsh/work.zshrc"
+if [[ $OSTYPE =~ 'linux-gnu' ]]; then
+  source '/usr/share/doc/fzf/examples/key-bindings.zsh'
+  source '/usr/share/doc/fzf/examples/completion.zsh'
+fi
 
-if [[ -f $WORK_ZSHRC ]]; then
-  source $WORK_ZSHRC
+if [[ $OSTYPE =~ 'darwin' ]] && [[ -f "${HOME}/.zsh/work.zsh" ]]; then
+  source "${HOME}/.zsh/work.zsh"
 fi
