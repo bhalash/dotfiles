@@ -6,7 +6,6 @@
 let g:coc_global_extensions = [
       \ 'coc-angular',
       \ 'coc-css',
-      \ 'coc-eslint',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-marketplace',
