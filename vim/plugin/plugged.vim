@@ -96,8 +96,6 @@ let g:goyo_width = 120
 let g:goyo_height = 100
 let g:goyo_linenr = 1
 
-" enter and leave events for pairing sessions :p
-
 function! s:goyo_enter()
   set norelativenumber
 endfunction
@@ -106,8 +104,9 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" enter and leave events for pairing sessions :p
+" autocmd! User GoyoEnter nested call <SID>goyo_enter()
+" autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " airline/airline

@@ -42,7 +42,7 @@ nnoremap <silent><leader>rp gg"_dGVp
 nnoremap * :keepjumps normal! mi*`i<CR>
 
 " Format JSON in buffer.
-nnoremap <silent><leader>jf :%!python -m json.tool<CR>
+nnoremap <silent><leader>jf :set ft=json <bar> %!python -m json.tool<CR>
 
 " Toggle quickfix window.
 nnoremap <leader>q :call QuickfixToggle()<CR>
