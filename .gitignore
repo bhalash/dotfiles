@@ -25,4 +25,4 @@
 /tmux/plugins
 
 # ignore work zshrc as it may have sensitive crud
-/zsh/work.zshrc
+/zsh/work.zsh
