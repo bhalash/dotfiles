@@ -222,17 +222,22 @@ alias shit="printf '\e[?25h'"
 alias tmux='tmux -2'
 
 ################################################################################
-# Global Node.js Init
+# Node Init
 ################################################################################
 
-path+=('/usr/local/lib/node_modules')
+export NVM_DIR="$HOME/.nvm"
+
+if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
+  source "${NVM_DIR}/nvm.sh"
+fi
 
 ################################################################################
 # FZF
 ################################################################################
 
-local FZF_PATH="${HOME}/.fzf.zsh"
-
+# See: https://github.com/junegunn/fzf#preview-window
+# export FZF_DEFAULT_OPTS='--preview "cat {}"'
+export FZF_PATH="${HOME}/.fzf.zsh"
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_CTRL_T_COMMAND='rg --files --follow'
 
