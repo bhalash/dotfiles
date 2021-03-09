@@ -53,54 +53,54 @@ fi
 # Prompt
 ################################################################################
 
-# Wrap $1 in given colors. Done for (perosnal) readability.
+# Wrap $1 in given color. Done for (perosnal) readability.
 # See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
 # See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-function prompt-color {
+function df_prompt_color {
   local CONTENT=$1
   local FG=${2:-15} # fallback white
-  local BG=${3:-0}  # fallback black
-  echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k"
+  local BG=${3}     # no fallback bg
+
+  if [[ -n $BG ]]; then
+    echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k" # For background
+  else
+    echo "%F{${FG}}${CONTENT}%f%k"
+  fi
 }
 
 # Separate Segments
-function segment-separator {
+function df_prompt_segment_separator {
   local SEGMENT_SEPARATOR=$'\ue0b0'
   local BG=${1:-0}
   local FG=${2:-15}
-  echo $(prompt-color $SEGMENT_SEPARATOR $FG $BG)
+  echo $(df_prompt_color $SEGMENT_SEPARATOR $FG $BG)
 }
 
 # Show prompt for remote (SSH) or root user.
-function user-prompt {
+function df_prompt_user {
   local FG=15
-  # local BG=23
 
   if [[ $(id -u) == 0 ]]; then
     FG=9 # red for root :p
   fi
 
-  echo $(prompt-color '%n@%m ' $FG $BG)
+  echo $(df_prompt_color '%n@%m ' $FG)
 }
 
-function dir-prompt {
-  local FG=15
-  # local BG=15
-  echo $(prompt-color '%1~ ' $FG $BG)
+function df_prompt_dir {
+  echo $(df_prompt_color '%1~ ')
 }
 
-function mode-prompt {
-  local FG=15
-  # local BG=64
-  local MODE_NORMAL=$(prompt-color '>' $FG $BG)
-  local MODE_INSERT=$(prompt-color '$' $FG $BG)
+function df_prompt_mode {
+  local MODE_NORMAL=$(df_prompt_color '>')
+  local MODE_INSERT=$(df_prompt_color '$')
   echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
 }
 
 zle-line-init zle-keymap-select() {
   # Set prompt per functions above. Unset right prompt.
-  # PROMPT="$(mode-prompt)$(user-prompt)$(dir-prompt) $ %b"
-  PROMPT="$(user-prompt)$(dir-prompt)$(mode-prompt) %b"
+  # PROMPT="$(df_prompt_mode)$(df_prompt_user)$(df_prompt_dir) $ %b"
+  PROMPT="$(df_prompt_user)$(df_prompt_dir)$(df_prompt_mode) %b"
   RPROMPT=""
   zle reset-prompt
 }
@@ -110,14 +110,6 @@ zle-line-init zle-keymap-select() {
 setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=''
-
-################################################################################
-# Terminal/Pane Title
-################################################################################
-
-function set-window-title {
-  echo -ne "\e]0;${1}\a"
-}
 
 ################################################################################
 # History
@@ -150,10 +142,10 @@ plugins=(git github history-substring-search)
 autoload -Uz compinit && compinit -u
 
 ################################################################################
-# Bind <tab> to cd Command
+# bind <tab>-without-arguments to cd
 ################################################################################
 
-function first-tab {
+function df_tab_cd {
   if [[ $#BUFFER == 0 ]]; then
     BUFFER="cd "
     CURSOR=3
@@ -163,14 +155,14 @@ function first-tab {
   fi
 }
 
-zle -N first-tab
-bindkey '^I' first-tab
+zle -N df_tab_cd
+bindkey '^I' df_tab_cd
 
 ################################################################################
 # cd to Git Project Root Folder
 ################################################################################
 
-function git-root {
+function df_git_root {
   if $(git rev-parse 2> /dev/null); then
     builtin cd "$(git rev-parse --show-toplevel)"
   else
@@ -202,21 +194,20 @@ bindkey '^U' backward-kill-line
 # Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
 ################################################################################
 
-function fg-vim {
+function df_fg_vim {
   fg nvim 2>/dev/null
 }
 
 stty susp undef
-zle -N fg-vim
-bindkey '^z' fg-vim
+zle -N df_fg_vim
+bindkey '^z' df_fg_vim
 
 ################################################################################
 # Command Aliases
 ################################################################################
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias bf='big-files'
-alias gr='git-root'
+alias gr='df_git_root'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
 alias shit="printf '\e[?25h'"
 alias tmux='tmux -2'
