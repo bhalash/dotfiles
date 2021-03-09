@@ -74,6 +74,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'yarisgutierrez/ayu-lightline'
 
+Plug 'kshenoy/vim-signature'
+
 call plug#end()
 
 filetype plugin indent on
