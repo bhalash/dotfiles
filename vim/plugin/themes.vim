@@ -61,5 +61,5 @@ augroup themes
   autocmd! ColorScheme colorsbox-stnight call s:colorsbox_patch()
   autocmd! ColorScheme hybrid-material call s:gitgutter_patch()
   autocmd! ColorScheme ayu call s:ayu_patch()
-  colorscheme ayu
+  colorscheme colorsbox-stnight
 augroup END
