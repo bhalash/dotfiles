@@ -52,8 +52,9 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascriptreact'] }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'javascriptreact'] }
 
 " Colorscheme
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'aonemd/kuroi.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'lokaltog/vim-monotone'
 Plug 'jordwalke/flatlandia'
 
 " File finder

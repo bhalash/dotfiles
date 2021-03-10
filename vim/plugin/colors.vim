@@ -2,7 +2,6 @@
 " Core Vim Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set term colours.
 set termguicolors background=dark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -23,9 +22,11 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 function! s:ayu_patch()
+  call s:gitgutter_patch()
   hi ColorColumn guibg=#30373d
   hi Comment guifg=#8293a5
   hi LineNr guifg=#5c636b
+  let ayucolor='dark'
 endfunction
 
 autocmd! ColorScheme ayu call s:ayu_patch()
@@ -75,4 +76,12 @@ autocmd! ColorScheme flatlandia call s:flatlandia_patch()
 " Set Preferred Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme flatlandia
+colorscheme tender
+
+" TODO: monotone works for me, needs some love and attention though - fork?
+" See: https://github.com/Lokaltog/vim-monotone
+" colorscheme monotone
+" hi clear Comment
+" hi Comment guibg=none guifg=#424242
+" call s:gitgutter_patch()
+" hi LineNr guifg=#5c636b
