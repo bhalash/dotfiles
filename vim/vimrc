@@ -2,9 +2,6 @@
 " Core Vim Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set term colours.
-set termguicolors background=dark
-
 " Enable syntax highlighting.
 syntax on
 
@@ -42,6 +39,9 @@ set shortmess=a
 " Disable visual bell. It's annoying as crap in git bash on Windows.
 set visualbell
 set t_vb=
+
+" More informative statusbar
+set statusline=\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scrolling and Mice

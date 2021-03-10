@@ -13,66 +13,61 @@ Plug 'bronson/vim-trailing-whitespace'
 " , . ; : + - = ~ _ * # / | \ & $
 Plug 'wellle/targets.vim'
 
-" Provide motion keyed to gs<motion> to sort stuff.
+" Provide motion keyed to gs<motion> to sort stuff
 Plug 'christoomey/vim-sort-motion'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 
-" Better FfTt action.
+" Better FfTt action
 Plug 'unblevable/quick-scope'
 
-" Auto CD to project root.
+" Auto CD to project root
 Plug 'airblade/vim-rooter'
 
-" Quickly change wrapping characters with cs<char>.
+" Quickly change wrapping characters with cs<char>
 Plug 'tpope/vim-surround'
 
 " Case-insensitive replacement
 Plug 'tpope/vim-abolish'
 
-" Authoring (Markdown and article writing).
+" Authoring (Markdown and article writing)
 Plug 'junegunn/goyo.vim'
 
-" JavaScript and JSX highlighting.
+" JavaScript and JSX highlighting
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
-" Auto pair brackets, like.
+" Auto pair brackets, like
 Plug 'jiangmiao/auto-pairs'
 
-" Toggle comments.
+" Toggle comments
 Plug 'tpope/vim-commentary'
 
 " git project management
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" HTML expansion.
+" HTML expansion
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascriptreact'] }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'javascriptreact'] }
 
-" Colorscheme.
+" Colorscheme
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'andreasvc/vim-256noir'
-Plug 'mkarmona/colorsbox'
 Plug 'aonemd/kuroi.vim'
+Plug 'jordwalke/flatlandia'
 
-" File finder.
+" File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Linting and tab completion.
+" Linting and tab completion
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Syntax highlighting.
+" Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
 " For file navigation
 Plug 'tpope/vim-vinegar'
-
-" Because eh?
-Plug 'itchyny/lightline.vim'
-Plug 'yarisgutierrez/ayu-lightline'
 
 Plug 'kshenoy/vim-signature'
 
@@ -84,10 +79,10 @@ filetype plugin indent on
 " airblade/vim-rooter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Silently auto CD to the root folder of the current git project.
+" Silently auto CD to the root folder of the current git project
 let g:rooter_silent_chdir = 1
 
-" Only highlight keys when the appropriate key is depressed.
+" Only highlight keys when the appropriate key is depressed
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,21 +101,11 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
-" enter and leave events for pairing sessions :p
-" autocmd! User GoyoEnter nested call <SID>goyo_enter()
-" autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airline/airline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:airline_powerline_fonts = 1
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Match fzf.vim to colorscheme.
+" Match fzf.vim to colorscheme
 " See: https://github.com/junegunn/fzf.vim/issues/581
 let g:fzf_colors = {
       \ "fg":       ["fg", "Normal"],
