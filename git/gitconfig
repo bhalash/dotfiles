@@ -5,7 +5,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	editor = vim
+	editor = nvim
 [user]
 	name = Mark Grealish
 	email = mark@bhalash.com
