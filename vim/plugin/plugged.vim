@@ -70,7 +70,11 @@ Plug 'sheerun/vim-polyglot'
 " For file navigation
 Plug 'tpope/vim-vinegar'
 
+" Display marks within the buffer
 Plug 'kshenoy/vim-signature'
+
+" Present markdown slides
+Plug 'sotte/presenting.vim'
 
 call plug#end()
 

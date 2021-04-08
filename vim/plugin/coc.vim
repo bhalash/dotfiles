@@ -9,7 +9,6 @@ let g:coc_global_extensions = [
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-marketplace',
-      \ 'coc-react-refactor',
       \ 'coc-tsserver'
       \ ]
 
