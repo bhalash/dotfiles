@@ -56,6 +56,7 @@ Plug 'aonemd/kuroi.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'lokaltog/vim-monotone'
 Plug 'jordwalke/flatlandia'
+Plug 'ayu-theme/ayu-vim'
 
 " File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

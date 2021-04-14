@@ -76,7 +76,7 @@ autocmd! ColorScheme flatlandia call s:flatlandia_patch()
 " Set Preferred Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme flatlandia
+colorscheme ayu
 
 " TODO: monotone works for me, needs some love and attention though - fork?
 " See: https://github.com/Lokaltog/vim-monotone
