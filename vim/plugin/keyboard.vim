@@ -62,6 +62,10 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " Take visual selection and search with it.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" NOTE MG 2021-05-26: These work, but need refinement and cleanup. :)
+:imap <F2> <C-R>=strftime('FIXME MG %Y-%m-%d: ')<C-M>
+:imap <F3> <C-R>=strftime('TODO MG %Y-%m-%d: ')<C-M>
+:imap <F4> <C-R>=strftime('NOTE MG %Y-%m-%d: ')<C-M>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
