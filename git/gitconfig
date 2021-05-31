@@ -18,3 +18,5 @@
 # Include work configuration if given.
 [include]
 	path = ~/workspace/.gitconfig
+[pull]
+	rebase = true
