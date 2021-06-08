@@ -11,6 +11,7 @@
 	email = mark@bhalash.com
 [alias]
 	branchname = !git rev-parse --abbrev-ref HEAD
+	pm = !git pull origin master
 	dammit = !git push -u origin \"$(git branchname)\"
 	squish = "!git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
 	unchanged = !git ls-files -v | grep \"^[[:lower:]]\"
