@@ -208,8 +208,8 @@ bindkey '^z' df_fg_vim
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
 alias gr='df_git_root'
+alias gp='git pull origin master --rebase'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
-alias shit="printf '\e[?25h'"
 alias tmux='tmux -2'
 
 ################################################################################
