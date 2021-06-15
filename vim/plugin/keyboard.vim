@@ -4,11 +4,18 @@
 
 let mapleader = "\<space>"
 
+" Common vim operations, to reduce pinky-stretching.
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>wq :wq<CR>
+nnoremap <leader><space> :
+vnoremap <leader><space> :
+
 " Use <Tab> to cycle through buffers.
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
-" Split file.
+" Split buffer.
 nnoremap <leader>v :vsp<CR>
 noremap <leader>x :sp<CR>
 
@@ -45,7 +52,7 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 nnoremap <silent><leader>jf :set ft=json <bar> %!python -m json.tool<CR>
 
 " Toggle quickfix window.
-nnoremap <leader>q :call QuickfixToggle()<CR>
+nnoremap <leader>qf :call QuickfixToggle()<CR>
 
 " Set colorcolumn at current cursor column.
 nnoremap <silent><leader>ch :execute 'set colorcolumn=' . col('.')<CR>
