@@ -4,12 +4,9 @@
 
 let mapleader = "\<space>"
 
-" Common vim operations, to reduce pinky-stretching.
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>wq :wq<CR>
-nnoremap <leader><bs> :
-vnoremap <leader><bs> :
+" Rebind : to reduce pinky stretching
+nnoremap <leader><space> :
+vnoremap <leader><space> :
 
 " Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
 nnoremap s :s,,<left>
