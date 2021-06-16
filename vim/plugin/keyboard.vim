@@ -6,10 +6,15 @@ let mapleader = "\<space>"
 
 " Common vim operations, to reduce pinky-stretching.
 nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q!<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>wq :wq<CR>
-nnoremap <leader><space> :
-vnoremap <leader><space> :
+nnoremap <leader><bs> :
+vnoremap <leader><bs> :
+
+" Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
+nnoremap s :s,,<left>
+nnoremap S :%s,,<left>
+nnoremap <leader>S :%S,,<left>
 
 " Use <Tab> to cycle through buffers.
 nnoremap <Tab> <C-W>w
@@ -24,11 +29,6 @@ nnoremap <leader>sp :setlocal spell!<CR>
 
 " Toggle highlighted results.
 nnoremap <silent><bs> :nohlsearch<CR>
-
-" Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
-nnoremap s :s,,<left>
-nnoremap S :%s,,<left>
-nnoremap <leader>S :%S,,<left>
 
 " git checkout the currently edited file. Useful for scratch work.
 nnoremap <leader>gr :!git checkout %<CR>
