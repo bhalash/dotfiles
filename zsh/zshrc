@@ -211,6 +211,7 @@ alias gr='df_git_root'
 alias gp='git pull origin master --rebase'
 alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
 alias tmux='tmux -2'
+alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
 
 ################################################################################
 # Node Init
