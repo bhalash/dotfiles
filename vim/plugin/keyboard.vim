@@ -4,10 +4,6 @@
 
 let mapleader = "\<space>"
 
-" Rebind : to reduce pinky stretching
-nnoremap <leader><space> :
-vnoremap <leader><space> :
-
 " Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
 nnoremap s :s,,<left>
 nnoremap S :%s,,<left>
