@@ -103,6 +103,11 @@ set directory=~/.vim/.tmp,~/tmp,/tmp
 " Highlight the current line and set the colour.
 set cul
 
+" Insert notes into comments
+:iab fixme FIXME(mark):
+:iab note NOTE(mark):
+:iab todo TODO(mark):
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Quickfix Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
