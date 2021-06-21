@@ -62,6 +62,10 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " Take visual selection and search with it.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" Rebind : to reduce pinky stretching
+nnoremap <Esc> <Esc>:
+vnoremap <Esc> <Esc>:
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
