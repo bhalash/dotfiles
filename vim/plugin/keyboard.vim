@@ -76,6 +76,7 @@ nnoremap <silent><leader>gy :Goyo<CR>
 " fzf
 nnoremap <silent><leader>f :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
+nnoremap <silent><leader>bl :BLines<CR>
 
 " vim-fugitive
-nnoremap <silent><leader>gb :Gblame<CR>
+nnoremap <silent><leader>gb :Git blame<CR>
