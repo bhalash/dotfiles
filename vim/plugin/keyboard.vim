@@ -63,8 +63,10 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Rebind : to reduce pinky stretching
-nnoremap <Esc> <Esc>:
-vnoremap <Esc> <Esc>:
+" NOTE(mark): disabled as these worked well, but were a bit hair trigger
+" I need some sort of check for "if not in command mode"
+" nnoremap <Esc> <Esc>:
+" vnoremap <Esc> <Esc>:
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Keybinds
