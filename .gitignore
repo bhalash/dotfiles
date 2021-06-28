@@ -6,6 +6,7 @@
 !install.conf.yaml
 
 !git/
+!kitty/
 !regolith/
 !tig/
 !tmux/

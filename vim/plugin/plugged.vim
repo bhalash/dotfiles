@@ -91,6 +91,9 @@ let g:rooter_silent_chdir = 1
 " Only highlight keys when the appropriate key is depressed
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" Don't highlight whitespace in Markdown
+let g:extra_whitespace_ignored_filetypes = ['markdown']
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/goyo.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

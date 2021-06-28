@@ -72,8 +72,8 @@ set_from_resource $ws19 i3-wm.workspace.19.name "19"
 ###############################################################################
 
 ## Launch // Terminal // <> Enter ##
-bindsym $mod+Return exec /usr/bin/x-terminal-emulator
-# bindsym $mod+Return exec /usr/bin/x-terminal-emulator -e tmux
+# bindsym $mod+Return exec /usr/bin/x-terminal-emulator
+ bindsym $mod+Return exec /usr/bin/x-terminal-emulator -e tmux
 
 ## Launch // Browser // <><Shift> Enter ##
 bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)

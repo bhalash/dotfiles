@@ -1,5 +1,6 @@
 - clean: ['~']
 - link:
+    ~/.config/kitty: kitty
     ~/.config/regolith: regolith
     ~/.gitconfig: git/gitconfig
     ~/.tigrc: tig/tigrc
