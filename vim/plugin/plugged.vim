@@ -74,10 +74,6 @@ Plug 'tpope/vim-vinegar'
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
 
-" Present markdown slides
-Plug 'sotte/presenting.vim'
-Plug 'vim-scripts/SyntaxRange'
-
 call plug#end()
 
 filetype plugin indent on
