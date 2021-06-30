@@ -76,6 +76,7 @@ Plug 'kshenoy/vim-signature'
 
 " Present markdown slides
 Plug 'sotte/presenting.vim'
+Plug 'vim-scripts/SyntaxRange'
 
 call plug#end()
 
@@ -132,4 +133,4 @@ let g:fzf_colors = {
       \ "header":   ["fg", "WildMenu"]
       \ }
 
-let g:fzf_layout = { 'down':  '30%'}
+let g:fzf_layout = { 'down':  '30%' }
