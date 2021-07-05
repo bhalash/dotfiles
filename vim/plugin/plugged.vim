@@ -68,9 +68,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
-" For file navigation
-Plug 'tpope/vim-vinegar'
-
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
 
