@@ -23,9 +23,6 @@ nnoremap <leader>sp :setlocal spell!<CR>
 " Toggle highlighted results.
 nnoremap <silent><bs> :nohlsearch<CR>
 
-" git checkout the currently edited file. Useful for scratch work.
-nnoremap <leader>gr :!git checkout %<CR>
-
 " Strip trailing whitespace from the file.
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :noh<CR>
 
@@ -82,3 +79,8 @@ nnoremap <silent><leader>bl :BLines<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Git blame<CR>
+nnoremap <silent><leader>gc :Git commit<CR>
+nnoremap <silent><leader>gp :Git push<CR>
+nnoremap <silent><leader>gw :Gw<CR>
+" git checkout the currently edited file. Useful for scratch work.
+nnoremap <leader>gr :!git checkout %<CR>
