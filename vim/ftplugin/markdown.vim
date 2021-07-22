@@ -7,4 +7,4 @@ autocmd FileType markdown let g:airline#extensions#whitespace#show_message = 0
 autocmd FileType markdown let b:coc_suggest_disable = 1
 
 setlocal wrap
-setlocal expandtab ts=4 sw=4 sts=4
+setlocal expandtab ts=2 sw=2 sts=2
