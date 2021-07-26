@@ -24,6 +24,7 @@ endfunction
 function! s:ayu_patch()
   call s:gitgutter_patch()
   hi ColorColumn guibg=#30373d
+  hi Search gui=underline guibg=none guifg=#c3ce2d
   hi Comment guifg=#8293a5
   hi LineNr guifg=#5c636b
   let ayucolor='dark'
