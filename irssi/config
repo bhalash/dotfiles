@@ -1,5 +1,12 @@
+# vim: set ft=conf:
 servers = (
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
+  {
+    address = "irc.libera.chat";
+    chatnet = "libera";
+    port = "6697";
+    use_tls = "yes";
+  },
   {
     address = "ssl.efnet.org";
     chatnet = "EFNet";
@@ -134,6 +141,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
+  libera = { type = "IRC"; };
 };
 
 channels = (
@@ -301,6 +309,10 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "mark"; user_name = "mark"; nick = "mark"; };
+  core = {
+    real_name = "the_restless";
+    user_name = "the_restless";
+    nick = "the_restless";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
 };
