@@ -3,6 +3,7 @@
     ~/.config/kitty: kitty
     ~/.config/regolith: regolith
     ~/.gitconfig: git/gitconfig
+    ~/.irssi: irssi
     ~/.tigrc: tig/tigrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux

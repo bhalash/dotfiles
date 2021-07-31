@@ -6,6 +6,7 @@
 !install.conf.yaml
 
 !git/
+!irssi/
 !kitty/
 !regolith/
 !tig/
