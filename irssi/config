@@ -315,4 +315,6 @@ settings = {
     nick = "the_restless";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "tinylajs"; };
 };
+ignores = ( { level = "JOINS PARTS"; } );
