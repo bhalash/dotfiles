@@ -1,0 +1,6 @@
+{
+  "angular.experimental-ivy": true,
+  "angular.log": "verbose",
+  "angular.trace.server": "verbose",
+  "tsserver.trace.server": "verbose"
+}
