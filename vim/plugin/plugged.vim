@@ -62,7 +62,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Linting and tab completion
+" Language server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Syntax highlighting
@@ -76,11 +76,11 @@ call plug#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airblade/vim-rooter
+" Random plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Silently auto CD to the root folder of the current git project
 let g:rooter_silent_chdir = 1
+let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile']
 
 " Only highlight keys when the appropriate key is depressed
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']

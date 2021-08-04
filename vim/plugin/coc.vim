@@ -2,7 +2,7 @@
 " neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Extensions I want to keep.
+" Default extensions
 let g:coc_global_extensions = [
       \ 'coc-angular',
       \ 'coc-css',
