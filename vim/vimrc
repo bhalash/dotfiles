@@ -109,7 +109,8 @@ iab <expr> note strftime('NOTE(mark %Y-%m-%d):')
 iab <expr> todo strftime('TODO(mark %Y-%m-%d):')
 
 " Insert JavaScript arrow function
-iab arrow () => {}<LEFT>
+autocmd! FileType javascript,typescript
+  \ iab <buffer> arrow () => {}<left>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Quickfix Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
