@@ -104,10 +104,12 @@ set directory=~/.vim/.tmp,~/tmp,/tmp
 set cul
 
 " Insert notes into comments
-:iab <expr> fixme strftime('FIXME(mark %Y-%m-%d):')
-:iab <expr> note strftime('NOTE(mark %Y-%m-%d):')
-:iab <expr> todo strftime('TODO(mark %Y-%m-%d):')
+iab <expr> fixme strftime('FIXME(mark %Y-%m-%d):')
+iab <expr> note strftime('NOTE(mark %Y-%m-%d):')
+iab <expr> todo strftime('TODO(mark %Y-%m-%d):')
 
+" Insert JavaScript arrow function
+iab arrow () => {}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Quickfix Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
