@@ -4,7 +4,6 @@
 
 " let mapleader = '\<space>'
 " let mapleader = ','
-let mapleader = 'f'
 
 " Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
 nnoremap s :s,,<left>
