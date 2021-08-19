@@ -2,7 +2,9 @@
 " Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = "\<space>"
+" let mapleader = '\<space>'
+" let mapleader = ','
+let mapleader = 'f'
 
 " Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
 nnoremap s :s,,<left>
@@ -46,8 +48,8 @@ nnoremap Y y$
 
 " Set and clear colorcolumn.
 nnoremap <silent><leader>cc :set colorcolumn=<CR>
-nnoremap <silent><leader>c8 :set colorcolumn=80<CR>
-nnoremap <silent><leader>c1 :set colorcolumn=120<CR>
+nnoremap <silent><leader>ce :set colorcolumn=80<CR>
+nnoremap <silent><leader>co :set colorcolumn=120<CR>
 nnoremap <silent><leader>ch :execute 'set colorcolumn=' . col('.')<CR>
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML.
@@ -66,8 +68,7 @@ nnoremap <silent><leader>gy :Goyo<CR>
 " fzf
 nnoremap <silent><leader>f :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
-" Pop open a search window for current buffer.
-nnoremap <silent>// :BLines<CR>
+nnoremap <silent><leader>/ :BLines<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Git blame<CR>
