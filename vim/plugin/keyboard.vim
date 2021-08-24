@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " let mapleader = '\<space>'
-" let mapleader = ','
+let mapleader = ','
 
 " Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
 nnoremap s :s,,<left>
@@ -67,6 +67,7 @@ nnoremap <silent><leader>gy :Goyo<CR>
 " fzf
 nnoremap <silent><leader>f :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
+nnoremap <silent><leader>o :Buffers<CR>
 nnoremap <silent><leader>/ :BLines<CR>
 
 " vim-fugitive
