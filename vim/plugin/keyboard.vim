@@ -68,7 +68,7 @@ nnoremap <silent><leader>gy :Goyo<CR>
 nnoremap <silent><leader>f :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
 nnoremap <silent><leader>o :Buffers<CR>
-nnoremap <silent><leader>/ :BLines<CR>
+nnoremap <silent><leader>b :BLines<CR>
 
 " vim-fugitive
 nnoremap <silent><leader>gb :Git blame<CR>
