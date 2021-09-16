@@ -125,5 +125,3 @@ let g:fzf_colors = {
       \ "spinner":  ["fg", "IncSearch"],
       \ "header":   ["fg", "WildMenu"]
       \ }
-
-let g:fzf_layout = { 'down':  '30%' }
