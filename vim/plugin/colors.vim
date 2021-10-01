@@ -27,6 +27,7 @@ function! s:ayu_patch()
   hi Search gui=underline guibg=none guifg=#c3ce2d
   hi Comment guifg=#8293a5
   hi LineNr guifg=#5c636b
+  hi CocUnusedHighlight guifg=#ea1730 gui=underline
   let ayucolor='dark'
 endfunction
 
