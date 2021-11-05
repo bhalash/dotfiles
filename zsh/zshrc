@@ -36,6 +36,8 @@ if [[ -z "$EDITOR" ]]; then
   export EDITOR='nvim'
 fi
 
+alias vim='nvim'
+
 ################################################################################
 # Set Tempdir
 ################################################################################
@@ -211,7 +213,7 @@ alias tmux='tmux -2'
 alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
 
 ################################################################################
-# Node Init
+# Node/NNVM Init
 ################################################################################
 
 export NVM_DIR="$HOME/.nvm"
@@ -234,21 +236,15 @@ if [[ -f $FZF_PATH ]]; then
   source $FZF_PATH
 fi
 
-################################################################################
-# Load Transient Work Configuration
-################################################################################
-
 if [[ $OSTYPE =~ 'linux-gnu' ]]; then
   source '/usr/share/doc/fzf/examples/key-bindings.zsh'
   source '/usr/share/doc/fzf/examples/completion.zsh'
 fi
 
-if [[ -f "${HOME}/.zsh/work.zsh" ]]; then
-  source "${HOME}/.zsh/work.zsh"
+################################################################################
+# Load Extra Transient Configurations
+################################################################################
+
+if [[ -f "${HOME}/.work.zsh" ]]; then
+  source "${HOME}/.work.zsh"
 fi
-
-################################################################################
-# Load Extra Crap
-################################################################################
-
-path+="${HOME}/.cargo/bin"
