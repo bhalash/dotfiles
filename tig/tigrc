@@ -7,7 +7,7 @@
 
 # Main UI
 # ==============================================================================
-color default           250             234
+color default           250             233
 color 'Author '         15              default
 color 'Commit: '        242             default
 color 'Merge: '         45              default
