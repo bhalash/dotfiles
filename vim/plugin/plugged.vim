@@ -67,6 +67,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'austintraver/vim-jrnl'
 
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
