@@ -5,7 +5,7 @@ setlocal colorcolumn=88
 hi ColorColumn ctermbg=1 guibg=#30373d guifg=#ffffff
 
 " vim-jrnl sets folds based on markdown heading; this is annoying to undo
-setlocal foldmethod=marker
+setlocal nofoldenable
 
 " vim-jrnl turns on spell-checking, which I find distracting
 setlocal nospell
