@@ -111,6 +111,15 @@ iab <expr> todo strftime('TODO(mark %Y-%m-%d):')
 " Insert JavaScript arrow function
 autocmd! FileType javascript,typescript
   \ iab <buffer> arrow () => {}<left>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set gx open command for macOS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has('macunix')
+  let g:netrw_browsex_viewer = 'open'
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle Quickfix Window
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
