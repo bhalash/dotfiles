@@ -9,3 +9,9 @@ setlocal nofoldenable
 
 " vim-jrnl turns on spell-checking, which I find distracting
 setlocal nospell
+
+" vim-jrnl unsets wrap
+setlocal wrap
+
+" vim-jrnl unsets tab settings
+setlocal expandtab ts=2 sw=2 sts=2
