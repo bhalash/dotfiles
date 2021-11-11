@@ -77,7 +77,7 @@ call plug#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Random plugins
+" Random Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:rooter_silent_chdir = 1
@@ -105,6 +105,8 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
+nnoremap <silent><leader>gg :Goyo<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,3 +128,18 @@ let g:fzf_colors = {
       \ "spinner":  ["fg", "IncSearch"],
       \ "header":   ["fg", "WildMenu"]
       \ }
+
+" See: https://github.com/junegunn/fzf.vim#commands
+nnoremap <silent><leader>f :Rg<CR>
+nnoremap <silent><leader>p :Files<CR>
+nnoremap <silent><leader>o :Buffers<CR>
+nnoremap <silent><leader>b :BLines<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tpope/vim-fugitive
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <silent><leader>fb :Git blame<CR>
+nnoremap <silent><leader>fw :Gw<CR>
+" git checkout the currently edited file. Useful for scratch work.
+nnoremap <silent><leader>fr :!git checkout %<CR>

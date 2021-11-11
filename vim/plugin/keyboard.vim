@@ -56,24 +56,3 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
 " Take visual selection and search with it.
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Keybinds
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" goyo
-nnoremap <silent><leader>gy :Goyo<CR>
-
-" fzf
-nnoremap <silent><leader>f :Rg<CR>
-nnoremap <silent><leader>p :Files<CR>
-nnoremap <silent><leader>o :Buffers<CR>
-nnoremap <silent><leader>b :BLines<CR>
-
-" vim-fugitive
-nnoremap <silent><leader>gb :Git blame<CR>
-nnoremap <silent><leader>gc :Git commit<CR>
-nnoremap <silent><leader>gp :Git push<CR>
-nnoremap <silent><leader>gw :Gw<CR>
-" git checkout the currently edited file. Useful for scratch work.
-nnoremap <silent><leader>gr :!git checkout %<CR>
