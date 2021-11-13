@@ -139,7 +139,8 @@ nnoremap <silent><leader>b :BLines<CR>
 " tpope/vim-fugitive
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <silent><leader>fb :Git blame<CR>
-nnoremap <silent><leader>fw :Gw<CR>
-" git checkout the currently edited file. Useful for scratch work.
-nnoremap <silent><leader>fr :!git checkout %<CR>
+nnoremap <silent><leader>gb :Git blame<CR>
+nnoremap <silent><leader>gw :Gw<CR>
+nnoremap <silent><leader>gc :Git commit<CR>
+" git checkout the file in the current buffer
+nnoremap <silent><leader>gr :!git checkout %<CR>
