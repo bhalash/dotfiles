@@ -142,6 +142,7 @@ nnoremap <silent><leader>b :BLines<CR>
 nnoremap <silent><leader>gb :Git blame<CR>
 nnoremap <silent><leader>gp :Git pull<CR>
 nnoremap <silent><leader>gu :Git push<CR>
+nnoremap <silent><leader>gs :Git status<CR>
 nnoremap <silent><leader>gw :Gw<CR>
 nnoremap <silent><leader>gc :Git commit<CR>
 " git checkout the file in the current buffer
