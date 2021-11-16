@@ -229,7 +229,7 @@ fi
 # See: https://github.com/junegunn/fzf#preview-window
 # export FZF_DEFAULT_OPTS='--preview "cat {}"'
 export FZF_PATH="${HOME}/.fzf.zsh"
-export FZF_DEFAULT_COMMAND='rg --files --follow'
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 
 if [[ -f $FZF_PATH ]]; then
