@@ -130,7 +130,7 @@ let g:fzf_colors = {
       \ }
 
 " See: https://github.com/junegunn/fzf.vim#commands
-nnoremap <silent><leader>f :Rg<CR>
+nnoremap <silent><Leader>r :Rg <C-R><C-W><CR>
 nnoremap <silent><leader>p :Files<CR>
 nnoremap <silent><leader>o :Buffers<CR>
 nnoremap <silent><leader>b :BLines<CR>
