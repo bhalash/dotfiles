@@ -17,6 +17,7 @@
 	p = !git pull
 	s = !git status
 	u = !git push
+	branchname = !git rev-parse --abbrev-ref HEAD
 	dammit = !git push -u origin \"$(git branchname)\"
 	squish = "!git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
 	unchanged = !git ls-files -v | grep \"^[[:lower:]]\"
