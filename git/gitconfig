@@ -1,29 +1,28 @@
-# vim: set ft=gitconfig
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [core]
-	editor = nvim
+  editor = nvim
 [user]
-	name = Mark Grealish
-	email = mark@bhalash.com
+  name = Mark Grealish
+  email = mark@bhalash.com
 [alias]
-	bn = !git rev-parse --abbrev-ref HEAD
-	pm = !git pull origin master
-	b = !git branch
-	co = !git checkout
-	p = !git pull
-	s = !git status
-	u = !git push
-	branchname = !git rev-parse --abbrev-ref HEAD
-	dammit = !git push -u origin \"$(git branchname)\"
-	squish = "!git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
-	unchanged = !git ls-files -v | grep \"^[[:lower:]]\"
-	untracked = !git ls-files --others --exclude-standard
-# Include work configuration if given.
-[include]
-	path = ~/workspace/.gitconfig
+  b = !git branch
+  c = !git checkout
+  p = !git pull
+  s = !git status
+  s = !git status
+  u = !git push
+  bn = !git rev-parse --abbrev-ref HEAD
+  pm = !git pull origin master
+  branchname = !git rev-parse --abbrev-ref HEAD
+  dammit = !git push -u origin \"$(git branchname)\"
+  squish = "!git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
+  unchanged = !git ls-files -v | grep \"^[[:lower:]]\"
+  untracked = !git ls-files --others --exclude-standard
 [pull]
-	rebase = true
+  rebase = true
+[includeIf "gitdir:~/Work"]
+  path = ~/Work/.gitconfig
