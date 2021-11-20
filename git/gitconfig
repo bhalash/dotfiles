@@ -13,7 +13,6 @@
   c = !git checkout
   p = !git pull
   s = !git status
-  s = !git status
   u = !git push
   bn = !git rev-parse --abbrev-ref HEAD
   pm = !git pull origin master
