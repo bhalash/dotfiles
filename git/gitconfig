@@ -23,5 +23,5 @@
   untracked = !git ls-files --others --exclude-standard
 [pull]
   rebase = true
-[includeIf "gitdir:~/Work"]
+[includeIf "gitdir:~/Work/"]
   path = ~/Work/.gitconfig
