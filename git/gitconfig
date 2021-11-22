@@ -15,6 +15,7 @@
   s = !git status
   u = !git push
   bn = !git rev-parse --abbrev-ref HEAD
+  co = !git checkout
   pm = !git pull origin master
   branchname = !git rev-parse --abbrev-ref HEAD
   dammit = !git push -u origin \"$(git branchname)\"
