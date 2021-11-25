@@ -5,10 +5,9 @@
 " let mapleader = '\<space>'
 let mapleader = ','
 
-" Use s and S to quickly search and replace in content: sfoo/bar Sfoo/bar.
-nnoremap s :s,,<left>
-nnoremap S :%s,,<left>
-nnoremap <leader>S :%S,,<left>
+" Page backwards and forwards through open file.
+nnoremap <leader>s :prev<CR>
+nnoremap <leader>d :n<CR>
 
 " Use <Tab> to cycle through buffers.
 nnoremap <Tab> <C-W>w
