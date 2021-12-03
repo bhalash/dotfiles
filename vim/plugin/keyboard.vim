@@ -2,11 +2,10 @@
 " Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" let mapleader = '\<space>'
-let mapleader = ','
+let mapleader = 's'
 
 " Page backwards and forwards through open file.
-nnoremap <leader>s :prev<CR>
+nnoremap <leader>s :prev<CR>p
 nnoremap <leader>d :n<CR>
 
 " Use <Tab> to cycle through buffers.
