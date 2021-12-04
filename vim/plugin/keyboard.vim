@@ -2,7 +2,7 @@
 " Keybinds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = 's'
+let mapleader = 'f'
 
 " So "+ is difficult to reach on my split 36 key keyboard.
 nnoremap + "+
