@@ -1,8 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keybinds
+"
+" See vim/plugin/plugged.vim for keybinds tied to plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = 'f'
+let mapleader = 's'
 
 " So "+ is difficult to reach on my split 36 key keyboard.
 nnoremap + "+
