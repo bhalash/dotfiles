@@ -8,7 +8,7 @@ let mapleader = 's'
 nnoremap + "+
 
 " Page backwards and forwards through a stack of open files.
-nnoremap <leader>s :prev<CR>p
+nnoremap <leader>s :prev<CR>
 nnoremap <leader>d :n<CR>
 
 " Use <Tab> to cycle through buffers.
