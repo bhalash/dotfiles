@@ -4,7 +4,10 @@
 
 let mapleader = 's'
 
-" Page backwards and forwards through open file.
+" So "+ is difficult to reach on my split 36 key keyboard.
+nnoremap + "+
+
+" Page backwards and forwards through a stack of open files.
 nnoremap <leader>s :prev<CR>p
 nnoremap <leader>d :n<CR>
 
