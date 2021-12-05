@@ -140,11 +140,11 @@ nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
 " tpope/vim-fugitive
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <silent><leader>gb :Git blame<CR>
-nnoremap <silent><leader>gp :Git pull<CR>
-nnoremap <silent><leader>gu :Git push<CR>
-nnoremap <silent><leader>gs :Git status<CR>
-nnoremap <silent><leader>gw :Gw<CR>
-nnoremap <silent><leader>gc :Git commit<CR>
+nnoremap <silent><leader>fb :Git blame<CR>
+nnoremap <silent><leader>fp :Git pull<CR>
+nnoremap <silent><leader>fu :Git push<CR>
+nnoremap <silent><leader>fs :Git status<CR>
+nnoremap <silent><leader>fw :Gw<CR>
+nnoremap <silent><leader>fc :Git commit<CR>
 " git checkout the file in the current buffer
-nnoremap <silent><leader>gr :!git checkout %<CR>
+nnoremap <silent><leader>fr :!git checkout %<CR>
