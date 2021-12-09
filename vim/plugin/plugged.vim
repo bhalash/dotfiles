@@ -108,7 +108,7 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
-nnoremap <silent><leader>gg :Goyo<CR>
+nnoremap <silent><leader>g :Goyo<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/fzf.vim
@@ -135,8 +135,8 @@ let g:fzf_colors = {
 " See: https://github.com/junegunn/fzf.vim#commands
 nnoremap <silent><leader>r :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
-nnoremap <silent><leader>o :Buffers<CR>
-nnoremap <silent><leader>b :BLines<CR>
+nnoremap <silent><leader>u :Buffers<CR>
+nnoremap <silent><leader>l :BLines<CR>
 nnoremap <silent><leader>j :History<CR>
 nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
 
@@ -152,3 +152,20 @@ nnoremap <silent><leader>fw :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
 " git checkout the file in the current buffer
 nnoremap <silent><leader>fr :!git checkout %<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tpope/vim-obsession
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Autoload sessions created by tpope's vim-obsession when starting Vim
+" See: https://gist.github.com/robmiller/5135652
+augroup sourcesession
+  autocmd!
+  autocmd VimEnter * nested
+  \ if !argc() && empty(v:this_session) && filereadable('Session.vim') |
+  \   source Session.vim |
+  \ endif
+augroup END
+
+nnoremap <silent><leader>o :Ob.<CR>
+nnoremap <silent><leader>n :Ob!<CR>
