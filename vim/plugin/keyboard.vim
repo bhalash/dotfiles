@@ -48,11 +48,12 @@ nnoremap <leader>qf :call QuickfixToggle()<CR>
 " See: https://github.com/neovim/neovim/pull/13268
 nnoremap Y y$
 
-" Set and clear colorcolumn.
+" Set and clear colorcolumn
 nnoremap <silent><leader>cc :set colorcolumn=<CR>
 nnoremap <silent><leader>ce :set colorcolumn=80<CR>
 nnoremap <silent><leader>co :set colorcolumn=120<CR>
 nnoremap <silent><leader>ch :execute 'set colorcolumn=' . col('.')<CR>
+nnoremap <silent><leader>cn :set colorcolumn=
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML.
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
