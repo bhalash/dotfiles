@@ -72,6 +72,9 @@ Plug 'austintraver/vim-jrnl'
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
 
+" Session management
+Plug 'tpope/vim-obsession'
+
 call plug#end()
 
 filetype plugin indent on
@@ -134,7 +137,7 @@ nnoremap <silent><leader>r :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
 nnoremap <silent><leader>o :Buffers<CR>
 nnoremap <silent><leader>b :BLines<CR>
-nnoremap <silent><leader>h :History<CR>
+nnoremap <silent><leader>j :History<CR>
 nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
