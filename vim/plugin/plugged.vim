@@ -134,6 +134,7 @@ nnoremap <silent><leader>r :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
 nnoremap <silent><leader>o :Buffers<CR>
 nnoremap <silent><leader>b :BLines<CR>
+nnoremap <silent><leader>h :History<CR>
 nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
