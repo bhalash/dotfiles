@@ -171,7 +171,6 @@ augroup sourcesession
   \ endif
 augroup END
 
-nnoremap <silent><leader>u :Ob.<CR>
 nnoremap <silent><leader>n :Ob!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
