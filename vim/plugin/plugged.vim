@@ -114,6 +114,10 @@ nnoremap <silent><leader>g :Goyo<CR>
 " junegunn/fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Jump to existing buffer instead of opening it in current
+" See: https://github.com/junegunn/fzf.vim/issues/98
+let g:fzf_buffers_jump = 1
+
 " Match fzf.vim to colorscheme
 " See: https://github.com/junegunn/fzf.vim/issues/581
 let g:fzf_colors = {
@@ -135,8 +139,8 @@ let g:fzf_colors = {
 " See: https://github.com/junegunn/fzf.vim#commands
 nnoremap <silent><leader>r :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
-nnoremap <silent><leader>u :Buffers<CR>
-nnoremap <silent><leader>l :BLines<CR>
+nnoremap <silent><leader>o :Buffers<CR>
+nnoremap <silent><leader>d :BLines<CR>
 nnoremap <silent><leader>j :History<CR>
 nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
 
@@ -167,5 +171,11 @@ augroup sourcesession
   \ endif
 augroup END
 
-nnoremap <silent><leader>o :Ob.<CR>
+nnoremap <silent><leader>u :Ob.<CR>
 nnoremap <silent><leader>n :Ob!<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mattn/emmet-vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:user_emmet_leader_key='<leader>'
