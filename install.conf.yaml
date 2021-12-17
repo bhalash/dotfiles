@@ -4,6 +4,7 @@
     ~/.config/regolith: regolith
     ~/.gitconfig: git/gitconfig
     ~/.irssi: irssi
+    ~/.taskrc: taskwarrior/taskrc
     ~/.tigrc: tig/tigrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
