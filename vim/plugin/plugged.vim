@@ -140,9 +140,9 @@ let g:fzf_colors = {
 nnoremap <silent><leader>r :Rg<CR>
 nnoremap <silent><leader>p :Files<CR>
 nnoremap <silent><leader>o :Buffers<CR>
-nnoremap <silent><leader>d :BLines<CR>
 nnoremap <silent><leader>j :History<CR>
 nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
+nnoremap / :BLines<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/vim-fugitive
