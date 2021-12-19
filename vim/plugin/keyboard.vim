@@ -4,11 +4,10 @@
 " See vim/plugin/plugged.vim for keybinds tied to plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = 's'
+let mapleader = ' '
 
-" So "+ is difficult to reach on my split 36 key keyboard.
+" Ergonomic binds in consideration of my split keyboard
 nnoremap + "+
-
 nnoremap WW :w<CR>
 
 " Page backwards and forwards through a stack of open files.
