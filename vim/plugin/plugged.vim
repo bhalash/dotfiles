@@ -48,8 +48,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " HTML expansion
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascriptreact'] }
-Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript', 'javascriptreact'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript'] }
+Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript'] }
 
 " Colorscheme
 Plug 'aonemd/kuroi.vim'
@@ -137,12 +137,12 @@ let g:fzf_colors = {
       \ }
 
 " See: https://github.com/junegunn/fzf.vim#commands
-nnoremap <silent><leader>r :Rg<CR>
-nnoremap <silent><leader>p :Files<CR>
-nnoremap <silent><leader>o :Buffers<CR>
-nnoremap <silent><leader>j :History<CR>
-nnoremap <silent><Leader>* :Rg <C-R><C-W><CR>
-nnoremap / :BLines<CR>
+nnoremap <leader>r :Rg<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>j :History<CR>
+nnoremap <Leader>* :Rg <C-R><C-W><CR>
+nnoremap <leader>/ :BLines<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/vim-fugitive
