@@ -104,9 +104,9 @@ set directory=~/.vim/.tmp,~/tmp,/tmp
 set cul
 
 " Insert notes into comments
-iab <expr> fixme strftime('FIXME(mark %Y-%m-%d):')
-iab <expr> note strftime('NOTE(mark %Y-%m-%d):')
-iab <expr> todo strftime('TODO(mark %Y-%m-%d):')
+iab <expr> xf strftime('FIXME(mark %Y-%m-%d):')
+iab <expr> xn strftime('NOTE(mark %Y-%m-%d):')
+iab <expr> xt strftime('TODO(mark %Y-%m-%d):')
 
 " TODO(mark 2021-12-18): doesn't work, replace with snippets?
 " See: https://github.com/honza/vim-snippets
