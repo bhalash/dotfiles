@@ -6,13 +6,16 @@
 
 let mapleader = ' '
 
-" Ergonomic binds in consideration of my split keyboard
+" Combination is awkward to reach on my keyboard
 nnoremap + "+
-nnoremap WW :w<CR>
+
+" Make it easier to reach and swap files
+nnoremap - <C-^>
 
 " Page backwards and forwards through a stack of open files.
-nnoremap <leader>s :prev<CR>
-nnoremap <leader>d :n<CR>
+" TODO(mark 2021-12-20): these suck, replace
+" nnoremap <leader>s :prev<CR>
+" nnoremap <leader>d :n<CR>
 
 " Use <Tab> to cycle through buffers.
 nnoremap <Tab> <C-W>w

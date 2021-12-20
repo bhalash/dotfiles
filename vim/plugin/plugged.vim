@@ -137,12 +137,12 @@ let g:fzf_colors = {
       \ }
 
 " See: https://github.com/junegunn/fzf.vim#commands
-nnoremap <leader>r :Rg<CR>
-nnoremap <leader>p :Files<CR>
+" nnoremap <leader>r :Rg<CR>
+nnoremap <leader><CR> :Files<CR>
 nnoremap <leader>o :Buffers<CR>
 nnoremap <leader>j :History<CR>
 nnoremap <Leader>* :Rg <C-R><C-W><CR>
-nnoremap <leader>/ :BLines<CR>
+nnoremap <leader><Tab> :BLines<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/vim-fugitive

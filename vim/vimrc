@@ -108,11 +108,8 @@ iab <expr> xf strftime('FIXME(mark %Y-%m-%d):')
 iab <expr> xn strftime('NOTE(mark %Y-%m-%d):')
 iab <expr> xt strftime('TODO(mark %Y-%m-%d):')
 
-" TODO(mark 2021-12-18): doesn't work, replace with snippets?
-" See: https://github.com/honza/vim-snippets
-" Insert JavaScript arrow function
-autocmd! FileType javascript,typescript
-  \ iab <buffer> arrow () => {}<left>
+" Insert arrow function
+iab xa () => {}<left>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set gx open command for macOS
