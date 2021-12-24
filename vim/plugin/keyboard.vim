@@ -4,7 +4,7 @@
 " See vim/plugin/plugged.vim for keybinds tied to plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = ' '
+let mapleader = 's'
 
 " Combination is awkward to reach on my keyboard
 nnoremap + "+

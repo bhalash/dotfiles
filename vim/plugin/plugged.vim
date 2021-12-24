@@ -54,9 +54,11 @@ Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript'] }
 " Colorscheme
 Plug 'aonemd/kuroi.vim'
 Plug 'jacoborus/tender.vim'
-Plug 'lokaltog/vim-monotone'
 Plug 'jordwalke/flatlandia'
 Plug 'ayu-theme/ayu-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'romainl/apprentice'
 
 " File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -138,11 +140,12 @@ let g:fzf_colors = {
 
 " See: https://github.com/junegunn/fzf.vim#commands
 " nnoremap <leader>r :Rg<CR>
-nnoremap <leader><CR> :Files<CR>
+nnoremap <leader>p :Files<CR>
 nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>f :Lines<CR>
 nnoremap <leader>j :History<CR>
 nnoremap <Leader>* :Rg <C-R><C-W><CR>
-nnoremap <leader><Tab> :BLines<CR>
+nnoremap <leader>/ :BLines<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/vim-fugitive
