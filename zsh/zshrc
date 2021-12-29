@@ -1,8 +1,9 @@
-################################################################################
-# ZSH Options
+# vim:foldmethod=marker
+
+# Zsh: Base {{{
+
 # TODO(mark 2021-12-29): look at setting more options? Some cool stuff in there
 # See: https://linux.die.net/man/1/zshoptions
-################################################################################
 
 export TERM=xterm-256color
 
@@ -18,15 +19,12 @@ unsetopt rm_star_silent
 # Enable color output
 autoload colors && colors
 
-# Remove annoying "%" sign after certain outputs
-# See: https://stackoverflow.com/questions/13660636/what-is-percent-tilde-in-zsh
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=''
+plugins=(git github history-substring-search)
+autoload -Uz compinit && compinit -u
 
-################################################################################
-# History
-################################################################################
+# }}}
+
+# Zsh: History {{{
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=2000
@@ -45,58 +43,15 @@ bindkey '^R' history-incremental-search-backward
 # Create $HISTFILE if it does not exist, which happens for some dumb reason?
 [[ ! -f $HISTFILE ]] && touch $HISTFILE
 
-################################################################################
-# Plugin Init
-################################################################################
+# }}}
 
-plugins=(git github history-substring-search)
-autoload -Uz compinit && compinit -u
+# Zsh: Prompt {{{
 
-################################################################################
-# Zsh Vim Mode
-################################################################################
-
-# Operate zsh in vim mode
-bindkey -v
-
-# Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
-# See: https://dougblack.io/words/zsh-vi-mode.html
-KEYTIMEOUT=1
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
-# Backward deletion keybinds in insert mode.
-bindkey '^?' backward-delete-char
-bindkey '^W' backward-kill-word
-bindkey '^H' backward-delete-char
-bindkey '^U' backward-kill-line
-
-################################################################################
-# Vim
-################################################################################
-
-# Default editor to nvim if unset
-if [[ -z "$EDITOR" ]]; then
-  export EDITOR='nvim'
-fi
-
-alias vim='nvim'
-alias vi='nvim'
-
-################################################################################
-# Temp
-################################################################################
-
-if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
-  # $TMPDIR is not declared on my Ubuntu box for some ineffable reason
-  export TMPDIR='/var/tmp/'
-  mkdir -p -m 700 "${TMPDIR}"
-fi
-
-################################################################################
-# Prompt
-################################################################################
+# Remove annoying "%" sign after certain outputs
+# See: https://stackoverflow.com/questions/13660636/what-is-percent-tilde-in-zsh
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=''
 
 # Wrap $1 in given color. Done for (perosnal) readability.
 # See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
@@ -143,20 +98,63 @@ function _prompt_mode {
 }
 
 zle-line-init zle-keymap-select() {
-  # Set prompt per functions above. Unset right prompt.
-  # PROMPT="$(_prompt_mode)$(_prompt_user)$(_prompt_dir) $ %b"
   PROMPT="$(_prompt_user)$(_prompt_dir)$(_prompt_mode) %b"
   RPROMPT=""
   zle reset-prompt
 }
 
-################################################################################
+# }}}
+
+# Zsh: Vim Mode {{{
+
+# Operate zsh in vim mode
+bindkey -v
+
+# Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
+# See: https://dougblack.io/words/zsh-vi-mode.html
+KEYTIMEOUT=1
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# Backward deletion keybinds in insert mode.
+bindkey '^?' backward-delete-char
+bindkey '^W' backward-kill-word
+bindkey '^H' backward-delete-char
+bindkey '^U' backward-kill-line
+
+# }}}
+
+# Zsh: Temp {{{
+
+if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
+  # $TMPDIR is not declared on my Ubuntu box for some ineffable reason
+  export TMPDIR='/var/tmp/'
+  mkdir -p -m 700 "${TMPDIR}"
+fi
+
+# }}}
+
+# Vim {{{
+
+# Default editor to nvim if unset
+if [[ -z "$EDITOR" ]]; then
+  export EDITOR='nvim'
+fi
+
+alias vim='nvim'
+alias vi='nvim'
+
+# }}}
+
+# Widget: bind cd to <tab> {{{
+
 # bind <tab>-without-arguments to cd
-################################################################################
+# TODO(mark 2021-12-29): very much unused by me. Would be
 
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    BUFFER="cd "
+    BUFFER="cd $(rg --files --null | xargs -0 dirname | sort | uniq | fzf)"
     CURSOR=3
     zle list-choices
   else
@@ -165,12 +163,31 @@ function _tab_cd {
 }
 
 zle -N _tab_cd
-bindkey '^I' _tab_cd
 
-################################################################################
+# }}}
+
+# Widget: Foreground/Background Vim {{{
+
+# Stolen from Reddit, this is the Zsh equivalent of:
+#
+#   stty susp undef
+#   bind '"\C-z":"fg\015"'
+#
+# Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
+
+function _fg_vim {
+  fg nvim 2>/dev/null
+}
+
+stty susp undef
+zle -N _fg_vim
+bindkey '^z' _fg_vim
+
+# }}}
+
+# Git {{{
+
 # cd to Git Project Root Folder
-################################################################################
-
 function _git_root {
   if $(git rev-parse 2> /dev/null); then
     builtin cd "$(git rev-parse --show-toplevel)"
@@ -181,31 +198,12 @@ function _git_root {
 
 alias gr='_git_root'
 
-################################################################################
-# Foreground/Background Vim
-#
-# Stolen from Reddit, this is the Zsh equivalent of:
-#
-#   stty susp undef
-#   bind '"\C-z":"fg\015"'
-#
-# Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
-################################################################################
+# }}}
 
-function _fg_vim {
-  fg nvim 2>/dev/null
-}
+# FZF {{{
 
-stty susp undef
-zle -N _fg_vim
-bindkey '^z' _fg_vim
-
-################################################################################
-# FZF
-#
 # TODO(mark 2021-12-29): this whole section needs revision
 # See: https://github.com/junegunn/fzf#environment-variables
-################################################################################
 
 # TODO(mark 2021-12-29): needed?
 local FZF_PATH="${HOME}/.fzf.zsh"
@@ -215,7 +213,6 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitk
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 
-
 if [[ $OSTYPE =~ 'linux-gnu' ]]; then
   source '/usr/share/doc/fzf/examples/key-bindings.zsh'
   source '/usr/share/doc/fzf/examples/completion.zsh'
@@ -224,23 +221,25 @@ fi
 # Browse for a file and open it in vim
 alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
 
-################################################################################
-# Command Aliases
-################################################################################
+# }}}
+
+# Command Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
 alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
 
-################################################################################
-# Node/NNVM Init
-################################################################################
+# }}}
+
+# Node/NNVM Init {{{
 
 # TODO(mark 2021-12-29): move to work config?
 export NVM_DIR="$HOME/.nvm"
 [[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"
 
-################################################################################
-# Load Extra Transient Configurations
-################################################################################
+# }}}
+
+# Load Extra Crap {{{
 
 [[ -f "${HOME}/.work.zsh" ]] && source "${HOME}/.work.zsh"
+
+# }}}
