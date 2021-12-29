@@ -2,82 +2,83 @@
 " Core Vim Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enable syntax highlighting.
+" Enable syntax highlighting
 syntax on
 
-" Backspace will delete.
+" Backspace will delete
 set backspace=indent,eol,start
 
-" Enable relative line numbers.
+" Enable relative line numbers
 set nu relativenumber
 
-" Open split below and to the right instead of up and to the left.
+" Open split below and to the right instead of up and to the left
 set splitbelow splitright
 
-" Force order of line endings.
+" Force order of line endings
 set ffs=unix,dos
 
-" Follow auto indent.
+" Follow auto indent
 set autoindent
 
-" Don't wrap lines outside of words.
+" Don't wrap lines outside of words
 set nowrap breakindent linebreak nolist
 
-" Enable ruler for column count.
+" Enable ruler for column count
 set ruler
 
-" Enable statusbar.
+" Enable statusbar
 set laststatus=2
 
-" Accept instructions from the top n lines of a file.
+" Accept instructions from the top n lines of a file
 set modelines=1
 
-" Stop annoying problem on OS X.
-" Arrow keybinds cause a status popup to appear when I tab back to vim.
+" Stop annoying problem on OS X
+" Arrow keybinds cause a status popup to appear when I tab back to vim
 set shortmess=a
 
-" Disable visual bell. It's annoying as crap in git bash on Windows.
+" Disable visual bell. It's annoying as crap in git bash on Windows
 set visualbell
 set t_vb=
 
 " More informative statusbar
+" TODO(mark 2021-12-29): document this and expand
 set statusline=\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scrolling and Mice
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set padding when scrolling.
+" Set padding when scrolling
 set scrolloff=10 sidescrolloff=10
 
-" Scroll with mouse in insert mode.
+" Scroll with mouse in insert mode
 set mouse=i
 
-" Increase scroll speed.
+" Increase scroll speed
 set ttyfast
 
-" Change how buffer is redrawn. /Should/ increase scroll speed.
+" Change how buffer is redrawn. /Should/ increase scroll speed
 set lazyredraw
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completion and Indentation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Ignore common temp files and directories.
+" Ignore common temp files and directories
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.cache,*.bak,*.pyc,*.class
 set wildignore+=node_modules
 set wildignore+=*public/packs*
 
-" Menu display output.
+" Menu display output
 set wildmenu wildmode=list:full
 
-" Search as I type, and highlight results.
+" Search as I type, and highlight results
 set incsearch smartcase hlsearch
 
-" Searches are assumed to be global on a line.
+" Searches are assumed to be global on a line
 set gdefault
 
-" Tabs.
+" Set tabbing and indentation
 set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab smartindent
 
@@ -85,78 +86,76 @@ set expandtab smartindent
 " Saving, Filesystem and History
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Save file when it loses focus.
+" Save file when it loses focus
 set autowrite
 
-" More frequent saves and bigger undo history.
+" More frequent saves and bigger undo history
 set updatecount=50 history=2000 undolevels=2000
 
-" Keep a persistent backup file.
+" Keep a persistent backup file
 set undofile undodir=.undo,~/tmp,/tmp
 
-" Disable swap files.
+" Disable swap files, but set directories in case they *are* turned on
 set noswapfile
-
-" Set a directory in case they *are* turned on.
 set directory=~/.vim/.tmp,~/tmp,/tmp
 
-" Highlight the current line and set the colour.
+" Highlight the current line and set the colour
 set cul
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippets and Abbreviations
+"
+" TODO(mark 2021-12-29): set up some sort of snippet engine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Insert notes into comments
-iab <expr> xf strftime('FIXME(mark %Y-%m-%d):')
-iab <expr> xn strftime('NOTE(mark %Y-%m-%d):')
-iab <expr> xt strftime('TODO(mark %Y-%m-%d):')
+iab <expr> @f strftime('FIXME(' . $USER . ' %Y-%m-%d):')
+iab <expr> @t strftime('TODO(' . $USER . ' %Y-%m-%d):')
+iab <expr> @n strftime('NOTE(' . $USER . ' %Y-%m-%d):')
 
 " Insert arrow function
-iab xa () => {}<left>
+au Filetype typescript :iab xa () => {}<left>
+
+" Insert block comment
+au Filetype typescript :iab /* /**<CR><CR>/<Up>
+
+" Insert test boilerplate
+au Filetype typescript :iab desc describe('CHANGEME', () => {});<Left><Left><Left><CR>
+au Filetype typescript :iab rit it('CHANGEME', () => {});<Left><Left><Left><CR>
+au Filetype typescript :iab xpe expect("CHANGEME").toBe('CHANGEME');
+au Filetype typescript :iab function export function ChangeMe(): void {}<Left><CR>
+
+" Insert class, constructor and method
+au Filetype typescript :iab cls export class ChangeMe {}<Left><CR>
+au Filetype typescript :iab csr constructor() {}
+au Filetype typescript :iab mtd method(): void {}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netrw
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set gx open command for macOS
-"
-" TODO(mark 2021-12-18): improve this, it doesn't seem to work very well
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" FIXME(mark 2021-12-18): improve this, it does not at all work
 if has('macunix')
   let g:netrw_browsex_viewer = 'open'
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggle Quickfix Window
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:quickfix_is_open = 0
-
-function! QuickfixToggle()
-  if g:quickfix_is_open
-    cclose
-    let g:quickfix_is_open = 0
-  else
-    copen
-    let g:quickfix_is_open = 1
-  endif
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Force cursor to be a line in insert mode.
+" Force cursor to be a line in insert mode
 "
 " See: https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
 " See: https://github.com/mintty/mintty/wiki/Tips#mode-dependent-cursor-in-vim
+"
+" TODO(mark 2021-12-29): still needed? I use kitty at home and work
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if $TERM_PROGRAM =~ "iTerm"
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-elseif $TERM =~ "xterm"
-  let &t_ti.="\e[1 q"
-  let &t_SI.="\e[5 q"
-  let &t_EI.="\e[1 q"
-  let &t_te.="\e[0 q"
-endif
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" External Configurations (Plugins)
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 runtime plugin/plugged.vim

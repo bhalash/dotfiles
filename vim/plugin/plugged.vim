@@ -110,8 +110,6 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
-nnoremap <silent><leader>g :Goyo<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/fzf.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,28 +136,6 @@ let g:fzf_colors = {
       \ "header":   ["fg", "WildMenu"]
       \ }
 
-" See: https://github.com/junegunn/fzf.vim#commands
-" nnoremap <leader>r :Rg<CR>
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>o :Buffers<CR>
-nnoremap <leader>f :Lines<CR>
-nnoremap <leader>j :History<CR>
-nnoremap <Leader>* :Rg <C-R><C-W><CR>
-nnoremap <leader>/ :BLines<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tpope/vim-fugitive
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-nnoremap <silent><leader>fb :Git blame<CR>
-nnoremap <silent><leader>fp :Git pull<CR>
-nnoremap <silent><leader>fu :Git push<CR>
-nnoremap <silent><leader>fs :Git status<CR>
-nnoremap <silent><leader>fw :Gw<CR>
-nnoremap <silent><leader>fc :Git commit<CR>
-" git checkout the file in the current buffer
-nnoremap <silent><leader>fr :!git checkout %<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/vim-obsession
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,11 +149,3 @@ augroup sourcesession
   \   source Session.vim |
   \ endif
 augroup END
-
-nnoremap <silent><leader>n :Ob!<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mattn/emmet-vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:user_emmet_leader_key='<leader>'
