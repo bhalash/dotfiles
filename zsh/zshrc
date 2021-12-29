@@ -150,11 +150,12 @@ alias vi='nvim'
 # Widget: bind cd to <tab> {{{
 
 # bind <tab>-without-arguments to cd
-# TODO(mark 2021-12-29): very much unused by me. Would be
+# TODO(mark 2021-12-29): very much unused by me. Would be nice to have FZF
+# completion here
 
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    BUFFER="cd $(rg --files --null | xargs -0 dirname | sort | uniq | fzf)"
+    BUFFER='cd '
     CURSOR=3
     zle list-choices
   else
