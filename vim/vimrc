@@ -108,27 +108,9 @@ set cul
 " TODO(mark 2021-12-29): set up some sort of snippet engine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Insert notes into comments
 iab <expr> @f strftime('FIXME(' . $USER . ' %Y-%m-%d):')
 iab <expr> @t strftime('TODO(' . $USER . ' %Y-%m-%d):')
 iab <expr> @n strftime('NOTE(' . $USER . ' %Y-%m-%d):')
-
-" Insert arrow function
-au Filetype typescript :iab xa () => {}<left>
-
-" Insert block comment
-au Filetype typescript :iab /* /**<CR><CR>/<Up>
-
-" Insert test boilerplate
-au Filetype typescript :iab desc describe('CHANGEME', () => {});<Left><Left><Left><CR>
-au Filetype typescript :iab rit it('CHANGEME', () => {});<Left><Left><Left><CR>
-au Filetype typescript :iab xpe expect("CHANGEME").toBe('CHANGEME');
-au Filetype typescript :iab function export function ChangeMe(): void {}<Left><CR>
-
-" Insert class, constructor and method
-au Filetype typescript :iab cls export class ChangeMe {}<Left><CR>
-au Filetype typescript :iab csr constructor() {}
-au Filetype typescript :iab mtd method(): void {}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
