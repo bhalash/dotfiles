@@ -110,11 +110,12 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-## Navigate // Relative Window // <> k j h l ##
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+## Navigate // Relative Window // <> j k l ' ##
+## See: https://help.ubuntu.com/community/GtkComposeTable
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+apostrophe focus right
 
 ## Navigate // Workspaces 1-10 // <> 0..9 ##
 bindsym $mod+1 workspace number $ws1
