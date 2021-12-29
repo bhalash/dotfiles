@@ -1,111 +1,24 @@
 ################################################################################
 # ZSH Options
+# TODO(mark 2021-12-29): look at setting more options? Some funky stuff in there
+# See: https://linux.die.net/man/1/zshoptions
 ################################################################################
 
 export TERM=xterm-256color
 
-# Permit shorter loop syntax.
+# Permit shorter loop syntax
 setopt short_loops
 setopt function_arg_zero
-
-# Resolve symlinks.
+# Resolve symlinks
 setopt chase_links
-
-# No beeps.
+# No beeps
 unsetopt beep
-
-# Safe rm.
+# Safe rm
 unsetopt rm_star_silent
-
-# Enable color output.
+# Enable color output
 autoload colors && colors
 
-################################################################################
-# Vim/Nvim
-################################################################################
-
-# Operate zsh in vim mode.
-bindkey -v
-
-# Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
-# See: https://dougblack.io/words/zsh-vi-mode.html
-KEYTIMEOUT=1
-
-# Default editor to nvim if unset.
-if [[ -z "$EDITOR" ]]; then
-  export EDITOR='nvim'
-fi
-
-alias vim='nvim'
-alias vi='nvim'
-
-################################################################################
-# Set Tempdir
-################################################################################
-
-if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
-  # $TMPDIR is not declared on my Ubuntu box for some ineffable reason.
-  export TMPDIR='/var/tmp/'
-  mkdir -p -m 700 "${TMPDIR}"
-fi
-
-################################################################################
-# Prompt
-################################################################################
-
-# Wrap $1 in given color. Done for (perosnal) readability.
-# See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
-# See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-function df_prompt_color {
-  local CONTENT=$1
-  local FG=${2:-15} # fallback white
-  local BG=${3}     # no fallback bg
-
-  if [[ -n $BG ]]; then
-    echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k" # For background
-  else
-    echo "%F{${FG}}${CONTENT}%f%k"
-  fi
-}
-
-# Separate Segments
-function df_prompt_segment_separator {
-  local SEGMENT_SEPARATOR=$'\ue0b0'
-  local BG=${1:-0}
-  local FG=${2:-15}
-  echo $(df_prompt_color $SEGMENT_SEPARATOR $FG $BG)
-}
-
-# Show prompt for remote (SSH) or root user.
-function df_prompt_user {
-  local FG=15
-
-  if [[ $(id -u) == 0 ]]; then
-    FG=9 # red for root :p
-  fi
-
-  echo $(df_prompt_color '%n@%m ' $FG)
-}
-
-function df_prompt_dir {
-  echo $(df_prompt_color '%1~ ')
-}
-
-function df_prompt_mode {
-  local MODE_NORMAL=$(df_prompt_color '>')
-  local MODE_INSERT=$(df_prompt_color '$')
-  echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
-}
-
-zle-line-init zle-keymap-select() {
-  # Set prompt per functions above. Unset right prompt.
-  # PROMPT="$(df_prompt_mode)$(df_prompt_user)$(df_prompt_dir) $ %b"
-  PROMPT="$(df_prompt_user)$(df_prompt_dir)$(df_prompt_mode) %b"
-  RPROMPT=""
-  zle reset-prompt
-}
-
-# Remove annoying "%" sign after certain outputs.
+# Remove annoying "%" sign after certain outputs
 # See: https://stackoverflow.com/questions/13660636/what-is-percent-tilde-in-zsh
 setopt PROMPT_CR
 setopt PROMPT_SP
@@ -126,13 +39,11 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_VERIFY
 unsetopt HIST_BEEP
 
-# Bind ctrl + r to history search.
+# Bind ctrl + r to history search
 bindkey '^R' history-incremental-search-backward
 
-if [[ ! -f $HISTFILE ]]; then
-  # Create $HISTFILE if it does not exist.
-  touch $HISTFILE
-fi
+# Create $HISTFILE if it does not exist, which happens for some dumb reason?
+[[ ! -f $HISTFILE ]] && touch $HISTFILE
 
 ################################################################################
 # Plugin Init
@@ -142,37 +53,15 @@ plugins=(git github history-substring-search)
 autoload -Uz compinit && compinit -u
 
 ################################################################################
-# bind <tab>-without-arguments to cd
+# Zsh Vim Mode
 ################################################################################
 
-function df_tab_cd {
-  if [[ $#BUFFER == 0 ]]; then
-    BUFFER="cd "
-    CURSOR=3
-    zle list-choices
-  else
-    zle expand-or-complete
-  fi
-}
+# Operate zsh in vim mode
+bindkey -v
 
-zle -N df_tab_cd
-bindkey '^I' df_tab_cd
-
-################################################################################
-# cd to Git Project Root Folder
-################################################################################
-
-function df_git_root {
-  if $(git rev-parse 2> /dev/null); then
-    builtin cd "$(git rev-parse --show-toplevel)"
-  else
-    echo "cd: not a git project: ${PWD}"
-  fi
-}
-
-################################################################################
-# Vim Mode Keybinds
-################################################################################
+# Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
+# See: https://dougblack.io/words/zsh-vi-mode.html
+KEYTIMEOUT=1
 
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -182,6 +71,115 @@ bindkey '^?' backward-delete-char
 bindkey '^W' backward-kill-word
 bindkey '^H' backward-delete-char
 bindkey '^U' backward-kill-line
+
+################################################################################
+# Vim
+################################################################################
+
+# Default editor to nvim if unset
+if [[ -z "$EDITOR" ]]; then
+  export EDITOR='nvim'
+fi
+
+alias vim='nvim'
+alias vi='nvim'
+
+################################################################################
+# Temp
+################################################################################
+
+if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
+  # $TMPDIR is not declared on my Ubuntu box for some ineffable reason
+  export TMPDIR='/var/tmp/'
+  mkdir -p -m 700 "${TMPDIR}"
+fi
+
+################################################################################
+# Prompt
+################################################################################
+
+# Wrap $1 in given color. Done for (perosnal) readability.
+# See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
+# See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+function _prompt_color {
+  local CONTENT=$1
+  local FG=${2:-15} # fallback white
+  local BG=${3}     # no fallback bg
+
+  if [[ -n $BG ]]; then
+    echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k" # For background
+  else
+    echo "%F{${FG}}${CONTENT}%f%k"
+  fi
+}
+
+# Separate Segments
+function _prompt_segment_separator {
+  local SEGMENT_SEPARATOR=$'\ue0b0'
+  local BG=${1:-0}
+  local FG=${2:-15}
+  echo $(_prompt_color $SEGMENT_SEPARATOR $FG $BG)
+}
+
+# Show prompt for remote (SSH) or root user.
+function _prompt_user {
+  local FG=15
+
+  if [[ $(id -u) == 0 ]]; then
+    FG=9 # red for root :p
+  fi
+
+  echo $(_prompt_color '%n@%m ' $FG)
+}
+
+function _prompt_dir {
+  echo $(_prompt_color '%1~ ')
+}
+
+function _prompt_mode {
+  local MODE_NORMAL=$(_prompt_color '>')
+  local MODE_INSERT=$(_prompt_color '$')
+  echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
+}
+
+zle-line-init zle-keymap-select() {
+  # Set prompt per functions above. Unset right prompt.
+  # PROMPT="$(_prompt_mode)$(_prompt_user)$(_prompt_dir) $ %b"
+  PROMPT="$(_prompt_user)$(_prompt_dir)$(_prompt_mode) %b"
+  RPROMPT=""
+  zle reset-prompt
+}
+
+################################################################################
+# bind <tab>-without-arguments to cd
+################################################################################
+
+function _tab_cd {
+  if [[ $#BUFFER == 0 ]]; then
+    BUFFER="cd "
+    CURSOR=3
+    zle list-choices
+  else
+    zle expand-or-complete
+  fi
+}
+
+zle -N _tab_cd
+bindkey '^I' _tab_cd
+
+################################################################################
+# cd to Git Project Root Folder
+################################################################################
+
+function _git_root {
+  if $(git rev-parse 2> /dev/null); then
+    builtin cd "$(git rev-parse --show-toplevel)"
+  else
+    echo "cd: not a git project: ${PWD}"
+  fi
+}
+
+alias gr='_git_root'
 
 ################################################################################
 # Foreground/Background Vim
@@ -194,57 +192,55 @@ bindkey '^U' backward-kill-line
 # Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
 ################################################################################
 
-function df_fg_vim {
+function _fg_vim {
   fg nvim 2>/dev/null
 }
 
 stty susp undef
-zle -N df_fg_vim
-bindkey '^z' df_fg_vim
-
-################################################################################
-# Command Aliases
-################################################################################
-
-alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias gr='df_git_root'
-alias gp='git pull origin master --rebase'
-alias rot13='tr a-zA-Z n-za-mN-ZA-M <<<'
-alias tmux='tmux -2'
-alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
-
-################################################################################
-# Node/NNVM Init
-################################################################################
-
-export NVM_DIR="$HOME/.nvm"
-
-if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
-  source "${NVM_DIR}/nvm.sh"
-fi
+zle -N _fg_vim
+bindkey '^z' _fg_vim
 
 ################################################################################
 # FZF
+#
+# TODO(mark 2021-12-29): this whole section needs revision
+# See: https://github.com/junegunn/fzf#environment-variables
 ################################################################################
 
-export FZF_PATH="${HOME}/.fzf.zsh"
+# TODO(mark 2021-12-29): needed?
+local FZF_PATH="${HOME}/.fzf.zsh"
+[[ -f $FZF_PATH ]] && source $FZF_PATH
+
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 
-if [[ -f $FZF_PATH ]]; then
-  source $FZF_PATH
-fi
 
 if [[ $OSTYPE =~ 'linux-gnu' ]]; then
   source '/usr/share/doc/fzf/examples/key-bindings.zsh'
   source '/usr/share/doc/fzf/examples/completion.zsh'
 fi
 
+# Browse for a file and open it in vim
+alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
+
+################################################################################
+# Command Aliases
+################################################################################
+
+alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
+alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
+
+################################################################################
+# Node/NNVM Init
+################################################################################
+
+# TODO(mark 2021-12-29): move to work config?
+export NVM_DIR="$HOME/.nvm"
+[[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"
+
 ################################################################################
 # Load Extra Transient Configurations
 ################################################################################
 
-if [[ -f "${HOME}/.work.zsh" ]]; then
-  source "${HOME}/.work.zsh"
-fi
+[[ -f "${HOME}/.work.zsh" ]] && source "${HOME}/.work.zsh"
