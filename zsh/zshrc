@@ -208,10 +208,6 @@ alias gr='_git_root'
 # TODO(mark 2021-12-29): this whole section needs revision
 # See: https://github.com/junegunn/fzf#environment-variables
 
-# TODO(mark 2021-12-29): needed?
-local FZF_PATH="${HOME}/.fzf.zsh"
-[[ -f $FZF_PATH ]] && source $FZF_PATH
-
 # TODO(mark 2021-12-29): needs revision
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
@@ -239,13 +235,14 @@ alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
 # Lazy load nvm and default node version
 # See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
 # TODO(mark 2021-12-30): check and set path for macOS
+# TODO(mark 2021-12-30): set up like lazy loading for everything else, fzf etc.
 
 nvm () {
   if [[ -d "${HOME}/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
     source "${NVM_DIR}/nvm.sh"
 
-    if [[ "${NVM_DIR}/alias/default" ]]; then
+    if [[ -f "${NVM_DIR}/alias/default" ]]; then
       PATH+=":${NVM_DIR}/versions/node/$(cat ${NVM_DIR}/alias/default)/bin"
     fi
 
