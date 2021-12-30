@@ -37,8 +37,7 @@ set modelines=1
 set shortmess=a
 
 " Disable visual bell. It's annoying as crap in git bash on Windows
-set visualbell
-set t_vb=
+set visualbell t_vb=
 
 " More informative statusbar
 " TODO(mark 2021-12-29): document this and expand
@@ -86,7 +85,7 @@ set expandtab smartindent
 " Saving, Filesystem and History
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Save file when it loses focus
+" Write file when it loses focus
 set autowrite
 
 " More frequent saves and bigger undo history
@@ -96,17 +95,16 @@ set updatecount=50 history=2000 undolevels=2000
 set undofile undodir=.undo,~/tmp,/tmp
 
 " Disable swap files, but set directories in case they *are* turned on
-set noswapfile
-set directory=~/.vim/.tmp,~/tmp,/tmp
+set noswapfile directory=~/.vim/.tmp,~/tmp,/tmp
 
 " Highlight the current line and set the colour
 set cul
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Snippets and Abbreviations
-" TODO(mark 2021-12-29): set up some sort of snippet engine?
+" Abbreviations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" TODO(mark 2021-12-29): set up some sort of snippet engine?
 iab <expr> f@ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
 iab <expr> t@ strftime('TODO(' . $USER . ' %Y-%m-%d):')
 iab <expr> n@ strftime('NOTE(' . $USER . ' %Y-%m-%d):')
@@ -122,21 +120,7 @@ if has('macunix')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Force cursor to be a line in insert mode
-"
-" See: https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
-" See: https://github.com/mintty/mintty/wiki/Tips#mode-dependent-cursor-in-vim
-"
-" TODO(mark 2021-12-29): still needed? I use kitty at home and work
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-runtime plugin/plugged.vim
+runtime plugin/plug.vim

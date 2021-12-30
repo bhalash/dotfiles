@@ -7,6 +7,7 @@
 let mapleader = 's'
 
 " Trying something dumb :-)
+" NOTE(mark 2021-12-30): this depends on swapping ' <-> ; on my keyboard!
 " noremap h '
 " noremap ' l
 " noremap l k
@@ -17,7 +18,7 @@ let mapleader = 's'
 nnoremap + "+
 nnoremap - <C-^>
 
-" Use <Tab> to cycle through buffers
+" Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 

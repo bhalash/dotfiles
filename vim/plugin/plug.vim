@@ -1,8 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" vim-plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-filetype off
 
 call plug#begin('$HOME/.vim/extensions')
 
@@ -30,12 +28,11 @@ Plug 'tpope/vim-surround'
 " Case-insensitive replacement
 Plug 'tpope/vim-abolish'
 
-" Authoring (Markdown and article writing)
+" Distraction-free mode
 Plug 'junegunn/goyo.vim'
 
-" JavaScript and JSX highlighting
+" JavaScript
 Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 
 " Auto pair brackets, like
 Plug 'jiangmiao/auto-pairs'
@@ -43,15 +40,15 @@ Plug 'jiangmiao/auto-pairs'
 " Toggle comments
 Plug 'tpope/vim-commentary'
 
-" git project management
+" git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " HTML expansion
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript'] }
-Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript'] }
+Plug 'mattn/emmet-vim', { 'for': ['html'] }
+Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
-" Colorscheme
+" Colorschemes
 Plug 'aonemd/kuroi.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'jordwalke/flatlandia'
@@ -78,8 +75,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-obsession'
 
 call plug#end()
-
-filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Random Plugins
