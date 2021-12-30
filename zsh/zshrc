@@ -210,6 +210,7 @@ alias gr='_git_root'
 local FZF_PATH="${HOME}/.fzf.zsh"
 [[ -f $FZF_PATH ]] && source $FZF_PATH
 
+# TODO(mark 2021-12-29): needs revision
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
