@@ -1,6 +1,9 @@
 - clean: ['~']
+- create:
+  - ~/.config
 - link:
     ~/.config/kitty: kitty
+    ~/.config/nvim: vim
     ~/.config/regolith: regolith
     ~/.gitconfig: git/gitconfig
     ~/.irssi: irssi
@@ -8,11 +11,9 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
     ~/.vim: vim
-    ~/.zsh: zsh
+    ~/.zautoload: zsh/autoload
     ~/.zshrc: zsh/zshrc
-    ~/.config/nvim:
-      create: true
-      path: vim
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [nvim --headless +PlugInstall +qall, Installing vim/nvim plugins]
+  - [touch ~/.private.zsh, Create private zshrc]
+  - [git submodule update --init --recursive, Install git submodules]
+  - [nvim --headless +PlugInstall +qall, Install vim/nvim plugins]
