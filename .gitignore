@@ -1,27 +1,16 @@
-/*
+# tmux tpm plugins
+tmux/plugins/
 
-!LICENSE
-!README.md
-!install
-!install.conf.yaml
+# dotbot
+dotbot/
 
-!git/
-!irssi/
-!kitty/
-!regolith/
-!tig/
-!tmux/
-!vim/
-!zsh/
+# vim plugins and spellcheck
+vim/.netrwhist
+vim/.tmp
+vim/.undo
+vim/extensions
+vim/session
+vim/spell
 
-# vim crud
-/vim/.netrwhist
-/vim/.tmp
-/vim/.undo
-/vim/bundle/*
-/vim/extensions
-/vim/session
-/vim/spell
-
-# tmux crud
-/tmux/plugins
+# vim session files
+Session.vim
