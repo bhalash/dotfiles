@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+function benchmark {
+  for i in $(seq 1 ${2:-10}); do
+    time ${1:-$SHELL} -i -c exit
+  done
+}

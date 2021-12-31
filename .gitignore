@@ -25,6 +25,3 @@
 
 # tmux crud
 /tmux/plugins
-
-# ignore work zshrc as it may have sensitive crud
-/zsh/work.zsh

@@ -20,9 +20,23 @@ unsetopt beep
 unsetopt rm_star_silent
 # Enable color output
 autoload colors && colors
+# }}}
 
-plugins=(git github history-substring-search)
-autoload -Uz compinit && compinit -u
+# Zsh: Autoload {{{
+
+fpath=($fpath "${HOME}/.zautoload")
+
+# }}}
+
+# Zsh: Plugins {{{
+
+# TODO(mark 2021-12-30): find more plugins? Seems to be some interesting
+# options out there, but eh, installing stuff. I'm /very/ happy with my zsh
+# startup time right now, without the addition of other crap to slow it
+
+# NOTE(mark 2021-12-30): https://github.com/unixorn/awesome-zsh-plugins
+# plugins=(git history-substring-search)
+autoload -Uz compinit && compinit -C
 
 # }}}
 
@@ -235,17 +249,13 @@ alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
 # Lazy load nvm and default node version
 # See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
 # TODO(mark 2021-12-30): check and set path for macOS
-# TODO(mark 2021-12-30): set up like lazy loading for everything else, fzf etc.
+# TODO(mark 2021-12-30): can any other tool benefit from lazy load?
 
-nvm () {
+function nvm {
   if [[ -d "${HOME}/.nvm" ]]; then
+    unfunction "$0"
     export NVM_DIR="$HOME/.nvm"
     source "${NVM_DIR}/nvm.sh"
-
-    if [[ -f "${NVM_DIR}/alias/default" ]]; then
-      PATH+=":${NVM_DIR}/versions/node/$(cat ${NVM_DIR}/alias/default)/bin"
-    fi
-
     nvm "$@"
   else
     echo "nvm is not installed" >&2
@@ -255,9 +265,11 @@ nvm () {
 
 # }}}
 
-# Load Work Zshrc {{{
+# Private Zshrc {{{
 
-[[ -f "${HOME}/.work.zsh" ]] && source "${HOME}/.work.zsh"
+if [[ -f "${HOME}/.private.zsh" ]]; then
+  source "${HOME}/.private.zsh"
+fi
 
 # }}}
 
