@@ -1,4 +1,4 @@
-" TODO(mark 2021-12-29): set up some sort of snippet engine
+" TODO(mark 2021-12-29): set up some sort of snippet engine?
 
 " Arrow function
 iab <buffer> xa () => {}<left>
@@ -7,12 +7,14 @@ iab <buffer> xa () => {}<left>
 iab <buffer> /* /**<CR><CR>/<Up>
 
 " jasmine/jest test boilerplate
-iab <buffer> desc describe('CHANGEME', () => {});<Esc>2hi<CR>
-iab <buffer> rit it('CHANGEME', () => {});<Esc>2hi<CR>
-iab <buffer> xpe expect('foo').toBe('bar');
+iab <buffer> de@ describe('@', () => {<CR>});<Esc>O
+iab <buffer> it@ it('should %', () => {<CR>});<Esc>O
+iab <buffer> xp@ expect('foo').toBe('bar');<Esc>
+iab <buffer> be@ beforeEach(() => {<CR>});<Esc>O
+iab <buffer> af@ afterEach(() => {<CR>});<Esc>O
 
 " function export
-iab <buffer> function export function changeMe(): void {}<Left><CR>
+iab <buffer> fun@ export function changeMe(): void {}<Left><CR>
 
 " class, constructor and method
 iab <buffer> cls export class ChangeMe {}<Left><CR>
@@ -20,7 +22,7 @@ iab <buffer> csr constructor() {}<Esc>a
 iab <buffer> mtd method(): void {}<Esc>a
 
 " import statement
-iab <buffer> import import { Whatever} from 'CHANGEME';<Esc>
+iab <buffer> imp@ import { Whatever} from 'CHANGEME';<Esc>
 
 " console.log
-iab <buffer> c@ console.log();<Esc>hi
+iab <buffer> con@ console.log();<Esc>hi

@@ -12,4 +12,4 @@ setlocal formatoptions+=ro
 setlocal comments=s1:/*,mb:*,ex:*/,://,:///
 
 " Correctly mark hyphenated keywords.
-autocmd FileType scss set iskeyword+=-
+autocmd FileType scss setlocal iskeyword+=-
