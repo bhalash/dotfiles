@@ -1,6 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Core Vim Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Core Configuration {{{
 
 " Enable syntax highlighting
 syntax on
@@ -43,25 +41,24 @@ set visualbell t_vb=
 " TODO(mark 2021-12-29): document this and expand
 set statusline=\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scrolling and Mice
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" Scrolling! {{{
 
 " Set padding when scrolling
 set scrolloff=10 sidescrolloff=10
-
-" Scroll with mouse in insert mode
-set mouse=i
 
 " Increase scroll speed
 set ttyfast
 
 " Change how buffer is redrawn. /Should/ increase scroll speed
-set lazyredraw
+" TODO(mark 2021-12-31): does this affect weird syntax highlighting in big
+" Angular files?
+" set lazyredraw
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Completion and Indentation
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" Completion and Indentation {{{
 
 " Ignore common temp files and directories
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.cache,*.bak,*.pyc,*.class
@@ -81,9 +78,9 @@ set gdefault
 set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab smartindent
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Saving, Filesystem and History
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" Saving, Filesystem and History {{{
 
 " Write file when it loses focus
 set autowrite
@@ -100,18 +97,9 @@ set noswapfile directory=~/.vim/.tmp,~/tmp,/tmp
 " Highlight the current line and set the colour
 set cul
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Abbreviations
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
 
-" TODO(mark 2021-12-29): set up some sort of snippet engine?
-iab <expr> f@ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
-iab <expr> t@ strftime('TODO(' . $USER . ' %Y-%m-%d):')
-iab <expr> n@ strftime('NOTE(' . $USER . ' %Y-%m-%d):')
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" netrw
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netrw! {{{
 
 " Set gx open command for macOS
 " FIXME(mark 2021-12-18): improve this, it does not at all work
@@ -119,8 +107,10 @@ if has('macunix')
   let g:netrw_browsex_viewer = 'open'
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" Plugins {{{
 
 runtime plugin/plug.vim
+
+" }}}

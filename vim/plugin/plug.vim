@@ -1,6 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-plug
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-plug {{{
 
 call plug#begin('$HOME/.vim/extensions')
 
@@ -76,22 +74,30 @@ Plug 'tpope/vim-obsession'
 
 call plug#end()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Random Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" airblade/vim-rooter {{{
 
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile']
 
+" }}}
+
+" unblevable/quick-scope {{{
+
 " Only highlight keys when the appropriate key is depressed
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" }}}
+
+" bronson/vim-trailing-whitespace {{{
 
 " Don't highlight whitespace in Markdown
 let g:extra_whitespace_ignored_filetypes = ['markdown']
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" junegunn/goyo.vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" junegunn/goyo.vim {{{
 
 let g:goyo_width = 120
 let g:goyo_height = 100
@@ -105,11 +111,11 @@ function! s:goyo_leave()
   set relativenumber
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" junegunn/fzf.vim
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
 
-" Jump to existing buffer instead of opening it in current
+" junegunn/fzf.vim {{{
+
+" Reuse the existing buffer when opening a file which is already open
 " See: https://github.com/junegunn/fzf.vim/issues/98
 let g:fzf_buffers_jump = 1
 
@@ -131,9 +137,9 @@ let g:fzf_colors = {
       \ "header":   ["fg", "WildMenu"]
       \ }
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tpope/vim-obsession
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" tpope/vim-obsession {{{
 
 " Autoload sessions created by tpope's vim-obsession when starting Vim
 " See: https://gist.github.com/robmiller/5135652
@@ -144,3 +150,5 @@ augroup sourcesession
   \   source Session.vim |
   \ endif
 augroup END
+
+" }}}

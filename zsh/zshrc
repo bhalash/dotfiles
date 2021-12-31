@@ -1,5 +1,3 @@
-# vim:foldmethod=marker
-
 # zmodload zsh/zprof
 
 # Zsh: Base {{{
@@ -20,6 +18,7 @@ unsetopt beep
 unsetopt rm_star_silent
 # Enable color output
 autoload colors && colors
+
 # }}}
 
 # Zsh: Autoload {{{
@@ -252,10 +251,10 @@ alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
 # TODO(mark 2021-12-30): can any other tool benefit from lazy load?
 
 function nvm {
-  if [[ -d "${HOME}/.nvm" ]]; then
+  if [[ -d "$HOME/.nvm" ]]; then
     unfunction "$0"
     export NVM_DIR="$HOME/.nvm"
-    source "${NVM_DIR}/nvm.sh"
+    source "$NVM_DIR/nvm.sh"
     nvm "$@"
   else
     echo "nvm is not installed" >&2
@@ -267,8 +266,8 @@ function nvm {
 
 # Private Zshrc {{{
 
-if [[ -f "${HOME}/.private.zsh" ]]; then
-  source "${HOME}/.private.zsh"
+if [[ -f "$HOME/.private.zsh" ]]; then
+  source "$HOME/.private.zsh"
 fi
 
 # }}}
