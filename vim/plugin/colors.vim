@@ -1,12 +1,6 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Core Vim Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set termguicolors background=dark
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme Patches
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter Patch {{{
 
 function! s:gitgutter_patch()
   hi clear LineNr
@@ -17,9 +11,9 @@ function! s:gitgutter_patch()
   hi GitGutterDelete        cterm=none  ctermbg=none  ctermfg=196  gui=none  guifg=#ff0000 guibg=none
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Patch: ayu
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+
+" Patch: ayu {{{
 
 function! s:ayu_patch()
   call s:gitgutter_patch()
@@ -31,37 +25,9 @@ function! s:ayu_patch()
   let ayucolor='dark'
 endfunction
 
-autocmd! ColorScheme ayu call s:ayu_patch()
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Patch: monochrome
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-function! s:monochrome_patch()
-  call s:gitgutter_patch()
-  hi SignatureMarkText guibg=none
-  hi SignatureMarkerText guibg=none
-endfunction
-
-autocmd! ColorScheme monochrome call s:monochrome_patch()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Patch: gruvbox
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-function! s:gruvbox_patch()
-  call s:gitgutter_patch()
-  hi SignatureMarkText guibg=none
-  hi SignatureMarkerText guibg=none
-  let g:gruvbox_contrast_dark = 'hard'
-  let g:gruvbox_transparent_bg = 1
-endfunction
-
-autocmd! ColorScheme gruvbox call s:gruvbox_patch()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Patch: flatlandia
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Patch: flatlandia {{{
 
 function! s:flatlandia_patch()
   " hi StatusLineNC guibg=#4c4c4c
@@ -74,16 +40,6 @@ endfunction
 
 autocmd! ColorScheme flatlandia call s:flatlandia_patch()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set Preferred Theme
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
 
-colorscheme ayu
-
-" TODO: monotone works for me, needs some love and attention though - fork?
-" See: https://github.com/Lokaltog/vim-monotone
-" colorscheme monotone
-" hi clear Comment
-" hi Comment guibg=none guifg=#424242
-" call s:gitgutter_patch()
-" hi LineNr guifg=#5c636b
+colorscheme tender
