@@ -1,4 +1,12 @@
-# zmodload zsh/zprof
+# zmodload zsh/zprofuto
+
+# Environment! {{{
+
+# TODO(mark 2022-01-01): needs different file?
+export ZSH_DIR="${HOME}/.zsh"
+export DOTFILES_DIR="${HOME}/.dotfiles"
+
+# }}}
 
 # Zsh: Base {{{
 
@@ -23,7 +31,7 @@ autoload colors && colors
 
 # Zsh: Autoload {{{
 
-fpath=($fpath "${HOME}/.zautoload")
+fpath=($fpath "${ZSH_DIR}/autoload")
 
 # }}}
 
@@ -33,15 +41,17 @@ fpath=($fpath "${HOME}/.zautoload")
 # options out there, but eh, installing stuff. I'm /very/ happy with my zsh
 # startup time right now, without the addition of other crap to slow it
 
-# NOTE(mark 2021-12-30): https://github.com/unixorn/awesome-zsh-plugins
 # plugins=(git history-substring-search)
+# NOTE(mark 2021-12-30): https://github.com/unixorn/awesome-zsh-plugins
+
 autoload -Uz compinit && compinit -C
 
 # }}}
 
 # Zsh: History {{{
 
-HISTFILE=$HOME/.zsh_history
+HISTFILE="${HOME}/.zsh_history"
+
 HISTSIZE=2000
 SAVEHIST=$HISTSIZE
 
@@ -55,8 +65,9 @@ unsetopt HIST_BEEP
 # Bind ctrl + r to history search
 bindkey '^R' history-incremental-search-backward
 
-# Create $HISTFILE if it does not exist, which happens for some dumb reason?
-[[ ! -f $HISTFILE ]] && touch $HISTFILE
+if [[ ! -f $HISTFILE ]]; then
+  touch $HISTFILE
+fi
 
 # }}}
 
@@ -122,7 +133,6 @@ zle-line-init zle-keymap-select() {
 
 # Zsh: Vim Mode {{{
 
-# Operate zsh in vim mode
 bindkey -v
 
 # Decrease lag in vim mode: This reduces time between input keystrokes to 1ms.
@@ -142,17 +152,18 @@ bindkey '^U' backward-kill-line
 
 # Zsh: Temp {{{
 
-if [[ -z $TMPDIR ]] || [[ ! -d "${TMPDIR}" ]]; then
-  # $TMPDIR is not declared on my Ubuntu box for some ineffable reason
+if [[ -z $TMPDIR ]]; then
   export TMPDIR='/var/tmp/'
-  mkdir -p -m 700 "${TMPDIR}"
+fi
+
+if [[ ! -d $TMPDIR ]]; then
+  mkdir -p -m 700 $TMPDIR
 fi
 
 # }}}
 
 # Vim {{{
 
-# Default editor to nvim if unset
 if [[ -z "$EDITOR" ]]; then
   export EDITOR='nvim'
 fi
@@ -164,13 +175,12 @@ alias vi='nvim'
 
 # Widget: bind cd to <tab> {{{
 
-# bind <tab>-without-arguments to cd
 # TODO(mark 2021-12-29): very much unused by me. Would be nice to have FZF
 # completion here
 
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    BUFFER='cd '
+    BUFFER="cd "
     CURSOR=3
     zle list-choices
   else
@@ -179,6 +189,7 @@ function _tab_cd {
 }
 
 zle -N _tab_cd
+bindkey '^I' _tab_cd
 
 # }}}
 
@@ -203,16 +214,14 @@ bindkey '^z' _fg_vim
 
 # Git {{{
 
-# cd to Git Project Root Folder
-function _git_root {
+function gr {
+  # cd to git project root folder
   if $(git rev-parse 2> /dev/null); then
     builtin cd "$(git rev-parse --show-toplevel)"
   else
     echo "cd: not a git project: ${PWD}"
   fi
 }
-
-alias gr='_git_root'
 
 # }}}
 

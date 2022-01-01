@@ -11,7 +11,7 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
     ~/.vim: vim
-    ~/.zautoload: zsh/autoload
+    ~/.zsh: zsh
     ~/.zshrc: zsh/zshrc
 - shell:
   - [touch ~/.private.zsh, Create private zshrc]
