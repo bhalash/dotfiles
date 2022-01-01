@@ -256,8 +256,7 @@ alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
 
 # Lazy load nvm and default node version
 # See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
-# TODO(mark 2021-12-30): check and set path for macOS
-# TODO(mark 2021-12-30): can any other tool benefit from lazy load?
+# NOTE(mark 2022-01-01): can any other tool benefit from lazy load?
 
 function nvm {
   if [[ -d "$HOME/.nvm" ]]; then
