@@ -17,7 +17,7 @@ colors:
 
 window:
   decorations: "none"
-  startup_mode: "Maximized"
+  startup_mode: "Fullscreen"
 
 key_bindings:
   # My fat fingers tend to mash cmd+q/cmd+w (=
