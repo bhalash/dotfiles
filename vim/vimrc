@@ -99,16 +99,6 @@ set cul
 
 " }}}
 
-" netrw! {{{
-
-" Set gx open command for macOS
-" FIXME(mark 2021-12-18): improve this, it does not at all work
-if has('macunix')
-  let g:netrw_browsex_viewer = 'open'
-endif
-
-" }}}
-
 " Plugins {{{
 
 runtime plugin/plug.vim
