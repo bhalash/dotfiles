@@ -2,7 +2,7 @@
 - create:
   - ~/.config
 - link:
-    ~/.config/kitty: kitty
+    ~/.config/alacritty: alacritty
     ~/.config/nvim: vim
     ~/.config/regolith: regolith
     ~/.gitconfig: git/gitconfig

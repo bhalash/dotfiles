@@ -1,0 +1,14 @@
+# Prototype: https://github.com/tmcdonell/config-alacritty/blob/master/alacritty.yml
+
+font:
+  normal:
+    family: "Fira Code"
+  size: 11.0
+
+colors:
+  primary:
+    background: "#121212"
+
+window:
+  decorations: "none"
+  startup_mode: "Maximized"
