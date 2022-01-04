@@ -1,8 +1,7 @@
 # zmodload zsh/zprofuto
 
-# Environment! {{{
+# Environment {{{
 
-# TODO(mark 2022-01-01): needs different file?
 export ZSH_DIR="${HOME}/.zsh"
 export DOTFILES_DIR="${HOME}/.dotfiles"
 
@@ -51,7 +50,6 @@ autoload -Uz compinit && compinit -C
 # Zsh: History {{{
 
 HISTFILE="${HOME}/.zsh_history"
-
 HISTSIZE=2000
 SAVEHIST=$HISTSIZE
 
@@ -68,66 +66,6 @@ bindkey '^R' history-incremental-search-backward
 if [[ ! -f $HISTFILE ]]; then
   touch $HISTFILE
 fi
-
-# }}}
-
-# Zsh: Prompt {{{
-
-# Remove annoying "%" sign after certain outputs
-# See: https://stackoverflow.com/questions/13660636/what-is-percent-tilde-in-zsh
-setopt PROMPT_CR
-setopt PROMPT_SP
-export PROMPT_EOL_MARK=''
-
-# Wrap $1 in given color. Done for (perosnal) readability.
-# See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
-# See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-function _prompt_color {
-  local CONTENT=$1
-  local FG=${2:-15} # fallback white
-  local BG=${3}     # no fallback bg
-
-  if [[ -n $BG ]]; then
-    echo "%F{${FG}}%K{${BG}}${CONTENT}%f%k" # For background
-  else
-    echo "%F{${FG}}${CONTENT}%f%k"
-  fi
-}
-
-# Separate Segments
-function _prompt_segment_separator {
-  local SEGMENT_SEPARATOR=$'\ue0b0'
-  local BG=${1:-0}
-  local FG=${2:-15}
-  echo $(_prompt_color $SEGMENT_SEPARATOR $FG $BG)
-}
-
-# Show prompt for remote (SSH) or root user.
-function _prompt_user {
-  local FG=15
-
-  if [[ $(id -u) == 0 ]]; then
-    FG=9 # red for root :p
-  fi
-
-  echo $(_prompt_color '%n@%m ' $FG)
-}
-
-function _prompt_dir {
-  echo $(_prompt_color '%1~ ')
-}
-
-function _prompt_mode {
-  local MODE_NORMAL=$(_prompt_color '>')
-  local MODE_INSERT=$(_prompt_color '$')
-  echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
-}
-
-zle-line-init zle-keymap-select() {
-  PROMPT="$(_prompt_user)$(_prompt_dir)$(_prompt_mode) %b"
-  RPROMPT=""
-  zle reset-prompt
-}
 
 # }}}
 
@@ -227,6 +165,8 @@ function gr {
 
 # FZF {{{
 
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
+
 # TODO(mark 2021-12-29): this whole section needs revision
 # See: https://github.com/junegunn/fzf#environment-variables
 
@@ -235,20 +175,14 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitk
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 
-if [[ $OSTYPE =~ 'linux-gnu' ]]; then
-  source '/usr/share/doc/fzf/examples/key-bindings.zsh'
-  source '/usr/share/doc/fzf/examples/completion.zsh'
-fi
-
 # Browse for a file and open it in vim
 alias vo='vim $(fzf --preview "batcat --style=numbers --color=always --line-range :500 {}")'
 
-# }}}
-
-# Command Aliases {{{
-
-alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
+if [[ $OSTYPE =~ 'linux-gnu' ]]; then
+  # TODO(mark 2022-01-04): same path on macOS?
+  source '/usr/share/doc/fzf/examples/key-bindings.zsh'
+  source '/usr/share/doc/fzf/examples/completion.zsh'
+fi
 
 # }}}
 
@@ -272,10 +206,23 @@ function nvm {
 
 # }}}
 
+# Command Aliases {{{
+
+alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
+alias tmux='tmux -2' # TODO(mark 2021-12-29): why this?
+
+# }}}
+
+# Prompt {{{
+
+source "${ZSH_DIR}/prompt.zsh"
+
+# }}}
+
 # Private Zshrc {{{
 
-if [[ -f "$HOME/.private.zsh" ]]; then
-  source "$HOME/.private.zsh"
+if [[ -f "${HOME}/.private.zsh" ]]; then
+  source "${HOME}/.private.zsh"
 fi
 
 # }}}
