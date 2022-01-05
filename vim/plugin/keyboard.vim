@@ -2,17 +2,8 @@ let mapleader = 's'
 
 " Normal {{{
 
-" Trying something dumb :-)
-" NOTE(mark 2021-12-30): this depends on swapping ' <-> ; on my keyboard!
-" noremap h '
-" noremap ' l
-" noremap l k
-" noremap k j
-" noremap j h
-
 " These combinations are awkward to reach on my keyboard
 nnoremap + "+
-nnoremap ` <C-^>
 
 " NOTE(mark 2021-12-30): trying these out for size :-)
 nnoremap <leader>! ZQ<CR>
