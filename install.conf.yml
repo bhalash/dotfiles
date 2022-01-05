@@ -13,6 +13,7 @@
     ~/.vim: vim
     ~/.zsh: zsh
     ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
 - shell:
   - [touch ~/.private.zsh, Create private zshrc]
   - [git submodule update --init --recursive, Install git submodules]
