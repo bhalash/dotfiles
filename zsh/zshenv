@@ -1,0 +1,4 @@
+export DOTFILES_DIR="${HOME}/.dotfiles"
+export EDITOR='nvim'
+export TERM='xterm-256color'
+export ZSH_DIR="${HOME}/.zsh"
