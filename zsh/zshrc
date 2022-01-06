@@ -96,12 +96,11 @@ fi
 
 # ! Widget: bind cd to <tab> {{{
 
-# TODO(mark 2021-12-29): very much unused by me. Would be nice to have FZF
-# completion here
-
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    BUFFER="cd "
+    # TODO(mark 2021-12-29): works but needs tidyup, as "cd foo" draws twice
+    # FIXME(mark 2022-01-06): gdirname=dirname in Linux
+    BUFFER="cd $(rg --files --null | xargs -0 gdirname | sort -r | uniq | fzf --height 40% --layout=reverse)"
     CURSOR=3
     zle list-choices
   else
