@@ -9,3 +9,6 @@ iab <buffer> fcite [0]:
 
 " Insert activity for end of week report
 iab <buffer> a@ **[!Day] (Thing):**  <CR><><Esc>h
+
+" Paste from clipboard into auto-link, e.g. - <https://www.example.com>
+iab <buffer> <> - <<C-r>*>

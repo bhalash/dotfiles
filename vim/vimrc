@@ -52,9 +52,7 @@ set scrolloff=10 sidescrolloff=10
 set ttyfast
 
 " Change how buffer is redrawn. /Should/ increase scroll speed
-" TODO(mark 2021-12-31): does this affect weird syntax highlighting in big
-" Angular files?
-" set lazyredraw
+set lazyredraw
 
 " }}}
 

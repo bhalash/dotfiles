@@ -2,14 +2,9 @@ let mapleader = 's'
 
 " Normal {{{
 
-" These combinations are awkward to reach on my keyboard
+" These keys are awkward to reach in combination on my keyboard
 nnoremap + "+
-
-" NOTE(mark 2021-12-30): trying these out for size :-)
-nnoremap <leader>! ZQ<CR>
-nnoremap <leader>Q :qa<CR>
-nnoremap <leader>q ZZ<CR>
-nnoremap <leader>w :w<CR>
+vnoremap + "+
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
@@ -26,7 +21,7 @@ nnoremap <leader>sp :setlocal spell!<CR>
 nnoremap <silent><bs> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :noh<CR>
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
@@ -40,7 +35,7 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 " Format JSON in buffer
 nnoremap <silent><leader>jf :set ft=json <bar> %!python -m json.tool<CR>
 
-" See: https://github.com/neovim/neovim/pull/13268
+" Yank to EOL. See: https://github.com/neovim/neovim/pull/13268
 nnoremap Y y$
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
