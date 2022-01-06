@@ -28,7 +28,7 @@ key_bindings:
   # My fat fingers tend to mash cmd+q/cmd+w (=
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
-  - { key: F, mods: Shift|Command, action: ToggleFullscreen }
+  - { key: Return, mods: Shift|Command, action: ToggleFullscreen }
 
 shell:
   # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
