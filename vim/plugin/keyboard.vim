@@ -6,6 +6,10 @@ let mapleader = 's'
 nnoremap + "+
 vnoremap + "+
 
+" Diff
+nnoremap <leader>dt :windo diffthis<CR>
+nnoremap <leader>do :windo diffoff<CR>
+
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
@@ -49,7 +53,7 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " See: https://github.com/junegunn/fzf.vim#commands
 " nnoremap <leader>r :Rg<CR>
 nnoremap <leader>p :Files<CR>
-nnoremap <leader>o :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Lines<CR>
 nnoremap <leader>j :History<CR>
 nnoremap <Leader>* :Rg <C-R><C-W><CR>
@@ -97,7 +101,7 @@ nnoremap <silent><leader>fr :!git checkout %<CR>
 " tpope/vim-obsession {{{
 
 " TODO(mark 2021-12-29): move to a 'less easy' key to avoid accidents?
-nnoremap <silent><leader>b :Ob!<CR>
+nnoremap <silent><leader>so :Ob!<CR>
 
 " }}}
 

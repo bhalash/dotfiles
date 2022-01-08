@@ -3,9 +3,6 @@
 " Arrow function
 iab <buffer> xa () => {}<left>
 
-" Block comment
-iab <buffer> /* /**<CR><CR>/<Up>
-
 " jasmine/jest test boilerplate
 iab <buffer> de@ describe('@', () => {<CR>});<Esc>O
 iab <buffer> it@ it('should %', () => {<CR>});<Esc>O
@@ -25,4 +22,4 @@ iab <buffer> mtd method(): void {}<Esc>a
 iab <buffer> imp@ import { Whatever} from 'CHANGEME';<Esc>
 
 " console.log
-iab <buffer> con@ console.log();<Esc>hi
+iab <buffer> con@ console.log()<Esc>hi

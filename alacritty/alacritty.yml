@@ -8,14 +8,14 @@
 
 font:
   normal:
-    family: &fira "Fira Code"
+    family: &codefont "Fira Code"
   bold:
-    family: *fira
+    family: *codefont
     style: SemiBold
   bold_italic:
-    family: *fira
+    family: *codefont
     style: Italic
-  size: 12.0
+  size: 12.0 # FIXME(mark 2022-01-08): want this 11.0 for Linux - how?
 
 colors:
   primary:
@@ -23,12 +23,16 @@ colors:
 
 window:
   startup_mode: Maximized
+  # padding:
+  #   x: 100
+  #   y: 100
 
 key_bindings:
   # My fat fingers tend to mash cmd+q/cmd+w (=
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
   - { key: Return, mods: Shift|Command, action: ToggleFullscreen }
+  - { key: Key2, mods: Alt, chars: '€' } # <3
 
 shell:
   # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/

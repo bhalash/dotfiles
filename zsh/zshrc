@@ -43,23 +43,24 @@ autoload -Uz compinit && compinit -C
 
 # Zsh: History {{{
 
-HISTFILE="${HOME}/.zsh_history"
-HISTSIZE=2000
-SAVEHIST=$HISTSIZE
-
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_VERIFY
-unsetopt HIST_BEEP
-
-# Bind ctrl + r to history search
-bindkey '^R' history-incremental-search-backward
+export HISTFILE="$HOME/.zsh_history"
+export SAVEHIST=500 # history written to file
+export HISTSIZE=100 # history loaded to memory
 
 if [[ ! -f $HISTFILE ]]; then
   touch $HISTFILE
 fi
+
+# setopt extendedhistory # enable to log timestamp alongside command
+setopt histignorealldups
+setopt histignorespace
+setopt histreduceblanks
+setopt histsavenodups
+setopt histverify
+unsetopt histbeep
+
+# Bind ctrl + r to history search
+bindkey '^R' history-incremental-search-backward
 
 # }}}
 
@@ -195,22 +196,24 @@ alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias jrnl=' jrnl' # Excludes jrnl with histignorespace set above^
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
+hash -d config="$HOME/.config"
 
 # }}}
 
 # Prompt {{{
 
-source "${ZSH_DIR}/prompt.zsh"
+source "$ZSH_DIR/prompt.zsh"
 
 # }}}
 
 # Private Zshrc {{{
 
-if [[ -f "${HOME}/.private.zsh" ]]; then
-  source "${HOME}/.private.zsh"
+if [[ -f "$HOME/.private.zsh" ]]; then
+  source "$HOME/.private.zsh"
 fi
 
 # }}}

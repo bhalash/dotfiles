@@ -5,3 +5,6 @@ iab <expr> n@ strftime('NOTE(' . $USER . ' %Y-%m-%d):')
 
 " Paste from clipboard, best for flow when typing
 iab ~~ <C-r>*
+
+" Block comment
+iab /* /**<CR><CR>/<Up>

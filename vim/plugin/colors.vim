@@ -17,13 +17,21 @@ endfunction
 
 function! s:ayu_patch()
   call s:gitgutter_patch()
-  hi ColorColumn guibg=#30373d
-  hi Search gui=underline guibg=none guifg=#c3ce2d
-  hi Comment guifg=#8293a5
-  hi LineNr guifg=#5c636b
+
   hi CocUnusedHighlight guifg=#ea1730 gui=underline
+  hi ColorColumn guibg=#30373d
+  hi Comment guifg=#62595a
+  hi LineNr guifg=#5c636b
+  hi Search gui=underline guibg=none guifg=#c3ce2d
+  hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#E6E1CF guibg=#14191F
+  hi clear StatusLineNC
+  hi clear TabLine
+  hi clear TabLineFill
+
   let ayucolor='dark'
 endfunction
+
+autocmd! ColorScheme ayu call s:ayu_patch()
 
 " }}}
 
@@ -42,4 +50,5 @@ autocmd! ColorScheme flatlandia call s:flatlandia_patch()
 
 " }}}
 
-colorscheme tender
+" colorscheme tender
+colorscheme ayu
