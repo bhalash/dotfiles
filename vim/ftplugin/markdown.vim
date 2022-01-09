@@ -1,5 +1,5 @@
 setlocal wrap
-setlocal expandtab ts=2 sw=2 sts=2
+setlocal expandtab ts=4 sw=4 sts=4
 
 " Disable coc.nvim
 let b:coc_suggest_disable = 1
@@ -11,4 +11,4 @@ iab <buffer> fcite [0]:
 iab <buffer> a@ **[!Day] (Thing):**  <CR><><Esc>h
 
 " Paste from clipboard into auto-link, e.g. - <https://www.example.com>
-iab <buffer> <> - <<C-r>*>
+iab <buffer> <> <<Esc>"+pA>

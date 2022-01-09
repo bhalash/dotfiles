@@ -49,14 +49,12 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
 " junegunn/fzf.vim {{{
 
-" TODO(mark 2021-12-29): these needs some love/reduction
 " See: https://github.com/junegunn/fzf.vim#commands
 " nnoremap <leader>r :Rg<CR>
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Lines<CR>
 nnoremap <leader>j :History<CR>
-nnoremap <Leader>* :Rg <C-R><C-W><CR>
 nnoremap <leader>/ :BLines<CR>
 
 " }}}
@@ -86,7 +84,6 @@ nnoremap <silent><leader>g :Goyo<CR>
 
 " tpope/vim-fugitive {{{
 
-" TODO(mark 2021-12-29): these needs some love/reduction
 noremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
@@ -100,8 +97,7 @@ nnoremap <silent><leader>fr :!git checkout %<CR>
 
 " tpope/vim-obsession {{{
 
-" TODO(mark 2021-12-29): move to a 'less easy' key to avoid accidents?
-nnoremap <silent><leader>so :Ob!<CR>
+nnoremap <silent><leader>k :Ob!<CR>
 
 " }}}
 
