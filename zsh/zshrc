@@ -95,13 +95,11 @@ fi
 
 # }}}
 
-# ! Widget: bind cd to <tab> {{{
+# Widget: bind cd to <tab> {{{
 
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    # TODO(mark 2021-12-29): works but needs tidyup, as "cd foo" draws twice
-    # FIXME(mark 2022-01-06): gdirname=dirname in Linux
-    BUFFER="cd $(rg --files --null | xargs -0 gdirname | sort -r | uniq | fzf --height 40% --layout=reverse)"
+    BUFFER="cd "
     CURSOR=3
     zle list-choices
   else
@@ -169,7 +167,7 @@ fi
 
 # }}}
 
-# NVM {{{
+# Lazyload: NVM {{{
 
 # Lazy load nvm and default node version
 # See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
@@ -196,7 +194,6 @@ alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias jrnl=' jrnl' # Excludes jrnl with histignorespace set above^
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
@@ -210,7 +207,16 @@ source "$ZSH_DIR/prompt.zsh"
 
 # }}}
 
-# Private Zshrc {{{
+# fzf-tab plugin {{{
+
+# See: https://github.com/Aloxaf/fzf-tab
+if [[ -f "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh" ]]; then
+  source "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh"
+fi
+
+# }}}
+
+# Zsh: Private Configuration {{{
 
 if [[ -f "$HOME/.private.zsh" ]]; then
   source "$HOME/.private.zsh"

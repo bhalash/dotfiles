@@ -1,8 +1,9 @@
 # tmux tpm plugins
 tmux/plugins/
 
-# dotbot
+# submodules
 dotbot/
+fzf-tab/
 
 # vim plugins and spellcheck
 vim/.netrwhist
