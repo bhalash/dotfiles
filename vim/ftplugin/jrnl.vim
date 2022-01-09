@@ -1,6 +1,4 @@
-setlocal expandtab ts=2 sw=2 sts=2
-setlocal nofoldenable
+setlocal expandtab ts=4 sw=4 sts=4
+setlocal colorcolumn=90 textwidth=90
+setlocal nospell
 setlocal wrap
-
-setlocal colorcolumn=90
-setlocal textwidth=90
