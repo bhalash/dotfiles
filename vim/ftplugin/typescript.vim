@@ -22,4 +22,4 @@ iab <buffer> mtd method(): void {}<Esc>a
 iab <buffer> imp@ import { Whatever} from 'CHANGEME';<Esc>
 
 " console.log
-iab <buffer> con@ console.log()<Esc>hi
+iab <buffer> con@ console.log()<Left>

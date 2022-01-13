@@ -2,6 +2,9 @@ let mapleader = 's'
 
 " Normal {{{
 
+" Fits with tmux prefix being on C-a
+nnoremap <C-s> <C-a>
+
 " These keys are awkward to reach in combination on my keyboard
 nnoremap + "+
 vnoremap + "+
@@ -97,7 +100,7 @@ nnoremap <silent><leader>fr :!git checkout %<CR>
 
 " tpope/vim-obsession {{{
 
-nnoremap <silent><leader>k :Ob!<CR>
+nnoremap <silent><leader>' :Ob!<CR>
 
 " }}}
 

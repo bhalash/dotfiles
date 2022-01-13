@@ -23,7 +23,9 @@ function! s:ayu_patch()
   hi Comment guifg=#62595a
   hi LineNr guifg=#5c636b
   hi Search gui=underline guibg=none guifg=#c3ce2d
-  hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#E6E1CF guibg=#14191F
+  hi StatusLine guibg=#313740 guifg=#ffffff
+  hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#e6e1cf guibg=#14191f
+
   hi clear StatusLineNC
   hi clear TabLine
   hi clear TabLineFill

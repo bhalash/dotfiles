@@ -43,7 +43,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " HTML expansion
-Plug 'mattn/emmet-vim', { 'for': ['html'] }
+" FIXME(mark 2022-01-10): disabled, this inserts a bunch of imap keys under s-
+" prefix which fuck with normal typing. Nothing in docs about this
+" Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
 " Colorschemes
