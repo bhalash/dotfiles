@@ -28,10 +28,10 @@ window:
   #   y: 100
 
 key_bindings:
-  # My fat fingers tend to mash cmd+q/cmd+w (=
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
-  - { key: Return, mods: Shift|Command, action: ToggleFullscreen }
+  - { key: N, mods: Command, action: None }
+  - { key: I, mods: Shift|Command, action: ToggleFullscreen }
   - { key: Key2, mods: Alt, chars: '€' } # <3
 
 shell:
