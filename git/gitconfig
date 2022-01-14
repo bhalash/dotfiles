@@ -9,19 +9,21 @@
   name = Mark Grealish
   email = mark@bhalash.com
 [alias]
-  b = !git branch
-  c = !git checkout
-  p = !git pull
-  s = !git status
-  u = !git push
-  bn = !git rev-parse --abbrev-ref HEAD
-  co = !git checkout
-  pm = !git pull origin master
-  branchname = !git rev-parse --abbrev-ref HEAD
-  dammit = !git push -u origin \"$(git branchname)\"
-  squish = "!git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))"
-  unchanged = !git ls-files -v | grep \"^[[:lower:]]\"
-  untracked = !git ls-files --others --exclude-standard
+  b = branch
+  c = checkout
+  m = commit
+  p = pull
+  s = status
+  u = push
+  bn = rev-parse --abbrev-ref HEAD
+  mm = commit -m
+  pm = pull origin master
+  branchname = rev-parse --abbrev-ref HEAD
+  dammit = push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
+  squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
+  unchanged = ls-files -v | grep \"^[[:lower:]]\"
+  undo = "!_undo() { git reset --soft HEAD~${1:-1}; }; _undo"
+  untracked = ls-files --others --exclude-standard
 [pull]
   rebase = true
 [includeIf "gitdir:~/Work/"]
