@@ -14,4 +14,4 @@ vim/session
 vim/spell
 
 # vim session files
-Session.vim
+/*.vim

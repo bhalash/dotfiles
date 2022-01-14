@@ -136,16 +136,4 @@ let g:fzf_colors = {
 
 " }}}
 
-" tpope/vim-obsession {{{
-
-" Autoload sessions created by tpope's vim-obsession when starting Vim
-" See: https://gist.github.com/robmiller/5135652
-augroup sourcesession
-  autocmd!
-  autocmd VimEnter * nested
-  \ if !argc() && empty(v:this_session) && filereadable('Session.vim') |
-  \   source Session.vim |
-  \ endif
-augroup END
-
 " }}}

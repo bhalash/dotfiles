@@ -98,12 +98,6 @@ nnoremap <silent><leader>fr :!git checkout %<CR>
 
 " }}}
 
-" tpope/vim-obsession {{{
-
-nnoremap <silent><leader>' :Ob!<CR>
-
-" }}}
-
 " mattn/emmet-vim {{{
 
 let g:user_emmet_leader_key='<leader>'
