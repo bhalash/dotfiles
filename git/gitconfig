@@ -13,6 +13,7 @@
   c = checkout
   m = commit
   p = pull
+  r = reset
   s = status
   u = push
   bn = rev-parse --abbrev-ref HEAD
