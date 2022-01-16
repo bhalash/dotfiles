@@ -15,6 +15,6 @@
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
 - shell:
-  - [touch ~/.private.zsh, Create private zshrc]
+  - [touch ~/.private.zsh && chmod 600 ~/.private.zsh, Create private zshrc]
   - [git submodule update --init --recursive, Install git submodules]
   - [nvim --headless +PlugInstall +qall, Install vim/nvim plugins]
