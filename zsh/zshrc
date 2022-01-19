@@ -44,8 +44,8 @@ autoload -Uz compinit && compinit -C
 # Zsh: History {{{
 
 export HISTFILE="$HOME/.zsh_history"
-export SAVEHIST=500 # history written to file
-export HISTSIZE=100 # history loaded to memory
+export SAVEHIST=5000 # history written to file
+export HISTSIZE=1000 # history loaded to memory
 
 if [[ ! -f $HISTFILE ]]; then
   touch $HISTFILE
