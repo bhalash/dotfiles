@@ -94,7 +94,7 @@ nnoremap <silent><leader>fs :Git status<CR>
 nnoremap <silent><leader>fw :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
 " reset the file in the current buffer
-nnoremap <silent><leader>fr :!git checkout %<CR>
+nnoremap <silent><leader>fe :!git checkout %<CR>
 
 " }}}
 
