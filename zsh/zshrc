@@ -52,12 +52,13 @@ if [[ ! -f $HISTFILE ]]; then
 fi
 
 # setopt extendedhistory # enable to log timestamp alongside command
-setopt histignorealldups
-setopt histignorespace
-setopt histreduceblanks
-setopt histsavenodups
-setopt histverify
-unsetopt histbeep
+# setopt share_history # share history fully between concurrent sessions
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_verify
+unsetopt hist_beep
 
 # Bind ctrl + r to history search
 bindkey '^R' history-incremental-search-backward
@@ -99,9 +100,7 @@ fi
 
 function _tab_cd {
   if [[ $#BUFFER == 0 ]]; then
-    BUFFER="cd "
-    CURSOR=3
-    zle list-choices
+    fzf-cd-widget
   else
     zle expand-or-complete
   fi
