@@ -19,7 +19,7 @@ iab <buffer> csr constructor() {}<Esc>a
 iab <buffer> mtd method(): void {}<Esc>a
 
 " import statement
-iab <buffer> imp@ import { Whatever} from 'CHANGEME';<Esc>
+iab <buffer> imp@ import {<CR>} from '@@';<Up><CR><Esc>
 
 " console.log
 iab <buffer> con@ console.log()<Left>

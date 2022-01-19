@@ -97,8 +97,8 @@ set cul
 
 " }}}
 
-" Plugins {{{
+" vim-plug {{{
 
-runtime plugin/plug.vim
+runtime autoload/vim-plug.vim
 
 " }}}

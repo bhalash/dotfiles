@@ -1,6 +1,8 @@
+" tpope/vim-obsession
+
 function! s:SessionName()
   if system('git rev-parse 2> /dev/null; echo $?') == 0
-    return trim(system('git rev-parse --abbrev-ref HEAD')) . '.vim'
+    return 'Session.' . trim(system('git rev-parse --abbrev-ref HEAD')) . '.vim'
   else
     return 'Session.vim'
   endif

@@ -2,6 +2,8 @@
 
 call plug#begin('$HOME/.vim/extensions')
 
+Plug 'ouuan/vim-plug-config'
+
 " RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -92,22 +94,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Don't highlight whitespace in Markdown
 let g:extra_whitespace_ignored_filetypes = ['markdown']
-
-" }}}
-
-" junegunn/goyo.vim {{{
-
-let g:goyo_width = 120
-let g:goyo_height = '80%'
-let g:goyo_linenr = 1
-
-function! s:goyo_enter()
-  set norelativenumber
-endfunction
-
-function! s:goyo_leave()
-  set relativenumber
-endfunction
 
 " }}}
 

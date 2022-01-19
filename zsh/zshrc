@@ -121,7 +121,7 @@ bindkey '^I' _tab_cd
 # Set ctrl + z to fg vim. It makes a great, efficient toggle on slow systems.
 
 function _fg_vim {
-  fg nvim 2>/dev/null
+  fg $EDITOR 2>/dev/null
 }
 
 stty susp undef
