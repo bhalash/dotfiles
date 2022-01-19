@@ -20,10 +20,12 @@
   mm = commit -m
   pm = pull origin master
   branchname = rev-parse --abbrev-ref HEAD
+  conflicted = diff --name-only --diff-filter=U
   dammit = push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
+  save = "!_save() { git add .; git commit -m \"${@:-staging change}\"; git push; }; _save"
   squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
-  undo = "!_undo() { git reset --soft HEAD~${1:-1}; }; _undo"
+  undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
   untracked = ls-files --others --exclude-standard
 [pull]
   rebase = true
