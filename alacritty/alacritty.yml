@@ -28,11 +28,17 @@ window:
   #   y: 100
 
 key_bindings:
+  # <3
+  - { key: Key2, mods: Alt, chars: '€' }
+  # Stop fat fingers on macOS
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
   - { key: N, mods: Command, action: None }
-  - { key: I, mods: Shift|Command, action: ToggleFullscreen }
-  - { key: Key2, mods: Alt, chars: '€' } # <3
+  - { key: F, mods: Shift|Alt, action: ToggleFullscreen }
+  # Command-+ does not work on keyboard
+  - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
+  - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
+  - { key: L, mods: Shift|Alt, action: ResetFontSize }
 
 shell:
   # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
