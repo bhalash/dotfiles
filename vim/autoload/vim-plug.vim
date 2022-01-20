@@ -62,6 +62,7 @@ Plug 'junegunn/fzf.vim'
 
 " Language server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'antoinemadec/coc-fzf'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -99,6 +100,8 @@ let g:extra_whitespace_ignored_filetypes = ['markdown']
 
 " junegunn/fzf.vim {{{
 
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
+
 " Reuse the existing buffer when opening a file which is already open
 " See: https://github.com/junegunn/fzf.vim/issues/98
 let g:fzf_buffers_jump = 1
@@ -123,4 +126,11 @@ let g:fzf_colors = {
 
 " }}}
 
+" antoinemadec/coc-fzf {{{
+
+let g:coc_fzf_preview = 'up:80%'
+" let g:coc_fzf_preview_fullscreen = 0 " do I want fullscreen?
+
+" }}}
+"
 " }}}

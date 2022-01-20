@@ -39,14 +39,14 @@ nnoremap <silent><leader>rp gg"_dGVp
 " Stop * jumping to next occurrence
 nnoremap * :keepjumps normal! mi*`i<CR>
 
-" Format JSON in buffer
-nnoremap <silent><leader>jf :set ft=json <bar> %!python -m json.tool<CR>
-
 " Yank to EOL. See: https://github.com/neovim/neovim/pull/13268
 nnoremap Y y$
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
+
+" Yank relative path to file to system clipboard, useful for note-taking
+nnoremap <leader>yp :let @+ = expand('%')<CR>
 
 " }}}
 
