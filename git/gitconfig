@@ -10,14 +10,14 @@
   email = mark@bhalash.com
 [alias]
   b = branch
-  c = checkout
-  m = commit
+  c = commit
   p = pull
   r = reset
   s = status
   u = push
   bn = rev-parse --abbrev-ref HEAD
-  mm = commit -m
+  co = checkout
+  cm = commit -m
   pm = pull origin master
   branchname = rev-parse --abbrev-ref HEAD
   conflicted = diff --name-only --diff-filter=U
