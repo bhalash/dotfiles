@@ -1,4 +1,4 @@
-" vim-plug {{{
+" junegunn/vim-plug {{{
 
 call plug#begin('$HOME/.vim/extensions')
 
