@@ -48,6 +48,9 @@ nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 " Yank relative path to file to system clipboard, useful for note-taking
 nnoremap <leader>yp :let @+ = expand('%')<CR>
 
+" Most of the time I'm happy with the top seplling suggestion
+nnoremap z= 1z=
+
 " }}}
 
 " junegunn/fzf.vim {{{

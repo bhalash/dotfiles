@@ -132,5 +132,19 @@ let g:coc_fzf_preview = 'up:80%'
 " let g:coc_fzf_preview_fullscreen = 0 " do I want fullscreen?
 
 " }}}
-"
+
+" junegunn/goyo.vim {{{
+
+let g:goyo_width = 120
+let g:goyo_height = '100%'
+let g:goyo_linenr = 1
+
+function! s:goyo_enter()
+  set norelativenumber
+endfunction
+
+function! s:goyo_leave()
+  set relativenumber
+endfunction
+
 " }}}

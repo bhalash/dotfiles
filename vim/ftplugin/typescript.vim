@@ -1,12 +1,11 @@
-" TODO(mark 2021-12-29): set up some sort of snippet engine?
-
 " Arrow function
-iab <buffer> xa () => {}<left>
+iab <buffer> ar@ () =>
 
 " jasmine/jest test boilerplate
 iab <buffer> de@ describe('@', () => {<CR>});<Esc>O
 iab <buffer> it@ it('should %', () => {<CR>});<Esc>O
-iab <buffer> xp@ expect('foo').toBe('bar');<Esc>
+iab <buffer> eq@ expect('foo').toEqual('bar');<Esc>
+iab <buffer> to@ expect('foo').toBe('bar');<Esc>
 iab <buffer> be@ beforeEach(() => {<CR>});<Esc>O
 iab <buffer> af@ afterEach(() => {<CR>});<Esc>O
 

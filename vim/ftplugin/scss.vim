@@ -10,3 +10,5 @@ setlocal formatoptions+=ro
 
 " SCSS comments are either /* */ or //
 setlocal comments=s1:/*,mb:*,ex:*/,://,:///
+
+iab <buffer> && &__foo {}
