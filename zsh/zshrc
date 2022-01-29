@@ -52,7 +52,7 @@ if [[ ! -f $HISTFILE ]]; then
 fi
 
 # setopt extendedhistory # enable to log timestamp alongside command
-# setopt share_history # share history fully between concurrent sessions
+setopt share_history # share history fully between concurrent sessions
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
