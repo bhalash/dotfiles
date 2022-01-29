@@ -1,17 +1,16 @@
-# tmux tpm plugins
-tmux/plugins/
-
 # submodules
 dotbot/
 fzf-tab/
 
-# vim plugins and spellcheck
+# tmux
+tmux/plugins/
+tmux/resurrect/
+
+# vim
 vim/.netrwhist
 vim/.tmp
 vim/.undo
 vim/extensions
 vim/session
 vim/spell
-
-# vim session files
 /*.vim

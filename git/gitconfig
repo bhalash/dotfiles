@@ -10,19 +10,19 @@
   email = mark@bhalash.com
 [alias]
   b = branch
-  c = commit
+  m = commit
   p = pull
   r = reset
   s = status
   u = push
   bn = rev-parse --abbrev-ref HEAD
   co = checkout
-  cm = commit -m
+  mm = commit -m
   pm = pull origin master
   branchname = rev-parse --abbrev-ref HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
-  save = "!_save() { git add .; git commit -m \"${@:-staging work in flight}\"; git push; }; _save"
+  save = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; git push; }; _save"
   squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
