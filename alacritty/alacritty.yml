@@ -22,10 +22,10 @@ colors:
     background: "#121212"
 
 window:
-  startup_mode: Maximized
-  # padding:
-  #   x: 100
-  #   y: 100
+  startup_mode: SimpleFullscreen
+  padding:
+    x: 5
+    y: 5
 
 key_bindings:
   # <3
@@ -34,7 +34,7 @@ key_bindings:
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
   - { key: N, mods: Command, action: None }
-  - { key: F, mods: Shift|Alt, action: ToggleFullscreen }
+  - { key: F, mods: Shift|Alt, action: ToggleSimpleFullscreen }
   # Command-+ does not work on keyboard
   - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
   - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
