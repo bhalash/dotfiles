@@ -5,6 +5,7 @@
     ~/.config/alacritty: alacritty
     ~/.config/nvim: vim
     ~/.config/regolith: regolith
+    ~/.git-templates: git/templates
     ~/.gitconfig: git/gitconfig
     ~/.irssi: irssi
     ~/.tigrc: tig/tigrc
@@ -12,8 +13,8 @@
     ~/.tmux: tmux
     ~/.vim: vim
     ~/.zsh: zsh
-    ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
 - shell:
   - [touch ~/.private.zsh && chmod 600 ~/.private.zsh, Create private zshrc]
   - [git submodule update --init --recursive, Install git submodules]

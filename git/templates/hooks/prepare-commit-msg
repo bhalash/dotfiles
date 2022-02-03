@@ -1,0 +1,25 @@
+#!/bin/sh
+# ______      _    __ _ _
+# |  _  \    | |  / _(_) |
+# | | | |___ | |_| |_ _| | ___  ___
+# | | | / _ \| __|  _| | |/ _ \/ __|
+# | |/ / (_) | |_| | | | |  __/\__ \
+# |___/ \___/ \__|_| |_|_|\___||___/
+#
+# Who doesn't love a snazzy ASCII header? Prepend - if found - the ticket number
+# from the current branch to the beginning of the git commit message.
+
+COMMIT_MSG_FILE=$1
+BRANCH=$(git symbolic-ref --short HEAD | tr '[:lower:]' '[:upper:]')
+TICKET=$(grep -Eio '^[A-Za-z]+-[0-9]+' <<< $BRANCH)
+
+function ticket_not_in_commit {
+  local COMMIT=$1
+  local TICKET=$2
+
+  [[ -n $TICKET ]] && [[ ! $(head -n 1 $COMMIT) =~ $TICKET ]]
+}
+
+if ticket_not_in_commit $COMMIT_MSG_FILE $TICKET; then
+  sed -i'' -e "1s/^/${TICKET} /" $COMMIT_MSG_FILE
+fi

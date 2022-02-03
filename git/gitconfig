@@ -19,7 +19,7 @@
   co = checkout
   mm = commit -m
   pm = pull origin master
-  branchname = rev-parse --abbrev-ref HEAD
+  branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
   save = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; git push; }; _save"
