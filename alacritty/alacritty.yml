@@ -1,11 +1,10 @@
-# Alacritty Config {{{
+# Alacritty Config
 #
 # See: https://github.com/alacritty/alacritty#configuration
 # See: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 # See: https://defkey.com/alacritty-0-9-shortcuts
-#
-# }}}
 
+# Font {{{
 font:
   normal:
     family: &codefont "Fira Code"
@@ -15,17 +14,33 @@ font:
   bold_italic:
     family: *codefont
     style: Italic
-  size: 12.0 # FIXME(mark 2022-01-08): want this 11.0 for Linux - how?
+  # FIXME(mark 2022-01-08): want this 11.0 for Linux - how?
+  # size: 11.0
+  # size: 12.0
+
+# }}}
+
+# Colors {{{
 
 colors:
   primary:
     background: "#121212"
 
+# }}}
+
+# Window {{{
+
 window:
-  startup_mode: SimpleFullscreen
+  # FIXME(mark 2022-01-30): change for macos
+  # startup_mode: SimpleFullscreen
+  # startup_mode: Fullscreen
   padding:
     x: 5
     y: 5
+
+# }}}
+
+# Key Bindings {{{
 
 key_bindings:
   # <3
@@ -34,11 +49,17 @@ key_bindings:
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
   - { key: N, mods: Command, action: None }
-  - { key: F, mods: Shift|Alt, action: ToggleSimpleFullscreen }
+  # FIXME(mark 2022-01-30): change for macos
+  # - { key: F, mods: Shift|Alt, action: ToggleSimpleFullscreen }
+  # - { key: F, mods: Shift|Alt, action: ToggleFullscreen }
   # Command-+ does not work on keyboard
   - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
   - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
   - { key: L, mods: Shift|Alt, action: ResetFontSize }
+
+# }}}
+
+# Shell {{{
 
 shell:
   # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
