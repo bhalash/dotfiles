@@ -1,0 +1,21 @@
+# Mac: Bigger font for the laptop, some default keybinds clash
+
+font:
+  size: 12.0
+
+window:
+  startup_mode: SimpleFullscreen
+
+key_bindings:
+  # Stop fat fingers
+  - { key: Q, mods: Command, action: None }
+  - { key: W, mods: Command, action: None }
+  - { key: N, mods: Command, action: None }
+  # Command-+ does not work on keyboard
+  - { key: F, mods: Shift|Alt, action: ToggleSimpleFullscreen }
+  - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
+  - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
+  - { key: L, mods: Shift|Alt, action: ResetFontSize }
+
+import:
+  - ~/.dotfiles/alacritty/base.yml

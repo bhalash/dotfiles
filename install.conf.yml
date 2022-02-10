@@ -1,8 +1,8 @@
-- clean: ['~']
+- clean: ['~', '~/.config/alacritty']
 - create:
   - ~/.config
+  - ~/.config/alacritty
 - link:
-    ~/.config/alacritty: alacritty
     ~/.config/nvim: vim
     ~/.config/regolith: regolith
     ~/.git-templates: git/templates
@@ -15,6 +15,14 @@
     ~/.zsh: zsh
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
+- link:
+    ~/.config/alacritty/alacritty.yml:
+      path: alacritty/linux.yml
+      if: '[[ `uname` =~ Linux ]]'
+- link:
+    ~/.config/alacritty/alacritty.yml:
+      path: alacritty/mac.yml
+      if: '[[ `uname` =~ Darwin ]]'
 - shell:
   - [touch ~/.private.zsh && chmod 600 ~/.private.zsh, Create private zshrc]
   - [git submodule update --init --recursive, Install git submodules]

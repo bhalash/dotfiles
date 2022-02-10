@@ -4,7 +4,6 @@
 # See: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 # See: https://defkey.com/alacritty-0-9-shortcuts
 
-# Font {{{
 font:
   normal:
     family: &codefont "Fira Code"
@@ -15,35 +14,19 @@ font:
     family: *codefont
     style: Italic
 
-# }}}
-
-# Colors {{{
-
 colors:
   primary:
     background: "#121212"
 
-# }}}
-
-# Window {{{
-
 window:
   # startup_mode: Fullscreen
   padding:
-    x: 20
-    y: 10
-
-# }}}
-
-# Key Bindings {{{
+    x: 0
+    y: 0
 
 key_bindings:
   # <3
   - { key: Key2, mods: Alt, chars: '€' }
-
-# }}}
-
-# Shell {{{
 
 shell:
   # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/

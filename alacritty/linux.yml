@@ -1,0 +1,13 @@
+# Linux: generally, I just want a smaller font size to fit the laptop display
+
+font:
+  size: 10.0
+
+window:
+  startup_mode: Fullscreen
+
+key_bindings:
+  - { key: F, mods: Shift|Alt, action: ToggleFullscreen }
+
+import:
+  - ~/.dotfiles/alacritty/base.yml
