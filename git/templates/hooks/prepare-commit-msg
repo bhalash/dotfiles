@@ -1,13 +1,13 @@
 #!/bin/sh
-# ______      _    __ _ _
-# |  _  \    | |  / _(_) |
-# | | | |___ | |_| |_ _| | ___  ___
-# | | | / _ \| __|  _| | |/ _ \/ __|
-# | |/ / (_) | |_| | | | |  __/\__ \
-# |___/ \___/ \__|_| |_|_|\___||___/
+#  _____ _ _
+# |  __ (_) |
+# | |  \/_| |_
+# | | __| | __|
+# | |_\ \ | |_
+#  \____/_|\__|
 #
-# Who doesn't love a snazzy ASCII header? Prepend - if found - the ticket number
-# from the current branch to the beginning of the git commit message.
+# Prepend - if found - the ticket number from the current branch to the start of
+# the git commit message.
 
 COMMIT_MSG_FILE=$1
 BRANCH=$(git symbolic-ref --short HEAD | tr '[:lower:]' '[:upper:]')

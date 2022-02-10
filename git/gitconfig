@@ -21,7 +21,7 @@
   pm = pull origin master
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
-  dammit = push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
+  dammit = !git push -u origin $(git branchname)
   save = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; git push; }; _save"
   squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
