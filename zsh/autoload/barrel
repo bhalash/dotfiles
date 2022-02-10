@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+#  _____                               _       _
+# |_   _|                             (_)     | |
+#   | |_   _ _ __   ___  ___  ___ _ __ _ _ __ | |_
+#   | | | | | '_ \ / _ \/ __|/ __| '__| | '_ \| __|
+#   | | |_| | |_) |  __/\__ \ (__| |  | | |_) | |_
+#   \_/\__, | .__/ \___||___/\___|_|  |_| .__/ \__|
+#       __/ | |                         | |
+#      |___/|_|                         |_|
+#
+# Generate index barrel file for the current folder. /Not/ recursive.
+
+function barrel {
+  local INDEX='index.ts'
+  ls -1 *.ts | grep -v $INDEX | grep -v 'spec' > $INDEX
+  sed -i '' -e "s,^,export * from './,;s,\.ts$,'\;," $INDEX
+}

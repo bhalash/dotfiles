@@ -1,4 +1,12 @@
 #!/usr/bin/env zsh
+#          _          _ _
+#         | |        | | |
+#  _______| |__   ___| | |
+# |_  / __| '_ \ / _ \ | |
+#  / /\__ \ | | |  __/ | |
+# /___|___/_| |_|\___|_|_|
+#
+# Start and exit the shell in rapid sequence to quickly gauge statup time.
 
 function benchmark {
   for i in $(seq 1 ${2:-10}); do

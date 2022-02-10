@@ -13,12 +13,16 @@ setopt short_loops
 setopt function_arg_zero
 # Resolve symlinks
 setopt chase_links
+# cd more shortly
+setopt autocd
 # No beeps
 unsetopt beep
 # Safe rm
 unsetopt rm_star_silent
 # Enable color output
 autoload colors && colors
+# Make more easily cd
+setopt autocd
 
 # }}}
 
@@ -52,7 +56,7 @@ if [[ ! -f $HISTFILE ]]; then
 fi
 
 # setopt extendedhistory # enable to log timestamp alongside command
-setopt share_history # share history fully between concurrent sessions
+# setopt share_history # share history fully between concurrent sessions
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
