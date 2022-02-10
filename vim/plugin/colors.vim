@@ -18,17 +18,20 @@ endfunction
 function! s:ayu_patch()
   call s:gitgutter_patch()
 
+  hi clear StatusLineNC
+  hi clear TabLine
+  hi clear TabLineFill
+
   hi CocUnusedHighlight guifg=#ea1730 gui=underline
   hi ColorColumn guibg=#30373d
   hi Comment guifg=#62595a
   hi LineNr guifg=#5c636b
   hi Search gui=underline guibg=none guifg=#c3ce2d
-  hi StatusLine guibg=#313740 guifg=#ffffff
-  hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#e6e1cf guibg=#14191f
 
-  hi clear StatusLineNC
-  hi clear TabLine
-  hi clear TabLineFill
+  hi StatusLine guifg=#ffffff guibg=none
+  hi StatusLineNC guifg=#606060
+
+  hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#e6e1cf guibg=#14191f
 
   let ayucolor='dark'
 endfunction
