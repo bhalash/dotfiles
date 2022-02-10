@@ -19,7 +19,8 @@ nnoremap <S-Tab> <C-W>W
 
 " Split buffer horizontally or vertically
 nnoremap <leader>v :vsp<CR>
-noremap <leader>x :sp<CR>
+nnoremap <leader>x :sp<CR>
+nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
 nnoremap <leader>sp :setlocal spell!<CR>

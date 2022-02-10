@@ -65,9 +65,9 @@ nmap <silent><leader>jp <Plug>(coc-diagnostic-prev)
 nmap <silent><leader>jn <Plug>(coc-diagnostic-next)
 
 " Code navigation
-nmap <silent><leader>jd :sp<CR><Plug>(coc-definition)
-nmap <silent><leader>jy :sp<CR><Plug>(coc-type-definition)
-nmap <silent><leader>ji :sp<CR><Plug>(coc-implementation)
+nmap <silent><leader>jd :vsp<CR><Plug>(coc-definition)
+nmap <silent><leader>jy :vsp<CR><Plug>(coc-type-definition)
+nmap <silent><leader>ji :vsp<CR><Plug>(coc-implementation)
 nmap <silent><leader>jr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
