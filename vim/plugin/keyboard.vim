@@ -5,6 +5,9 @@ let mapleader = 's'
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
+" Easier quit
+nnoremap <leader>ff :wqa<CR>
+
 " These keys are awkward to reach in combination on my keyboard
 nnoremap + "+
 vnoremap + "+
@@ -33,9 +36,6 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
-
-" Replace all lines in the file with the contents of the system clipboard
-nnoremap <silent><leader>rp gg"_dGVp
 
 " Stop * jumping to next occurrence
 nnoremap * :keepjumps normal! mi*`i<CR>

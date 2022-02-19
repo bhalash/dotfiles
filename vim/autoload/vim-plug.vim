@@ -35,7 +35,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'yuezk/vim-js'
 
 " Auto pair brackets, like
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 
 " Toggle comments
 Plug 'tpope/vim-commentary'
