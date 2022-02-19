@@ -1,7 +1,15 @@
 # vim: set ft=tigrc
+
+# TODO(mark 2022-02-14): https://github.com/nesono/nesono-bin/blob/master/tigrc
+
+# copy (yank) commid hash to clipboard
+bind generic Y @bash -c "echo -n %(commit) | pbcopy"
+
+# Theme {{{
+#
 # See: http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 # See: http://jonas.nitro.dk/tig/tigrc.5.html
-#
+
 # Area                  Foreground      Background         Options
 # ==============================================================================
 
@@ -42,3 +50,5 @@ color diff-index        14              default
 color diff-add          40              default
 color diff-del          161             default
 color diff-chunk        190             default
+
+# }}}
