@@ -8,13 +8,11 @@
 #       __/ | |                         | |
 #      |___/|_|                         |_|
 #
-# Generate barrel file for the current folder. /Not/ recursive.
+# Recursive simple rename of FOO with BAR
 
-function barrel {
-  local INDEX='index.ts'
+function fixxor {
+	local TERM=$1
+	local REPLACEMENT=$2
 
-  rg --files -g '*.ts' -g "!${INDEX}" -g '!*.spec.ts' --max-depth 1 \
-    | sort \
-    | sed -e "s,^,export * from './,;s,\.ts$,'\;," \
-    > $INDEX
+	sed -i '' -e "s,${TERM},${REPLACEMENT},g" $(rg "${TERM}" -l)
 }

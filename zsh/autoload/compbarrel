@@ -8,12 +8,12 @@
 #       __/ | |                         | |
 #      |___/|_|                         |_|
 #
-# Generate barrel file for the current folder. /Not/ recursive.
+# Generate barrel for components classes under the current folder.
 
-function barrel {
+function compbarrel {
   local INDEX='index.ts'
 
-  rg --files -g '*.ts' -g "!${INDEX}" -g '!*.spec.ts' --max-depth 1 \
+  rg --files -g '*.component.ts'  \
     | sort \
     | sed -e "s,^,export * from './,;s,\.ts$,'\;," \
     > $INDEX

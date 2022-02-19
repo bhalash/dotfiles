@@ -134,6 +134,18 @@ bindkey '^z' _fg_vim
 
 # }}}
 
+# Vim/Ripgrep {{{
+
+function vo {
+  nvim $(rg -l "$1")
+}
+
+
+# Browse for a file and open it in vim
+# alias vo='vim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
+#
+# }}}
+
 # Git {{{
 
 function gr {
@@ -158,9 +170,6 @@ function gr {
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
 export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
-
-# Browse for a file and open it in vim
-alias vo='vim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
 
 if [[ $OSTYPE =~ 'linux-gnu' ]]; then
   # TODO(mark 2022-01-04): same path on macOS?
@@ -192,6 +201,8 @@ function nvm {
 # Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
+alias gs='git status'
+alias rgl='rg -l'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias vi='nvim'
 alias vim='nvim'
