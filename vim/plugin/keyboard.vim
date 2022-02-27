@@ -6,6 +6,7 @@ let mapleader = 's'
 nnoremap <C-s> <C-a>
 
 " Easier quit
+" nnoremap <leader>w :w<CR>
 nnoremap <leader>ff :wqa<CR>
 
 " These keys are awkward to reach in combination on my keyboard
@@ -15,6 +16,11 @@ vnoremap + "+
 " Diff
 nnoremap <leader>dt :windo diffthis<CR>
 nnoremap <leader>do :windo diffoff<CR>
+
+" Page up and down with minimal fuss
+nnoremap J <PageDown>
+nnoremap K <PageUp>
+nnoremap <C-j> J
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
@@ -43,9 +49,6 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 " Yank to EOL. See: https://github.com/neovim/neovim/pull/13268
 nnoremap Y y$
 
-" Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
-nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
-
 " Yank relative path to file to system clipboard, useful for note-taking
 nnoremap <leader>yp :let @+ = expand('%')<CR>
 
@@ -61,7 +64,7 @@ nnoremap z= 1z=
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Lines<CR>
-nnoremap <leader>j :History<CR>
+" nnoremap <leader>j :History<CR>
 nnoremap <leader>/ :BLines<CR>
 
 " }}}
@@ -76,7 +79,14 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " }}}
 
-" Visual {{{
+" Search/Replace {{{
+
+" Double space on word to search for it and replace
+nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap cw caw
+
+" Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
+nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
