@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+# ______            _
+# | ___ \          | |
+# | |_/ /   _ _ __ | | ___   __ _
+# |    / | | | '_ \| |/ _ \ / _` |
+# | |\ \ |_| | | | | | (_) | (_| |
+# \_| \_\__,_|_| |_|_|\___/ \__, |
+#                            __/ |
+#                           |___/
+#
+# Create/edit jrnl entry for a running log for the given year and week thereof.
+# Functions should be obvious from name. Feel free to fork and dork.
+#
+# See: https://jrnl.sh/en/stable/
+
+YEAR=$(date +%Y)
+WEEK_OF_YEAR=$(date +%V)
+
+function no-entry {
+  local YEAR=$1
+  local WEEK=$2
+  [[ $(jrnl @runlog -and @${YEAR} -and @${WEEK} | sed -e '/^$/d' | wc -l) -eq 0 ]]
+}
+
+function new-entry {
+  local YEAR=$1
+  local WEEK=$2
+
+jrnl << EOF
+# Running Log Week #${WEEK}
+@running @log @runlog @${YEAR} @${WEEK}
+
+**Monday (CHANGEME):**
+
+**Tuesday (CHANGEME):**
+
+**Wednesday (CHANGEME):**
+
+**Thursday (CHANGEME):**
+
+**Friday (CHANGEME):**
+
+**Saturday (CHANGEME):**
+
+**Sunday (CHANGEME):**
+EOF
+}
+
+function edit-entry {
+  local YEAR=$1
+  local WEEK=$2
+  jrnl @runlog -and @${YEAR} -and @${WEEK} --edit
+}
+
+if no-entry $YEAR $WEEK_OF_YEAR; then
+  new-entry $YEAR $WEEK_OF_YEAR
+fi
+
+edit-entry $YEAR $WEEK_OF_YEAR
