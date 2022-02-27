@@ -4,10 +4,10 @@ setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=''
 
+# Wrap argument $1 in given fg and bg colours
+# See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
+# See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 function _prompt_color {
-  # Wrap argument $1 in given fg and bg colours
-  # See: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
-  # See: https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
   local CONTENT=$1
   local FG=${2:-15} # fallback white
   local BG=${3} # no fallback bg
@@ -19,6 +19,7 @@ function _prompt_color {
   fi
 }
 
+# Separate segments of the prompt, eg foo@bar or foo/bar
 function _prompt_segment_separator {
   local SEGMENT_SEPARATOR=$'\ue0b0'
   local BG=${1:-0}
@@ -26,20 +27,23 @@ function _prompt_segment_separator {
   echo $(_prompt_color $SEGMENT_SEPARATOR $FG $BG)
 }
 
+# Set username and colour for that user - red if root
 function _prompt_user {
-  local FG=15
+  local FG=15 # white
 
   if [[ $(id -u) == 0 ]]; then
-    FG=9 # red for root :p
+    FG=9 # red
   fi
 
   echo $(_prompt_color '%n@%m ' $FG)
 }
 
+# Set dir in prompt
 function _prompt_dir {
   echo $(_prompt_color '%1~ ')
 }
 
+# Set vi mode - insert or command
 function _prompt_mode {
   local MODE_NORMAL=$(_prompt_color '>')
   local MODE_INSERT=$(_prompt_color '$')

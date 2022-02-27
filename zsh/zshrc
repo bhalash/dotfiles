@@ -146,19 +146,6 @@ function vo {
 #
 # }}}
 
-# Git {{{
-
-function gr {
-  # cd to git project root folder
-  if $(git rev-parse 2> /dev/null); then
-    builtin cd "$(git rev-parse --show-toplevel)"
-  else
-    echo "cd: not a git project: ${PWD}"
-  fi
-}
-
-# }}}
-
 # ! FZF {{{
 
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
@@ -201,7 +188,6 @@ function nvm {
 # Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias gs='git status'
 alias rgl='rg -l'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias vi='nvim'
@@ -214,18 +200,19 @@ hash -d config="$HOME/.config"
 
 # }}}
 
-# Prompt {{{
-
-source "$ZSH_DIR/prompt.zsh"
-
-# }}}
-
 # fzf-tab plugin {{{
 
 # See: https://github.com/Aloxaf/fzf-tab
 if [[ -f "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh" ]]; then
   source "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh"
 fi
+
+# }}}
+
+# Other Scripts {{{
+
+source "$ZSH_DIR/prompt.zsh"
+source "$ZSH_DIR/git.zsh"
 
 # }}}
 
