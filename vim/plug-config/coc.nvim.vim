@@ -71,7 +71,8 @@ nmap <silent><leader>ji :vsp<CR><Plug>(coc-implementation)
 nmap <silent><leader>jr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" INFO(mark 2022-02-26): disabled by me, caused clash with keys I'm testing
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
