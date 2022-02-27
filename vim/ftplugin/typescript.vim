@@ -8,10 +8,10 @@ iab <buffer> it/ it('should', () => {<CR>});<Esc>k^fda
 iab <buffer> tr/ expect().toBeTruthy();<Esc>^f(a
 iab <buffer> ec/ expect().toHaveBeenCalled();<Esc>^f(a
 iab <buffer> ecw/ expect().toHaveBeenCalledWith();<Esc>@xi
-iab <buffer> eq/ expect().toEqual();<Esc>
-iab <buffer> be/ expect().toBe();<Esc>
-iab <buffer> be/ beforeEach(() => {<CR>});<Esc>O
+iab <buffer> eq/ expect().toEqual();<Esc>^f(
+iab <buffer> to/ expect().toBe();<Esc>^f(
 iab <buffer> ba/ beforeAll(() => {<CR>});<Esc>O
+iab <buffer> be/ beforeEach(() => {<CR>});<Esc>O
 iab <buffer> af/ afterEach(() => {<CR>});<Esc>O
 iab <buffer> aa/ afterAll(() => {<CR>});<Esc>O
 iab <buffer> spy/ spyOn();<Esc>^f(
