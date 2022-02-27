@@ -35,8 +35,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'yuezk/vim-js'
 
 " Auto pair brackets, like
-" Plug 'jiangmiao/auto-pairs'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 
 " Toggle comments
 Plug 'tpope/vim-commentary'
@@ -143,10 +142,14 @@ let g:goyo_linenr = 1
 
 function! s:goyo_enter()
   set norelativenumber
+  set scrolloff=999
 endfunction
 
 function! s:goyo_leave()
-  set relativenumber
+  set scrolloff=10
 endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " }}}
