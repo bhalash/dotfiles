@@ -18,9 +18,8 @@ nnoremap <leader>dt :windo diffthis<CR>
 nnoremap <leader>do :windo diffoff<CR>
 
 " Page up and down with minimal fuss
-nnoremap J <PageDown>
-nnoremap K <PageUp>
-nnoremap <C-j> J
+nnoremap <C-j> <PageDown>
+nnoremap <C-k> <PageUp>
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w

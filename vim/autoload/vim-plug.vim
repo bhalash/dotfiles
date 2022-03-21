@@ -22,7 +22,7 @@ Plug 'unblevable/quick-scope'
 " Auto CD to project root
 Plug 'airblade/vim-rooter'
 
-" Quickly change wrapping characters with cs<char>
+" Better handling of paired characters
 Plug 'tpope/vim-surround'
 
 " Case-insensitive replacement
@@ -51,10 +51,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
 " Colorschemes
-Plug 'aonemd/kuroi.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'jordwalke/flatlandia'
 Plug 'ayu-theme/ayu-vim'
+Plug 'morhetz/gruvbox'
 
 " File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
