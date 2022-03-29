@@ -55,6 +55,4 @@ autocmd! ColorScheme flatlandia call s:flatlandia_patch()
 
 " }}}
 
-colorscheme tender
-" colorscheme ayu
-" colorscheme wwdc16
+colorscheme ayu

@@ -33,7 +33,7 @@ iab <buffer> mtd method(): void {}<Esc>a
 iab <buffer> imp/ import {<CR>} from '@@';<Up><CR><Esc>
 
 " console/log
-iab <buffer> con/ console.log()<Left>
+iab <buffer> c/ console.log()<Left>
 
 " Folding good
 setlocal foldmethod=syntax

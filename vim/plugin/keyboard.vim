@@ -20,6 +20,8 @@ nnoremap <leader>do :windo diffoff<CR>
 " Page up and down with minimal fuss
 nnoremap <C-j> <PageDown>
 nnoremap <C-k> <PageUp>
+nnoremap <C-b> <NOP>
+nnoremap <C-f> <NOP>
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
@@ -48,8 +50,8 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 " Yank to EOL. See: https://github.com/neovim/neovim/pull/13268
 nnoremap Y y$
 
-" Yank relative path to file to system clipboard, useful for note-taking
-nnoremap <leader>yp :let @+ = expand('%')<CR>
+" Yank filename
+nnoremap <silent><leader>yp :let @" = expand('%')<CR>
 
 " Most of the time I'm happy with the top seplling suggestion
 nnoremap z= 1z=
@@ -82,13 +84,19 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " Double space on word to search for it and replace
 nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader><Space> :s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap cw caw
+
+vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" Yank marked up snippet to clipboard
+vnoremap <leader>y :call functions#YankSnippet()<CR>
 
 " }}}
 
