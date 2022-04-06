@@ -5,10 +5,6 @@ let mapleader = 's'
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
-" Easier quit
-" nnoremap <leader>w :w<CR>
-nnoremap <leader>ff :wqa<CR>
-
 " These keys are awkward to reach in combination on my keyboard
 nnoremap + "+
 vnoremap + "+
