@@ -35,7 +35,7 @@ nnoremap <leader>sp :setlocal spell!<CR>
 nnoremap <silent><bs> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
+nnoremap <leader>E :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
@@ -79,8 +79,9 @@ nnoremap <silent><leader>cb :set colorcolumn=
 " Search/Replace {{{
 
 " Double space on word to search for it and replace
-nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader><Space> :s/\<<C-r>=expand("<cword>")<CR>\>/
+" nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>w :s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>W :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap cw caw
 
 vnoremap <leader>m <F7> :s/$/;/<CR>
