@@ -55,6 +55,9 @@ nnoremap z= 1z=
 " Insert ; at end of line, because I am lazy, lol
 nnoremap <space><space> A;<Esc>
 
+" Quicklier change ft
+nnoremap <leader>ft :set ft=
+
 " }}}
 
 " junegunn/fzf.vim {{{
