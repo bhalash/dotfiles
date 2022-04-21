@@ -18,6 +18,7 @@ iab <buffer> spy/ spyOn();<Esc>^f(
 iab <buffer> spyp/ spyOnProperty();<Esc>^f(
 iab <buffer> spypr/ spyOnProperty().and.returnValue()w<Esc>^f(
 iab <buffer> spyr/ spyOn().and.return.Value();<Esc>^f(
+iab <buffer> ob/ expect().toBeObservable(expected$);<Esc>^f(
 
 iab <buffer> xp/ let expected$: any;<Esc>
 
