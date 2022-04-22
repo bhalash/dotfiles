@@ -52,8 +52,9 @@ nnoremap <silent><leader>yp :let @" = expand('%')<CR>
 " Most of the time I'm happy with the top seplling suggestion
 nnoremap z= 1z=
 
-" Insert ; at end of line, because I am lazy, lol
-nnoremap <space><space> A;<Esc>
+" Insert ;, at end of line, because I am lazy, lol
+nnoremap <space>; A;<Esc>
+nnoremap <space>, A,<Esc>
 
 " Quicklier change ft
 nnoremap <leader>ft :set ft=
