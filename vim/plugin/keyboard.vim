@@ -55,6 +55,7 @@ nnoremap z= 1z=
 " Insert ;, at end of line, because I am lazy, lol
 nnoremap <space>; A;<Esc>
 nnoremap <space>, A,<Esc>
+nnoremap <space>. A.<Esc>
 
 " Quicklier change ft
 nnoremap <leader>ft :set ft=
@@ -89,7 +90,6 @@ nnoremap <silent><leader>cb :set colorcolumn=
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>w :s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>W :%s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap cw caw
 
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
