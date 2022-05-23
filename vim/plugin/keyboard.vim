@@ -14,10 +14,10 @@ nnoremap <leader>dt :windo diffthis<CR>
 nnoremap <leader>do :windo diffoff<CR>
 
 " Page up and down with minimal fuss
-nnoremap <C-j> <PageDown>
-nnoremap <C-k> <PageUp>
-nnoremap <C-b> <NOP>
-nnoremap <C-f> <NOP>
+noremap <C-j> <PageDown>
+noremap <C-k> <PageUp>
+noremap <C-b> <NOP>
+noremap <C-f> <NOP>
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
@@ -53,9 +53,9 @@ nnoremap <silent><leader>yp :let @" = expand('%')<CR>
 nnoremap z= 1z=
 
 " Insert ;, at end of line, because I am lazy, lol
-nnoremap <space>; A;<Esc>
-nnoremap <space>, A,<Esc>
-nnoremap <space>. A.<Esc>
+nnoremap <leader>; A;<Esc>
+nnoremap <leader>, A,<Esc>
+nnoremap <leader>. A.<Esc>
 
 " Quicklier change ft
 nnoremap <leader>ft :set ft=
