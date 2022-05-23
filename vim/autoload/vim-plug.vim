@@ -55,7 +55,6 @@ Plug 'jacoborus/tender.vim'
 Plug 'jordwalke/flatlandia'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/everforest'
 Plug 'rafi/awesome-vim-colorschemes'
 
 " File finder
