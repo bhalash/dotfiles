@@ -40,19 +40,4 @@ autocmd! ColorScheme ayu call s:ayu_patch()
 
 " }}}
 
-" Patch: flatlandia {{{
-
-function! s:flatlandia_patch()
-    " hi StatusLineNC guibg=#4c4c4c
-  " hi VertSplit guibg=#4c4c4c
-  call s:gitgutter_patch()
-  hi LineNr guifg=#5c636b
-  hi NonText guibg=none
-  hi StatusLine guibg=none guifg=Black guibg=#a5a5a5
-endfunction
-
-autocmd! ColorScheme flatlandia call s:flatlandia_patch()
-
-" }}}
-
-colorscheme ayu
+colo ayu

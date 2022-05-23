@@ -51,11 +51,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
 " Colorschemes
-Plug 'jacoborus/tender.vim'
 Plug 'jordwalke/flatlandia'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug '4513echo/vim-colors-hatsunemiku'
 
 " File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -66,7 +66,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'antoinemadec/coc-fzf'
 
 " Syntax highlighting
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/completion-treesitter'
 
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
@@ -152,5 +153,18 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" }}}
+
+" nvim-treesitter/nvim-treesitter {{{
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "html", "lua", "scss", "typescript", "vim" },
+  highlight = {
+    enable = true,
+  }
+}
+EOF
 
 " }}}
