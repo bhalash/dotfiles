@@ -40,14 +40,12 @@ Plug 'jiangmiao/auto-pairs'
 " Toggle comments
 Plug 'tpope/vim-commentary'
 
-" git
+" git'n'shit
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'editorconfig/editorconfig-vim'
 
 " HTML expansion
-" FIXME(mark 2022-01-10): disabled, this inserts a bunch of imap keys under s-
-" prefix which fuck with normal typing. Nothing in docs about this
-" Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
 " Colorschemes
@@ -58,12 +56,11 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug '4513echo/vim-colors-hatsunemiku'
 
 " File finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Language server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'antoinemadec/coc-fzf'
 
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -100,42 +97,6 @@ let g:extra_whitespace_ignored_filetypes = ['markdown']
 
 " }}}
 
-" junegunn/fzf.vim {{{
-
-" Reuse the existing buffer when opening a file which is already open
-" See: https://github.com/junegunn/fzf.vim/issues/98
-let g:fzf_buffers_jump = 1
-
-let g:fzf_layout = { 'down': '50%' }
-" let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
-
-" Match fzf.vim to colorscheme
-" See: https://github.com/junegunn/fzf.vim/issues/581
-let g:fzf_colors = {
-      \ "fg":       ["fg", "Normal"],
-      \ "bg":       ["bg", "Normal"],
-      \ "hl":       ["fg", "IncSearch"],
-      \ "fg+":      ["fg", "CursorLine", "CursorColumn", "Normal"],
-      \ "bg+":      ["bg", "CursorLine", "CursorColumn"],
-      \ "hl+":      ["fg", "IncSearch"],
-      \ "info":     ["fg", "IncSearch"],
-      \ "border":   ["fg", "Ignore"],
-      \ "prompt":   ["fg", "Comment"],
-      \ "pointer":  ["fg", "IncSearch"],
-      \ "marker":   ["fg", "IncSearch"],
-      \ "spinner":  ["fg", "IncSearch"],
-      \ "header":   ["fg", "WildMenu"]
-      \ }
-
-" }}}
-
-" antoinemadec/coc-fzf {{{
-
-let g:coc_fzf_preview = 'up:80%'
-let g:coc_fzf_preview_fullscreen = 1
-
-" }}}
-
 " junegunn/goyo.vim {{{
 
 let g:goyo_width = 120
@@ -163,6 +124,24 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = { "html", "lua", "scss", "typescript", "vim" },
   highlight = {
     enable = true,
+  }
+}
+EOF
+
+" }}}
+
+" telescope.nvim {{{
+
+lua <<EOF
+local actions = require'telescope.actions'
+
+require'telescope'.setup {
+  defaults = {
+    mappings = {
+      i = {
+        ['<esc>'] = actions.close
+      }
+    }
   }
 }
 EOF

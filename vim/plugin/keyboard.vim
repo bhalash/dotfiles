@@ -1,5 +1,3 @@
-let mapleader = 's'
-
 " Normal {{{
 
 " Fits with tmux prefix being on C-a
@@ -62,15 +60,15 @@ nnoremap <leader>ft :set ft=
 
 " }}}
 
-" junegunn/fzf.vim {{{
+" telescope.nvim {{{
 
-" See: https://github.com/junegunn/fzf.vim#commands
-" nnoremap <leader>r :Rg<CR>
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>f :Lines<CR>
-" nnoremap <leader>j :History<CR>
-nnoremap <leader>/ :BLines<CR>
+nnoremap <leader>r <cmd>Telescope live_grep<cr>
+nnoremap <leader>q <cmd>Telescope command_history<cr>
+nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>* <cmd>Telescope grep_string<cr>
+nnoremap <leader>t <cmd>Telescope treesitter<cr>
 
 " }}}
 
@@ -90,7 +88,6 @@ nnoremap <silent><leader>cb :set colorcolumn=
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>w :s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>W :%s/\<<C-r>=expand("<cword>")<CR>\>/
-
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
@@ -112,7 +109,7 @@ nnoremap <silent><leader>g :Goyo<CR>
 
 " tpope/vim-fugitive {{{
 
-noremap <silent><leader>fb :Git blame<CR>
+nnoremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
 nnoremap <silent><leader>fs :Git status<CR>
@@ -120,11 +117,5 @@ nnoremap <silent><leader>fw :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
 " reset the file in the current buffer
 nnoremap <silent><leader>fe :!git checkout %<CR>
-
-" }}}
-
-" mattn/emmet-vim {{{
-
-let g:user_emmet_leader_key='<leader>'
 
 " }}}

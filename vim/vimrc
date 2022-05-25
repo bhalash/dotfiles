@@ -1,5 +1,7 @@
 " Core Configuration {{{
 
+let mapleader = 's'
+
 " Enable syntax highlighting
 syntax on
 
@@ -94,11 +96,5 @@ set noswapfile directory=~/.vim/.tmp,~/tmp,/tmp
 
 " Highlight the current line and set the colour
 set cul
-
-" }}}
-
-" vim-plug {{{
-
-runtime autoload/vim-plug.vim
 
 " }}}
