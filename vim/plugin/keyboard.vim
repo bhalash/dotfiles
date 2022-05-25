@@ -3,9 +3,15 @@
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
-" These keys are awkward to reach in combination on my keyboard
+" These keys are awkward to reach in combination on my stupid keyboard
 nnoremap + "+
 vnoremap + "+
+
+" Remap alternate-file to something easier on my stupid keyboard
+noremap '' <C-^>
+
+" Just think about it...
+nnoremap <silent><leader>% :source %<CR>
 
 " Diff
 nnoremap <leader>dt :windo diffthis<CR>
@@ -62,13 +68,13 @@ nnoremap <leader>ft :set ft=
 
 " telescope.nvim {{{
 
-nnoremap <leader>r <cmd>Telescope live_grep<cr>
-nnoremap <leader>q <cmd>Telescope command_history<cr>
-nnoremap <leader>p <cmd>Telescope find_files<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>/ <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <leader>* <cmd>Telescope grep_string<cr>
-nnoremap <leader>t <cmd>Telescope treesitter<cr>
+nnoremap <leader>r :Telescope live_grep<CR>
+nnoremap <leader>q :Telescope command_history<CR>
+nnoremap <leader>p :Telescope find_files<CR>
+nnoremap <leader>b :Telescope buffers<CR>
+nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
+nnoremap <leader>* :Telescope grep_string<CR>
+nnoremap <leader>t :Telescope treesitter<CR>
 
 " }}}
 
