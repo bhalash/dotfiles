@@ -74,7 +74,7 @@ nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <leader>* :Telescope grep_string<CR>
-nnoremap <leader>t :Telescope treesitter<CR>
+nnoremap <leader>n :Telescope git_bcommits<CR>
 
 " }}}
 
