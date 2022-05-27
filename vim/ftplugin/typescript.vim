@@ -1,6 +1,6 @@
 " Arrow functions
-iab <buffer> ar/ () =>
-iab <buffer> am/ () => {}<Left><Space><Left>
+iab <buffer> r/ () =>
+iab <buffer> m/ () => {}<Left><Space><Left>
 
 " Test boilerplate
 iab <buffer> de/ describe('', () => {<CR>});<Esc>k^f'a
