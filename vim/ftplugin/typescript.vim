@@ -36,6 +36,7 @@ iab <buffer> imp/ import {<CR>} from '@@';<Up><CR><Esc>
 " console/log
 iab <buffer> c/ console.log()<Left>
 
-" Folding good
-setlocal foldmethod=syntax
+" See: https://github.com/nvim-treesitter/nvim-treesitter#folding
+setlocal foldmethod=expr
+setlocal foldexpr=nvim_treesitter#foldexpr()
 setlocal foldlevelstart=99

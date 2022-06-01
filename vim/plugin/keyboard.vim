@@ -10,9 +10,6 @@ vnoremap + "+
 " Remap alternate-file to something easier on my stupid keyboard
 noremap '' <C-^>
 
-" Just think about it...
-nnoremap <silent><leader>% :source %<CR>
-
 " Diff
 nnoremap <leader>dt :windo diffthis<CR>
 nnoremap <leader>do :windo diffoff<CR>
@@ -62,7 +59,7 @@ nnoremap <leader>, A,<Esc>
 nnoremap <leader>. A.<Esc>
 
 " Quicklier change ft
-nnoremap <leader>ft :set ft=
+nnoremap <leader>tt :set ft=
 
 " }}}
 

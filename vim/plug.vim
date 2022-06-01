@@ -65,6 +65,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/completion-treesitter'
+Plug 'mracos/mermaid.vim'
 
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
