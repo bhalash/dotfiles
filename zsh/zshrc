@@ -193,6 +193,7 @@ alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias lg='lazygit'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
