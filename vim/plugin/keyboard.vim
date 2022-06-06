@@ -30,7 +30,7 @@ nnoremap <leader>x :sp<CR>
 nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
-nnoremap <leader>sp :setlocal spell!<CR>
+nnoremap <leader><leader>p :setlocal spell!<CR>
 
 " Clear highlighted results
 nnoremap <silent><bs> :nohlsearch<CR>
@@ -58,8 +58,12 @@ nnoremap <leader>; A;<Esc>
 nnoremap <leader>, A,<Esc>
 nnoremap <leader>. A.<Esc>
 
-" Quicklier change ft
+" More quicklier faster change ft
 nnoremap <leader>tt :set ft=
+
+" Pew pew
+nnoremap <leader>oo :only<CR>
+nnoremap <leader>tc :tabclose<CR>
 
 " }}}
 
@@ -106,7 +110,7 @@ vnoremap <leader>y :call functions#YankSnippet()<CR>
 
 " junegunn/goyo.vim {{{
 
-nnoremap <silent><leader>g :Goyo<CR>
+nnoremap <silent><leader><leader>g :Goyo<CR>
 
 " }}}
 

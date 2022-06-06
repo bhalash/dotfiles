@@ -70,6 +70,9 @@ nmap <silent><leader>jy :vsp<CR><Plug>(coc-type-definition)
 nmap <silent><leader>ji :vsp<CR><Plug>(coc-implementation)
 nmap <silent><leader>jr <Plug>(coc-references)
 
+" Symbol renaming.
+nmap <leader>jn <Plug>(coc-rename)
+
 " Use K to show documentation in preview window.
 " INFO(mark 2022-02-26): disabled by me, caused clash with keys I'm testing
 " nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -84,9 +87,6 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>f <Plug>(coc-format-selected)
