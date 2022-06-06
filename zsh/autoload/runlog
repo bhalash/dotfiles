@@ -8,52 +8,39 @@
 #                            __/ |
 #                           |___/
 #
-# Create/edit jrnl entry for a running log for the given year and week thereof.
-# Functions should be obvious from name. Feel free to fork and dork.
-#
-# See: https://jrnl.sh/en/stable/
+# Edit weekly running log in vim. Functions should be obvious from name. Feel
+# free to fork and dork.
 
-YEAR=$(date +%Y)
-WEEK_OF_YEAR=$(date +%V)
-
-function no-entry {
-  local YEAR=$1
-  local WEEK=$2
-  [[ $(jrnl @runlog -and @${YEAR} -and @${WEEK} | sed -e '/^$/d' | wc -l) -eq 0 ]]
-}
-
-function new-entry {
-  local YEAR=$1
-  local WEEK=$2
-
-jrnl << EOF
-# Running Log Week #${WEEK}
-@running @log @runlog @${YEAR} @${WEEK}
-
+LOG=$(cat <<EOF
 **Monday (CHANGEME):**
+
+- <strava_link>
 
 **Tuesday (CHANGEME):**
 
+- <strava_link>
+
 **Wednesday (CHANGEME):**
+
+- <strava_link>
 
 **Thursday (CHANGEME):**
 
+- <strava_link>
+
 **Friday (CHANGEME):**
+
+- <strava_link>
 
 **Saturday (CHANGEME):**
 
+- <strava_link>
+
 **Sunday (CHANGEME):**
+
+- <strava_link>
+
 EOF
-}
+)
 
-function edit-entry {
-  local YEAR=$1
-  local WEEK=$2
-  jrnl @runlog -and @${YEAR} -and @${WEEK} --edit
-}
-
-if no-entry $YEAR $WEEK_OF_YEAR; then
-  new-entry $YEAR $WEEK_OF_YEAR
-fi
-
-edit-entry $YEAR $WEEK_OF_YEAR
+echo $LOG | nvim -c 'set filetype=markdown' -
