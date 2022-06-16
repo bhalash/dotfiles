@@ -116,6 +116,7 @@ nnoremap <silent><leader><leader>g :Goyo<CR>
 
 " tpope/vim-fugitive {{{
 
+nnoremap <silent><leader>fdd :GDelete!<CR>
 nnoremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
