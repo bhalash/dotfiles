@@ -138,10 +138,25 @@ local actions = require'telescope.actions'
 
 require'telescope'.setup {
   defaults = {
+    path_display = { 'smart' },
+    layout_config = {
+      horizontal = {
+        height = 0.9,
+        width = 0.9
+      }
+    },
+    file_ignore_patterns = {
+      '^.git/'
+    },
     mappings = {
       i = {
         ['<esc>'] = actions.close
       }
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true
     }
   }
 }

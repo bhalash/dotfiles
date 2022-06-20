@@ -7,6 +7,9 @@ nnoremap <C-s> <C-a>
 nnoremap + "+
 vnoremap + "+
 
+nnoremap <leader>w :w<CR>
+nnoremap <leader>wq :wq!<CR>
+
 " Remap alternate-file to something easier on my stupid keyboard
 noremap '' <C-^>
 
@@ -76,6 +79,7 @@ nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <leader>* :Telescope grep_string<CR>
 nnoremap <leader>n :Telescope git_bcommits<CR>
+nnoremap <leader>k :Telescope keymaps<CR>
 
 " }}}
 
@@ -93,8 +97,8 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " Double space on word to search for it and replace
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader>w :s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader>W :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>l :s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>L :%s/\<<C-r>=expand("<cword>")<CR>\>/
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
