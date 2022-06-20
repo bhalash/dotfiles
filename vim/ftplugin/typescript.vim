@@ -1,6 +1,6 @@
 " Arrow functions
-iab <buffer> r/ () =>
-iab <buffer> m/ () => {}<Left><Space><Left>
+iab <buffer> arrow () =>
+iab <buffer> braced () => {}<Left><Space><Left>
 
 " Test boilerplate
 iab <buffer> de/ describe('', () => {<CR>});<Esc>k^f'a
@@ -12,7 +12,7 @@ iab <buffer> eq/ expect().toEqual();<Esc>^f(
 iab <buffer> to/ expect().toBe();<Esc>^f(
 iab <buffer> ba/ beforeAll(() => {<CR>});<Esc>O
 iab <buffer> be/ beforeEach(() => {<CR>});<Esc>O
-iab <buffer> af/ afterEach(() => {<CR>});<Esc>O
+iab <buffer> ae/ afterEach(() => {<CR>});<Esc>O
 iab <buffer> aa/ afterAll(() => {<CR>});<Esc>O
 iab <buffer> spy/ spyOn();<Esc>^f(
 iab <buffer> spyp/ spyOnProperty();<Esc>^f(
