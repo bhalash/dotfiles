@@ -7,6 +7,7 @@ function gr {
   fi
 }
 
-alias gs='git status'
+alias gc='git comit'
 alias gp='git pull'
+alias gs='git status'
 alias gu='git push'
