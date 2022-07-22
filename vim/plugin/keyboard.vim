@@ -7,9 +7,6 @@ nnoremap <C-s> <C-a>
 nnoremap + "+
 vnoremap + "+
 
-nnoremap <leader>w :w<CR>
-nnoremap <leader>wq :wq!<CR>
-
 " Remap alternate-file to something easier on my stupid keyboard
 noremap '' <C-^>
 
@@ -39,16 +36,13 @@ nnoremap <leader><leader>p :setlocal spell!<CR>
 nnoremap <silent><bs> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <leader>E :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
 
 " Stop * jumping to next occurrence
 nnoremap * :keepjumps normal! mi*`i<CR>
-
-" Yank to EOL. See: https://github.com/neovim/neovim/pull/13268
-nnoremap Y y$
 
 " Yank filename
 nnoremap <silent><leader>yp :let @" = expand('%')<CR>
@@ -64,22 +58,18 @@ nnoremap <leader>. A.<Esc>
 " More quicklier faster change ft
 nnoremap <leader>tt :set ft=
 
-" Pew pew
-nnoremap <leader>oo :only<CR>
-nnoremap <leader>tc :tabclose<CR>
-
 " }}}
 
 " telescope.nvim {{{
 
 nnoremap <leader>r :Telescope live_grep<CR>
-nnoremap <leader>q :Telescope command_history<CR>
+nnoremap <leader>' :Telescope command_history<CR>
 nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <leader>* :Telescope grep_string<CR>
 nnoremap <leader>n :Telescope git_bcommits<CR>
-nnoremap <leader>k :Telescope keymaps<CR>
+nnoremap <leader>m :Telescope keymaps<CR>
 
 " }}}
 
@@ -98,7 +88,7 @@ nnoremap <silent><leader>cb :set colorcolumn=
 " Double space on word to search for it and replace
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <leader>l :s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader>L :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader>j :%s/\<<C-r>=expand("<cword>")<CR>\>/
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
@@ -125,8 +115,9 @@ nnoremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
 nnoremap <silent><leader>fs :Git status<CR>
-nnoremap <silent><leader>fw :Gw<CR>
+nnoremap <silent><leader>ww :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
+nnoremap <silent><leader>hh :LazyGit<CR>
 " reset the file in the current buffer
 nnoremap <silent><leader>fe :!git checkout %<CR>
 

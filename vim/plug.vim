@@ -31,9 +31,6 @@ Plug 'tpope/vim-abolish'
 " Distraction-free mode
 Plug 'junegunn/goyo.vim'
 
-" JavaScript
-Plug 'yuezk/vim-js'
-
 " Auto pair brackets, like
 Plug 'jiangmiao/auto-pairs'
 
@@ -44,6 +41,7 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'kdheepak/lazygit.nvim'
 
 " HTML expansion
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
@@ -58,6 +56,7 @@ Plug '4513echo/vim-colors-hatsunemiku'
 " File finder
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 " Language server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -134,9 +133,18 @@ EOF
 " telescope.nvim {{{
 
 lua <<EOF
+
 local actions = require'telescope.actions'
 
 require'telescope'.setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
   defaults = {
     path_display = { 'smart' },
     layout_config = {
@@ -160,6 +168,9 @@ require'telescope'.setup {
     }
   }
 }
+
+require('telescope').load_extension('fzf')
+
 EOF
 
 " }}}

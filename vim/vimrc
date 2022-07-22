@@ -1,6 +1,6 @@
 " Core Configuration {{{
 
-let mapleader = 's'
+let mapleader = ' '
 
 " Enable syntax highlighting
 syntax on
@@ -32,15 +32,10 @@ set laststatus=2
 " Accept instructions from the top n lines of a file
 set modelines=1
 
-" Stop annoying problem on OS X
-" Arrow keybinds cause a status popup to appear when I tab back to vim
-set shortmess=a
-
 " Disable visual bell. It's annoying as crap in git bash on Windows
 set visualbell t_vb=
 
 " More informative statusbar
-" TODO(mark 2021-12-29): document this and expand
 set statusline=\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
 
 " }}}
