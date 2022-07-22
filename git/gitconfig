@@ -15,11 +15,11 @@
   p = pull
   r = reset
   s = status
+  t = stash
   u = push
   bn = rev-parse --abbrev-ref HEAD
   mm = commit -m
   pm = pull origin master
-  st = stash
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)

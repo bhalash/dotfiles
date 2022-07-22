@@ -6,8 +6,3 @@ function gr {
     echo "cd: not a git project: ${PWD}"
   fi
 }
-
-alias gc='git comit'
-alias gp='git pull'
-alias gs='git status'
-alias gu='git push'

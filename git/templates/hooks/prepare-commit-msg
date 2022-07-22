@@ -6,7 +6,7 @@
 # | |_\ \ | |_
 #  \____/_|\__|
 #
-# Prepend - if found - the ticket number from the current branch to the start of
+# Append - if found - the ticket number from the current branch to the start of
 # the git commit message.
 
 COMMIT_MSG_FILE=$1
@@ -21,5 +21,5 @@ function ticket_not_in_commit {
 }
 
 if ticket_not_in_commit $COMMIT_MSG_FILE $TICKET; then
-  sed -i'' -e "1s/^/${TICKET} /" $COMMIT_MSG_FILE
+  echo $TICKET >> $COMMIT_MSG_FILE
 fi
