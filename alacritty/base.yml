@@ -16,7 +16,7 @@ font:
 
 colors:
   primary:
-    # background: "#121212"
+    background: "#121212"
     foreground: "#ffffff"
 
 window:
