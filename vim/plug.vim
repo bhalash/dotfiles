@@ -56,7 +56,6 @@ Plug '4513echo/vim-colors-hatsunemiku'
 " File finder
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 " Language server
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -137,14 +136,6 @@ lua <<EOF
 local actions = require'telescope.actions'
 
 require'telescope'.setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = "smart_case",
-    }
-  },
   defaults = {
     path_display = { 'smart' },
     layout_config = {
@@ -164,12 +155,13 @@ require'telescope'.setup {
   },
   pickers = {
     find_files = {
+      find_command = { "rg", "--files", "--hidden", "--follow"},
       hidden = true
     }
   }
 }
 
-require('telescope').load_extension('fzf')
+require('telescope')
 
 EOF
 
