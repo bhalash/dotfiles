@@ -1,6 +1,5 @@
 " Arrow functions
-iab <buffer> arr () =>
-iab <buffer> bra () => {}<Left><Space><Left>
+iab <buffer> ()) () =>
 
 " Test boilerplate
 iab <buffer> de/ describe('', () => {<CR>});<Esc>k^f'a
@@ -34,7 +33,7 @@ iab <buffer> mtd method(): void {}<Esc>a
 iab <buffer> imp/ import {<CR>} from '@@';<Up><CR><Esc>
 
 " console/log
-iab <buffer> ccc console.log()<Left>
+iab <buffer> c/ console.log()<Left>
 
 " See: https://github.com/nvim-treesitter/nvim-treesitter#folding
 " setlocal foldmethod=expr

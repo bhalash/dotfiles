@@ -87,9 +87,12 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " Double space on word to search for it and replace
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader>l :s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <leader>j :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap s :s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap S :%s/\<<C-r>=expand("<cword>")<CR>\>/
 vnoremap <leader>m <F7> :s/$/;/<CR>
+
+" nnoremap S  :%s,
+" nnoremap s  :s,
 
 " Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
 nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
@@ -117,7 +120,7 @@ nnoremap <silent><leader>fu :Git push<CR>
 nnoremap <silent><leader>fs :Git status<CR>
 nnoremap <silent><leader>ww :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
-nnoremap <silent><leader>hh :LazyGit<CR>
+nnoremap <silent><leader>jj :LazyGit<CR>
 " reset the file in the current buffer
 nnoremap <silent><leader>fe :!git checkout %<CR>
 
