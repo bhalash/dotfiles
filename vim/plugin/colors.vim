@@ -1,7 +1,5 @@
 set termguicolors background=dark
 
-" GitGutter Patch {{{
-
 function! s:gitgutter_patch()
   hi clear LineNr
   hi clear SignColumn
@@ -11,11 +9,7 @@ function! s:gitgutter_patch()
   hi GitGutterDelete        cterm=none  ctermbg=none  ctermfg=196  gui=none  guifg=#ff0000 guibg=none
 endfunction
 
-" }}}
-
-" Patch: ayu {{{
-
-function! s:ayu_patch()
+function! s:theme_patch()
   call s:gitgutter_patch()
 
   hi clear StatusLineNC
@@ -34,10 +28,10 @@ function! s:ayu_patch()
   hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#e6e1cf guibg=#14191f
 
   let ayucolor='dark'
+  hi MatchParen gui=underline guifg=#ff9800 guibg=none
+  hi NonText guibg=#26292c
 endfunction
 
-autocmd! ColorScheme ayu call s:ayu_patch()
+autocmd! ColorScheme flatlandia call s:theme_patch()
 
-" }}}
-
-colo ayu
+colo flatlandia
