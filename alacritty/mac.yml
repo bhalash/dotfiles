@@ -16,6 +16,8 @@ key_bindings:
   - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
   - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
   - { key: L, mods: Shift|Alt, action: ResetFontSize }
+  - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
+
 
 import:
   - ~/.dotfiles/alacritty/base.yml
