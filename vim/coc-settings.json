@@ -1,3 +1,4 @@
 {
-  "tsserver.disableAutomaticTypeAcquisition": false
+  "tsserver.disableAutomaticTypeAcquisition": false,
+  "suggest.noselect": true
 }
