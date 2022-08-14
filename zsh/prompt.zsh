@@ -50,9 +50,20 @@ function _prompt_mode {
   echo "${${KEYMAP/vicmd/${MODE_NORMAL}}/(main|viins)/${MODE_INSERT}}"
 }
 
+# Set block ▮ or | cursor, depending upon mode
+# See: https://unix.stackexchange.com/a/433321
+function _mode_cursor {
+  if [[ ${KEYMAP} == vicmd ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+
 zle-line-init zle-keymap-select() {
   # Draw prompt
   PROMPT="$(_prompt_user)$(_prompt_dir)$(_prompt_mode) %b"
   RPROMPT=""
+  _mode_cursor
   zle reset-prompt
 }
