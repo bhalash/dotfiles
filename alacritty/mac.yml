@@ -16,7 +16,17 @@ key_bindings:
   - { key: J, mods: Shift|Alt, action: DecreaseFontSize }
   - { key: K, mods: Shift|Alt, action: IncreaseFontSize }
   - { key: L, mods: Shift|Alt, action: ResetFontSize }
+  # Open second window
+  # TODO(mark 2022-08-14): This needs Configuration with Tmux IMO
   - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
+  # For Tmux, macOS inserts special characters using the alt key.
+  # https://github.com/alacritty/alacritty/issues/93
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
+  - { key: O, mods: Alt, chars: "\x1bo" }
+
 
 
 import:
