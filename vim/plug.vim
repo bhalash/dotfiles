@@ -47,11 +47,9 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'alvan/vim-closetag', { 'for': ['html'] }
 
 " Colorschemes
-Plug 'jordwalke/flatlandia'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug '4513echo/vim-colors-hatsunemiku'
 
 " File finder
 Plug 'nvim-lua/plenary.nvim'

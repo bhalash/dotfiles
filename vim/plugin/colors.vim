@@ -27,11 +27,12 @@ function! s:theme_patch()
 
   hi TabLineSel cterm=reverse ctermfg=15 ctermbg=242 gui=reverse guifg=#e6e1cf guibg=#14191f
 
-  let ayucolor='dark'
-  hi MatchParen gui=underline guifg=#ff9800 guibg=none
-  hi NonText guibg=#26292c
+  " let ayucolor='dark'
+  " hi MatchParen gui=underline guifg=#ff9800 guibg=none
+  " hi NonText guibg=#26292c
+  hi CursorLine guibg=#303030
 endfunction
 
-autocmd! ColorScheme flatlandia call s:theme_patch()
+autocmd! ColorScheme happy_hacking call s:theme_patch()
 
-colo flatlandia
+colo happy_hacking
