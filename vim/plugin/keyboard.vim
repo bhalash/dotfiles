@@ -50,10 +50,8 @@ nnoremap <silent><leader>yp :let @" = expand('%')<CR>
 " Most of the time I'm happy with the top seplling suggestion
 nnoremap z= 1z=
 
-" Insert ;, at end of line, because I am lazy, lol
-nnoremap <leader>; A;<Esc>
-nnoremap <leader>, A,<Esc>
-nnoremap <leader>. A.<Esc>
+" Insert one character at end of line, because I am lazy, lol
+nnoremap <silent>n :exec "normal A".nr2char(getchar())."\e"<CR>
 
 " More quicklier faster change ft
 nnoremap <leader>tt :set ft=
