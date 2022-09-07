@@ -50,6 +50,7 @@ Plug 'alvan/vim-closetag', { 'for': ['html'] }
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'EdenEast/nightfox.nvim'
 
 " File finder
 Plug 'nvim-lua/plenary.nvim'
@@ -62,6 +63,12 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'mracos/mermaid.vim'
+
+" Show indentation
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Display marks within the buffer
 Plug 'kshenoy/vim-signature'
@@ -99,18 +106,6 @@ let g:extra_whitespace_ignored_filetypes = ['markdown']
 let g:goyo_width = 120
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
-
-function! s:goyo_enter()
-  set norelativenumber
-  set scrolloff=999
-endfunction
-
-function! s:goyo_leave()
-  set scrolloff=10
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " }}}
 
