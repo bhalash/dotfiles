@@ -5,6 +5,9 @@
 # See: https://defkey.com/alacritty-0-9-shortcuts
 # See: https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/
 
+env:
+  TERM: xterm-256color
+
 hide_when_typing: true
 
 font:
@@ -19,8 +22,7 @@ font:
 
 colors:
   primary:
-    background: "#121212"
-    foreground: "#ffffff"
+    background: "0x2a2e38"
 
 window:
   # startup_mode: Fullscreen
