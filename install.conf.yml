@@ -26,4 +26,4 @@
 - shell:
   - [touch ~/.private.zsh && chmod 600 ~/.private.zsh, Create private zshrc]
   - [git submodule update --init --recursive, Install git submodules]
-  - [nvim --headless +PlugInstall +qall, Install vim/nvim plugins]
+  - [nvim --headless +PackerInstall +qall, Install vim/nvim plugins]

@@ -8,6 +8,3 @@
 [submodule "fzf-tab"]
   path = fzf-tab
   url = git@github.com:Aloxaf/fzf-tab.git
-[submodule "vim/.packer"]
-	path = vim/.packer
-	url = git@github.com:wbthomason/packer.nvim.git

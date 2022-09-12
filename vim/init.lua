@@ -1,8 +1,5 @@
 -- Core Configuration {{{
 
--- So I can keep third-party extensions here
-vim.o.packpath = vim.o.runtimepath
-
 -- Leaduhr
 vim.g.mapleader = ' '
 
@@ -27,10 +24,10 @@ vim.o.fileformats = 'unix,dos'
 vim.o.autoindent = true
 
 -- Don't wrap lines outside of words
-vim.wo.nowrap = true
+vim.o.wrap = false
 vim.o.breakindent = true
 vim.o.linebreak = true
-vim.wo.nolist = true
+vim.o.list = false
 
 -- Enable ruler for column count
 vim.o.ruler = true
