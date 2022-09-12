@@ -43,8 +43,7 @@ vim.o.visualbell = true
 vim.wo.t_vb = ''
 
 -- More informative statusbar
--- vim.o.statusline = '\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P'
--- set statusline=\ %<%f\ %h%m%r\ %y%=%{v:register}\ %-14.(%l,%c%V%)\ %P
+vim.o.statusline = [[%<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 
 -- }}}
 
