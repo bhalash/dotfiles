@@ -62,8 +62,6 @@ vim.o.lazyredraw = true
 -- Highlight the current line and set the colour
 vim.o.cul = true
 
--- set cul
-
 -- }}}
 
 -- Completion and Indentation {{{
