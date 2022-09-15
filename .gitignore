@@ -10,7 +10,6 @@ tmux/resurrect/
 vim/.netrwhist
 vim/.tmp
 vim/.undo
-vim/extensions
 vim/session
 vim/spell
 /*.vim
