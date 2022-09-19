@@ -22,7 +22,7 @@ font:
 
 colors:
   primary:
-    background: '0x1b2b34'
+    background: '0x2c2e34'
 
 window:
   # startup_mode: Fullscreen

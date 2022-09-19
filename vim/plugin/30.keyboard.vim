@@ -103,9 +103,9 @@ vnoremap <leader>y :call functions#YankSnippet()<CR>
 
 " }}}
 
-" junegunn/goyo.vim {{{
+" zen-mode.nvim {{{
 
-nnoremap <silent><leader><leader>g :Goyo<CR>
+nnoremap <silent><leader><leader>g :ZenMode<CR>
 
 " }}}
 

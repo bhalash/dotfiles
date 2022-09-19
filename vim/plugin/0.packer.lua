@@ -46,7 +46,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-abolish'
 
   -- Distraction-free mode
-  use 'junegunn/goyo.vim'
+  use 'folke/zen-mode.nvim'
 
   -- Auto pair brackets, like
   use 'jiangmiao/auto-pairs'
@@ -128,14 +128,6 @@ vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
 
 -- }}}
 
--- junegunn/goyo.vim {{{
-
-vim.g.goyo_width = 120
-vim.g.goyo_height = '100%'
-vim.g.goyo_linenr = 1
-
--- }}}
-
 -- nvim-treesitter/nvim-treesitter {{{
 
 require'nvim-treesitter.configs'.setup {
@@ -184,5 +176,16 @@ require 'telescope'
 -- lualine.nvim {{{
 
 require'lualine'.setup()
+
+-- }}}
+
+-- zen-mode.nvim {{{
+
+require'zen-mode'.setup {
+  window = {
+    width = 120,
+    height = 1,
+  },
+}
 
 -- }}}
