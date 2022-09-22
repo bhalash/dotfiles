@@ -21,12 +21,12 @@ key_bindings:
   - { key: N, mods: Command, action: None }
   - { key: F, mods: Command|Shift, action: ToggleSimpleFullscreen }
   - { key: Plus, mods: Command, action: IncreaseFontSize }
-  # Open second window
-  # TODO(mark 2022-08-14): This needs Configuration with Tmux IMO
-  - { key: N, mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] } }
   # For Tmux, macOS inserts special characters using the alt key.
   # https://github.com/alacritty/alacritty/issues/93
+  - { key: A, mods: Alt, chars: "\x1ba" }
+  - { key: D, mods: Alt, chars: "\x1bd" }
   - { key: F, mods: Alt, chars: "\x1bf" }
+  - { key: G, mods: Alt, chars: "\x1bg" }
   - { key: H, mods: Alt, chars: "\x1bh" }
   - { key: J, mods: Alt, chars: "\x1bj" }
   - { key: K, mods: Alt, chars: "\x1bk" }
@@ -35,6 +35,7 @@ key_bindings:
   - { key: O, mods: Alt, chars: "\x1bo" }
   - { key: S, mods: Alt, chars: "\x1bs" }
   - { key: V, mods: Alt, chars: "\x1bv" }
+  - { key: W, mods: Alt, chars: "\x1bw" }
 
 import:
   - ~/.dotfiles/alacritty/base.yml
