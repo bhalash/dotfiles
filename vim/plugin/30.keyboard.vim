@@ -30,13 +30,13 @@ nnoremap <leader>x :sp<CR>
 nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
-nnoremap <leader><leader>p :setlocal spell!<CR>
+nnoremap <leader>s :setlocal spell!<CR>
 
 " Clear highlighted results
-nnoremap <silent><bs> :nohlsearch<CR>
+nnoremap <silent><BS> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
+nnoremap <leader>S :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
@@ -45,13 +45,13 @@ nnoremap <leader>yy :%y+<CR>
 nnoremap * :keepjumps normal! mi*`i<CR>
 
 " Yank filename
-nnoremap <silent><leader>yp :let @" = expand('%')<CR>
+nnoremap <silent><leader>h :let @" = expand('%')<CR>
 
 " Most of the time I'm happy with the top seplling suggestion
 nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol
-nnoremap <silent>n :exec "normal A".nr2char(getchar())."\e"<CR>
+nnoremap <silent><CR> :exec "normal A".nr2char(getchar())."\e"<CR>
 
 " More quicklier faster change ft
 nnoremap <leader>tt :set ft=
@@ -61,7 +61,7 @@ nnoremap <leader>tt :set ft=
 " telescope.nvim {{{
 
 nnoremap <leader>r :Telescope live_grep<CR>
-nnoremap <leader>' :Telescope command_history<CR>
+nnoremap <leader>q :Telescope command_history<CR>
 nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
@@ -89,12 +89,6 @@ nnoremap s :s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap S :%s/\<<C-r>=expand("<cword>")<CR>\>/
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
-" nnoremap S  :%s,
-" nnoremap s  :s,
-
-" Remove fucky quote characters in snippets pasted from Microsoft Word/HTML
-nnoremap <silent><leader>cj :%s/[‘’]/'/e \| %s/[“”]/"/e<CR>
-
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
@@ -105,7 +99,7 @@ vnoremap <leader>y :call functions#YankSnippet()<CR>
 
 " zen-mode.nvim {{{
 
-nnoremap <silent><leader><leader>g :ZenMode<CR>
+nnoremap <silent><leader>z :ZenMode<CR>
 
 " }}}
 
@@ -116,9 +110,8 @@ nnoremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
 nnoremap <silent><leader>fs :Git status<CR>
-nnoremap <silent><leader>ww :Gw<CR>
+nnoremap <silent><leader>w :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
-nnoremap <silent><leader>jj :LazyGit<CR>
 " reset the file in the current buffer
 nnoremap <silent><leader>fe :!git checkout %<CR>
 

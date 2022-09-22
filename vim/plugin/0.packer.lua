@@ -58,7 +58,6 @@ require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
   use 'tpope/vim-fugitive'
   use 'editorconfig/editorconfig-vim'
-  use 'kdheepak/lazygit.nvim'
 
   -- HTML expansion
   use { 'alvan/vim-closetag', ft = 'html' }
