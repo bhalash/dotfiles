@@ -217,11 +217,9 @@ source "$ZSH_DIR/git.zsh"
 
 # }}}
 
-# Zsh: Private Configuration {{{
+# Zsh: Local/Private Configuration {{{
 
-if [[ -f "$HOME/.private.zsh" ]]; then
-  source "$HOME/.private.zsh"
-fi
+source "${HOME}/.local.zsh" 2>&1 > /dev/null
 
 # }}}
 

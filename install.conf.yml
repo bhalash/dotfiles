@@ -14,6 +14,7 @@
     ~/.vim: vim
     ~/.zsh: zsh
     ~/.zshenv: zsh/zshenv
+    ~/.taskrc: taskwarrior/taskrc
     ~/.zshrc: zsh/zshrc
 - link:
     ~/.config/alacritty/alacritty.yml:
@@ -24,6 +25,7 @@
       path: alacritty/mac.yml
       if: '[[ `uname` =~ Darwin ]]'
 - shell:
-  - [touch ~/.private.zsh && chmod 600 ~/.private.zsh, Create private zshrc]
+  - [touch ~/.local.zsh && chmod 600 ~/.local.zsh, Create private zshrc]
+  - [touch ~/.local.taskrc && chmod 600 ~/.local.taskrc, Create private taskrc]
   - [git submodule update --init --recursive, Install git submodules]
-  - [nvim --headless +PackerInstall +qall, Install vim/nvim plugins]
+  - [nvim --headless +PackerInstall +qall, Install nvim plugins]
