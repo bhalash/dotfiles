@@ -83,7 +83,6 @@ require('packer').startup(function(use)
   -- Show indentation
   use 'lukas-reineke/indent-blankline.nvim'
 
-  -- Plug 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
   -- Display marks within the buffer
@@ -130,7 +129,7 @@ vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
 -- nvim-treesitter/nvim-treesitter {{{
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "html", "lua", "scss", "typescript", "vim" },
+  ensure_installed = { "html", "java", "lua", "scss", "typescript", "vim" },
   highlight = {
     enable = true,
   }

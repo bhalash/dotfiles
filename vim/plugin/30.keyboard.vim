@@ -17,8 +17,8 @@ nnoremap <leader>do :windo diffoff<CR>
 " Page up and down with minimal fuss
 noremap <C-j> <PageDown>
 noremap <C-k> <PageUp>
-noremap <C-b> <NOP>
-noremap <C-f> <NOP>
+" noremap <C-b> <NOP>
+" noremap <C-f> <NOP>
 
 " Use <Tab> to cycle through buffers in tab
 nnoremap <Tab> <C-W>w
@@ -36,7 +36,7 @@ nnoremap <leader>s :setlocal spell!<CR>
 nnoremap <silent><BS> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <leader>S :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR>
+nnoremap <silent><BS><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>
@@ -51,7 +51,8 @@ nnoremap <silent><leader>h :let @" = expand('%')<CR>
 nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol
-nnoremap <silent><CR> :exec "normal A".nr2char(getchar())."\e"<CR>
+" nnoremap <silent><CR> :exec "normal A".nr2char(getchar())."\e"<CR>
+" nnoremap <CR> <Esc>:
 
 " More quicklier faster change ft
 nnoremap <leader>tt :set ft=
@@ -110,6 +111,7 @@ nnoremap <silent><leader>fb :Git blame<CR>
 nnoremap <silent><leader>fp :Git pull<CR>
 nnoremap <silent><leader>fu :Git push<CR>
 nnoremap <silent><leader>fs :Git status<CR>
+nnoremap <silent><leader>fv :Gvdiffsplit<CR>
 nnoremap <silent><leader>w :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
 " reset the file in the current buffer

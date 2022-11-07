@@ -40,10 +40,14 @@ vim.o.modelines = 1
 
 -- Disable visual bell. It's annoying as crap in git bash on Windows
 vim.o.visualbell = true
-vim.wo.t_vb = ''
 
--- More informative statusbar
+-- Statusbar - good if you don't want to use a plugin.
 vim.o.statusline = [[%<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
+
+-- TODO(mark 2022-11-07): This doesn't work with nvim-lualine
+-- See: https://github.com/nvim-lualine/lualine.nvim/issues/853
+-- See: https://github.com/neovim/neovim/pull/20582
+-- vim.o.cmdheight = 0
 
 -- }}}
 
