@@ -20,7 +20,9 @@ key_bindings:
   - { key: W, mods: Command, action: None }
   - { key: N, mods: Command, action: None }
   - { key: F, mods: Command, action: ToggleSimpleFullscreen }
-  - { key: Plus, mods: Command, action: IncreaseFontSize }
+  - { key: J, mods: Control|Shift, action: DecreaseFontSize }
+  - { key: K, mods: Control|Shift, action: IncreaseFontSize }
+  - { key: L, mods: Control|Shift, action: ResetFontSize }
   # For Tmux, macOS inserts special characters using the alt key.
   # See: https://github.com/alacritty/alacritty/issues/93
   - { key: A, mods: Alt, chars: "\x1ba" }
