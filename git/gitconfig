@@ -32,3 +32,5 @@
   rebase = true
 [includeIf "gitdir:~/Work/"]
   path = ~/Work/.gitconfig
+[init]
+	defaultBranch = main
