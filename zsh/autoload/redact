@@ -6,7 +6,7 @@
 # | |  |  __/ |  | |
 # |_|   \___|_|  |_|
 #
-# React sensitive tokens and passwords in passed input.
+# Redact sensitive tokens and passwords in passed input.
 # See: https://regex101.com/r/0axM8q/1
 
 function redact {
