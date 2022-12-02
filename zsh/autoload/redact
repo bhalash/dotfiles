@@ -11,6 +11,6 @@
 
 function redact {
   while read -r DATA; do
-    echo $DATA | perl -pe 's/(((?<=secret)|(?<=password)).*?(\t|\s))(.*)/$1$2*****/'
+    echo $DATA | perl -pe 's/(((?<=secret)|(?<=password)).*?(\t|\s|=))(.*)/$1$2*****/'
   done
 }
