@@ -106,15 +106,16 @@ nnoremap <silent><leader>z :ZenMode<CR>
 
 " tpope/vim-fugitive {{{
 
-nnoremap <silent><leader>fdd :GDelete!<CR>
-nnoremap <silent><leader>fb :Git blame<CR>
-nnoremap <silent><leader>fp :Git pull<CR>
-nnoremap <silent><leader>fu :Git push<CR>
-nnoremap <silent><leader>fs :Git status<CR>
-nnoremap <silent><leader>fv :Gvdiffsplit<CR>
+nnoremap <silent><leader>gdd :GDelete!<CR>
+nnoremap <silent><leader>gb :Git blame<CR>
+nnoremap <silent><leader>gp :Git pull<CR>
+nnoremap <silent><leader>gu :Git push<CR>
+nnoremap <silent><leader>gs :Git status<CR>
+nnoremap <silent><leader>cv :Gvdiffsplit<CR>
+nnoremap <silent><leader>gw :Gw<CR>
+nnoremap <silent><leader>gc :Git commit<CR>
 nnoremap <silent><leader>w :Gw<CR>
-nnoremap <silent><leader>fc :Git commit<CR>
 " reset the file in the current buffer
-nnoremap <silent><leader>fe :!git checkout %<CR>
+nnoremap <silent><leader>ge :!git checkout %<CR>
 
 " }}}

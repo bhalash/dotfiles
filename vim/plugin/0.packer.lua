@@ -66,6 +66,7 @@ require('packer').startup(function(use)
   use 'ayu-theme/ayu-vim'
   use 'morhetz/gruvbox'
   use 'rafi/awesome-vim-colorschemes'
+  use 'projekt0n/github-nvim-theme'
   use 'EdenEast/nightfox.nvim'
 
   -- File finder
