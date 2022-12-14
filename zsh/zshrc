@@ -212,14 +212,14 @@ fi
 
 # Other Scripts {{{
 
-source "$ZSH_DIR/prompt.zsh"
-source "$ZSH_DIR/git.zsh"
+[[ -f "$ZSH_DIR/prompt.zsh" ]] && source "$ZSH_DIR/prompt.zsh"
+[[ -f "$ZSH_DIR/git.zsh" ]] && source "$ZSH_DIR/git.zsh"
 
 # }}}
 
 # Zsh: Local/Private Configuration {{{
 
-source "${HOME}/.local.zsh" 2>&1 > /dev/null
+[[ -f "$HOME/.local.zsh" ]] && source "$HOME/.local.zsh"
 
 # }}}
 
