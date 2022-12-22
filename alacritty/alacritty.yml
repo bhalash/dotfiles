@@ -17,14 +17,6 @@ font:
 
 # }}}
 
-# Colors {{{
-
-colors:
-  primary:
-    background: "#121212"
-
-# }}}
-
 # Window {{{
 
 window:

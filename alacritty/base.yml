@@ -12,7 +12,7 @@ hide_when_typing: true
 
 font:
   normal:
-    family: &codefont "Fira Code"
+    family: &codefont "FiraCode Nerd Font"
   bold:
     family: *codefont
     style: SemiBold

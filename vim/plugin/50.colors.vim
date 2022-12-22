@@ -36,6 +36,7 @@ endfunction
 autocmd! ColorScheme ayu call s:ayu_patch()
 autocmd! ColorScheme terafox call s:terafox_patch()
 
-colo terafox
+colo happy_hacking
+" colo terafox
 " colo ayu
 " colo sonokai
