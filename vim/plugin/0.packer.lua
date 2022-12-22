@@ -32,6 +32,7 @@ require('packer').startup(function(use)
   use 'christoomey/vim-sort-motion'
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-indent'
+  use 'ggandor/leap.nvim'
 
   -- Better FfTt action
   use 'unblevable/quick-scope'
@@ -186,5 +187,8 @@ require'zen-mode'.setup {
     height = 1,
   },
 }
+
+-- ggandor/leap.nvim
+require('leap').add_default_mappings()
 
 -- }}}

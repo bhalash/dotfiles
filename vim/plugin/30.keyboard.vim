@@ -84,10 +84,11 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " Search/Replace {{{
 
+" NOTE(mark 2022-12-22): Disabled for leap.vim
 " Double space on word to search for it and replace
 " nnoremap <Space><Space> :%s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap s :s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap S :%s/\<<C-r>=expand("<cword>")<CR>\>/
+" nnoremap s :s/\<<C-r>=expand("<cword>")<CR>\>/
+" nnoremap S :%s/\<<C-r>=expand("<cword>")<CR>\>/
 vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Take visual selection and search with it
