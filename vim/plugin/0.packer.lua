@@ -43,14 +43,11 @@ require('packer').startup(function(use)
   -- Better handling of paired characters
   use 'tpope/vim-surround'
 
-  -- Case-insensitive replacement
-  use 'tpope/vim-abolish'
-
   -- Distraction-free mode
   use 'folke/zen-mode.nvim'
 
   -- Auto pair brackets, like
-  use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
 
   -- Toggle comments
   use 'tpope/vim-commentary'
@@ -67,7 +64,6 @@ require('packer').startup(function(use)
   use 'ayu-theme/ayu-vim'
   use 'morhetz/gruvbox'
   use 'rafi/awesome-vim-colorschemes'
-  use 'projekt0n/github-nvim-theme'
   use 'EdenEast/nightfox.nvim'
 
   -- File finder
@@ -80,7 +76,6 @@ require('packer').startup(function(use)
   -- Syntax highlighting
   use { 'nvim-treesitter/nvim-treesitter', config = 'vim.cmd([[TSUpdate]])' }
   use 'nvim-treesitter/completion-treesitter'
-  use 'mracos/mermaid.vim'
 
   -- Show indentation
   use 'lukas-reineke/indent-blankline.nvim'
@@ -188,7 +183,16 @@ require'zen-mode'.setup {
   },
 }
 
--- ggandor/leap.nvim
+-- ggandor/leap.nvim {{{
+
 require('leap').add_default_mappings()
+
+-- }}}
+
+-- https://github.com/windwp/nvim-autopairs {{{
+
+require('nvim-autopairs').setup {}
+
+-- }}}
 
 -- }}}
