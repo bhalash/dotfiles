@@ -3,14 +3,15 @@ set termguicolors
 function! s:ayu_patch()
   hi clear LineNr
   hi clear SignColumn
+  hi clear NonText
+  hi clear StatusLineNC
+  hi clear TabLine
+  hi clear TabLineFill
+
   hi GitGutterAdd           cterm=none  ctermbg=none  ctermfg=46   gui=none  guifg=#00ff00 guibg=none
   hi GitGutterChange        cterm=none  ctermbg=none  ctermfg=45   gui=none  guifg=#00d7ff guibg=none
   hi GitGutterChangeDelete  cterm=none  ctermbg=none  ctermfg=11   gui=none  guifg=#ffff00 guibg=none
   hi GitGutterDelete        cterm=none  ctermbg=none  ctermfg=196  gui=none  guifg=#ff0000 guibg=none
-
-  hi clear StatusLineNC
-  hi clear TabLine
-  hi clear TabLineFill
 
   hi CocUnusedHighlight guifg=#ea1730 gui=underline
   hi ColorColumn guibg=#30373d
@@ -36,7 +37,5 @@ endfunction
 autocmd! ColorScheme ayu call s:ayu_patch()
 autocmd! ColorScheme terafox call s:terafox_patch()
 
-colo happy_hacking
-" colo terafox
-" colo ayu
-" colo sonokai
+colorscheme gotham
+hi clear NonText

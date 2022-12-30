@@ -6,10 +6,6 @@ font:
 window:
   startup_mode: Fullscreen
 
-colors:
-  primary:
-    background: "#292929"
-
 key_bindings:
   - { key: F, mods: Shift|Control, action: ToggleFullscreen }
 
