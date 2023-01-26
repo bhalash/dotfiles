@@ -202,6 +202,16 @@ function ng {
 
 # }}}
 
+# Lazyload: Angular CLI {{{
+
+function ng {
+  unfunction "$0"
+  source <(ng completion script)
+  ng "$@"
+}
+
+# }}}
+
 # Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
