@@ -39,4 +39,4 @@ include dark-gray-blue-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
-include ~/.local.taskrc
+include ~/.config/dotfiles/taskrc
