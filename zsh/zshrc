@@ -166,9 +166,7 @@ fi
 
 # }}}
 
-# Lazyload: NVM {{{
-
-# Lazy load nvm and default node version
+# Lazyload {{{
 # See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
 
 function nvm {
@@ -181,6 +179,13 @@ function nvm {
     echo "nvm is not installed" >&2
     return 1
   fi
+}
+
+function ng {
+  unfunction "$0"
+  # Load Angular CLI autocompletion.
+  source <(ng completion script)
+  ng "$@"
 }
 
 # }}}
