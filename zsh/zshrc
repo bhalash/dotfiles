@@ -26,6 +26,18 @@ setopt autocd
 
 # }}}
 
+# XDG {{{
+
+if [[ ! -v XDG_CONFIG_HOME ]]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+if [[ ! -v XDG_DATA_HOME ]]; then
+  export XDG_DATA_HOME="$HOME/.local/share"
+fi
+
+# }}}
+
 # Zsh: Autoload {{{
 
 fpath=($fpath "${ZSH_DIR}/autoload")
@@ -202,7 +214,7 @@ alias lg='lazygit'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
-hash -d config="$HOME/.config"
+hash -d config="$XDG_CONFIG_HOME/dotfiles"
 
 # }}}
 
@@ -224,7 +236,7 @@ fi
 
 # Zsh: Local/Private Configuration {{{
 
-[[ -f "$HOME/.local.zsh" ]] && source "$HOME/.local.zsh"
+[[ -f "$XDG_CONFIG_HOME/dotfiles/zsh" ]] && source "$XDG_CONFIG_HOME/dotfiles/zsh"
 
 # }}}
 
