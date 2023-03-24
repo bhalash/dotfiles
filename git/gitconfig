@@ -17,6 +17,7 @@
   s = status
   t = stash
   u = push
+  y = cherry-pick
   bn = rev-parse --abbrev-ref HEAD
   mm = commit -m
   pm = pull origin master
