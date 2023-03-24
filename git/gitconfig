@@ -9,6 +9,7 @@
   name = Mark Grealish
   email = mark@bhalash.com
 [alias]
+  a = add
   b = branch
   c = checkout
   m = commit
