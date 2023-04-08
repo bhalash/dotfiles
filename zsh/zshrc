@@ -211,6 +211,8 @@ alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 alias lg='lazygit'
+alias t='task'
+alias tt='task n'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
