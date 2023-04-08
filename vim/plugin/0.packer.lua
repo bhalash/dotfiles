@@ -187,6 +187,9 @@ require'zen-mode'.setup {
 
 require('leap').add_default_mappings()
 
+vim.keymap.set('n', '-', '<Plug>(leap-forward)', {})
+vim.keymap.set('n', '_', '<Plug>(leap-backward)', {})
+
 -- }}}
 
 -- https://github.com/windwp/nvim-autopairs {{{
