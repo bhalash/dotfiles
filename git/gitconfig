@@ -20,12 +20,12 @@
   u = push
   y = cherry-pick
   bn = rev-parse --abbrev-ref HEAD
+  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   mm = commit -m
   pm = pull origin master
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)
-  mmm = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
