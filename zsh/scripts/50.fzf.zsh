@@ -13,6 +13,7 @@ if [[ $OSTYPE =~ 'linux-gnu' ]]; then
   source '/usr/share/doc/fzf/examples/completion.zsh'
 fi
 
+# FIXME(mark 2023-05-02): Disabled because this is slow as hell in WSL.
 # if [[ -f "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh" ]]; then
 #   source "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh"
 # fi

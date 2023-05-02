@@ -192,7 +192,7 @@ hash -d config="$XDG_CONFIG_HOME/dotfiles"
 
 # Other Scripts {{{
 
-for SCRIPT in scripts/*.zsh; do
+for SCRIPT in $ZSH_DIR/scripts/*.zsh; do
   source $SCRIPT
 done
 
