@@ -1,5 +1,3 @@
-# zmodload zsh/zprofuto
-
 # TODO(mark 2022-01-05): have a read of flowchart to split stuff:
 # See: https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html
 
@@ -7,6 +5,10 @@
 
 # TODO(mark 2021-12-29): look at setting more options? Some cool stuff in there
 # See: https://linux.die.net/man/1/zshoptions
+
+# Enable startup profiling
+# See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html
+# zmodload zsh/zprof
 
 # Permit shorter loop syntax
 setopt short_loops
@@ -21,8 +23,6 @@ unsetopt beep
 unsetopt rm_star_silent
 # Enable color output
 autoload colors && colors
-# Make more easily cd
-setopt autocd
 
 # }}}
 
@@ -38,13 +38,13 @@ fi
 
 # }}}
 
-# Zsh: Autoload {{{
+# ZSH: Autoload {{{
 
 fpath=($fpath "${ZSH_DIR}/autoload")
 
 # }}}
 
-# ! Zsh: Plugins {{{
+# ZSH: Plugins {{{
 
 # TODO(mark 2021-12-30): find more plugins? Seems to be some interesting
 # options out there, but eh, installing stuff. I'm /very/ happy with my zsh
@@ -52,12 +52,11 @@ fpath=($fpath "${ZSH_DIR}/autoload")
 
 # plugins=(git history-substring-search)
 # NOTE(mark 2021-12-30): https://github.com/unixorn/awesome-zsh-plugins
-
 autoload -Uz compinit && compinit -C
 
 # }}}
 
-# Zsh: History {{{
+# ZSH: History {{{
 
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=5000 # history written to file
@@ -112,21 +111,6 @@ fi
 
 # }}}
 
-# Widget: bind cd to <tab> {{{
-
-function _tab_cd {
-  if [[ $#BUFFER == 0 ]]; then
-    fzf-cd-widget
-  else
-    zle expand-or-complete
-  fi
-}
-
-zle -N _tab_cd
-bindkey '^I' _tab_cd
-
-# }}}
-
 # Widget: Foreground/Background Vim {{{
 
 # Stolen from Reddit, this is the Zsh equivalent of:
@@ -151,30 +135,6 @@ bindkey '^z' _fg_vim
 function vo {
   nvim $(rg -l "$1")
 }
-
-
-# Browse for a file and open it in vim
-# alias vo='vim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
-#
-# }}}
-
-# ! FZF {{{
-
-[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
-
-# TODO(mark 2021-12-29): this whole section needs revision
-# See: https://github.com/junegunn/fzf#environment-variables
-
-# TODO(mark 2021-12-29): needs revision
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden -g "!.git/*" -g "!.gitkeep"'
-export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
-export FZF_ALT_C_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
-
-if [[ $OSTYPE =~ 'linux-gnu' ]]; then
-  # TODO(mark 2022-01-04): same path on macOS?
-  source '/usr/share/doc/fzf/examples/key-bindings.zsh'
-  source '/usr/share/doc/fzf/examples/completion.zsh'
-fi
 
 # }}}
 
@@ -215,14 +175,14 @@ function ng {
 # Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias rgl='rg -l'
+alias t='task'
+alias ta='task add'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
+alias tree='tree --gitignore'
+alias tt='task n'
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias lg='lazygit'
-alias t='task'
-alias tt='task n'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
@@ -230,19 +190,11 @@ hash -d config="$XDG_CONFIG_HOME/dotfiles"
 
 # }}}
 
-# fzf-tab plugin {{{
-
-# See: https://github.com/Aloxaf/fzf-tab
-if [[ -f "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh" ]]; then
-  source "$DOTFILES_DIR/fzf-tab/fzf-tab.plugin.zsh"
-fi
-
-# }}}
-
 # Other Scripts {{{
 
-[[ -f "$ZSH_DIR/prompt.zsh" ]] && source "$ZSH_DIR/prompt.zsh"
-[[ -f "$ZSH_DIR/git.zsh" ]] && source "$ZSH_DIR/git.zsh"
+for SCRIPT in scripts/*.zsh; do
+  source $SCRIPT
+done
 
 # }}}
 
