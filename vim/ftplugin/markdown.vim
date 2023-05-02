@@ -8,5 +8,5 @@ let b:coc_suggest_disable = 1
 iab <buffer> -/ - <<Esc>"+pA>
 iab <buffer> ++ <Esc>"+pA
 
-iab <buffer> <expr> m/ strftime('*' . $USER . ' %Y-%m-%d:*')
-iab <buffer> <expr> d/ strftime('**NOTE ' . $USER . ' %Y-%m-%d:**')
+iab <buffer> <expr> m/ strftime($USER . ' %Y-%m-%d:')
+iab <buffer> <expr> d/ strftime('%Y-%m-%d')

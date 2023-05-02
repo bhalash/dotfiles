@@ -36,7 +36,7 @@ nnoremap <leader>s :setlocal spell!<CR>
 nnoremap <silent><BS> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
-nnoremap <silent><BS><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>
+nnoremap <silent><leader><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>
 
 " Yank the whole file to system clipboard
 nnoremap <leader>yy :%y+<CR>

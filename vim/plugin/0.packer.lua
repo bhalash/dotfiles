@@ -128,7 +128,8 @@ vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "html", "java", "lua", "scss", "typescript", "vim" },
   highlight = {
-    enable = true,
+    enabled = true,
+    -- additional_vim_regex_highlighting = true,
   }
 }
 
@@ -185,10 +186,10 @@ require'zen-mode'.setup {
 
 -- ggandor/leap.nvim {{{
 
-require('leap').add_default_mappings()
-
-vim.keymap.set('n', '-', '<Plug>(leap-forward)', {})
-vim.keymap.set('n', '_', '<Plug>(leap-backward)', {})
+-- TODO(mark 2023-04-11): Enable this, it doesn't work well with my flow.
+-- require('leap').add_default_mappings()
+-- vim.keymap.set('n', '-', '<Plug>(leap-forward)', {})
+-- vim.keymap.set('n', '_', '<Plug>(leap-backward)', {})
 
 -- }}}
 
