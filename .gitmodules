@@ -5,6 +5,6 @@
   path = dotbot
   url = git@github.com:anishathalye/dotbot.git
   ignore = dirty
-[submodule "fzf-tab"]
-  path = fzf-tab
-  url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "fzf-tab-completion"]
+  path = fzf-tab-completion
+  url = git@github.com:lincheney/fzf-tab-completion.git
