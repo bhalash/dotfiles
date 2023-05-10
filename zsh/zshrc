@@ -187,6 +187,7 @@ alias vimdiff='nvim -d'
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
 hash -d config="$XDG_CONFIG_HOME/dotfiles"
+hash -d passwords="${HOME}/.password-store"
 
 # }}}
 
