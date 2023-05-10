@@ -2,8 +2,8 @@ set termguicolors
 
 let g:ayucolor='dark'
 
-" colorscheme ayu
-colorscheme tender
+colorscheme ayu
+" colorscheme tender
 
 hi clear NonText
 hi clear LineNr
