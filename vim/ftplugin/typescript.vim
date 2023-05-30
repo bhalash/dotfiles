@@ -35,6 +35,9 @@ iab <buffer> imp/ import {<CR>} from '@@';<Up><CR><Esc>
 " console/log
 iab <buffer> c/ console.log()<Left>
 
+" Fucking arrow fucking function
+iab <buffer> g/ () =>
+
 " See: https://github.com/nvim-treesitter/nvim-treesitter#folding
 " setlocal foldmethod=expr
 " setlocal foldexpr=nvim_treesitter#foldexpr()

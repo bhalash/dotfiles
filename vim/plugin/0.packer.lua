@@ -62,9 +62,8 @@ require('packer').startup(function(use)
 
   -- Colorschemes
   use 'ayu-theme/ayu-vim'
-  use 'morhetz/gruvbox'
   use 'rafi/awesome-vim-colorschemes'
-  use 'EdenEast/nightfox.nvim'
+  use 'projekt0n/github-nvim-theme'
 
   -- File finder
   use 'nvim-lua/plenary.nvim'
@@ -78,7 +77,7 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/completion-treesitter'
 
   -- Show indentation
-  use 'lukas-reineke/indent-blankline.nvim'
+  -- use 'lukas-reineke/indent-blankline.nvim'
 
   use 'kyazdani42/nvim-web-devicons'
 
@@ -87,11 +86,6 @@ require('packer').startup(function(use)
 
   -- Session management
   use 'tpope/vim-obsession'
-
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -166,12 +160,6 @@ require'telescope'.setup {
 }
 
 require 'telescope'
-
--- }}}
-
--- lualine.nvim {{{
-
-require'lualine'.setup()
 
 -- }}}
 

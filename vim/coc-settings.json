@@ -1,4 +1,5 @@
 {
   "tsserver.disableAutomaticTypeAcquisition": false,
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "angular.enable-strict-mode-prompt": false
 }
