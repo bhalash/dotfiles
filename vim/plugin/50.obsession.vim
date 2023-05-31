@@ -32,4 +32,4 @@ augroup sourcesession
   \ endif
 augroup END
 
-nnoremap <silent><leader><leader>' :call ToggleObsession()<CR>
+nnoremap <silent><leader>i :call ToggleObsession()<CR>

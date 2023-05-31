@@ -32,7 +32,9 @@ require('packer').startup(function(use)
   use 'christoomey/vim-sort-motion'
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-indent'
-  use 'ggandor/leap.nvim'
+
+  -- INFO(mark 2023-05-31): Disable when I figurea good way to integrate.
+  -- use 'ggandor/leap.nvim'
 
   -- Better FfTt action
   use 'unblevable/quick-scope'
