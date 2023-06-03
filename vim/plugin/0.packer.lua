@@ -33,9 +33,6 @@ require('packer').startup(function(use)
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-indent'
 
-  -- INFO(mark 2023-05-31): Disable when I figurea good way to integrate.
-  -- use 'ggandor/leap.nvim'
-
   -- Better FfTt action
   use 'unblevable/quick-scope'
 
@@ -173,15 +170,6 @@ require'zen-mode'.setup {
     height = 1,
   },
 }
-
--- ggandor/leap.nvim {{{
-
--- TODO(mark 2023-04-11): Enable this, it doesn't work well with my flow.
--- require('leap').add_default_mappings()
--- vim.keymap.set('n', '-', '<Plug>(leap-forward)', {})
--- vim.keymap.set('n', '_', '<Plug>(leap-backward)', {})
-
--- }}}
 
 -- https://github.com/windwp/nvim-autopairs {{{
 

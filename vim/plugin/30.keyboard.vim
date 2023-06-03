@@ -1,5 +1,8 @@
 " Normal {{{
 
+" Leaduhr
+let mapleader = ' '
+
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
@@ -7,32 +10,25 @@ nnoremap <C-s> <C-a>
 nnoremap + "+
 vnoremap + "+
 
-" Remap alternate-file to something easier on my stupid keyboard
+" Remap alternate-file to '', easier on my stupid keyboard
 noremap '' <C-^>
 
-" Diff
-nnoremap <leader>dt :windo diffthis<CR>
-nnoremap <leader>do :windo diffoff<CR>
-
-" Page up and down with minimal fuss
+" Page up and down on nav keys
 noremap <C-j> <PageDown>
 noremap <C-k> <PageUp>
-" noremap <C-b> <NOP>
-" noremap <C-f> <NOP>
 
-" Use <Tab> to cycle through buffers in tab
-nnoremap <Tab> <C-W>w
-nnoremap <S-Tab> <C-W>W
+" Use <CR> to cycle forwards through buffers in tab
+nnoremap <CR> <C-W>w
 
-" Split buffer horizontally or vertically
+" Split buffer horizontally or vertically or tabically
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>x :sp<CR>
-nnoremap <leader>t :tabedit %<CR>
+" nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
-nnoremap <leader>s :setlocal spell!<CR>
+nnoremap <leader>a :setlocal spell!<CR>
 
-" Clear highlighted results
+" Clear highlighted search easier
 nnoremap <silent><BS> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
@@ -52,10 +48,9 @@ nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol
 " nnoremap <silent><CR> :exec "normal A".nr2char(getchar())."\e"<CR>
-" nnoremap <CR> <Esc>:
 
 " More quicklier faster change ft
-nnoremap <leader>tt :set ft=
+" nnoremap <leader>tt :set ft=
 
 " }}}
 
@@ -84,9 +79,12 @@ nnoremap <silent><leader>cb :set colorcolumn=
 
 " Search/Replace {{{
 
-" Double space on word to search for it and replace
-nnoremap s :s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap S :%s/\<<C-r>=expand("<cword>")<CR>\>/
+" Stolen from Reddit
+nnoremap <Tab> ciw
+
+" Replace all instances of word on line
+nnoremap <S-Tab> :s/\<<C-r>=expand("<cword>")<CR>\>/
+" nnoremap <C-Tab> :%s/\<<C-r>=expand("<cword>")<CR>\>/
 " vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Take visual selection and search with it

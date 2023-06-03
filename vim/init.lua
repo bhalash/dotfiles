@@ -1,8 +1,5 @@
 -- Core Configuration {{{
 
--- Leaduhr
-vim.g.mapleader = ' '
-
 -- Enable syntax highlighting
 -- syntax on
 
@@ -43,11 +40,6 @@ vim.o.visualbell = true
 
 -- Statusbar - good if you don't want to use a plugin.
 vim.o.statusline = [[%<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
-
--- TODO(mark 2022-11-07): This doesn't work with nvim-lualine
--- See: https://github.com/nvim-lualine/lualine.nvim/issues/853
--- See: https://github.com/neovim/neovim/pull/20582
--- vim.o.cmdheight = 0
 
 -- }}}
 

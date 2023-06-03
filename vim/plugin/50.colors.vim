@@ -2,12 +2,12 @@ set termguicolors
 
 let g:ayucolor='dark'
 
-colorscheme github_dark
+colorscheme sonokai
 
 hi clear NonText
 hi clear LineNr
-hi clear SignColumn
 hi clear NonText
+hi clear SignColumn
 hi clear StatusLineNC
 hi clear TabLine
 hi clear TabLineFill
