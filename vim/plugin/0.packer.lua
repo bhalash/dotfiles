@@ -136,29 +136,64 @@ require'telescope'.setup {
   defaults = {
     path_display = { 'smart' },
     layout_config = {
-      horizontal = {
-        height = 0.9,
-        width = 0.9
-      }
+      -- horizontal = {
+      --   height = 0.7,
+      --   width = 0.7
+      -- }
     },
     file_ignore_patterns = {
       '^.git/'
     },
     mappings = {
       i = {
-        ['<esc>'] = actions.close
-      }
+        ['<esc>'] = actions.close,
+        -- Open all files in a new tab with <CR>; will jump to an existing
+        -- buffer if file is already open.
+        -- TODO(mark 2023-06-03): Keep an eye on this one; do I like it?
+        -- ["<CR>"] = actions.select_tab_drop,
+      },
     },
   },
   pickers = {
+    current_buffer_fuzzy_find = {
+      layout_config = {
+        horizontal = {
+          height = 0.5,
+          width = 0.5
+        }
+      },
+    },
+    oldfiles = {
+      theme = 'dropdown',
+      previewer = false,
+      mappings = {
+        i = {
+          ["<CR>"] = actions.select_tab_drop,
+        },
+      },
+    },
+    buffers = {
+      theme = 'dropdown',
+      previewer = false,
+      show_all_buffers = true,
+      mappings = {
+        i = {
+          ["<CR>"] = actions.select_tab_drop,
+        },
+      },
+    },
+    colorscheme = {
+      theme = 'dropdown',
+      enable_preview = true,
+    },
     find_files = {
+      theme = 'dropdown',
+      previewer = false,
       find_command = { "rg", "--files", "--hidden", "--follow"},
-      hidden = true
+      hidden = true,
     }
   }
 }
-
-require 'telescope'
 
 -- }}}
 
@@ -171,10 +206,10 @@ require'zen-mode'.setup {
   },
 }
 
+-- }}}
+
 -- https://github.com/windwp/nvim-autopairs {{{
 
 require('nvim-autopairs').setup {}
-
--- }}}
 
 -- }}}

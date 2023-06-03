@@ -6,10 +6,6 @@ let mapleader = ' '
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
-" These keys are awkward to reach in combination on my stupid keyboard
-nnoremap + "+
-vnoremap + "+
-
 " Remap alternate-file to '', easier on my stupid keyboard
 noremap '' <C-^>
 
@@ -17,13 +13,14 @@ noremap '' <C-^>
 noremap <C-j> <PageDown>
 noremap <C-k> <PageUp>
 
-" Use <CR> to cycle forwards through buffers in tab
-nnoremap <CR> <C-W>w
+" Use <Tab> to cycle through buffers in tab
+nnoremap <Tab> <C-W>w
+nnoremap <S-Tab> <C-W>W
 
 " Split buffer horizontally or vertically or tabically
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>x :sp<CR>
-" nnoremap <leader>t :tabedit %<CR>
+nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
 nnoremap <leader>a :setlocal spell!<CR>
@@ -34,14 +31,8 @@ nnoremap <silent><BS> :nohlsearch<CR>
 " Strip all trailing whitespace from the file
 nnoremap <silent><leader><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>
 
-" Yank the whole file to system clipboard
-nnoremap <leader>yy :%y+<CR>
-
 " Stop * jumping to next occurrence
 nnoremap * :keepjumps normal! mi*`i<CR>
-
-" Yank filename
-nnoremap <silent><leader>h :let @" = expand('%')<CR>
 
 " Most of the time I'm happy with the top seplling suggestion
 nnoremap z= 1z=
@@ -56,40 +47,48 @@ nnoremap z= 1z=
 
 " telescope.nvim {{{
 
+nnoremap <leader>p :Telescope find_files<CR>
+nnoremap <leader>o :Telescope oldfiles<CR>
 nnoremap <leader>r :Telescope live_grep<CR>
 nnoremap <leader>q :Telescope command_history<CR>
-nnoremap <leader>p :Telescope find_files<CR>
 nnoremap <leader>b :Telescope buffers<CR>
 nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
-nnoremap <leader>* :Telescope grep_string<CR>
+nnoremap <leader>k :Telescope keymaps<CR>
 nnoremap <leader>n :Telescope git_bcommits<CR>
-nnoremap <leader>m :Telescope keymaps<CR>
+nnoremap <leader>, :Telescope colorscheme<CR>
 
 " }}}
 
 " Colorcolumn {{{
 
-nnoremap <silent><leader>cc :set colorcolumn=<CR>
-nnoremap <silent><leader>ce :set colorcolumn=80<CR>
+nnoremap <silent><leader>ce :set colorcolumn=<CR>
+nnoremap <silent><leader>cc :set colorcolumn=80<CR>
 nnoremap <silent><leader>co :set colorcolumn=120<CR>
 nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
-nnoremap <silent><leader>cb :set colorcolumn=
 
 " }}}
 
 " Search/Replace {{{
 
 " Stolen from Reddit
-nnoremap <Tab> ciw
-
+nnoremap <CR> ciw
 " Replace all instances of word on line
-nnoremap <S-Tab> :s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <leader><CR> :s/\<<C-r>=expand("<cword>")<CR>\>/
 " nnoremap <C-Tab> :%s/\<<C-r>=expand("<cword>")<CR>\>/
-" vnoremap <leader>m <F7> :s/$/;/<CR>
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" }}}
+
+" Yank {{{
+
+" These keys are awkward to reach in combination on my stupid keyboard
+nnoremap + "+
+vnoremap + "+
+
+" Yank the whole file to system clipboard
+nnoremap <leader>yy :%y+<CR>
 " Yank marked up snippet to clipboard
 vnoremap <leader>y :call functions#YankSnippet()<CR>
 
