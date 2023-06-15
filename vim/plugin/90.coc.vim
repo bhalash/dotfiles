@@ -72,7 +72,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 nnoremap <leader>F gg<Plug>(coc-format-selected)G

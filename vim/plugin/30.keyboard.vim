@@ -45,20 +45,6 @@ nnoremap z= 1z=
 
 " }}}
 
-" telescope.nvim {{{
-
-nnoremap <leader>p :Telescope find_files<CR>
-nnoremap <leader>o :Telescope oldfiles<CR>
-nnoremap <leader>r :Telescope live_grep<CR>
-nnoremap <leader>q :Telescope command_history<CR>
-nnoremap <leader>b :Telescope buffers<CR>
-nnoremap <leader>/ :Telescope current_buffer_fuzzy_find<CR>
-nnoremap <leader>k :Telescope keymaps<CR>
-nnoremap <leader>n :Telescope git_bcommits<CR>
-nnoremap <leader>, :Telescope colorscheme<CR>
-
-" }}}
-
 " Colorcolumn {{{
 
 nnoremap <silent><leader>ce :set colorcolumn=<CR>
