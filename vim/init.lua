@@ -3,6 +3,9 @@
 -- Enable syntax highlighting
 -- syntax on
 
+-- Disable mouse interactions >_>
+vim.o.mouse = ''
+
 -- Backspace will delete
 vim.o.backspace = 'indent,eol,start'
 
