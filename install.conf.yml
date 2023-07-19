@@ -6,7 +6,6 @@
   - ~/.config/task
 - link:
     ~/.config/nvim: vim
-    ~/.config/regolith: regolith
     ~/.config/task/taskrc: taskwarrior/taskrc
     ~/.git-templates: git/templates
     ~/.gitconfig: git/gitconfig
