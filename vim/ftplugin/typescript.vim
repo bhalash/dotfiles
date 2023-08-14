@@ -2,15 +2,19 @@
 iab <buffer> ()) () =>
 
 " Test boilerplate
-iab <buffer> de/ describe('', () => {<CR>});<Esc>k^f'a
-iab <buffer> it/ it('should', () => {<CR>});<Esc>k^fda
+" iab <buffer> de/ describe('', () => {<CR>});<Esc>k^f'a
+" iab <buffer> it/ it('should', () => {<CR>});<Esc>k^fda
+iab <buffer> de/ describe('', () => {<CR><Esc>k^f'a
+iab <buffer> it/ it('should', () => {<CR><Esc>k^fda
+iab <buffer> be/ beforeEach(() => {<CR><Esc>O
+
 iab <buffer> tr/ expect().toBeTruthy();<Esc>^f(a
 iab <buffer> ec/ expect().toHaveBeenCalled();<Esc>^f(a
 iab <buffer> ecw/ expect().toHaveBeenCalledWith();<Esc>@xi
 iab <buffer> eq/ expect().toEqual();<Esc>^f(
 iab <buffer> to/ expect().toBe();<Esc>^f(
 iab <buffer> ba/ beforeAll(() => {<CR>});<Esc>O
-iab <buffer> be/ beforeEach(() => {<CR>});<Esc>O
+" iab <buffer> be/ beforeEach(() => {<CR>});<Esc>O
 iab <buffer> ae/ afterEach(() => {<CR>});<Esc>O
 iab <buffer> aa/ afterAll(() => {<CR>});<Esc>O
 iab <buffer> spy/ spyOn();<Esc>^f(
