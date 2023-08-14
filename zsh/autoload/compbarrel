@@ -13,7 +13,7 @@
 function compbarrel {
   local INDEX='index.ts'
 
-  rg --files -g '*.component.ts'  \
+  rg --files -g '*.component.ts' -g '*.pipe.ts' -g '*.directive.ts'  --max-depth 2 \
     | sort \
     | sed -e "s,^,export * from './,;s,\.ts$,'\;," \
     > $INDEX
