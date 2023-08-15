@@ -56,11 +56,14 @@ nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
 " Search/Replace {{{
 
-" Stolen from Reddit
+" Stolen from Reddit - replace word under cursor
 nnoremap <CR> ciw
-" Replace all instances of word on line
-nnoremap <leader><CR> :s/\<<C-r>=expand("<cword>")<CR>\>/
-" nnoremap <C-Tab> :%s/\<<C-r>=expand("<cword>")<CR>\>/
+
+" Replace all instances of word in file
+nnoremap <leader>s :%s,\<<C-r>=expand("<cword>")<CR>\>,
+nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
+
+nnoremap <leader>S :%s,
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>

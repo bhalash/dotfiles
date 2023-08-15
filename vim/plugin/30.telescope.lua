@@ -73,7 +73,7 @@ require'telescope'.setup {
       },
     },
     find_files = {
-      theme = 'dropdown',
+      theme = 'ivy',
       previewer = false,
       find_command = {
         "rg",

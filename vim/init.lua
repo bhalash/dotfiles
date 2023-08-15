@@ -101,7 +101,7 @@ vim.o.undolevels = 2000
 
 -- Keep a persistent backup file
 vim.o.undofile = true
-vim.o.undodir = '.undo,~/.tmp,/tmp'
+vim.o.undodir = '~.undo,~/.tmp,/tmp'
 
 -- Disable swap files, but set directories in case they *are* turned on
 vim.o.swapfile = false
