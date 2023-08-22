@@ -60,10 +60,9 @@ nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 nnoremap <CR> ciw
 
 " Replace all instances of word in file
-nnoremap <leader>s :%s,\<<C-r>=expand("<cword>")<CR>\>,
+nnoremap <leader>S :%s,\<<C-r>=expand("<cword>")<CR>\>,
 nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
-
-nnoremap <leader>S :%s,
+nnoremap <leader>s :%s,
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
