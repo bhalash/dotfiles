@@ -29,7 +29,7 @@ require('packer').startup(function(use)
   use 'wellle/targets.vim'
 
   -- Provide motion keyed to gs<motion> to sort stuff
-  use 'christoomey/vim-sort-motion'
+  use 'bhalash/vim-sort-motion'
   use 'kana/vim-textobj-user'
   use 'kana/vim-textobj-indent'
 
@@ -49,7 +49,7 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
 
   -- Toggle comments
-  use 'tpope/vim-commentary'
+  use 'numToStr/Comment.nvim'
 
   -- git'n'shit
   use 'airblade/vim-gitgutter'
@@ -119,7 +119,14 @@ vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
 -- nvim-treesitter/nvim-treesitter {{{
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "html", "java", "lua", "scss", "typescript", "vim" },
+  ensure_installed = {
+    'bash',
+    'html',
+    'lua',
+    'scss',
+    'typescript',
+    'vim',
+  },
   highlight = {
     enabled = true,
     -- additional_vim_regex_highlighting = true,
@@ -141,6 +148,19 @@ require'zen-mode'.setup {
 
 -- https://github.com/windwp/nvim-autopairs {{{
 
-require('nvim-autopairs').setup {}
+require'nvim-autopairs'.setup {
+  -- enable_abbr = true,
+  disable_in_visualblock = true
+}
+
+-- }}}
+
+-- https://github.com/numToStr/Comment.nvim {{{
+
+require'Comment'.setup {
+  ft = {
+    typescript = {'//%s', '/**%s*/'}
+  }
+}
 
 -- }}}

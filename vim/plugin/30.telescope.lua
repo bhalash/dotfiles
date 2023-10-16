@@ -12,7 +12,8 @@ require'telescope'.setup {
     }
   },
   defaults = {
-    path_display = { 'smart' },
+    -- TODO(workmark 2023-10-16): Come back and play with this.
+    -- path_display = { 'smart' },
     file_ignore_patterns = {
       '^.git/',
       '*.xlf' -- angular i18n files
@@ -74,7 +75,9 @@ require'telescope'.setup {
     },
     find_files = {
       theme = 'ivy',
-      previewer = false,
+      previewer = true,
+      -- TODO(workmark 2023-10-16): Come back and play with this.
+      path_display = 'truncate',
       find_command = {
         "rg",
         "--files",
