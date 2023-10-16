@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-html',
       \ 'coc-json',
+      \ 'coc-sumneko-lua',
       \ 'coc-marketplace',
       \ 'coc-tsserver'
       \ ]
