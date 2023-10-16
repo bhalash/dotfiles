@@ -25,16 +25,17 @@
   mm = commit -m
   pm = pull origin master
   uf = push --force
+  pf = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)
-  squish = "!_squish() { git reset $(git merge-base ${1:-develop} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
+  squish = "!_squish() { git reset $(git merge-base ${1:-master} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
   untracked = ls-files --others --exclude-standard
 [pull]
   rebase = true
 [includeIf "gitdir/i:**/Work/"]
-	path = ~/Work/.gitconfig
+  path = ~/Work/.gitconfig
 [init]
-	defaultBranch = main
+  defaultBranch = main
