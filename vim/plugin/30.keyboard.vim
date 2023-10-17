@@ -23,7 +23,7 @@ nnoremap <leader>x :sp<CR>
 nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
-nnoremap <leader>a :setlocal spell!<CR>
+" nnoremap <leader>a :setlocal spell!<CR>
 
 " Clear highlighted search easier
 nnoremap <silent><BS> :nohlsearch<CR>
@@ -38,7 +38,7 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol
-" nnoremap <silent><CR> :exec "normal A".nr2char(getchar())."\e"<CR>
+" nnoremap <silent><CR> :exec "normal A" . nr2char(getchar()) . "\e"<CR>
 
 " More quicklier faster change ft
 " nnoremap <leader>tt :set ft=
@@ -54,15 +54,20 @@ nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
 " }}}
 
-" Search/Replace {{{
+" Find & Replace {{{
 
 " Stolen from Reddit - replace word under cursor
 nnoremap <CR> ciw
 
-" Replace all instances of word in file
-nnoremap <leader>S :%s,\<<C-r>=expand("<cword>")<CR>\>,
+" Replace all instances of word in file or selection
 nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
-nnoremap <leader>s :%s,
+vnoremap <leader><CR> :s,\<<C-r>=expand("<cword>")<CR>\>,
+
+nnoremap <leader>A :%s,\<<C-r>=expand("<cword>")<CR>\>,
+nnoremap <leader>a :%s,
+vnoremap <leader>a :s,
+
+" nnoremap <leader>f :%g,
 
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>

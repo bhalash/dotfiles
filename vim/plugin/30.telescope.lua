@@ -76,8 +76,6 @@ require'telescope'.setup {
     find_files = {
       theme = 'ivy',
       previewer = true,
-      -- TODO(workmark 2023-10-16): Come back and play with this.
-      path_display = 'truncate',
       find_command = {
         "rg",
         "--files",
