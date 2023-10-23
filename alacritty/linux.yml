@@ -9,5 +9,10 @@ window:
 key_bindings:
   - { key: F, mods: Shift|Control, action: ToggleFullscreen }
 
+colors:
+  primary:
+    background: "0x30363d"
+    foreground: "0xe6edf3"
+
 import:
   - ~/.dotfiles/alacritty/base.yml
