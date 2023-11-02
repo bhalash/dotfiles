@@ -13,6 +13,7 @@
   a = add
   b = branch
   c = checkout
+  d = difftool
   m = commit
   p = pull
   r = reset
@@ -33,9 +34,14 @@
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
   untracked = ls-files --others --exclude-standard
+  nuke = !git branch -D
 [pull]
   rebase = true
 [includeIf "gitdir/i:**/Work/"]
   path = ~/Work/.gitconfig
 [init]
   defaultBranch = main
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
