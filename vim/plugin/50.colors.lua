@@ -2,7 +2,7 @@ vim.o.termguicolors = true
 
 vim.g.ayucolor = 'dark'
 
-vim.cmd.colorscheme 'sonokai'
+vim.cmd.colorscheme 'gotham'
 
 vim.cmd [[
   hi clear NonText

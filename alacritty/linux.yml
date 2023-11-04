@@ -11,7 +11,7 @@ key_bindings:
 
 colors:
   primary:
-    background: "0x30363d"
+    background: "0x0c1014"
     foreground: "0xe6edf3"
 
 import:
