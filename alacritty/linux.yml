@@ -5,6 +5,9 @@ font:
 
 window:
   startup_mode: Fullscreen
+  padding:
+    x: 5
+    y: 5
 
 key_bindings:
   - { key: F, mods: Shift|Control, action: ToggleFullscreen }

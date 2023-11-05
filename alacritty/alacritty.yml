@@ -5,6 +5,7 @@
 # See: https://defkey.com/alacritty-0-9-shortcuts
 
 # Font {{{
+
 font:
   normal:
     family: &codefont "Fira Code"
@@ -30,8 +31,7 @@ window:
 # Key Bindings {{{
 
 key_bindings:
-  # <3
-  - { key: Key2, mods: Alt, chars: '€' }
+  - { key: Key2, mods: Alt, chars: '€' } # <3
 
 # }}}
 
