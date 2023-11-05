@@ -1,8 +1,6 @@
 vim.o.termguicolors = true
-
 vim.g.ayucolor = 'dark'
-
-vim.cmd.colorscheme 'gotham'
+vim.cmd.colorscheme 'alice'
 
 vim.cmd [[
   hi clear NonText

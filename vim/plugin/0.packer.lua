@@ -36,9 +36,6 @@ require('packer').startup(function(use)
   -- Better FfTt action
   use 'unblevable/quick-scope'
 
-  -- Auto CD to project root
-  use 'airblade/vim-rooter'
-
   -- Better handling of paired characters
   use 'tpope/vim-surround'
 
@@ -63,6 +60,7 @@ require('packer').startup(function(use)
   use 'ayu-theme/ayu-vim'
   use 'rafi/awesome-vim-colorschemes'
   use 'projekt0n/github-nvim-theme'
+  use 'HicaroD/alice.nvim'
 
   -- File finder
   use 'nvim-lua/plenary.nvim'

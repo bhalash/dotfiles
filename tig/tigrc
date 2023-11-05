@@ -3,7 +3,7 @@
 # TODO(mark 2022-02-14): https://github.com/nesono/nesono-bin/blob/master/tigrc
 
 # copy (yank) commid hash to clipboard
-bind generic Y @bash -c "echo -n %(commit) | pbcopy"
+bind generic Y @bash -c "echo -n %(commit) | xclip -sel clip"
 
 # Theme {{{
 #
