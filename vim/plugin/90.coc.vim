@@ -137,7 +137,7 @@ command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeI
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^="%{coc#status()}%{get(b:,'coc_current_function','')} "
 
 " TODO(mark 2022-08-14): These clash with leader, which is bad.
 " They could go elsewhere, which is good.

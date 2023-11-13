@@ -42,7 +42,8 @@ vim.o.modelines = 1
 vim.o.visualbell = true
 
 -- Statusbar - good if you don't want to use a plugin.
-vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
+-- vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
+vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 
 -- }}}
 
