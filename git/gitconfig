@@ -23,6 +23,7 @@
   y = cherry-pick
   bn = rev-parse --abbrev-ref HEAD
   cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
+  cp = cherry-pick
   mm = commit -m
   pm = pull origin master
   uf = push --force
