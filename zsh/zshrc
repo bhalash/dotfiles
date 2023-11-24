@@ -130,42 +130,25 @@ bindkey '^z' _fg_vim
 
 # }}}
 
-# Vim/Ripgrep {{{
+# vim/ripgrep {{{
 
+# Directly open found files in vim. All args are passed to ripgrep.
+#   vo function # Open all files containing 'function'.
+#   vo function -g '*.ts' # Open all Typescript files containing 'function'.
 function vo {
-  nvim $(rg -l "$1")
+  nvim $(rg -l "${@}")
 }
 
 # }}}
-
-# Lazyload {{{
-# See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
-
-function nvm {
-  if [[ -d "$HOME/.nvm" ]]; then
-    unfunction "$0"
-    export NVM_DIR="$HOME/.nvm"
-    source "$NVM_DIR/nvm.sh"
-    nvm "$@"
-  else
-    echo "nvm is not installed" >&2
-    return 1
-  fi
-}
-
-function ng {
-  unfunction "$0"
-  # Load Angular CLI autocompletion.
-  source <(ng completion script)
-  ng "$@"
-}
 
 # }}}
 
 # Lazyload: Angular CLI {{{
+# See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
 
 function ng {
   unfunction "$0"
+  # Load Angular CLI autocompletion.
   source <(ng completion script)
   ng "$@"
 }
@@ -193,8 +176,8 @@ hash -d passwords="${HOME}/.password-store"
 
 # Other Scripts {{{
 
-for SCRIPT in $ZSH_DIR/scripts/*.zsh; do
-  source $SCRIPT
+for plugin in $ZSH_DIR/plugins/*.zsh; do
+  source $plugin
 done
 
 # }}}

@@ -9,21 +9,29 @@
 # See: https://github.com/junegunn/fzf
 # See: https://github.com/tmux/tmux
 
+#
+# cd to git project root
+#
+
 function _is_git_project {
   return $(git rev-parse 2> /dev/null)
-}
-
-function _is_nx_monorepo {
-  return $(test -f "$(git rev-parse --show-toplevel)/nx.json")
 }
 
 # cd to git project root folder
 function gr {
   if _is_git_project; then
-    builtin cd "$(git rev-parse --show-toplevel)"
+    cd "$(git rev-parse --show-toplevel)"
   else
     echo "cd: not a git project: ${PWD}"
   fi
+}
+
+#
+# swap to Nx sub-project
+#
+
+function _is_nx_monorepo {
+  return $(test -f "$(git rev-parse --show-toplevel)/nx.json")
 }
 
 # Get list of Nx projects in given directory.
@@ -61,6 +69,10 @@ function _cd_nx_project {
     return 3
   fi
 
+  # cd to selected project
+  builtin cd "${project_root}/${selected_project}"
+  zle reset-prompt
+
   if [[ -n $TMUX ]]; then
     if [[ $selected_project =~ '^\.$' ]]; then
       # special case: there's a project.json file in the root, which will be
@@ -70,10 +82,6 @@ function _cd_nx_project {
       tmux rename-window $selected_project
     fi
   fi
-
-  # cd to selected project
-  builtin cd "${project_root}/${selected_project}"
-  zle reset-prompt
 }
 
 # register widget and bind to ^h
