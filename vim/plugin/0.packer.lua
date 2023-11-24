@@ -73,6 +73,8 @@ require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', config = 'vim.cmd([[TSUpdate]])' }
   use 'nvim-treesitter/completion-treesitter'
 
+  use 'ggandor/leap.nvim' -- Blood!
+
   -- Show indentation
   -- use 'lukas-reineke/indent-blankline.nvim'
 
@@ -162,3 +164,6 @@ require'Comment'.setup {
 }
 
 -- }}}
+
+-- TODO(mark 2023-11-24): Read docs: https://github.com/ggandor/leap.nvim
+require'leap'.add_default_mappings()
