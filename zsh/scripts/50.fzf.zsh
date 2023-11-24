@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # See: https://github.com/Aloxaf/fzf-tab
 
 # ! FZF {{{
