@@ -166,4 +166,4 @@ require'Comment'.setup {
 -- }}}
 
 -- TODO(mark 2023-11-24): Read docs: https://github.com/ggandor/leap.nvim
-require'leap'.add_default_mappings()
+-- require'leap'.add_default_mappings()
