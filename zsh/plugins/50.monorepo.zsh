@@ -14,7 +14,7 @@
 #
 
 function _is_git_project {
-  return $(git rev-parse 2> /dev/null)
+  git rev-parse 2> /dev/null
 }
 
 # cd to git project root folder
@@ -31,7 +31,7 @@ function gr {
 #
 
 function _is_nx_monorepo {
-  return $(test -f "$(git rev-parse --show-toplevel)/nx.json")
+  test -f "$(git rev-parse --show-toplevel)/nx.json"
 }
 
 # Get list of Nx projects in given directory.
@@ -48,14 +48,10 @@ function _nx_project_list {
 
 function _cd_nx_project {
   if [[ $(_is_git_project; echo $?) != 0 ]]; then
-    echo "cd: not a git project: ${PWD}"
-    zle reset-prompt
     return 1
   fi
 
   if [[ $(_is_nx_monorepo; echo $?) != 0 ]]; then
-    echo "cd: not an Nx monorepo: ${PWD}"
-    zle reset-prompt
     return 2
   fi
 
@@ -66,7 +62,7 @@ function _cd_nx_project {
 
   # no project was picked
   if [[ ! -n $selected_project ]]; then
-    return 3
+    return 0
   fi
 
   # cd to selected project
