@@ -10,25 +10,12 @@
 # See: https://github.com/tmux/tmux
 
 #
-# cd to git project root
+# swap to Nx sub-project
 #
 
 function _is_git_project {
-  git rev-parse 2> /dev/null
+  git rev-parse 2>&1 > /dev/null
 }
-
-# cd to git project root folder
-function gr {
-  if _is_git_project; then
-    cd "$(git rev-parse --show-toplevel)"
-  else
-    echo "cd: not a git project: ${PWD}"
-  fi
-}
-
-#
-# swap to Nx sub-project
-#
 
 function _is_nx_monorepo {
   test -f "$(git rev-parse --show-toplevel)/nx.json"
