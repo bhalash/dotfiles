@@ -49,7 +49,7 @@ function _cd_nx_project {
 
   # no project was picked
   if [[ ! -n $selected_project ]]; then
-    return 0
+    return 3
   fi
 
   # cd to selected project
@@ -70,3 +70,11 @@ function _cd_nx_project {
 # register widget and bind to ^h
 zle -N _cd_nx_project
 bindkey '^H' _cd_nx_project
+
+# cd to project and open vim
+function _cd_nx_project_open_vim {
+  _cd_nx_project && vim
+}
+
+zle -N _cd_nx_project_open_vim
+bindkey '^G' _cd_nx_project_open_vim
