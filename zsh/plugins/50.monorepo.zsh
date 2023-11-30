@@ -69,7 +69,7 @@ function _cd_nx_project {
 
 # register widget and bind to ^h
 zle -N _cd_nx_project
-bindkey '^H' _cd_nx_project
+bindkey '^J' _cd_nx_project
 
 # cd to project and open vim
 function _cd_nx_project_open_vim {
@@ -77,4 +77,4 @@ function _cd_nx_project_open_vim {
 }
 
 zle -N _cd_nx_project_open_vim
-bindkey '^G' _cd_nx_project_open_vim
+bindkey '^K' _cd_nx_project_open_vim

@@ -36,4 +36,4 @@ function gr {
 
 # register widget and bind to ^h
 zle -N _cd_git_root
-bindkey '^J' _cd_git_root
+bindkey '^H' _cd_git_root

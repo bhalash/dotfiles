@@ -136,7 +136,15 @@ bindkey '^z' _fg_vim
 #   vo function # Open all files containing 'function'.
 #   vo function -g '*.ts' # Open all Typescript files containing 'function'.
 function vo {
-  nvim $(rg -l "${@}")
+  local found_files=$(rg -l "${@}")
+  local found_files_count=$(echo $found_files | sed '/^$/d' | wc -l)
+
+  if [[ $found_files_count == 0 ]]; then
+    echo "vo: no files found: ${@}"
+    return 1
+  fi
+
+  nvim $(echo "$found_files")
 }
 
 # }}}
