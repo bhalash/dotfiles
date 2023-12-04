@@ -9,47 +9,49 @@
 # See: https://github.com/junegunn/fzf
 # See: https://github.com/tmux/tmux
 
-#
-# swap to Nx sub-project
-#
-
-function _is_git_project {
-  git rev-parse 2>&1 > /dev/null
-}
-
-function _is_nx_monorepo {
-  test -f "$(git rev-parse --show-toplevel)/nx.json"
-}
-
-# Get list of Nx projects in given directory.
-# - Strips leading path and trailing project.json file.
-# - Special case: empty lines are assumed to be a project in the root directory.
-function _nx_project_list {
-  local project_root=$1
-
-  rg --files -g 'project.json' $project_root \
-    | sed -e "s,${project_root}/,," \
-    | sed -E -e 's,(/)?project.json,,' \
-    | sed -e 's,^$,.,'
-}
-
 function _cd_nx_project {
-  if [[ $(_is_git_project; echo $?) != 0 ]]; then
+  ### Functions
+  # ----------------------------------------------------------------------------
+
+  function __is_git_project {
+    git rev-parse 2>/dev/null 1>&2
+    return $?
+  }
+
+  function __is_nx_monorepo {
+    [[ __is_git_project && -f $(git rev-parse --show-toplevel)/nx.json ]]
+  }
+
+  function __nx_project_list {
+    # Get list of Nx projects in given directory.
+    # - Strips leading path and trailing project.json file.
+    # - Special case: empty lines are assumed to be a project in the root dir.
+    local project_root=$1
+
+    rg --files -g 'project.json' $project_root \
+      | sed -e "s,${project_root}/,," \
+      | sed -E -e 's,(/)?project.json,,' \
+      | sed -e 's,^$,.,'
+  }
+
+  function __pick_nx_project {
+    local project_root=$1
+    __nx_project_list $project_root | fzf
+  }
+
+  ### Do Stuff
+  # ----------------------------------------------------------------------------
+
+  if ! __is_nx_monorepo; then
     return 1
   fi
 
-  if [[ $(_is_nx_monorepo; echo $?) != 0 ]]; then
-    return 2
-  fi
-
-  # project root directory
   local project_root=$(git rev-parse --show-toplevel)
-  # get list of Nx projects, keyed by project.json file
-  local selected_project=$(_nx_project_list $project_root | fzf)
+  local selected_project=$(__pick_nx_project $project_root)
 
   # no project was picked
   if [[ ! -n $selected_project ]]; then
-    return 3
+    return 2
   fi
 
   # cd to selected project
