@@ -26,7 +26,8 @@ nnoremap <leader>t :tabedit %<CR>
 " nnoremap <leader>a :setlocal spell!<CR>
 
 " Clear highlighted search easier
-nnoremap <silent><BS> :nohlsearch<CR>
+" nnoremap <C-BS> :nohlsearch<CR>
+nnoremap <BS> :nohlsearch<CR>
 
 " Strip all trailing whitespace from the file
 nnoremap <silent><leader><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>

@@ -1,4 +1,4 @@
-function! functions#YankSnippet()
+function! functions#YankSnippet() abort
   redir @n | silent! :'<,'>number | redir END
   let filename=expand("%")
   let decoration=repeat('-', len(filename)+1)
