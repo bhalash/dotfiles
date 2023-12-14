@@ -1,18 +1,22 @@
 #!/usr/bin/env zsh
-#  _____                               _       _
-# |_   _|                             (_)     | |
-#   | |_   _ _ __   ___  ___  ___ _ __ _ _ __ | |_
-#   | | | | | '_ \ / _ \/ __|/ __| '__| | '_ \| __|
-#   | | |_| | |_) |  __/\__ \ (__| |  | | |_) | |_
-#   \_/\__, | .__/ \___||___/\___|_|  |_| .__/ \__|
-#       __/ | |                         | |
-#      |___/|_|                         |_|
+#   __ _            _____
+#  / _(_)          |  _  |
+# | |_ ___  ____  _| |/' |_ __
+# |  _| \ \/ /\ \/ /  /| | '__|
+# | | | |>  <  >  <\ |_/ / |
+# |_| |_/_/\_\/_/\_\\___/|_|
 #
-# Recursive simple rename of FOO with BAR
+# Simple rename of FOO with BAR using ripgrep.
 
 function fixxor {
-	local TERM=$1
-	local REPLACEMENT=$2
+  local search=$1
+  local replace=$2
+  local found_files=$(rg "${search}" -l)
 
-	sed -i '' -e "s,${TERM},${REPLACEMENT},g" $(rg "${TERM}" -l)
+  if [[ $#found_files == 0 ]]; then
+    echo "fixxor: term not found in any files: ${search}"
+    return 1
+  fi
+
+  echo $found_files | xargs -P 4 -n 10 sed -i -e "s,${search},${replace},g"
 }
