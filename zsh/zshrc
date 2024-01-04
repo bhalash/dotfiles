@@ -66,7 +66,8 @@ if [[ ! -f $HISTFILE ]]; then
   touch $HISTFILE
 fi
 
-# setopt extendedhistory # enable to log timestamp alongside command
+setopt extendedhistory # enable to log timestamp alongside command
+setopt append_history inc_append_history # append history for each command, not when shell exits
 # setopt share_history # share history fully between concurrent sessions
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
