@@ -1,0 +1,42 @@
+# Alacritty Config
+#
+# See: https://github.com/alacritty/alacritty#configuration
+# See: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+# See: https://defkey.com/alacritty-0-9-shortcuts
+# See: https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/
+
+env:
+  TERM: xterm-256color
+
+hide_when_typing: true
+
+font:
+  size: 9.0
+  normal:
+    family: &codefont Fira Code
+  bold:
+    family: *codefont
+    style: SemiBold
+  bold_italic:
+    family: *codefont
+    style: Italic
+
+colors:
+  primary:
+    background: "0x2c2e34"
+
+window:
+  startup_mode: Maximized
+  padding:
+    x: 0
+    y: 0
+
+key_bindings:
+  # <3
+  - { key: Key2, mods: Alt, chars: '€' }
+
+shell:
+  # Start WSL in home folder and try to reattach tmux.
+  # See: https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
+  # See: https://stackoverflow.com/questions/77362133/
+  program: wsl ~ -e tmux attach
