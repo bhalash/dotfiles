@@ -109,3 +109,9 @@ nnoremap <silent><leader>w :Gw<CR>
 nnoremap <silent><leader>ge :!git checkout %<CR>
 
 " }}}
+
+" tpope/vim-obsession {{{
+
+nnoremap <leader>i <Plug>(toggle-default-session)
+
+" }}}
