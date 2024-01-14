@@ -39,4 +39,4 @@ shell:
   # Start WSL in home folder and try to reattach tmux.
   # See: https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
   # See: https://stackoverflow.com/questions/77362133/
-  program: wsl ~ -e tmux attach
+  program: wsl ~ -e tmux new-session -A -s main
