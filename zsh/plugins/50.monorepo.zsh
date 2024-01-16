@@ -9,74 +9,86 @@
 # See: https://github.com/junegunn/fzf
 # See: https://github.com/tmux/tmux
 
-function _cd_nx_project {
-  ### Functions
-  # ----------------------------------------------------------------------------
+function __is_git_project {
+  git rev-parse 2>/dev/null 1>&2
+  return $?
+}
 
-  function __is_git_project {
-    git rev-parse 2>/dev/null 1>&2
-    return $?
-  }
+function __nx_project_list {
+  # Get list of Nx projects in given directory.
+  # - Strips leading path and trailing filename.
+  # - Special case: empty lines are assumed to be a project in the root dir.
+  local project_root=$1
 
-  function __is_nx_monorepo {
-    [[ __is_git_project && -f $(git rev-parse --show-toplevel)/nx.json ]]
-  }
+  rg --files -g 'nx.json' -g 'project.json' $project_root \
+    | sed -e "s,${project_root}/,," \
+    | sed -E -e 's,(/)?(project|nx).json,,' \
+    | sed -e 's,^$,.,' \
+    | sort -r \
+    | uniq
+}
 
-  function __nx_project_list {
-    # Get list of Nx projects in given directory.
-    # - Strips leading path and trailing project.json file.
-    # - Special case: empty lines are assumed to be a project in the root dir.
-    local project_root=$1
+function __pick_nx_project {
+  local project_root=$1
+  __nx_project_list $project_root | fzf
+}
 
-    rg --files -g 'project.json' $project_root \
-      | sed -e "s,${project_root}/,," \
-      | sed -E -e 's,(/)?project.json,,' \
-      | sed -e 's,^$,.,'
-  }
-
-  function __pick_nx_project {
-    local project_root=$1
-    __nx_project_list $project_root | fzf
-  }
-
-  ### Do Stuff
-  # ----------------------------------------------------------------------------
-
-  if ! __is_nx_monorepo; then
-    return 1
+function __cd_nx_project {
+  if ! __is_git_project; then
+    return 10
   fi
 
   local project_root=$(git rev-parse --show-toplevel)
+  local project_list=$(__nx_project_list $project_root)
+
+  if [[ $#project_list == 0 ]]; then
+    # no projects were found
+    return 20
+  fi
+
   local selected_project=$(__pick_nx_project $project_root)
 
-  # no project was picked
   if [[ ! -n $selected_project ]]; then
-    return 2
+    # no project was picked
+    return 30
+  fi
+
+  if [[ -n $TMUX ]]; then
+    local project_basename=$(basename $project_root)
+
+    if [[ $selected_project =~ '^\.$' ]]; then
+      # special case: there's a project.json file in the root, which will be
+      # the case in a migrated project
+      tmux rename-window $project_basename
+    else
+      tmux rename-window "${project_basename}/${selected_project}"
+    fi
   fi
 
   # cd to selected project
   builtin cd "${project_root}/${selected_project}"
   zle reset-prompt
-
-  if [[ -n $TMUX ]]; then
-    if [[ $selected_project =~ '^\.$' ]]; then
-      # special case: there's a project.json file in the root, which will be
-      # the case in a migrated project.
-      tmux rename-window $(basename $project_root)
-    else
-      tmux rename-window $selected_project
-    fi
-  fi
 }
-
-# register widget and bind to ^h
-zle -N _cd_nx_project
-bindkey '^J' _cd_nx_project
 
 # cd to project and open vim
-function _cd_nx_project_open_vim {
-  _cd_nx_project && vim
+function __cd_nx_project_open_vim {
+  __cd_nx_project && vim
 }
 
-zle -N _cd_nx_project_open_vim
-bindkey '^K' _cd_nx_project_open_vim
+# Register Widget
+# ==============================================================================
+
+# register widget and bind to ^h
+zle -N __cd_nx_project
+bindkey '^J' __cd_nx_project
+
+zle -N __cd_nx_project_open_vim
+bindkey '^K' __cd_nx_project_open_vim
+
+# Cleanup
+# ==============================================================================
+
+unset __cd_nx_project
+unset __is_git_project
+unset __nx_project_list
+unset __pick_nx_project
