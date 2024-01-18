@@ -110,6 +110,7 @@ nnoremap <silent><leader>f :Gw<CR>
 
 " tpope/vim-obsession {{{
 
-nnoremap <leader>p <Plug>(toggle-default-session)
+nnoremap <leader>p <Plug>(dotfiles-session-toggle)
+nnoremap <leader>P <Plug>(dotfiles-session-clear)
 
 " }}}

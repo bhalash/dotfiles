@@ -84,11 +84,3 @@ bindkey '^J' __cd_nx_project
 
 zle -N __cd_nx_project_open_vim
 bindkey '^K' __cd_nx_project_open_vim
-
-# Cleanup
-# ==============================================================================
-
-unset __cd_nx_project
-unset __is_git_project
-unset __nx_project_list
-unset __pick_nx_project

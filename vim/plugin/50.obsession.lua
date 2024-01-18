@@ -18,14 +18,27 @@ local function source_session(session_name)
   end
 end
 
--- Autoload sessions created by tpope's vim-obsession when starting Vim
+-- autoload sessions created by tpope's vim-obsession when starting vim
 vim.api.nvim_create_autocmd({'VimEnter'}, {
   pattern = {'*'},
   nested = true,
- callback = function() source_session(default_session) end,
+  callback = function() source_session(default_session) end,
 })
 
--- Plugin bind
-vim.keymap.set('n', '<Plug>(toggle-default-session)', function()
+
+-- fully close other buffers + tabs
+vim.api.nvim_create_user_command('Only',  function()
+  vim.cmd.only({ mods = { silent = true }})
+  vim.cmd.tabonly({ mods = { silent = true }})
+  vim.cmd.bufdo('bd')
+  -- TODO(mark 2024-01-18): clear session file
+end, {})
+
+-- plugin binds
+vim.keymap.set('n', '<Plug>(dotfiles-session-toggle)', function()
   toggle_session_recording(default_session)
 end)
+
+vim.keymap.set('n', '<Plug>(dotfiles-session-clear)', function()
+  vim.cmd.Only()
+end, { silent = true })
