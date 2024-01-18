@@ -1,6 +1,6 @@
 -- tpope/vim-obsession
 
-local default_session = 'Session.vim'
+local default_session = '.session.vim'
 
 local function toggle_session_recording(session_name)
   if vim.fn.filereadable(session_name) == 1 then
