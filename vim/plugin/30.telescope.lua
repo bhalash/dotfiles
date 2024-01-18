@@ -91,14 +91,16 @@ require'telescope'.setup {
 
 -- telescope keys {{{
 
-vim.keymap.set('n', '<leader>p', ':Telescope find_files<CR>');
-vim.keymap.set('n', '<leader>o', ':Telescope oldfiles<CR>');
-vim.keymap.set('n', '<leader>r', ':Telescope live_grep<CR>');
-vim.keymap.set('n', '<leader>q', ':Telescope command_history<CR>');
-vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
-vim.keymap.set('n', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>');
-vim.keymap.set('n', '<leader>k', ':Telescope keymaps<CR>');
-vim.keymap.set('n', '<leader>n', ':Telescope git_bcommits<CR>');
-vim.keymap.set('n', '<leader>,', ':Telescope colorscheme<CR>');
+vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
+vim.keymap.set('n', '<leader>j', ':Telescope find_files<CR>');
+vim.keymap.set('n', '<leader>n', ':Telescope buffers<CR>');
+
+vim.keymap.set('n', '<leader>i', ':Telescope git_bcommits<CR>');
+vim.keymap.set('n', '<leader>k', ':Telescope oldfiles<CR>');
+vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
+
+vim.keymap.set('n', '<leader>,', ':Telescope colorscheme<CR>'); -- TODO(mark 2024-01-18): rebind
+vim.keymap.set('n', '<leader>o', ':Telescope keymaps<CR>'); -- TODO(mark 2024-01-18): rebind
+vim.keymap.set('n', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>'); -- TODO(mark 2024-01-18): rebind
 
 -- }}}

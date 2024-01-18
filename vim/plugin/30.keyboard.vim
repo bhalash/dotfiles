@@ -59,14 +59,13 @@ nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
 " Stolen from Reddit - replace word under cursor
 nnoremap <CR> ciw
-
 " Replace all instances of word in file or selection
 nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
 vnoremap <leader><CR> :s,\<<C-r>=expand("<cword>")<CR>\>,
 
-nnoremap <leader>f :%s,
-nnoremap <leader>F :s,
-vnoremap <leader>f :s,
+nnoremap <leader>s :%s,
+nnoremap <leader>S :s,
+vnoremap <leader>s :s,
 
 " nnoremap <leader>f :%g,
 
@@ -96,22 +95,22 @@ nnoremap <silent><leader>z :ZenMode<CR>
 
 " tpope/vim-fugitive {{{
 
-nnoremap <silent><leader>gdd :GDelete!<CR>
-nnoremap <silent><leader>gb :Git blame<CR>
-nnoremap <silent><leader>gp :Git pull<CR>
-nnoremap <silent><leader>gu :Git push<CR>
-nnoremap <silent><leader>gs :Git status<CR>
-nnoremap <silent><leader>cv :Gvdiffsplit<CR>
-nnoremap <silent><leader>gw :Gw<CR>
-nnoremap <silent><leader>gc :Git commit<CR>
-nnoremap <silent><leader>w :Gw<CR>
+" nnoremap <silent><leader>fdd :GDelete!<CR>
+nnoremap <silent><leader>fb :Git blame<CR>
+" nnoremap <silent><leader>fp :Git pull<CR>
+" nnoremap <silent><leader>fu :Git push<CR>
+" nnoremap <silent><leader>fs :Git status<CR>
+nnoremap <silent><leader>fv :Gvdiffsplit<CR>
+nnoremap <silent><leader>fw :Gw<CR>
+nnoremap <silent><leader>fc :Git commit<CR>
+nnoremap <silent><leader>f :Gw<CR>
 " reset the file in the current buffer
-nnoremap <silent><leader>ge :!git checkout %<CR>
+" nnoremap <silent><leader>fe :!git checkout %<CR>
 
 " }}}
 
 " tpope/vim-obsession {{{
 
-nnoremap <leader>i <Plug>(toggle-default-session)
+nnoremap <leader>p <Plug>(toggle-default-session)
 
 " }}}
