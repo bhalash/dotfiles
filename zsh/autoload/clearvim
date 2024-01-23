@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+#        _
+#       (_)
+# __   ___ _ __ ___
+# \ \ / / | '_ ` _ \
+#  \ V /| | | | | | |
+#   \_/ |_|_| |_| |_|
+#
+# Clear all vim session files.
+
+function clearvim {
+  rg --files --hidden -g '.session.vim' -g 'Session*.vim' | xargs rm
+}
