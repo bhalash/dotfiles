@@ -1,0 +1,205 @@
+import = ["~/.dotfiles/alacritty/base.toml"]
+
+# Window {{{
+
+[window]
+startup_mode = "SimpleFullscreen"
+
+# }}}
+
+# Font {{{
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "FiraMono Nerd Font"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "FiraMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "FiraMono Nerd Font"
+
+# }}}
+
+# Keyboard: Stop app from closing {{{
+
+[[keyboard.bindings]]
+action = "None"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mods = "Command"
+
+# }}}
+
+# Keyboard: Window + font size {{{
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "J"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "K"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "L"
+mods = "Control|Shift"
+
+# }}}
+
+# Keyboard: Alt keys {{{
+# For Tmux, macOS inserts special characters using the alt key.
+# See: https://github.com/alacritty/alacritty/issues/93
+
+[[keyboard.bindings]]
+chars = "\u001Ba"
+key = "A"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "B"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bc"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bd"
+key = "D"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Be"
+key = "E"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Be"
+key = "E"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bg"
+key = "G"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bh"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bi"
+key = "I"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bj"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bk"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bl"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bm"
+key = "M"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bn"
+key = "N"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bo"
+key = "O"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bp"
+key = "P"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bq"
+key = "Q"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Br"
+key = "R"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bs"
+key = "S"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bt"
+key = "T"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bv"
+key = "V"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bw"
+key = "W"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bx"
+key = "X"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001By"
+key = "Y"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bz"
+key = "Z"
+mods = "Alt"
+
+# }}}

@@ -18,12 +18,12 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
 - link:
-    ~/.config/alacritty/alacritty.yml:
-      path: alacritty/linux.yml
+    ~/.config/alacritty/alacritty.toml:
+      path: alacritty/linux.toml
       if: '[[ `uname` =~ Linux ]]'
 - link:
-    ~/.config/alacritty/alacritty.yml:
-      path: alacritty/mac.yml
+    ~/.config/alacritty/alacritty.toml:
+      path: alacritty/mac.toml
       if: '[[ `uname` =~ Darwin ]]'
 - shell:
   - [touch ~/.config/dotfiles/zsh && chmod 600 ~/.config/dotfiles/zsh, Create private zshrc]
