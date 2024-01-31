@@ -21,6 +21,7 @@
   t = stash
   u = push
   y = cherry-pick
+  aa = add .
   bn = rev-parse --abbrev-ref HEAD
   cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   cp = cherry-pick

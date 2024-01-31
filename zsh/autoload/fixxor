@@ -18,5 +18,9 @@ function fixxor {
     return 1
   fi
 
-  echo $found_files | xargs -P 4 -n 10 sed -i -e "s,${search},${replace},g"
+  if [[ $OSTYPE =~ 'darwin' ]]; then
+    export alias sed=gsed
+  fi
+
+  echo $found_files | xargs -P 4 -n 10 sed -i '' -e "s,${search},${replace},g"
 }

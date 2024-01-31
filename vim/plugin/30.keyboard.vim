@@ -62,8 +62,8 @@ nnoremap <CR> ciw
 nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
 vnoremap <leader><CR> :s,\<<C-r>=expand("<cword>")<CR>\>,
 
-nnoremap <leader>s :%s,
-nnoremap <leader>S :s,
+nnoremap <leader>s :s,
+nnoremap <leader>S :%s,
 vnoremap <leader>s :s,
 
 " nnoremap <leader>f :%g,
