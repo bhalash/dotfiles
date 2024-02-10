@@ -18,8 +18,8 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
 - link:
-    ~/.config/alacritty/alacritty.toml:
-      path: alacritty/linux.toml
+    ~/.config/alacritty/alacritty.yml:
+      path: alacritty/linux.yml
       if: '[[ `uname` =~ Linux ]]'
 - link:
     ~/.config/alacritty/alacritty.toml:
