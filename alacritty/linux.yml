@@ -28,7 +28,10 @@ colors:
     foreground: "0xe6edf3"
 
 window:
-  startup_mode: Fullscreen
+  # TODO(mark 2024-03-03): Go back to Fullscreen; I've had problems with
+  # Maximized and multiple monitors on Ubuntu 23.10. >_>
+  # startup_mode: Fullscreen
+  startup_mode: Maximized
   padding:
     x: 5
     y: 5
