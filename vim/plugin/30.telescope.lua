@@ -92,6 +92,7 @@ require'telescope'.setup {
 -- telescope keys {{{
 
 vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
+vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
 vim.keymap.set('n', '<leader>j', ':Telescope find_files<CR>');
 vim.keymap.set('n', '<leader>n', ':Telescope buffers<CR>');
 

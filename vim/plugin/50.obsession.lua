@@ -18,13 +18,13 @@ local function source_session(session_name)
   end
 end
 
--- autoload sessions created by tpope's vim-obsession when starting vim
-vim.api.nvim_create_autocmd({'VimEnter'}, {
-  pattern = {'*'},
-  nested = true,
-  callback = function() source_session(default_session) end,
-})
-
+-- FIXME(mark 2024-02-28): This throws errors.
+-- -- autoload sessions created by tpope's vim-obsession when starting vim
+-- vim.api.nvim_create_autocmd({'VimEnter'}, {
+--   pattern = {'*'},
+--   nested = true,
+--   callback = function() source_session(default_session) end,
+-- })
 
 -- fully close other buffers + tabs
 vim.api.nvim_create_user_command('Only',  function()

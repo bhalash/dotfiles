@@ -59,8 +59,8 @@ nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 " Stolen from Reddit - replace word under cursor
 nnoremap <CR> ciw
 " Replace all instances of word in file or selection
-nnoremap <leader><CR> :%s,\<<C-r>=expand("<cword>")<CR>\>,
-vnoremap <leader><CR> :s,\<<C-r>=expand("<cword>")<CR>\>,
+" nnoremap <leader>S :%s,\<<C-r>=expand("<cword>")<CR>\>,
+" vnoremap <leader>S :s,\<<C-r>=expand("<cword>")<CR>\>,
 
 nnoremap <leader>s :s,
 nnoremap <leader>S :%s,
@@ -110,7 +110,7 @@ nnoremap <silent><leader>f :Gw<CR>
 
 " tpope/vim-obsession {{{
 
-nnoremap <leader>p <Plug>(dotfiles-session-toggle)
-nnoremap <leader>P <Plug>(dotfiles-session-clear)
+nnoremap <leader>P <Plug>(dotfiles-session-toggle)
+" nnoremap <leader>P <Plug>(dotfiles-session-clear)
 
 " }}}
