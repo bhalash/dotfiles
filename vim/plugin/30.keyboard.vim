@@ -65,6 +65,7 @@ nnoremap <CR> ciw
 nnoremap <leader>s :s,
 nnoremap <leader>S :%s,
 vnoremap <leader>s :s,
+nnoremap %% :%s,,
 
 " nnoremap <leader>f :%g,
 

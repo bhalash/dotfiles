@@ -90,6 +90,11 @@ action = "None"
 key = "N"
 mods = "Command"
 
+[[keyboard.bindings]]
+action = "None"
+key = "T"
+mods = "Command"
+
 # }}}
 
 # Keyboard: Window + font size {{{
