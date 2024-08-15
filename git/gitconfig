@@ -26,8 +26,8 @@
   cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   cp = cherry-pick
   mm = commit -m
-  pm = pull origin master
   uf = push --force
+  pb = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
   pf = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
