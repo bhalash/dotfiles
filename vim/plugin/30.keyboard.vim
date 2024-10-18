@@ -20,7 +20,6 @@ nnoremap <S-Tab> <C-W>W
 " Split buffer horizontally or vertically or tabically
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>x :sp<CR>
-nnoremap <leader>t :tabedit %<CR>
 
 " Toggle spellchecking
 " nnoremap <leader>a :setlocal spell!<CR>
@@ -47,8 +46,8 @@ nnoremap z= 1z=
 " }}}
 
 " Colorcolumn {{{
-nnoremap <leader>d <Plug>(dotfiles-toggle-colorcolumn)
 " TODO(mark 2024-01-18): rebind all these to match new function
+nnoremap <leader>d <Plug>(dotfiles-toggle-colorcolumn)
 nnoremap <silent><leader>co :set colorcolumn=120<CR>
 nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
@@ -65,7 +64,7 @@ nnoremap <CR> ciw
 nnoremap <leader>s :s,
 nnoremap <leader>S :%s,
 vnoremap <leader>s :s,
-nnoremap %% :%s,,
+nnoremap S :%s,,
 
 " nnoremap <leader>f :%g,
 
@@ -111,7 +110,7 @@ nnoremap <silent><leader>f :Gw<CR>
 
 " tpope/vim-obsession {{{
 
+" FIXME(mark 2024-10-09): Get this working, lol!
 nnoremap <leader>P <Plug>(dotfiles-session-toggle)
-" nnoremap <leader>P <Plug>(dotfiles-session-clear)
 
 " }}}

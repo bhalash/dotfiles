@@ -5,7 +5,7 @@
   required = true
 [core]
   editor = nvim
-  autocrlf = false
+  autocrlf = input
 [user]
   name = Mark Grealish
   email = mark@bhalash.com

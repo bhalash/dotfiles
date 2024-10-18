@@ -25,8 +25,6 @@ require'telescope'.setup {
         ['<esc>'] = actions.close,
         -- Open all files in a new tab with <CR>; will jump to an existing
         -- buffer if file is already open.
-        -- TODO(mark 2023-06-03): Keep an eye on this one; do I like it?
-        -- ["<CR>"] = actions.select_tab_drop,
       },
     },
   },
@@ -40,8 +38,8 @@ require'telescope'.setup {
       },
     },
     oldfiles = {
-      theme = 'dropdown',
-      previewer = false,
+      theme = 'ivy',
+      previewer = true,
       mappings = {
         i = {
           ["<CR>"] = actions.select_tab_drop,
@@ -93,11 +91,10 @@ require'telescope'.setup {
 
 vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
 vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
-vim.keymap.set('n', '<leader>j', ':Telescope find_files<CR>');
-vim.keymap.set('n', '<leader>n', ':Telescope buffers<CR>');
+vim.keymap.set('n', '<leader>j', ':Telescope oldfiles<CR>');
+vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
 
 vim.keymap.set('n', '<leader>i', ':Telescope git_bcommits<CR>');
-vim.keymap.set('n', '<leader>k', ':Telescope oldfiles<CR>');
 vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
 
 vim.keymap.set('n', '<leader>,', ':Telescope colorscheme<CR>'); -- TODO(mark 2024-01-18): rebind
