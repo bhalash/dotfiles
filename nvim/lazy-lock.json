@@ -1,6 +1,5 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "LazyVim": { "branch": "main", "commit": "75750be1c0493659c9fbc60ff5e06dba053ef528" },
   "coc.nvim": { "branch": "release", "commit": "57d488a06bdb34de89acef3c2f3e9ce609d632ed" },
   "completion-treesitter": { "branch": "master", "commit": "45c9b2faff4785539a0d0c655440c2465fed985a" },
   "edge": { "branch": "master", "commit": "2a9c299416c5bdf0506baefcd4635f85f5718c10" },

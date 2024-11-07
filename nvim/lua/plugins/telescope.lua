@@ -65,6 +65,10 @@ return {
           },
           live_grep = {
             -- Search for exact case.
+            file_ignore_patterns = {
+              '%.xlf', -- angular i18n files
+              'package-lock.json',
+            },
             vimgrep_arguments = {
               'rg',
               '--color=never',
