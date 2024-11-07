@@ -24,13 +24,11 @@ return {
             '*.xlf' -- angular i18n files
           },
           mappings = {
-            i = {
-              -- INFO(mark 2023-06-05): This changes all pickers to have a
-              -- single mode, they will now exit from insert mode upon <ESC>.
-              ['<esc>'] = actions.close,
-              -- Open all files in a new tab with <CR>; will jump to an
-              -- existing buffer if file is already open.
-            },
+            -- i = {
+            --   -- INFO(mark 2023-06-05): This changes all pickers to have a
+            --   -- single mode, they will now exit from insert mode upon <ESC>.
+            --   ['<esc>'] = actions.close,
+            -- },
           },
         },
         pickers = {
@@ -90,15 +88,15 @@ return {
         }
       }
 
-      -- telescope keys
       vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
       vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
-      vim.keymap.set('n', '<leader>j', ':Telescope oldfiles<CR>');
       vim.keymap.set('n', '<leader><Tab>', ':Telescope buffers<CR>');
 
       vim.keymap.set('n', '<leader>i', ':Telescope git_bcommits<CR>');
       vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
-      vim.keymap.set('n', '<leader>p', ':Telescope projects<CR>');
+
+      vim.keymap.set('n', '<leader>j', ':Telescope projects<CR>');
+      vim.keymap.set('n', '<leader>k', ':Telescope oldfiles<CR>');
 
       vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>');
       vim.keymap.set('n', '<leader>o', ':Telescope keymaps<CR>');

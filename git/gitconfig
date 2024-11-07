@@ -12,23 +12,24 @@
 [alias]
   a = add
   b = branch
-  c = checkout
   d = difftool
+  f = checkout
+  j = pull
+  k = push
   m = commit
-  p = pull
   r = reset
   s = status
   t = stash
-  u = push
   y = cherry-pick
   aa = add .
   bn = rev-parse --abbrev-ref HEAD
   cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   cp = cherry-pick
+  db = !git branch -D
   mm = commit -m
-  uf = push --force
-  pb = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
+  h = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
   pf = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
+  uf = push --force
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)
@@ -36,7 +37,6 @@
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
   untracked = ls-files --others --exclude-standard
-  nuke = !git branch -D
 [pull]
   rebase = true
 [includeIf "gitdir/i:**/Work/"]
