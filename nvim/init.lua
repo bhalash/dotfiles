@@ -3,6 +3,9 @@
 -- Enable syntax highlighting
 -- syntax on
 
+-- Leaduhr
+vim.g.mapleader = ' '
+
 -- Disable mouse interactions >_>
 vim.o.mouse = ''
 
@@ -42,8 +45,8 @@ vim.o.modelines = 1
 vim.o.visualbell = true
 
 -- Statusbar - good if you don't want to use a plugin.
--- vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %<%f %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{ObsessionStatus()} %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
+-- vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 
 -- }}}
 
@@ -106,5 +109,11 @@ vim.o.undodir = '~.undo,~/.tmp,/tmp'
 
 -- Disable swap files, but set directories in case they *are* turned on
 vim.o.swapfile = false
+
+-- }}}
+
+-- lazy.nvim {{{
+
+require'config.lazy'
 
 -- }}}

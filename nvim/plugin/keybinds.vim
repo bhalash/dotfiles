@@ -1,8 +1,5 @@
 " Normal {{{
 
-" Leaduhr
-let mapleader = ' '
-
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
