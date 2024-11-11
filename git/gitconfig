@@ -13,6 +13,7 @@
   a = add
   b = branch
   d = difftool
+  c = checkout
   f = checkout
   j = pull
   k = push
