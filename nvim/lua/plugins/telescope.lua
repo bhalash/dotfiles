@@ -9,12 +9,12 @@ return {
 
       require'telescope'.setup {
         extensions = {
-          coc = {
-            theme = 'ivy',
-            -- always use Telescope locations to preview definitions,
-            -- declarations, and implementations etc
-            prefer_locations = true,
-          }
+          -- coc = {
+          --   theme = 'ivy',
+          --   -- always use Telescope locations to preview definitions,
+          --   -- declarations, and implementations etc
+          --   prefer_locations = true,
+          -- }
         },
         defaults = {
           -- TODO(workmark 2023-10-16): Come back and play with this.
@@ -22,13 +22,6 @@ return {
           file_ignore_patterns = {
             '^.git/',
             '*.xlf' -- angular i18n files
-          },
-          mappings = {
-            -- i = {
-            --   -- INFO(mark 2023-06-05): This changes all pickers to have a
-            --   -- single mode, they will now exit from insert mode upon <ESC>.
-            --   ['<esc>'] = actions.close,
-            -- },
           },
         },
         pickers = {
@@ -86,6 +79,13 @@ return {
               "--files",
               "--hidden",
               "--follow",
+            },
+            mappings = {
+              i = {
+                -- INFO(mark 2023-06-05): This changes all pickers to have a
+                -- single mode, they will now exit from insert mode upon <ESC>.
+                ['<esc>'] = actions.close,
+              },
             },
             hidden = true,
           }

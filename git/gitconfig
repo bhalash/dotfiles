@@ -12,6 +12,7 @@
 [alias]
   a = add
   b = branch
+  c = checkout
   d = difftool
   f = checkout
   j = pull

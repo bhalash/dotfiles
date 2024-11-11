@@ -70,7 +70,7 @@ return {
   },
 
   -- Language server
-  { 'neoclide/coc.nvim', branch = 'release' },
+  -- { 'neoclide/coc.nvim', branch = 'release' },
 
   -- Blood!
   'ggandor/leap.nvim',
