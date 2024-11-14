@@ -1,13 +1,3 @@
--- bronson/vim-trailing-whitespace {{{
-
--- Don't highlight whitespace in Markdown
-vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
-
--- }}}
-
--- TODO(mark 2023-11-24): Read docs: https://github.com/ggandor/leap.nvim
--- require'leap'.add_default_mappings()
-
 return {
   {
     'vhyrro/luarocks.nvim',
@@ -18,7 +8,13 @@ return {
   },
 
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
-  'bronson/vim-trailing-whitespace',
+  {
+    'bronson/vim-trailing-whitespace',
+    init = function()
+      -- Don't highlight whitespace in Markdown
+      vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
+    end
+  },
 
   -- Provide additional text targets for di/a<char>:
   -- , . ; : + - = ~ _ * # / | \ & $
@@ -69,16 +65,27 @@ return {
     }
   },
 
-  -- Language server
-  { 'neoclide/coc.nvim', branch = 'release' },
-
-  -- Blood!
-  'ggandor/leap.nvim',
+  -- Navigate around.
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      -- "gs" clashes with the vim sort motion
+      -- https://github.com/ggandor/leap.nvim?tab=readme-ov-file#installation
+      -- require'leap'.add_default_mappings()
+      -- vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
+      -- vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
+      -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
+    end
+  },
 
   -- Show indentation
-  'lukas-reineke/indent-blankline.nvim',
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {},
+  },
 
-  -- Fancy stuff
+  -- Fancy icons
   'kyazdani42/nvim-web-devicons',
 
   -- Display marks within the buffer

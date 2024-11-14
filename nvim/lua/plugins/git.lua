@@ -6,10 +6,13 @@ return {
 
   {
     'ahmedkhalf/project.nvim',
-    config = function()
-      require('project_nvim').setup {
-        patterns = { '.git', 'nx.json', 'project.json' },
-      }
+    opts = {
+      scope_chdir = 'win',
+      patterns = { '.git', 'nx.json', 'project.json' },
+      main = 'project_nvim'
+    },
+    config = function(_, opts)
+      require('project_nvim').setup(opts)
     end
   },
 }

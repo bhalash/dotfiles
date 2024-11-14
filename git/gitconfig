@@ -17,6 +17,7 @@
   f = checkout
   j = pull
   k = push
+  kf = push --force
   m = commit
   r = reset
   s = status
@@ -24,13 +25,12 @@
   y = cherry-pick
   aa = add .
   bn = rev-parse --abbrev-ref HEAD
-  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   cp = cherry-pick
-  db = !git branch -D
   mm = commit -m
+  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
   h = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
-  pf = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
-  uf = push --force
+  hy = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
+  nuke = !git branch -D
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)

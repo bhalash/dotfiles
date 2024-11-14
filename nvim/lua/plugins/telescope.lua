@@ -24,11 +24,11 @@ return {
             '*.xlf' -- angular i18n files
           },
           mappings = {
-            -- i = {
-            --   -- INFO(mark 2023-06-05): This changes all pickers to have a
-            --   -- single mode, they will now exit from insert mode upon <ESC>.
-            --   ['<esc>'] = actions.close,
-            -- },
+            i = {
+              -- INFO(mark 2023-06-05): This changes all pickers to have a
+              -- single mode, they will now exit from insert mode upon <ESC>.
+              ['<esc>'] = actions.close,
+            },
           },
         },
         pickers = {

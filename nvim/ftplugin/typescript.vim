@@ -1,8 +1,8 @@
 " See: https://github.com/nvim-treesitter/nvim-treesitter#folding
-setlocal foldmethod=expr
-setlocal foldexpr=nvim_treesitter#foldexpr()
+" setlocal foldmethod=expr
+" setlocal foldexpr=nvim_treesitter#foldexpr()
+setlocal foldmethod=manual
 setlocal foldlevelstart=999
-" setlocal foldmethod=manual
 
 " console.log
 iab <buffer> cl/ console.log();<Left><Left>
