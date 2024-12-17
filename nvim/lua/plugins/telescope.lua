@@ -7,7 +7,7 @@ return {
     config = function()
       local actions = require 'telescope.actions'
 
-      require'telescope'.setup {
+      require'telescope'.setup({
         extensions = {
           coc = {
             theme = 'ivy',
@@ -90,7 +90,7 @@ return {
             hidden = true,
           }
         }
-      }
+      });
 
       vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
       vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
