@@ -23,6 +23,7 @@
   "quick-scope": { "branch": "master", "commit": "4d35d3b2bc6794666353dcc241b2680bd560416f" },
   "sonokai": { "branch": "master", "commit": "3dcd97c0c5e4118bc171df6ba33800dfd9524a00" },
   "targets.vim": { "branch": "master", "commit": "6325416da8f89992b005db3e4517aaef0242602e" },
+  "telescope-coc.nvim": { "branch": "master", "commit": "b305a2c4f5de45f93b94e1a72078edd6d62e8cc1" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
   "tokyonight.nvim": { "branch": "main", "commit": "52d67cc5d18c30f618897134620c64a11208fcae" },
   "vim-code-dark": { "branch": "master", "commit": "4624dc223bf574aa9a731c2383c579847303c380" },

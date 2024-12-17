@@ -10,26 +10,29 @@
   name = Mark Grealish
   email = mark@bhalash.com
 [alias]
+  # pull
+  p = pull
+  # push
+  u = push
+  uf = push --force
+  # rebase
+  rb = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
+  rbu = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
+  # commit
+  m = commit
+  mm = commit -m
+  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
+  # shorthands
   a = add
   b = branch
   d = difftool
   c = checkout
-  f = checkout
-  j = pull
-  k = push
-  kf = push --force
-  m = commit
   r = reset
   s = status
   t = stash
-  y = cherry-pick
   aa = add .
-  bn = rev-parse --abbrev-ref HEAD
   cp = cherry-pick
-  mm = commit -m
-  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
-  h = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
-  hy = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
+  # util
   nuke = !git branch -D
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
