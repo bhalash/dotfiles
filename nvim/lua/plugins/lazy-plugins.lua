@@ -58,11 +58,20 @@ return {
   -- Toggle comments
   {
     'numToStr/Comment.nvim',
-    opts = {
-      ft = {
-        typescript = {'//%s', '/**%s*/'}
+    config = function()
+      local ft = require('Comment.ft')
+      local comment = require('Comment')
+
+      comment.setup {
+        -- space after e.g. //
+        padding = true
       }
-    }
+
+      ft
+      .set('typescript', {'//%s', '/*%s*/'})
+      .set('javascript', {'//%s', '/*%s*/'})
+      .set('scss', {'//%s', '/*%s*/'})
+    end
   },
 
   -- Navigate around.
