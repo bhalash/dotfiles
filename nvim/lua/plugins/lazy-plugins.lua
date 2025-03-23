@@ -99,4 +99,6 @@ return {
 
   -- Display marks within the buffer
   'kshenoy/vim-signature',
+
+  'akinsho/toggleterm.nvim'
 }
