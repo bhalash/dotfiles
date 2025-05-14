@@ -115,5 +115,8 @@ vim.o.swapfile = false
 -- lazy.nvim {{{
 
 require'config.lazy'
+require'config.lsp'
+require'config.terminal'
+require'config.helper_functions'
 
 -- }}}
