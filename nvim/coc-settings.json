@@ -1,8 +1,0 @@
-{
-  "tsserver.disableAutomaticTypeAcquisition": false,
-  "suggest.noselect": true,
-  "angular.enable-strict-mode-prompt": false,
-  "sumneko-lua.enableNvimLuaDev": true,
-  "Lua.hint.paramName": "Disable",
-  "Lua.hint.arrayIndex": "Disable"
-}

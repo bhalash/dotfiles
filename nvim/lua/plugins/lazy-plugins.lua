@@ -99,4 +99,14 @@ return {
 
   -- Display marks within the buffer
   'kshenoy/vim-signature',
+
+  -- Automatically close HTML tags
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  },
+
+  'neovim/nvim-lspconfig',
 }
