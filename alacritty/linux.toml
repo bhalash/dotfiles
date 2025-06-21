@@ -37,7 +37,7 @@ key = "F"
 mods = "Super"
 
 # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux attach || tmux"]
 program = "/bin/zsh"
 
