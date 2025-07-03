@@ -51,6 +51,8 @@ vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {f
 
 vim.lsp.enable({
   'angularls',
+  'html',
+  'kotlin_language_server',
   'lua_ls',
   'ts_ls',
 })

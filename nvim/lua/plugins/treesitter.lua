@@ -16,6 +16,7 @@ return {
         'javascript',
         'jsdoc',
         'json',
+        'kotlin',
         'lua',
         'markdown',
         'markdown_inline',

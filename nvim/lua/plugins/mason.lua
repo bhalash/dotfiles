@@ -4,6 +4,7 @@ return {
     automatic_enable = {
       'angularls',
       'html',
+      'kotlin-language-server',
       'lua_ls',
       'ts_ls',
     }
