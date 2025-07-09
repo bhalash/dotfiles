@@ -23,6 +23,10 @@ return {
       local cmp = require('cmp')
 
       cmp.setup({
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         sources = {
           { name = 'path' },
           { name = 'nvim_lsp', keyword_length = 1 },
@@ -32,8 +36,6 @@ return {
         mapping = {
           ['<Tab>'] = cmp.mapping(
             function(fallback)
-              print('<Tab> hit!')
-
               if cmp.visible() then
                 cmp.select_next_item()
                 -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()

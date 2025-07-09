@@ -42,7 +42,7 @@ vim.o.modelines = 1
 vim.o.visualbell = true
 
 -- Statusbar - good if you don't want to use a plugin.
-vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{ObsessionStatus()} %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
+vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 
 -- }}}
 
@@ -87,9 +87,8 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 
--- Stop lsp from inserting the first match
--- See: https://github.com/neovim/neovim/issues/30644#issuecomment-2392629798
-vim.o.completeopt = 'noinsert,menuone,fuzzy'
+-- Align completeopt for LSP.
+vim.o.completeopt = 'menu,menuone,noinsert,noselect'
 
 -- }}}
 
