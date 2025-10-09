@@ -20,7 +20,7 @@ return {
   -- , . ; : + - = ~ _ * # / | \ & $
   'wellle/targets.vim',
 
-  -- Provide motion keyed to gs<motion> to sort stuff
+  -- Provide motion keyed to go<motion> to sort stuff
   'bhalash/vim-sort-motion',
 
   -- Treat indentations as a text object.
@@ -59,8 +59,8 @@ return {
   {
     'numToStr/Comment.nvim',
     config = function()
-      local ft = require('Comment.ft')
-      local comment = require('Comment')
+      local ft = require'Comment.ft'
+      local comment = require'Comment'
 
       comment.setup {
         -- space after e.g. //
@@ -71,19 +71,6 @@ return {
       .set('typescript', {'//%s', '/*%s*/'})
       .set('javascript', {'//%s', '/*%s*/'})
       .set('scss', {'//%s', '/*%s*/'})
-    end
-  },
-
-  -- Navigate around.
-  {
-    'ggandor/leap.nvim',
-    config = function()
-      -- "gs" clashes with the vim sort motion
-      -- https://github.com/ggandor/leap.nvim?tab=readme-ov-file#installation
-      -- require'leap'.add_default_mappings()
-      -- vim.keymap.set({'n', 'x', 'o'}, 's',  '<Plug>(leap-forward)')
-      -- vim.keymap.set({'n', 'x', 'o'}, 'S',  '<Plug>(leap-backward)')
-      -- vim.keymap.set({'n', 'x', 'o'}, 'gs', '<Plug>(leap-from-window)')
     end
   },
 
@@ -104,7 +91,7 @@ return {
   {
     'windwp/nvim-ts-autotag',
     config = function()
-      require('nvim-ts-autotag').setup()
+      require'nvim-ts-autotag'.setup()
     end
   },
 

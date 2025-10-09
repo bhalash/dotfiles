@@ -168,7 +168,9 @@ autoload -Uz compinit && compinit -C
 
 # Zsh: Local/Private Configuration {{{
 
-[[ -f "$XDG_CONFIG_HOME/dotfiles/zsh" ]] && source "$XDG_CONFIG_HOME/dotfiles/zsh"
+for script in $XDG_CONFIG_HOME/dotfiles/*zsh; do
+  source $script
+done
 
 # }}}
 

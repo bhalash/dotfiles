@@ -41,18 +41,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.diagnostic.config({
-  virtual_text = false
-})
-
--- Show line diagnostics automatically in hover window
+-- Enable to show line diagnostics automatically in hover window when over issue.
+-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.diagnostic.config({ virtual_text = true })
 
 vim.lsp.enable({
   'angularls',
   'html',
+  'jdtls',
   'kotlin_language_server',
   'lua_ls',
+  'sqlls',
   'ts_ls',
 })
