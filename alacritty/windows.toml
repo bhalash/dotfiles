@@ -32,16 +32,13 @@ chars = "€"
 key = "Key2"
 mods = "Alt"
 
-
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
 key = "G"
 mods = "Super"
 
-
 [window]
 startup_mode = "Fullscreen"
-
 
 [window.padding]
 x = 5

@@ -43,9 +43,9 @@ nnoremap z= 1z=
 " }}}
 
 " Colorcolumn {{{
-" TODO(mark 2024-01-18): rebind all these to match new function
-nnoremap <leader>d <Plug>(dotfiles-toggle-colorcolumn)
-nnoremap <silent><leader>co :set colorcolumn=120<CR>
+" This function defaults to 80.
+nnoremap <leader>cc <Plug>(dotfiles-toggle-colorcolumn)
+nnoremap <silent><leader>cp :set colorcolumn=120<CR>
 nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
 " }}}
