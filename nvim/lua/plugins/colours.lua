@@ -31,6 +31,13 @@ return {
       vim.o.termguicolors = true
       vim.g.sonokai_style = 'maia'
       vim.cmd.colorscheme 'tokyonight-night'
+
+      -- Lighten the ColorColumn for better visibility
+      -- TODO(mark 2025-10-09): Brighten work laptop screen?
+      vim.cmd([[
+        " hi ColorColumn guibg=#3b496e
+        hi ColorColumn guibg=#1f2335
+      ]])
     end
   },
 }
