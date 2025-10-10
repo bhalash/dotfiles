@@ -3,7 +3,13 @@ return {
 
   opts = {
     scope_chdir = 'win',
-    patterns = { 'init.lua', '.git', 'nx.json', 'project.json' },
+    patterns = {
+      '.git',
+      'init.lua', -- for nvim project
+      'nx.json',
+      'package.json',
+      'project.json',
+    },
     main = 'project_nvim'
   },
 
