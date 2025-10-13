@@ -1,5 +1,7 @@
 local group = vim.api.nvim_create_augroup('LspMappings', { clear = true })
 
+-- TODO(mark 2025-10-13): Revisit the LspAttach bindings. These are great as a
+-- start, but I haven't adapted them for real work.
 vim.api.nvim_create_autocmd('LspAttach', {
   group = group,
   callback = function(args)

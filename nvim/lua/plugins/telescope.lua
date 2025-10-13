@@ -28,6 +28,7 @@ return {
               -- INFO(mark 2023-06-05): This changes all pickers to have a
               -- single mode, they will now exit from insert mode upon <ESC>.
               ['<esc>'] = actions.close,
+              ['<C-h>'] = 'which_key',
             },
           },
         },
@@ -96,7 +97,11 @@ return {
       vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
       vim.keymap.set('n', '<leader><Tab>', ':Telescope buffers<CR>');
 
+      -- TODO(mark 2025-10-13): Look at better ways to integrate LSP + Telescope
+      -- into my workflow. The grep_string function is so so useful!
       vim.keymap.set('n', '<leader>g', ':Telescope grep_string<CR>');
+      vim.keymap.set('n', '<leader>h', ':Telescope lsp_references<CR>');
+
       vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
       vim.keymap.set('n', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>');
 
