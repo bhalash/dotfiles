@@ -5,11 +5,11 @@
   - ~/.config/dotfiles
   - ~/.config/task
 - link:
+    ~/.config/broot: broot
     ~/.config/nvim: nvim
     ~/.config/task/taskrc: taskwarrior/taskrc
     ~/.git-templates: git/templates
     ~/.gitconfig: git/gitconfig
-    ~/.irssi: irssi
     ~/.tigrc: tig/tigrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux
