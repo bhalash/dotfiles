@@ -35,7 +35,13 @@ mods = "Alt"
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
 key = "G"
-mods = "Super"
+mods = "Alt"
+
+# Disable Windows full-screen toggle
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Enter"
+mods = "Alt"
 
 [window]
 startup_mode = "Fullscreen"
