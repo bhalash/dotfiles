@@ -7,6 +7,23 @@ return {
     config = true,
   },
 
+  -- Command palette
+  {
+    'hachy/cmdpalette.nvim',
+    config = function()
+      require('cmdpalette').setup({
+        win = {
+          title = 'Command History'
+        },
+        sign = {
+          text = '>'
+        }
+      })
+
+      vim.keymap.set('n', 'q:', '<Plug>(cmdpalette)')
+    end,
+  },
+
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
   {
     'bronson/vim-trailing-whitespace',
