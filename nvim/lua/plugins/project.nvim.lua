@@ -1,6 +1,10 @@
 return {
-  'ahmedkhalf/project.nvim',
-
+  'DrKJeff16/project.nvim',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    'ibhagwan/fzf-lua',
+  },
   opts = {
     scope_chdir = 'win',
     patterns = {
@@ -12,8 +16,7 @@ return {
     },
     main = 'project_nvim'
   },
-
   config = function(_, opts)
-    require('project_nvim').setup(opts)
+    require('project').setup(opts)
   end
 }

@@ -54,11 +54,6 @@ return {
             theme = 'dropdown',
             previewer = false,
             show_all_buffers = true,
-            mappings = {
-              i = {
-                ["<CR>"] = actions.select_tab_drop,
-              },
-            },
           },
           colorscheme = {
             theme = 'dropdown',
@@ -95,7 +90,7 @@ return {
 
       vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
       vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
-      vim.keymap.set('n', '<leader><Tab>', ':Telescope buffers<CR>');
+      vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
 
       -- TODO(mark 2025-10-13): Look at better ways to integrate LSP + Telescope
       -- into my workflow. The grep_string function is so so useful!
@@ -109,7 +104,7 @@ return {
       vim.keymap.set('n', '<leader><Tab>', ':Telescope projects<CR>');
       vim.keymap.set('n', '<leader><CR>', ':Telescope oldfiles<CR>');
 
-      vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>');
+      -- vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>');
     end
   },
 }

@@ -13,31 +13,33 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     local kb_opts = { buffer = args.buf, silent = true }
 
-    vim.keymap.set('n', "gd", function() vim.lsp.buf.definition({}) end, kb_opts)
-    vim.keymap.set('n', "K", vim.lsp.buf.hover, kb_opts)
-    vim.keymap.set('n', "<c-s-K>", vim.lsp.buf.signature_help, kb_opts)
-    vim.keymap.set('n', "gD", function() vim.lsp.buf.implementation({}) end, kb_opts)
-    vim.keymap.set('n', "1gD", function() vim.lsp.buf.type_definition({}) end, kb_opts)
-    vim.keymap.set('n', "gr", function() vim.lsp.buf.references() end, kb_opts)
+    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition({}) end, kb_opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, kb_opts)
+    vim.keymap.set('n', '<c-s-K>', vim.lsp.buf.signature_help, kb_opts)
+    vim.keymap.set('n', 'gD', function() vim.lsp.buf.implementation({}) end, kb_opts)
+    vim.keymap.set('n', '1gD', function() vim.lsp.buf.type_definition({}) end, kb_opts)
+    vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, kb_opts)
 
-    vim.keymap.set('n', "<c-]>", function() vim.lsp.buf.declaration({}) end, kb_opts)
+    vim.keymap.set('n', '<c-]>', function() vim.lsp.buf.declaration({}) end, kb_opts)
 
-    vim.keymap.set('n', "<Leader>rn", vim.lsp.buf.rename, kb_opts)
-    vim.keymap.set('n', "<Leader>ca", vim.lsp.buf.code_action, kb_opts)
+    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, kb_opts)
+    vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, kb_opts)
 
-    vim.keymap.set('n', "<Leader>ih", function()
+    vim.keymap.set('n', '<Leader>ih', function()
       -- toggles inlay hints
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, kb_opts)
 
     -- diagnostics
-    vim.keymap.set('n', "<Leader>di", vim.diagnostic.open_float, kb_opts)
+    vim.keymap.set('n', '<Leader>di', vim.diagnostic.open_float, kb_opts)
 
-    vim.keymap.set('n', "<Leader>k", function()
+    -- vim.keymap.set('n', '<Leader>k', function()
+    vim.keymap.set('n', 'H', function()
       vim.diagnostic.jump({ float = true, count = -1 })
     end, kb_opts)
 
-    vim.keymap.set('n', "<Leader>j", function()
+    -- vim.keymap.set('n', '<Leader>j', function()
+    vim.keymap.set('n', 'L', function()
       vim.diagnostic.jump({ float = true, count = 1 })
     end, kb_opts)
   end,

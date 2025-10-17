@@ -14,9 +14,10 @@ noremap <C-k> <PageUp>
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
-" Split buffer horizontally or vertically or tabically
+" Split buffer
 nnoremap <leader>v :vsp<CR>
 nnoremap <leader>x :sp<CR>
+nnoremap <leader>t <C-W>T
 
 " Toggle spellchecking
 " nnoremap <leader>a :setlocal spell!<CR>
@@ -36,9 +37,6 @@ nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol
 " nnoremap <silent><CR> :exec "normal A" . nr2char(getchar()) . "\e"<CR>
-
-" More quicklier faster change ft
-" nnoremap <leader>tt :set ft=
 
 " }}}
 
