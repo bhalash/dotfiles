@@ -9,19 +9,20 @@ return {
 
   -- Command palette
   {
-    'hachy/cmdpalette.nvim',
-    config = function()
-      require('cmdpalette').setup({
-        win = {
-          title = 'Command History'
+    'VonHeikemen/fine-cmdline.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    opts = {
+      popup = {
+        position = {
+          row = '90%',
+          col = '50%',
         },
-        sign = {
-          text = '>'
-        }
-      })
-
-      vim.keymap.set('n', 'q:', '<Plug>(cmdpalette)')
-    end,
+        relative = 'editor',
+      },
+      cmdline = {
+        prompt = '> '
+      },
+    },
   },
 
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES

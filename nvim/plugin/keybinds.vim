@@ -1,5 +1,3 @@
-" Normal {{{
-
 " Fits with tmux prefix being on C-a
 nnoremap <C-s> <C-a>
 
@@ -38,18 +36,15 @@ nnoremap z= 1z=
 " Insert one character at end of line, because I am lazy, lol
 " nnoremap <silent><CR> :exec "normal A" . nr2char(getchar()) . "\e"<CR>
 
-" }}}
+nnoremap : <cmd>FineCmdline<CR>
 
-" Colorcolumn {{{
+" Colorcolumn
 " This function defaults to 80.
 nnoremap <leader>cc <Plug>(dotfiles-toggle-colorcolumn)
 nnoremap <silent><leader>cp :set colorcolumn=120<CR>
 nnoremap <silent><leader>cg :execute 'set colorcolumn=' . col('.')<CR>
 
-" }}}
-
-" Find & Replace {{{
-
+" Find & Replace
 " Stolen from Reddit - replace word under cursor
 nnoremap <CR> ciw
 " Replace all instances of word in file or selection
@@ -66,10 +61,7 @@ nnoremap S :%s,,
 " Take visual selection and search with it
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-" }}}
-
-" Yank {{{
-
+" Yank
 " These keys are awkward to reach in combination on my stupid keyboard
 nnoremap + "+
 vnoremap + "+
@@ -79,21 +71,12 @@ nnoremap <leader>yy :%y+<CR>
 " Yank marked up snippet to clipboard
 vnoremap <leader>y :call functions#YankSnippet()<CR>
 
-" }}}
-
-" zen-mode.nvim {{{
-
+" zen-mode.nvim
 nnoremap <silent><leader>z :ZenMode<CR>
 
-" }}}
-
-" tpope/vim-fugitive {{{
-
+" tpope/vim-fugitive
 " nnoremap <silent><leader>fdd :GDelete!<CR>
 nnoremap <silent><leader>fb :Git blame<CR>
-" nnoremap <silent><leader>fp :Git pull<CR>
-" nnoremap <silent><leader>fu :Git push<CR>
-" nnoremap <silent><leader>fs :Git status<CR>
 nnoremap <silent><leader>fv :Gvdiffsplit<CR>
 nnoremap <silent><leader>fw :Gw<CR>
 nnoremap <silent><leader>fc :Git commit<CR>
@@ -101,11 +84,6 @@ nnoremap <silent><leader>f :Gw<CR>
 " reset the file in the current buffer
 " nnoremap <silent><leader>fe :!git checkout %<CR>
 
-" }}}
-
-" tpope/vim-obsession {{{
-
+" tpope/vim-obsession
 " FIXME(mark 2024-10-09): Get this working, lol!
 nnoremap <leader>P <Plug>(dotfiles-session-toggle)
-
-" }}}

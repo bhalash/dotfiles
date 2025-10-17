@@ -2,8 +2,6 @@
 #
 # Find and open files in vim
 
-# vim/ripgrep {{{
-
 # Directly open found files in vim. All args are passed to ripgrep.
 #   vo function # Open all files containing 'function'.
 #   vo function -g '*.ts' # Open all Typescript files containing 'function'.
@@ -35,5 +33,3 @@ alias vf=_vim_open_file
 
 zle -N _vim_open_file
 bindkey '^P' _vim_open_file
-
-# }}}

@@ -142,6 +142,7 @@ alias tt='task n'
 alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias b='br'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
