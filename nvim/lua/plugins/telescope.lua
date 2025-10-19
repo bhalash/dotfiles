@@ -88,7 +88,6 @@ return {
         }
       });
 
-      vim.keymap.set('n', '<leader>u', ':Telescope command_history<CR>');
       vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
       vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
 
@@ -100,11 +99,11 @@ return {
       vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
       vim.keymap.set('n', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>');
 
+      vim.keymap.set('n', 'q:', ':Telescope command_history<CR>');
+
       vim.keymap.set('n', '<leader>b', ':Telescope git_bcommits<CR>');
       vim.keymap.set('n', '<leader><Tab>', ':Telescope projects<CR>');
       vim.keymap.set('n', '<leader><CR>', ':Telescope oldfiles<CR>');
-
-      -- vim.keymap.set('n', '<leader>t', ':Telescope colorscheme<CR>');
     end
   },
 }

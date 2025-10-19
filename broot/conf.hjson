@@ -15,24 +15,6 @@
 #
 ###############################################################
 
-verbs: [
-  {
-    invocation: openeditleave
-    key: enter
-    execution: "$EDITOR +{line} {file}"
-    leave_broot: false
-    apply_to: file
-  }
-  {
-    invocation: edit
-    key: F2
-    shortcut: e
-    apply_to: file
-    external: "nvim {file}"
-    leave_broot: false
-  }
-]
-
 ###############################################################
 # Default flags
 # You can set up flags you want broot to start with by
@@ -118,7 +100,7 @@ show_selection_mark: true
 # Special paths
 # If some paths must be handled specially, uncomment (and change
 # this section as per the examples)
-# Setting "list":"never" on a dir prevents broot from looking at its 
+# Setting "list":"never" on a dir prevents broot from looking at its
 #  children when searching, unless the dir is the selected root.
 # Setting "sum":"never" on a dir prevents broot from looking at its
 #  children when computing the total size and count of files.
@@ -148,7 +130,7 @@ special_paths: {
 # If you want the escape key to quit broot when there's nothing
 # to cancel (for example when you just opened broot), uncomment
 # this parameter
-# 
+#
 # quit_on_last_cancel: true
 
 ###############################################################
@@ -219,8 +201,8 @@ content_search_max_file_size: 10MB
 #
 # If you want to use advanced keyboard shortcuts in Kitty
 # compatible terminals (Kitty, Wezterm), set this to true.
-# 
-# This makes it possible to use shortcuts like 'space-n', 
+#
+# This makes it possible to use shortcuts like 'space-n',
 # 'ctrl-alt-a-b', 'shift-space', etc.
 #
 enable_kitty_keyboard: false
@@ -270,7 +252,7 @@ preview_transformers: [
     // # In this example, the command refers to neither the input nor the output,
     // # so broot pipes them to the stdin and stdout of the jq process
     // {
-    //     input_extensions: [ "json" ] 
+    //     input_extensions: [ "json" ]
     //     output_extension: json
     //     mode: text
     //     command: [ "jq" ]
@@ -283,7 +265,7 @@ preview_transformers: [
 # While it's possible to have all configuration in one file,
 # it's more convenient to split it in several ones.
 # Importing also allows to set a condition on the terminal's
-# color, which makes it possible to have a different skin 
+# color, which makes it possible to have a different skin
 # chosen when your terminal has a light background and when
 # it has a light one.
 imports: [
@@ -300,19 +282,19 @@ imports: [
             unknown
         ]
         # (un)comment to choose your preferred skin
-        file: skins/dark-blue.hjson
-        //file: skins/catppuccin-macchiato.hjson
-        //file: skins/catppuccin-mocha.hjson
-        //file: skins/dark-gruvbox.hjson
-        //file: skins/dark-orange.hjson
-        //file: skins/solarized-dark.hjson
+        # file: skins/dark-blue.hjson
+        file: skins/catppuccin-mocha-blue.hjson
+        # file: skins/catppuccin-mocha.hjson
+        # file: skins/dark-gruvbox.hjson
+        # file: skins/dark-orange.hjson
+        # file: skins/solarized-dark.hjson
     }
 
     # This skin is imported when your terminal is light
     {
         luma: light
         # (un)comment to choose your preferred skin
-        //file: skins/solarized-light.hjson
+        # file: skins/solarized-light.hjson
         file: skins/white.hjson
     }
 ]

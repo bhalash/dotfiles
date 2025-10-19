@@ -36,7 +36,9 @@ nnoremap z= 1z=
 " Insert one character at end of line, because I am lazy, lol
 " nnoremap <silent><CR> :exec "normal A" . nr2char(getchar()) . "\e"<CR>
 
+" Palette-style command replacement.
 nnoremap : <cmd>FineCmdline<CR>
+nnoremap <leader>: :
 
 " Colorcolumn
 " This function defaults to 80.

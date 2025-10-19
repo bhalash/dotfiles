@@ -114,4 +114,5 @@ return {
   },
 
   'neovim/nvim-lspconfig',
+  'hjson/vim-hjson',
 }

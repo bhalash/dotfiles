@@ -8,6 +8,7 @@ return {
   'sainnhe/edge',
   'sainnhe/sonokai',
   'tomasiser/vim-code-dark',
+  'KijitoraFinch/nanode.nvim',
 
   {
     'navarasu/onedark.nvim',
