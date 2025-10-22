@@ -1,8 +1,7 @@
 " Insert dated and signed remarks
-" iab <expr> t/ strftime('TODO(' . $USER . ' %Y-%m-%d):')
-iab <expr> f/ strftime('FIXME(mark %Y-%m-%d):')
-iab <expr> t/ strftime('TODO(mark %Y-%m-%d):')
-iab <expr> i/ strftime('INFO(mark %Y-%m-%d):')
+iab <expr> f/ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
+iab <expr> t/ strftime('TODO(' . $USER . ' %Y-%m-%d):')
+iab <expr> i/ strftime('INFO(' . $USER . ' %Y-%m-%d):')
 
 " Insert date in different formats
 iab <expr> dl/ strftime('%Y-%m-%d')
