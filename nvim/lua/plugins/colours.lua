@@ -4,11 +4,17 @@ return {
   'HoNamDuong/hybrid.nvim',
   'marko-cerovac/material.nvim',
   'navarasu/onedark.nvim',
-  'projekt0n/github-nvim-theme',
   'sainnhe/edge',
   'sainnhe/sonokai',
   'tomasiser/vim-code-dark',
   'KijitoraFinch/nanode.nvim',
+
+  {
+    'projekt0n/github-nvim-theme',
+    config = function()
+      -- vim.cmd.colorscheme 'github_dark_dimmed'
+    end
+  },
 
   {
     'navarasu/onedark.nvim',
