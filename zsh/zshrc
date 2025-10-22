@@ -176,6 +176,3 @@ done
 # }}}
 
 # zprof
-
-# FIXME(mark 2025-10-15): Move somewhere else
-source /home/mark/.config/broot/launcher/bash/br
