@@ -60,9 +60,6 @@ vim.o.sidescrolloff = 10
 -- Increase scroll speed
 vim.o.ttyfast = true
 
--- Change how buffer is redrawn. /Should/ increase scroll speed
-vim.o.lazyredraw = true
-
 -- Highlight the current line and set the colour
 vim.o.cul = true
 

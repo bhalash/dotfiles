@@ -53,7 +53,7 @@ vim.diagnostic.config({ virtual_text = true })
 vim.lsp.enable({
   'angularls',
   'html',
-  'jdtls',
+  -- 'jdtls',
   'kotlin_language_server',
   'lua_ls',
   'sqlls',

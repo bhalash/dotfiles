@@ -9,19 +9,34 @@ return {
 
   -- Command palette
   {
-    'VonHeikemen/fine-cmdline.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     opts = {
-      popup = {
-        position = {
-          row = '90%',
-          col = '50%',
-        },
-        relative = 'editor',
-      },
       cmdline = {
-        prompt = '> '
+        format = {
+          cmdline = { title = '' },
+        },
       },
+      views = {
+        cmdline_popup = {
+          position = {
+            row = '95%',
+            col = '5%'
+          },
+          border = {
+            style = 'rounded',
+            -- padding = { 2, 3 },
+          },
+          filter_options = {},
+          win_options = {
+            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+          },
+        },
+      },
+    },
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
     },
   },
 
@@ -114,5 +129,10 @@ return {
   },
 
   'neovim/nvim-lspconfig',
-  'hjson/vim-hjson',
+
+  -- Weird-ass format used for broot configuraton.
+  {
+    'hjson/vim-hjson',
+    ft = 'hjson'
+  }
 }

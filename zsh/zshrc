@@ -173,6 +173,8 @@ for script in $XDG_CONFIG_HOME/dotfiles/*zsh; do
   source $script
 done
 
+source ~/.config/broot/launcher/bash/br
+
 # }}}
 
 # zprof
