@@ -50,8 +50,11 @@ return {
               },
             },
           },
+          grep_string = {
+            theme = 'ivy',
+          },
           buffers = {
-            theme = 'dropdown',
+            theme = 'ivy',
             previewer = false,
             show_all_buffers = true,
           },
@@ -100,6 +103,7 @@ return {
       vim.keymap.set('n', '<leader>/', ':Telescope current_buffer_fuzzy_find<CR>');
 
       vim.keymap.set('n', 'q:', ':Telescope command_history<CR>');
+      vim.keymap.set('n', '<leader>u', ':Telescope buffers<CR>');
 
       vim.keymap.set('n', '<leader>b', ':Telescope git_bcommits<CR>');
       vim.keymap.set('n', '<leader><Tab>', ':Telescope projects<CR>');
