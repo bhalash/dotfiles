@@ -33,13 +33,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- diagnostics
     vim.keymap.set('n', '<Leader>di', vim.diagnostic.open_float, kb_opts)
 
-    -- vim.keymap.set('n', '<Leader>k', function()
-    vim.keymap.set('n', 'H', function()
+    vim.keymap.set('n', '[f', function()
       vim.diagnostic.jump({ float = true, count = -1 })
     end, kb_opts)
 
-    -- vim.keymap.set('n', '<Leader>j', function()
-    vim.keymap.set('n', 'L', function()
+    vim.keymap.set('n', ']f', function()
       vim.diagnostic.jump({ float = true, count = 1 })
     end, kb_opts)
   end,
@@ -53,7 +51,7 @@ vim.diagnostic.config({ virtual_text = true })
 vim.lsp.enable({
   'angularls',
   'html',
-  -- 'jdtls',
+  'jdtls', -- java, not js, lol
   'kotlin_language_server',
   'lua_ls',
   'sqlls',

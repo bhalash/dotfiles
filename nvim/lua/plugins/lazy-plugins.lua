@@ -7,39 +7,6 @@ return {
     config = true,
   },
 
-  -- Command palette
-  {
-    'folke/noice.nvim',
-    event = 'VeryLazy',
-    opts = {
-      cmdline = {
-        format = {
-          cmdline = { title = '' },
-        },
-      },
-      views = {
-        cmdline_popup = {
-          position = {
-            row = '90%',
-            col = '50%'
-          },
-          border = {
-            style = 'rounded',
-            -- padding = { 2, 3 },
-          },
-          filter_options = {},
-          win_options = {
-            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-          },
-        },
-      },
-    },
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
-    },
-  },
-
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
   {
     'bronson/vim-trailing-whitespace',
@@ -111,7 +78,6 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    opts = {},
   },
 
   -- Fancy icons
@@ -131,8 +97,19 @@ return {
   'neovim/nvim-lspconfig',
 
   -- Weird-ass format used for broot configuraton.
+  { 'hjson/vim-hjson', ft = 'hjson' },
+  'jidn/vim-dbml',
+
   {
-    'hjson/vim-hjson',
-    ft = 'hjson'
+    'folke/flash.nvim',
+    opts = {},
+    keys = {
+      { 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash' },
+      { 'S', mode = { 'n', 'x', 'o' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
+      { 'r', mode = 'o', function() require'flash'.remote() end, desc = 'Remote Flash' },
+      { 'R', mode = { 'o', 'x' }, function() require'flash'.treesitter_search() end, desc = 'Treesitter Search' },
+      { '<c-s>', mode = { 'c' }, function() require'flash'.toggle() end, desc = 'Toggle Flash Search' },
+      { '/', mode = { 'c' }, function() require'flash'.toggle() end, desc = 'Toggle Flash Search' },
+    },
   }
 }
