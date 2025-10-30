@@ -134,8 +134,6 @@ function ng {
 # Aliases {{{
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
-alias t='task'
-alias ta='task add'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias tree='tree --gitignore'
 alias tt='task n'
@@ -143,6 +141,11 @@ alias vi='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 alias b='br'
+alias c='tty-clock -S -c -b -s'
+
+# INFO(mark.grealish 2025-10-30): I haven't used taskwarrior in a while. Keep?
+# alias t='task'
+# alias ta='task add'
 
 hash -d zdir=$ZSH_DIR
 hash -d dotfiles=$DOTFILES_DIR
@@ -173,6 +176,7 @@ for script in $XDG_CONFIG_HOME/dotfiles/*zsh; do
   source $script
 done
 
+# FIXME(mark 2025-10-26): Keeps breaking at home!
 source ~/.config/broot/launcher/bash/br
 
 # }}}
