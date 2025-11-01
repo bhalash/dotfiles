@@ -28,10 +28,26 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         sources = {
-          { name = 'path' },
-          { name = 'nvim_lsp', keyword_length = 1 },
-          { name = 'buffer', keyword_length = 3 },
-          { name = 'luasnip', keyword_length = 2 },
+          {
+            name = 'buffer',
+            keyword_length = 2,
+            option = {
+              -- Complete against all open buffers.
+              get_bufnrs = function()
+                return vim.api.nvim_list_bufs()
+              end
+            }
+          },
+          {
+            name = 'path',
+            pathMappings = {
+              option = {
+                ['@'] = '${folder}/src',
+              }
+            }
+          },
+          { name = 'nvim_lsp', keyword_length = 6 },
+          { name = 'luasnip', keyword_length = 6 },
         },
         mapping = {
           ['<Tab>'] = cmp.mapping(
