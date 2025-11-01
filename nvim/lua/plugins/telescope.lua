@@ -55,7 +55,7 @@ return {
           },
           buffers = {
             theme = 'ivy',
-            previewer = false,
+            previewer = true,
             show_all_buffers = true,
           },
           colorscheme = {

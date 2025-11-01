@@ -9,7 +9,6 @@ return {
     scope_chdir = 'win',
     patterns = {
       '.git',
-      'init.lua', -- for nvim project
       'nx.json',
       'package.json',
       'project.json',
