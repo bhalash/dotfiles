@@ -16,8 +16,8 @@
   u = push
   uf = push --force
   # rebase
-  rb = "!_rebase() { git pull origin ${1:-master} --rebase; }; _rebase"
-  rbu = "!_rebase_push() { git pull origin ${1:-master} --rebase && git push --force; }; _rebase_push"
+  rb = "!_rebase() { git pull origin ${1:-main} --rebase; }; _rebase"
+  rbu = "!_rebase_push() { git pull origin ${1:-main} --rebase && git push --force; }; _rebase_push"
   # commit
   m = commit
   mm = commit -m
@@ -37,7 +37,7 @@
   branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)
-  squish = "!_squish() { git reset $(git merge-base ${1:-master} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
+  squish = "!_squish() { git reset $(git merge-base ${1:-main} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
   unchanged = ls-files -v | grep \"^[[:lower:]]\"
   undo = "!_undo() { git reset --soft HEAD~${1:-1}; git status; }; _undo"
   untracked = ls-files --others --exclude-standard
