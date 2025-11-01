@@ -96,10 +96,11 @@ return {
 
   'neovim/nvim-lspconfig',
 
-  -- Weird-ass format used for broot configuraton.
+  -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },
-  'jidn/vim-dbml',
+  { 'jidn/vim-dbml', ft = 'dbml' },
 
+  -- Jump jump around
   {
     'folke/flash.nvim',
     opts = {},

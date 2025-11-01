@@ -24,13 +24,11 @@ nnoremap <leader>t <C-W>T
 " nnoremap <C-BS> :nohlsearch<CR>
 nnoremap <BS> :nohlsearch<CR>
 
-" Strip all trailing whitespace from the file
-nnoremap <silent><leader><BS> :%s/\s\+$//<CR>:let @/=''<CR> :nohlsearch<CR> :w<CR>
-
 " Stop * jumping to next occurrence
 nnoremap * :keepjumps normal! mi*`i<CR>
 
 " Most of the time I'm happy with the top seplling suggestion
+" TODO(mark 2025-11-01): Change, this is a shitty key combo.
 nnoremap z= 1z=
 
 " Insert one character at end of line, because I am lazy, lol

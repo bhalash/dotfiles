@@ -14,3 +14,6 @@ iab /* /**<CR><CR>*/<Esc>2h2xka
 " Open help and man pages in a tab
 cab help tab help
 cab Man tab Man
+
+" Strip trailing whitespace before save
+autocmd BufWritePre,FileWritePre * :%s/\s\+$//e
