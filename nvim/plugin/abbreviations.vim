@@ -3,12 +3,11 @@ iab <expr> f/ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
 iab <expr> t/ strftime('TODO(' . $USER . ' %Y-%m-%d):')
 iab <expr> i/ strftime('INFO(' . $USER . ' %Y-%m-%d):')
 
-" Insert date in different formats
+" Insert date
 iab <expr> dl/ strftime('%Y-%m-%d')
-iab <expr> ds/ strftime('%d/%m')
 
 " Block comment
-" Vim helpfully inserts characters at the start of lines that I have to remote
+" Vim helpfully inserts characters at the start of lines that I have to remove
 iab /* /**<CR><CR>*/<Esc>2h2xka
 
 " Open help and man pages in a tab
