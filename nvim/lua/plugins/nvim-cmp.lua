@@ -28,7 +28,7 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         sources = {
-          { name = 'nvim_lsp', keyword_length = 6 },
+          { name = 'nvim_lsp', keyword_length = 4 },
           {
             name = 'buffer',
             keyword_length = 2,

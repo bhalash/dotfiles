@@ -177,7 +177,7 @@ for script in $XDG_CONFIG_HOME/dotfiles/*zsh; do
 done
 
 # FIXME(mark 2025-10-26): Keeps breaking at home!
-source ~/.config/broot/launcher/bash/br
+# source ~/.config/broot/launcher/bash/br
 
 # }}}
 
