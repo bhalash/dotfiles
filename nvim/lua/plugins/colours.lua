@@ -1,4 +1,4 @@
--- colorschemes
+-- colorschemes: set colo in init.lua, not here!
 return {
   'AlexvZyl/nordic.nvim',
   'HoNamDuong/hybrid.nvim',
@@ -8,13 +8,7 @@ return {
   'sainnhe/sonokai',
   'tomasiser/vim-code-dark',
   'KijitoraFinch/nanode.nvim',
-
-  {
-    'projekt0n/github-nvim-theme',
-    config = function()
-      -- vim.cmd.colorscheme 'github_dark_dimmed'
-    end
-  },
+  'projekt0n/github-nvim-theme',
 
   {
     'navarasu/onedark.nvim',
@@ -34,7 +28,6 @@ return {
       require('tokyonight').setup(opts)
       vim.o.termguicolors = true
       vim.g.sonokai_style = 'maia'
-      vim.cmd.colorscheme 'tokyonight-night'
 
       -- Lighten the ColorColumn for better visibility
       -- TODO(mark 2025-10-09): Brighten work laptop screen?

@@ -108,6 +108,8 @@ return {
       vim.keymap.set('n', '<leader>b', ':Telescope git_bcommits<CR>');
       vim.keymap.set('n', '<leader><Tab>', ':Telescope projects<CR>');
       vim.keymap.set('n', '<leader><CR>', ':Telescope oldfiles<CR>');
+
+      vim.keymap.set('n', '<leader>m', ':Telescope colorscheme<CR>');
     end
   },
 }

@@ -99,6 +99,7 @@ return {
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },
   { 'jidn/vim-dbml', ft = 'dbml' },
+  'austintraver/vim-jrnl',
 
   -- Jump jump around
   {

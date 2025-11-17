@@ -120,4 +120,8 @@ require'config.lsp'
 require'config.terminal'
 require'config.helper_functions'
 
+-- vim.cmd.colorscheme 'github_dark_high_contrast'
+-- vim.cmd.colorscheme 'github_dark_dimmed'
+vim.cmd.colorscheme 'tokyonight-night'
+
 -- }}}
