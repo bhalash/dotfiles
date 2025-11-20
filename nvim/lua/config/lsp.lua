@@ -50,11 +50,10 @@ vim.o.updatetime = 250
 vim.diagnostic.config({ virtual_text = true })
 
 vim.lsp.enable({
-  'angularls',
+  -- 'angularls',
   'html',
-  'jdtls', -- java, not js, lol
-  'kotlin_language_server',
+  -- 'jdtls', -- java, not js, lol
+  -- 'kotlin_language_server',
   'lua_ls',
-  'sqlls',
   'ts_ls',
 })

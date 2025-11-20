@@ -2,7 +2,7 @@ return {
   'mason-org/mason-lspconfig.nvim',
   opts = {
     ensure_installed = {
-      'angularls',
+      -- 'angularls',
       'html',
       'jdtls', -- java, not js, lol
       'kotlin_language_server',
@@ -11,7 +11,7 @@ return {
       'ts_ls',
     },
     automatic_enable = {
-      'angularls',
+      -- 'angularls',
       'html',
       'ts_ls',
     },

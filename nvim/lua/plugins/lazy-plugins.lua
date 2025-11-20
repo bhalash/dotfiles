@@ -7,6 +7,8 @@ return {
     config = true,
   },
 
+  'neovim/nvim-lspconfig',
+
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
   {
     'bronson/vim-trailing-whitespace',
@@ -93,8 +95,6 @@ return {
       require'nvim-ts-autotag'.setup()
     end
   },
-
-  'neovim/nvim-lspconfig',
 
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },

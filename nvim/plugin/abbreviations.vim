@@ -15,4 +15,9 @@ cab help tab help
 cab Man tab Man
 
 " Strip trailing whitespace before save
-autocmd BufWritePre,FileWritePre * :%s/\s\+$//e
+" TODO(mgrealis 2025-11-20): Migrate to Lua.
+" See: https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/autocmds.lua
+autocmd BufWritePre,FileWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre,FileWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre,FileWritePre *.scss :%s/\s\+$//e
+autocmd BufWritePre,FileWritePre *.ts :%s/\s\+$//e
