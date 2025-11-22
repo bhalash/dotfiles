@@ -91,12 +91,12 @@ return {
         }
       });
 
-      vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
-      vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
+      -- vim.keymap.set('n', '<leader><space>', ':Telescope find_files<CR>');
+      -- vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>');
 
       -- TODO(mark 2025-10-13): Look at better ways to integrate LSP + Telescope
       -- into my workflow. The grep_string function is so so useful!
-      vim.keymap.set('n', '<leader>g', ':Telescope grep_string<CR>');
+      -- vim.keymap.set('n', '<leader>g', ':Telescope grep_string<CR>');
       vim.keymap.set('n', '<leader>h', ':Telescope lsp_references<CR>');
 
       vim.keymap.set('n', '<leader>m', ':Telescope live_grep<CR>');
