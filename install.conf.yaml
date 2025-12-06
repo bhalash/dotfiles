@@ -1,0 +1,29 @@
+- clean: ['~', '~/.config/alacritty']
+- create:
+  - ~/.config
+  - ~/.config/alacritty
+  - ~/.config/dotfiles
+  - ~/.config/task
+- link:
+    ~/.config/broot: broot
+    ~/.config/nvim: nvim
+    ~/.config/task/taskrc: taskwarrior/taskrc
+    ~/.git-templates: git/templates
+    ~/.gitconfig: git/gitconfig
+    ~/.tigrc: tig/tigrc
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux: tmux
+    ~/.zsh: zsh
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+- link:
+    ~/.config/alacritty/alacritty.toml:
+      path: alacritty/linux.toml
+      if: '[[ `uname` =~ Linux ]]'
+- link:
+    ~/.config/alacritty/alacritty.toml:
+      path: alacritty/mac.toml
+      if: '[[ `uname` =~ Darwin ]]'
+- shell:
+  - [touch ~/.config/dotfiles/zsh && chmod 600 ~/.config/dotfiles/zsh, Create private zshrc]
+  - [git submodule update --init --recursive, Install git submodules]
