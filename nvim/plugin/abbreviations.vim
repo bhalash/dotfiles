@@ -3,6 +3,9 @@ iab <expr> f/ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
 iab <expr> t/ strftime('TODO(' . $USER . ' %Y-%m-%d):')
 iab <expr> i/ strftime('INFO(' . $USER . ' %Y-%m-%d):')
 
+" Username
+iab <expr> u/ $USER
+
 " Insert date
 iab <expr> dl/ strftime('%Y-%m-%d')
 
@@ -15,9 +18,11 @@ cab help tab help
 cab Man tab Man
 
 " Strip trailing whitespace before save
-" TODO(mgrealis 2025-11-20): Migrate to Lua.
-" See: https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/autocmds.lua
-autocmd BufWritePre,FileWritePre *.html :%s/\s\+$//e
-autocmd BufWritePre,FileWritePre *.js :%s/\s\+$//e
-autocmd BufWritePre,FileWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre,FileWritePre *.ts :%s/\s\+$//e
+augroup death_to_trailing
+  autocmd!
+  autocmd BufWritePre,FileWritePre *.html :%s/\s\+$//e
+  autocmd BufWritePre,FileWritePre *.lua :%s/\s\+$//e
+  autocmd BufWritePre,FileWritePre *.js :%s/\s\+$//e
+  autocmd BufWritePre,FileWritePre *.scss :%s/\s\+$//e
+  autocmd BufWritePre,FileWritePre *.ts :%s/\s\+$//e
+augroup end
