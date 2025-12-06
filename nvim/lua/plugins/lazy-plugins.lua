@@ -10,13 +10,7 @@ return {
   'neovim/nvim-lspconfig',
 
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
-  {
-    'bronson/vim-trailing-whitespace',
-    init = function()
-      -- Don't highlight whitespace in Markdown
-      vim.g.extra_whitespace_ignored_filetypes = { 'markdown' }
-    end
-  },
+  'bronson/vim-trailing-whitespace',
 
   -- Provide additional text targets for di/a<char>:
   -- , . ; : + - = ~ _ * # / | \ & $
@@ -100,6 +94,12 @@ return {
   { 'hjson/vim-hjson', ft = 'hjson' },
   { 'jidn/vim-dbml', ft = 'dbml' },
   'austintraver/vim-jrnl',
+
+  {
+    'esmuellert/vscode-diff.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    cmd = 'CodeDiff',
+  },
 
   -- Jump jump around
   {

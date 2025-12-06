@@ -9,6 +9,7 @@ return {
   'tomasiser/vim-code-dark',
   'KijitoraFinch/nanode.nvim',
   'projekt0n/github-nvim-theme',
+  'Mofiqul/vscode.nvim',
 
   {
     'navarasu/onedark.nvim',

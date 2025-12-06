@@ -48,6 +48,6 @@
 [init]
   defaultBranch = main
 [diff]
-  tool = vimdiff
+  tool = nvimdiff
 [difftool]
   prompt = false
