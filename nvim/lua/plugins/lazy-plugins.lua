@@ -96,9 +96,16 @@ return {
   'austintraver/vim-jrnl',
 
   {
-    'esmuellert/vscode-diff.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    cmd = 'CodeDiff',
+    'sindrets/diffview.nvim',
+    opts = {
+      file_panel = {
+        win_config = {
+          position = 'left',
+          width = 60,
+          win_opts = {},
+        },
+      },
+    }
   },
 
   -- Jump jump around
