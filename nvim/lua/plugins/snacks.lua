@@ -30,12 +30,12 @@ return {
       -- layout = 'left',
       -- layout = 'right',
       -- layout = 'select',
-      -- layout = 'sidebar',
+      layout = 'sidebar', -- i like this one
       -- layout = 'telescope',
       -- layout = 'top',
       -- layout = 'vertical',
       -- layout = 'vscode',
-      layout = 'bottom',
+      -- layout = 'bottom',
       win = {
         input = {
           keys = {
