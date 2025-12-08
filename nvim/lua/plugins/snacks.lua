@@ -20,20 +20,30 @@ return {
     statuscolumn = { enabled = false },
     words = { enabled = true },
   },
-  -- keys = {
-  --   { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-  -- },
   config = function()
     local snacks = require'snacks'
 
     local picker_opts = {
+      -- layout = 'bottom',
+      -- layout = 'dropdown',
+      -- layout = 'ivy_split',
+      -- layout = 'left',
+      -- layout = 'right',
+      -- layout = 'select',
+      -- layout = 'sidebar',
+      -- layout = 'telescope',
+      -- layout = 'top',
+      -- layout = 'vertical',
+      -- layout = 'vscode',
       layout = 'bottom',
       win = {
         input = {
           keys = {
             -- to close the picker on ESC instead of going to normal mode,
             -- add the following keymap to your config
-            ["<Esc>"] = { "close", mode = { "n", "i" } },
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+            ['<c-s>'] = { 'edit_split', mode = { 'i', 'n' } },
+            ['<c-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
           }
         }
       },
