@@ -33,13 +33,22 @@ return {
 
   -- Distraction-free mode
   {
-    'folke/zen-mode.nvim',
-    opts =  {
-      window = {
-        width = 160,
-        height = 1,
+    -- {
+    --   'folke/twilight.nvim',
+    -- },
+    {
+      'folke/zen-mode.nvim',
+      opts =  {
+        window = {
+          backdrop = 1,
+          width = 160,
+          height = 1,
+        },
+        gitsigns = {
+          enabled = true,
+        },
       },
-    },
+    }
   },
 
   -- Auto pair brackets, like
