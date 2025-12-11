@@ -84,7 +84,3 @@ nnoremap <silent><leader>fc :Git commit<CR>
 nnoremap <silent><leader>f :Gw<CR>
 " reset the file in the current buffer
 " nnoremap <silent><leader>fe :!git checkout %<CR>
-
-" tpope/vim-obsession
-" FIXME(mark 2024-10-09): Get this working, lol!
-nnoremap <leader>P <Plug>(dotfiles-session-toggle)

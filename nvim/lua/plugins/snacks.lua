@@ -24,13 +24,13 @@ return {
     local snacks = require'snacks'
 
     local picker_opts = {
-      -- layout = 'bottom',
+      layout = 'bottom',
       -- layout = 'dropdown',
       -- layout = 'ivy_split',
       -- layout = 'left',
       -- layout = 'right',
       -- layout = 'select',
-      layout = 'sidebar', -- i like this one
+      -- layout = 'sidebar', -- i like this one
       -- layout = 'telescope',
       -- layout = 'top',
       -- layout = 'vertical',

@@ -5,14 +5,18 @@ return {
       -- 'angularls',
       'html',
       'jdtls', -- java, not js, lol
+      'jsonls',
       'kotlin_language_server',
       'lua_ls',
       'sqlls',
       'ts_ls',
+      'vimls',
+      'yamlls',
     },
     automatic_enable = {
       -- 'angularls',
       'html',
+      'lua_ls',
       'ts_ls',
     },
   },

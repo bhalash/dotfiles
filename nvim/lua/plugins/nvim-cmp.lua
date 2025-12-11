@@ -27,11 +27,18 @@ return {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
+        completion = {
+          -- Align completeopt for LSP.
+          completeopt = 'menu,menuone,noinsert,noselect',
+        },
+        experimental = {
+          ghost_text = true,
+        },
         sources = {
-          { name = 'nvim_lsp', keyword_length = 4 },
           {
             name = 'buffer',
             keyword_length = 2,
+            max_item_count = 8,
             option = {
               -- Complete against all open buffers.
               get_bufnrs = function()
@@ -39,6 +46,9 @@ return {
               end
             }
           },
+          { name = 'path' },
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
           {
             name = 'path',
             pathMappings = {
@@ -47,7 +57,6 @@ return {
               }
             }
           },
-          { name = 'luasnip', keyword_length = 6 },
         },
         mapping = {
           ['<Tab>'] = cmp.mapping(
@@ -81,7 +90,6 @@ return {
           )
         }
       })
-
     end,
   }
 }
