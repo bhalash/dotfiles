@@ -21,7 +21,7 @@
   # commit
   m = commit
   mm = commit -m
-  cc = "!_save() { git add .; git commit -m \"${@:-saving work in flight}\"; }; _save"
+  cc = "!_save() { git add .; git commit -m \"$(date +'%Y-%m-%d %H:%M:%S'): saving work in flight\"; }; _save"
   # shorthands
   a = add
   b = branch
@@ -31,10 +31,11 @@
   s = status
   t = stash
   aa = add .
+  bb = symbolic-ref --short HEAD
+  branchname = symbolic-ref --short HEAD
   cp = cherry-pick
   # util
   nuke = !git branch -D
-  branchname = symbolic-ref --short HEAD
   conflicted = diff --name-only --diff-filter=U
   dammit = !git push -u origin $(git branchname)
   squish = "!_squish() { git reset $(git merge-base ${1:-main} $(git rev-parse --abbrev-ref HEAD)); }; _squish"
