@@ -35,10 +35,17 @@ return {
           ghost_text = true,
         },
         sources = {
+          { name = 'nvim_lsp', dup = 0 },
+          {
+            name = 'luasnip',
+            dup = 0,
+            keyword_length = 4,
+          },
           {
             name = 'buffer',
-            keyword_length = 2,
+            keyword_length = 6,
             max_item_count = 8,
+            dup = 0,
             option = {
               -- Complete against all open buffers.
               get_bufnrs = function()
@@ -46,11 +53,10 @@ return {
               end
             }
           },
-          { name = 'path' },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
           {
             name = 'path',
+            dup = 0,
+            keyword_length = 4,
             pathMappings = {
               option = {
                 ['@'] = '${folder}/src',

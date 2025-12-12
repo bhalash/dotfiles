@@ -120,6 +120,4 @@ require'config.lsp'
 require'config.terminal'
 require'config.helper_functions'
 
-vim.cmd.colorscheme 'tokyonight-night'
-
 -- }}}

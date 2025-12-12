@@ -1,7 +1,5 @@
 local group = vim.api.nvim_create_augroup('LspMappings', { clear = true })
 
--- TODO(mark 2025-10-13): Revisit the LspAttach bindings. These are great as a
--- start, but I haven't adapted them for real work.
 vim.api.nvim_create_autocmd('LspAttach', {
   group = group,
   callback = function(args)
@@ -39,11 +37,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- diagnostics
     vim.keymap.set('n', '<Leader>di', vim.diagnostic.open_float, kb_opts)
 
-    vim.keymap.set('n', '[f', function()
+    vim.keymap.set('n', 'gj', function()
       vim.diagnostic.jump({ float = true, count = -1 })
     end, kb_opts)
 
-    vim.keymap.set('n', ']f', function()
+    vim.keymap.set('n', 'gk', function()
       vim.diagnostic.jump({ float = true, count = 1 })
     end, kb_opts)
   end,
@@ -51,7 +49,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Enable to show line diagnostics automatically in hover window when over issue.
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-vim.o.updatetime = 250
+vim.o.updatetime = 400
 
 vim.diagnostic.config({
   float = { border = 'rounded' },
@@ -60,11 +58,9 @@ vim.diagnostic.config({
 })
 
 vim.lsp.enable({
-  -- 'angularls',
   'html',
   'jsonls',
   'lua_ls',
-  -- 'ts_ls',
   'vimls',
   'yamlls',
 })
