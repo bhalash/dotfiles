@@ -31,26 +31,6 @@ return {
   -- Better handling of paired characters
   'tpope/vim-surround',
 
-  -- Distraction-free mode
-  {
-    -- {
-    --   'folke/twilight.nvim',
-    -- },
-    {
-      'folke/zen-mode.nvim',
-      opts =  {
-        window = {
-          backdrop = 1,
-          width = 160,
-          height = 1,
-        },
-        gitsigns = {
-          enabled = true,
-        },
-      },
-    }
-  },
-
   -- Auto pair brackets, like
   {
     'windwp/nvim-autopairs',

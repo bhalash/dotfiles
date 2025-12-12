@@ -54,8 +54,8 @@ nnoremap <leader>W :s,,
 vnoremap <leader>W :s,
 
 " TODO(mark.grealish 2025-10-30): Use these keys for LSP?
-nnoremap gk :n<CR>
-nnoremap gj :prev<CR>
+nnoremap ]j :prev<CR>
+nnoremap [k :n<CR>
 
 " nnoremap ** :keepjumps normal! mi*`i<CR> :%s,,
 
@@ -71,9 +71,6 @@ vnoremap + "+
 nnoremap <leader>yy :%y+<CR>
 " Yank marked up snippet to clipboard
 vnoremap <leader>y :call functions#YankSnippet()<CR>
-
-" zen-mode.nvim
-nnoremap <silent><leader>z :ZenMode<CR>
 
 " tpope/vim-fugitive
 " nnoremap <silent><leader>fdd :GDelete!<CR>
