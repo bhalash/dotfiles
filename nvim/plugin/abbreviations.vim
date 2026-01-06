@@ -3,6 +3,10 @@ iab <expr> f/ strftime('FIXME(' . $USER . ' %Y-%m-%d):')
 iab <expr> t/ strftime('TODO(' . $USER . ' %Y-%m-%d):')
 iab <expr> i/ strftime('INFO(' . $USER . ' %Y-%m-%d):')
 
+iab  ff/ fixme:
+iab  ii/ info:
+iab  tt/ todo:
+
 " Username
 iab <expr> u/ $USER
 

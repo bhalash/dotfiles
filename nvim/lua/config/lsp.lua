@@ -4,6 +4,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = group,
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local snacks = require'snacks'
 
     if client and client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
@@ -20,9 +21,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', '<c-s-K>', vim.lsp.buf.signature_help, kb_opts)
 
-    vim.keymap.set('n', 'gD', function() vim.lsp.buf.implementation({}) end, kb_opts)
+    -- vim.keymap.set('n', 'gD', function() vim.lsp.buf.implementation({}) end, kb_opts)
+    -- vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, kb_opts)
     vim.keymap.set('n', '1gD', function() vim.lsp.buf.type_definition({}) end, kb_opts)
-    vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, kb_opts)
+
+    vim.keymap.set('n', 'gr', function() snacks.picker.lsp_references() end)
+    vim.keymap.set('n', 'gd', function() snacks.picker.lsp_definitions() end)
 
     vim.keymap.set('n', '<c-]>', function() vim.lsp.buf.declaration({}) end, kb_opts)
 

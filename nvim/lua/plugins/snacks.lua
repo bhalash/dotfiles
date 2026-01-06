@@ -63,7 +63,7 @@ return {
     };
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
-    vim.keymap.set('n', '<leader>p', function() snacks.picker.smart(picker_opts) end)
+    vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
 
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
 
@@ -85,7 +85,6 @@ return {
       },
     }) end)
 
-    vim.keymap.set('n', '<leader>h', function() snacks.picker.lsp_references(picker_opts) end)
     vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>u', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
