@@ -20,9 +20,9 @@ function __nx_project_list {
   # - Special case: empty lines are assumed to be a project in the root dir.
   local project_root=$1
 
-  rg --files -g 'nx.json' -g 'project.json' -g 'package.json' $project_root \
+  rg --files -g 'angular.json' -g 'nx.json' -g 'project.json' -g 'package.json' $project_root \
     | sed -e "s,${project_root}/,," \
-    | sed -E -e 's,(/)?(project|package|nx).json,,' \
+    | sed -E -e 's,(/)?(angular|project|package|nx).json,,' \
     | sed -e 's,^$,.,' \
     | sort -r \
     | uniq

@@ -143,6 +143,7 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 alias b='br'
 alias c='tty-clock -S -c -b -s'
+alias bat='batcat'
 
 # INFO(mark.grealish 2025-10-30): I haven't used taskwarrior in a while. Keep?
 # alias t='task'
