@@ -81,6 +81,3 @@ function __cd_nx_project_open_vim {
 # register widget and bind to ^h
 zle -N __cd_nx_project
 bindkey '^J' __cd_nx_project
-
-zle -N __cd_nx_project_open_vim
-bindkey '^K' __cd_nx_project_open_vim
