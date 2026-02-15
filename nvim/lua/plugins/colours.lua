@@ -29,7 +29,8 @@ return {
       require('tokyonight').setup(opts)
       vim.o.termguicolors = true
       vim.g.sonokai_style = 'maia'
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'material-deep-ocean'
       -- Lighten the ColorColumn for better visibility
       -- TODO(mark 2025-10-09): Brighten work laptop screen?
       vim.cmd([[hi ColorColumn guibg=#2d3454]])
