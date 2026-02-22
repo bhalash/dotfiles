@@ -4,6 +4,9 @@ nnoremap <C-s> <C-a>
 " Remap alternate-file to '', easier on my stupid keyboard
 noremap '' <C-^>
 
+" Case-insensitive search.
+nnoremap <leader>/ /\c
+
 " Page up and down on nav keys
 noremap <C-j> <PageDown>
 noremap <C-k> <PageUp>

@@ -9,15 +9,15 @@ return {
     bigfile = { enabled = false },
     dashboard = { enabled = false },
     explorer = { enabled = true },
-    indent = { enabled = false },
+    indent = { enabled = true },
     input = { enabled = true },
     picker = { enabled = true },
-    notifier = { enabled = true },
-    notify = { enabled = true },
+    notifier = { enabled = false },
+    notify = { enabled = false },
     quickfile = { enabled = true },
     scope = { enabled = true },
-    scroll = { enabled = false },
-    statuscolumn = { enabled = false },
+    scroll = { enabled = true },
+    statuscolumn = { enabled = true },
     words = { enabled = true },
     zen = { enabled = true },
   },
@@ -64,21 +64,33 @@ return {
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
     vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
-
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
 
+    -- FIXME(mark 2026-02-22): REENABLE THIS ONE ASAP
+    -- vim.keymap.set('n', '<leader><tab>', function() snacks.picker.lines(picker_opts) end)
+
     vim.keymap.set('n', '<leader><tab>', function() snacks.picker.projects({
-      -- scope_chdir = 'win',
+      scope_chdir = 'win',
       patterns = {
         '.git',
         'nx.json',
         'package.json',
         'project.json'
-      }
+      },
+      win = {
+        input = {
+          keys = {
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          }
+        }
+      },
     }) end)
 
     -- toggle zen mode
     vim.keymap.set('n', '<leader>z', function() snacks.zen({
+      toggles = {
+        dim = false
+      },
       window = {
         width = 160,
         height = 1,
@@ -90,6 +102,5 @@ return {
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
     vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
     vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({}) end)
-    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
   end
 }

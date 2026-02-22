@@ -30,6 +30,7 @@ require('lazy').setup {
   spec = {
     { import = 'plugins' },
   },
+  colorscheme = 'default',
   change_detection = {
     enabled = true,
     notify = false
