@@ -96,20 +96,4 @@ return {
       },
     }
   },
-
-  -- Jump jump around
-  {
-    'folke/flash.nvim',
-    opts = {},
-    keys = {
-      -- TODO(mark.grealish 2025-11-01): This is a neat plugin, but it also annoys me.
-      { 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash' },
-      { 'S', mode = { 'n', 'x', 'o' }, function() require('flash').treesitter() end, desc = 'Flash Treesitter' },
-      -- FIXME(mark.grealish 2025-11-01): Re-enable these ASASP.
-      -- { 'r', mode = 'o', function() require'flash'.remote() end, desc = 'Remote Flash' },
-      -- { 'R', mode = { 'o', 'x' }, function() require'flash'.treesitter_search() end, desc = 'Treesitter Search' },
-      -- { '<c-s>', mode = { 'c' }, function() require'flash'.toggle() end, desc = 'Toggle Flash Search' },
-      -- { '/', mode = { 'c' }, function() require'flash'.toggle() end, desc = 'Toggle Flash Search' },
-    },
-  }
 }
