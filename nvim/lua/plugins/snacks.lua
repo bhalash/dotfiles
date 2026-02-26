@@ -64,11 +64,13 @@ return {
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
     vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
-    vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
+    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.recent(picker_opts) end)
     vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
 
-    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.projects({
+    vim.keymap.set('n', '<leader><enter>', function() snacks.picker.projects({
+      finder = 'recent_projects',
       scope_chdir = 'win',
+      dev = { '~/Code', '~/Work', '~/.dotfiles/' },
       patterns = {
         '.git',
         'nx.json',
