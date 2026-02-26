@@ -81,3 +81,7 @@ nnoremap <silent><leader>fc :Git commit<CR>
 nnoremap <silent><leader>f :Gw<CR>
 " reset the file in the current buffer
 " nnoremap <silent><leader>fe :!git checkout %<CR>
+
+" sindrets/diffview.nvim
+nnoremap <leader>,, :DiffviewOpen<CR>
+nnoremap <leader>,. :DiffviewClose<CR>
