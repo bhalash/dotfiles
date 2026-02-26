@@ -1,10 +1,14 @@
 #!/usr/bin/env zsh
-#
-# cd to git project root folder
+# Useful utilities for git and git projects.
 
+# is this a git project?
 function __is_git_project {
   git rev-parse 2> /dev/null
+  return $?
 }
+
+# Function: cd to git project root folder
+# ==============================================================================
 
 function __cd_git_root {
   if __is_git_project; then
@@ -18,7 +22,38 @@ function __cd_git_root {
   fi
 }
 
-# bind to ^H
-zle -N __cd_git_root
-bindkey '^H' __cd_git_root
-alias gr=__cd_git_root
+function __pick_git_branch {
+  # sed strips `*` from current branch.
+  git branch | sort -r | fzf --height=~10% --layout=reverse | sed -e 's/^[*\s]//'
+}
+
+alias gr='__cd_git_root'
+
+# Function: Change Branch
+# ==============================================================================
+
+function __git_nuke_branch {
+  if __is_git_project; then
+    git branch -D $(__pick_git_branch)
+    zle reset-prompt
+  else
+    echo "cd: not a git project: ${PWD}"
+  fi
+}
+
+alias nk='__git_nuke_branch'
+
+# Widget: Change Branch
+# ==============================================================================
+
+function __git_change_branch {
+  if __is_git_project; then
+    git checkout $(__pick_git_branch)
+    zle reset-prompt
+  else
+    echo "cd: not a git project: ${PWD}"
+  fi
+}
+
+zle -N __git_change_branch
+bindkey '^H' __git_change_branch # Bind to Ctrl+H

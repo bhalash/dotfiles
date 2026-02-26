@@ -30,8 +30,11 @@ function __nx_project_list {
 
 function __pick_nx_project {
   local project_root=$1
-  __nx_project_list $project_root | fzf
+  __nx_project_list $project_root | fzf --height=~25% --layout=reverse
 }
+
+# Widget: Change Nx Project in Monorepo
+# ==============================================================================
 
 function __cd_nx_project {
   if ! __is_git_project; then
@@ -70,14 +73,5 @@ function __cd_nx_project {
   zle reset-prompt
 }
 
-# cd to project and open vim
-function __cd_nx_project_open_vim {
-  __cd_nx_project && vim
-}
-
-# Register Widget
-# ==============================================================================
-
-# register widget and bind to ^h
 zle -N __cd_nx_project
-bindkey '^J' __cd_nx_project
+bindkey '^J' __cd_nx_project # Bind to Ctrl+J
