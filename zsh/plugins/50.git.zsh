@@ -23,8 +23,10 @@ function __cd_git_root {
 }
 
 function __pick_git_branch {
-  # sed strips `*` from current branch.
-  git branch | sort -r | fzf --height=~10% --layout=reverse | sed -e 's/^[*\s]//'
+  git branch \
+    | sort -r \
+    | fzf --height=~20% --layout=reverse \
+    | sed -e 's/^[ *]\+//' # strip ` * ` from current branch
 }
 
 alias gr='__cd_git_root'
@@ -34,7 +36,12 @@ alias gr='__cd_git_root'
 
 function __git_nuke_branch {
   if __is_git_project; then
-    git branch -D $(__pick_git_branch)
+    branch=$(__pick_git_branch)
+
+    if [[ $branch != '' ]]; then
+      git branch -D "${branch}"
+    fi
+
     zle reset-prompt
   else
     echo "cd: not a git project: ${PWD}"
@@ -48,7 +55,12 @@ alias nk='__git_nuke_branch'
 
 function __git_change_branch {
   if __is_git_project; then
-    git checkout $(__pick_git_branch)
+    branch=$(__pick_git_branch)
+
+    if [[ $branch != '' ]]; then
+      git checkout "${branch}"
+    fi
+
     zle reset-prompt
   else
     echo "cd: not a git project: ${PWD}"
