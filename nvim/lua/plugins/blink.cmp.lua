@@ -4,13 +4,13 @@ return {
   version = '1.*',
   opts = {
     keymap = {
+      -- preset = 'super-tab',
       ['<CR>'] = { 'accept', 'fallback' },
       ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
       ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
 
       ['<C-e'] = { 'hide', 'fallback' },
-      ['<Esc>'] = { 'hide', 'fallback' },
       ['<Up>'] = { 'select_prev', 'fallback' },
       ['<Down>'] = { 'select_next', 'fallback' },
 
