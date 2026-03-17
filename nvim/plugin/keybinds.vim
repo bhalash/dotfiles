@@ -49,9 +49,9 @@ nnoremap <leader>* :%s,\<<C-r>=expand("<cword>")<CR>\>,
 vnoremap <leader>* :s,\<<C-r>=expand("<cword>")<CR>\>,
 
 " TODO(mark 2025-10-26): Move to not "s" - these interfere with leap.nvim
-nnoremap <leader>w :%s,,
-nnoremap <leader>W :s,,
-vnoremap <leader>W :s,
+nnoremap <leader>s :%s,
+nnoremap <leader>S :s,
+vnoremap <leader>S :s,
 
 " TODO(mark.grealish 2025-10-30): Use these keys for LSP?
 nnoremap ]j :prev<CR>
@@ -74,11 +74,11 @@ vnoremap <leader>y :call functions#YankSnippet()<CR>
 
 " tpope/vim-fugitive
 " nnoremap <silent><leader>fdd :GDelete!<CR>
-nnoremap <silent><leader>fb :Git blame<CR>
-nnoremap <silent><leader>fv :Gvdiffsplit<CR>
-nnoremap <silent><leader>fw :Gw<CR>
-nnoremap <silent><leader>fc :Git commit<CR>
-nnoremap <silent><leader>f :Gw<CR>
+" nnoremap <silent><leader>fb :Git blame<CR>
+" nnoremap <silent><leader>fv :Gvdiffsplit<CR>
+" nnoremap <silent><leader>fw :Gw<CR>
+" nnoremap <silent><leader>fc :Git commit<CR>
+" nnoremap <silent><leader>f :Gw<CR>
 " reset the file in the current buffer
 " nnoremap <silent><leader>fe :!git checkout %<CR>
 
