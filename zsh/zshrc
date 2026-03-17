@@ -136,7 +136,6 @@ function ng {
 
 alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
-alias tree='tree --gitignore'
 alias tt='task n'
 alias vi='nvim'
 alias vim='nvim'

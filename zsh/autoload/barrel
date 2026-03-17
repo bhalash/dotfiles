@@ -13,8 +13,9 @@
 function barrel {
   local INDEX='index.ts'
 
-  rg --files -g '*.ts' -g "!${INDEX}" -g '!*.spec.ts' --max-depth 1 \
+  rg --files -g '*.ts' -g '*.tsx' -g "!${INDEX}" -g '!*.spec.ts' --max-depth 1 \
     | sort \
-    | sed -e "s,^,export * from './,;s,\.ts$,'\;," \
+    | sed -e "s,^,export * from './," \
+    | sed -E -e "s,\.(ts|tsx)$,'\;," \
     > $INDEX
 }
