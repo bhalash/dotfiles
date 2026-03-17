@@ -79,10 +79,17 @@ return {
     end
   },
 
+  {
+    'airblade/vim-rooter',
+    config = function()
+      vim.g.rooter_silent_chdir = 1
+      vim.g.rooter_patterns = { '.git', 'Makefile', '*.sln', 'build/env.sh' }
+    end,
+  },
+
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },
   { 'jidn/vim-dbml', ft = 'dbml' },
-  'austintraver/vim-jrnl',
 
   {
     'sindrets/diffview.nvim',

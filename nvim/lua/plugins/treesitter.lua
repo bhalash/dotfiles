@@ -24,6 +24,7 @@ return {
         'typescript',
         'vim',
         'vimdoc',
+        'tsx',
         'yaml',
       },
     },

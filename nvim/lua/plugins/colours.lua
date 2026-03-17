@@ -2,14 +2,16 @@
 return {
   'AlexvZyl/nordic.nvim',
   'HoNamDuong/hybrid.nvim',
+  'KijitoraFinch/nanode.nvim',
+  'Mofiqul/vscode.nvim',
+  'catppuccin/nvim',
   'marko-cerovac/material.nvim',
   'navarasu/onedark.nvim',
+  'projekt0n/github-nvim-theme',
   'sainnhe/edge',
   'sainnhe/sonokai',
   'tomasiser/vim-code-dark',
-  'KijitoraFinch/nanode.nvim',
-  'projekt0n/github-nvim-theme',
-  'Mofiqul/vscode.nvim',
+  'rebelot/kanagawa.nvim',
 
   {
     'navarasu/onedark.nvim',
