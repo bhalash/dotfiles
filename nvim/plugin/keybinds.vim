@@ -49,9 +49,9 @@ nnoremap <leader>* :%s,\<<C-r>=expand("<cword>")<CR>\>,
 vnoremap <leader>* :s,\<<C-r>=expand("<cword>")<CR>\>,
 
 " TODO(mark 2025-10-26): Move to not "s" - these interfere with leap.nvim
-nnoremap <leader>s :%s,
-nnoremap <leader>S :s,
-vnoremap <leader>S :s,
+nnoremap <leader>a :%s,
+nnoremap <leader>A :s,
+vnoremap <leader>A :s,
 
 " TODO(mark.grealish 2025-10-30): Use these keys for LSP?
 nnoremap ]j :prev<CR>
