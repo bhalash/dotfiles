@@ -1,0 +1,15 @@
+- clean:
+  - '~'
+  - ~/AppData/Local/nvim
+  - ~/AppData/Roaming/alacritty
+- create:
+  - ~/.config
+  - ~/.config/alacritty
+- link:
+    # ~/.config/broot: broot
+    # ~/.tigrc: tig/tigrc
+    ~/.gitconfig: git/gitconfig
+    ~/AppData/Local/nvim: nvim
+    ~/AppData/Roaming/alacritty/alacritty.toml: alacritty/windows.toml
+- shell:
+  - [git submodule update --init --recursive, Install git submodules]
