@@ -1,10 +1,10 @@
 [submodule "tmux/plugins/tpm"]
   path = tmux/plugins/tpm
-  url = https://github.com:tmux-plugins/tpm.git
+  url = https://github.com/tmux-plugins/tpm.git
 [submodule "dotbot"]
   path = dotbot
-  url = https://github.com:anishathalye/dotbot.git
+  url = https://github.com/anishathalye/dotbot.git
   ignore = dirty
 [submodule "fzf-tab-completion"]
   path = fzf-tab-completion
-  url = https://github.com:lincheney/fzf-tab-completion.git
+  url = https://github.com/lincheney/fzf-tab-completion.git
