@@ -16,4 +16,3 @@
     ~/.config/alacritty/alacritty.toml: alacritty/linux.toml
 - shell:
   - [touch ~/.config/dotfiles/zsh && chmod 600 ~/.config/dotfiles/zsh, Create private zshrc]
-  - [git submodule update --init --recursive, Install git submodules]
