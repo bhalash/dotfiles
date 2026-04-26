@@ -3,8 +3,8 @@
   - ~/AppData/Local/nvim
   - ~/AppData/Roaming/alacritty
 - create:
-  - ~/.config
-  - ~/.config/alacritty
+  - ~/AppData/Local/nvim
+  - ~/AppData/Roaming/alacritty
 - link:
     # ~/.config/broot: broot
     # ~/.tigrc: tig/tigrc
