@@ -1,3 +1,7 @@
+# Enable startup profiling
+# See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html
+# zmodload zsh/zprof
+
 # TODO(mark 2022-01-05): have a read of flowchart to split stuff:
 # See: https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html
 
@@ -5,10 +9,6 @@
 
 # TODO(mark 2021-12-29): look at setting more options? Some cool stuff in there
 # See: https://linux.die.net/man/1/zshoptions
-
-# Enable startup profiling
-# See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html
-# zmodload zsh/zprof
 
 # Permit shorter loop syntax
 setopt short_loops
