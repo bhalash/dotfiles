@@ -62,11 +62,12 @@ vim.diagnostic.config({
 })
 
 vim.lsp.enable({
+  'angularls',
   'cssls',
   'html',
+  'jdtls',
   'jsonls',
   'lua_ls',
-  'tailwindcss',
   'tsgo',
   'vimls',
   'yamlls',

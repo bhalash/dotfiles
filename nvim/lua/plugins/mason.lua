@@ -5,6 +5,7 @@ return {
       'angularls',
       'cssls',
       'html',
+      'jdtls',
       'jsonls',
       'lua_ls',
       'tsgo',
