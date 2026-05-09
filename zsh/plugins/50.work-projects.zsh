@@ -3,21 +3,25 @@
 # cd between work projects in my work folder.
 
 function __get_project_list {
-  rg --files "$1" --maxdepth 2 --null | xargs -0 dirname
+  local projects=$(rg --files "$1" --maxdepth 2 --null)
+
+  if [[ $projects != '' ]]; then
+    echo $projects | xargs -0 dirname
+  fi
 }
 
 function __cd_work_project {
-  projects="${HOME}/.dotfiles\n" # start here with dotfiles
+  local projects="${DOTFILES}\n" # start here with dotfiles
 
-  if [[ -d ~/Code ]]; then # personal code projects
-    projects+=$(__get_project_list ~/Code)
+  if [[ -d $CODE_DIR ]]; then # personal code projects
+    projects+=$(__get_project_list $CODE_DIR)
   fi
 
-  if [[ -d ~/Work ]]; then # work projects
-    projects+=$(__get_project_list ~/Work)
+  if [[ -d $WORK_DIR ]]; then # work projects
+    projects+=$(__get_project_list $WORK_DIR)
   fi
 
-  selected_project=$(echo $projects | sort | uniq | fzf)
+  local selected_project=$(echo $projects | sort | uniq | fzf)
   builtin cd $selected_project
   zle reset-prompt
 }

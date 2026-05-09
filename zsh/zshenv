@@ -1,3 +1,5 @@
-export DOTFILES_DIR="${HOME}/.dotfiles"
+export DOTFILES="${HOME}/.dotfiles"
 export EDITOR='nvim'
 export ZSH_DIR="${HOME}/.zsh"
+export WORK_DIR="${HOME}/Work"
+export CODE_DIR="${HOME}/Code"

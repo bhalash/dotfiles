@@ -44,6 +44,18 @@ fpath=($fpath "${ZSH_DIR}/autoload")
 
 # }}}
 
+# Zsh: Temp {{{
+
+if [[ -z $TMPDIR ]]; then
+  export TMPDIR='/var/tmp/'
+fi
+
+if [[ ! -d $TMPDIR ]]; then
+  mkdir -p -m 700 $TMPDIR
+fi
+
+# }}}
+
 # ZSH: History {{{
 
 export HISTFILE="$HOME/.zsh_history"
@@ -89,18 +101,6 @@ bindkey '^U' backward-kill-line
 
 # }}}
 
-# Zsh: Temp {{{
-
-if [[ -z $TMPDIR ]]; then
-  export TMPDIR='/var/tmp/'
-fi
-
-if [[ ! -d $TMPDIR ]]; then
-  mkdir -p -m 700 $TMPDIR
-fi
-
-# }}}
-
 # Widget: Foreground/Background Vim {{{
 
 # Stolen from Reddit, this is the Zsh equivalent of:
@@ -120,21 +120,8 @@ bindkey '^z' _fg_vim
 
 # }}}
 
-# Lazyload: Angular CLI {{{
-# See: https://peterlyons.com/problog/2018/01/zsh-lazy-loading/
-
-function ng {
-  unfunction "$0"
-  # Load Angular CLI autocompletion.
-  source <(ng completion script)
-  ng "$@"
-}
-
-# }}}
-
 # Aliases {{{
 
-alias agu='sudo apt-get update && sudo apt-get -y dist-upgrade'
 alias tmux='tmux -2' # "Force tmux to assume the terminal supports 256 colours."
 alias tt='task n'
 alias vi='nvim'
@@ -150,7 +137,7 @@ alias lig='lazygit'
 # alias ta='task add'
 
 hash -d zdir=$ZSH_DIR
-hash -d dotfiles=$DOTFILES_DIR
+hash -d dotfiles=$DOTFILES
 hash -d config="$XDG_CONFIG_HOME/dotfiles"
 hash -d passwords="${HOME}/.password-store"
 

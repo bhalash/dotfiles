@@ -21,7 +21,7 @@ if [[ $OSTYPE =~ 'darwin' ]]; then
 fi
 
 # See: https://github.com/lincheney/fzf-tab-completion?tab=readme-ov-file
-source $DOTFILES_DIR/fzf-tab-completion/zsh/fzf-zsh-completion.sh
+source $DOTFILES/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 
 # Widget: bind cd to <tab> when the prompt is empty, or fallthrough to fzf-zsh-completion {{{
 

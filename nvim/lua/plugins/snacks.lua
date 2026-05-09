@@ -70,7 +70,11 @@ return {
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.projects({
       finder = 'recent_projects',
       scope_chdir = 'win',
-      dev = { '~/Code', '~/Work', '~/.dotfiles/' },
+      dev = {
+        vim.env.DOTFILES,
+        vim.env.CODE_DIR,
+        vim.env.WORK_DIR,
+      },
       patterns = {
         '.git',
         'nx.json',
