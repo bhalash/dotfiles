@@ -22,7 +22,11 @@ function __cd_work_project {
   fi
 
   local selected_project=$(echo $projects | sort | uniq | fzf)
-  builtin cd $selected_project
+
+  if [[ $selected_project != '' ]]; then
+    builtin cd $selected_project
+  fi
+
   zle reset-prompt
 }
 
