@@ -3,3 +3,4 @@ export EDITOR='nvim'
 export ZSH_DIR="${HOME}/.zsh"
 export WORK_DIR="${HOME}/Work"
 export CODE_DIR="${HOME}/Code"
+export CONFIG_DIR="${XDG_CONFIG_HOME}/dotfiles"

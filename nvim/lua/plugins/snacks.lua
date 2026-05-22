@@ -67,11 +67,12 @@ return {
     vim.keymap.set('n', '<leader><tab>', function() snacks.picker.recent(picker_opts) end)
     vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
 
-    vim.keymap.set('n', '<leader><enter>', function() snacks.picker.projects({
+    vim.keymap.set('n', '<leader>u', function() snacks.picker.projects({
       finder = 'recent_projects',
       scope_chdir = 'win',
       dev = {
         vim.env.DOTFILES,
+        vim.env.CONFIG_DIR,
         vim.env.CODE_DIR,
         vim.env.WORK_DIR,
       },
@@ -102,7 +103,6 @@ return {
     }) end)
 
     vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers(picker_opts) end)
-    vim.keymap.set('n', '<leader>u', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
     vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
     vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({}) end)

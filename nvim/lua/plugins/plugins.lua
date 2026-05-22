@@ -110,16 +110,4 @@ return {
     -- Note (lazy loading): grug-far.lua defers all it's requires so it's lazy by default
     -- additional lazy config to defer loading is not really needed...
   },
-
-  -- urgh
-  {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim', branch = 'master' },
-    },
-    build = 'make tiktoken',
-    opts = {
-      -- See Configuration section for options
-    },
-  },
 }
