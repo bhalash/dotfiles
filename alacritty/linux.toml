@@ -33,8 +33,8 @@ mods = "Alt"
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
-key = "F"
-mods = "Super"
+key = "Enter"
+mods = "Alt"
 
 # Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
 [terminal.shell]
@@ -42,8 +42,7 @@ args = ["-l", "-c", "tmux attach || tmux"]
 program = "/bin/zsh"
 
 [window]
-# startup_mode: Fullscreen
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 
 [window.padding]
 x = 5
