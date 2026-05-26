@@ -34,4 +34,4 @@ function __cd_work_project {
 # ==============================================================================
 
 zle -N __cd_work_project
-bindkey '^K' __cd_work_project
+bindkey '^P' __cd_work_project

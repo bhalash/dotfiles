@@ -32,4 +32,4 @@ function _vim_open_file {
 alias vf=_vim_open_file
 
 zle -N _vim_open_file
-bindkey '^P' _vim_open_file
+bindkey '^K' _vim_open_file
