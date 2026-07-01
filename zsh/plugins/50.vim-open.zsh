@@ -18,9 +18,8 @@ function vo {
 
 # Browse for an open a file in the folder. Need batcat.
 function _vim_open_file {
-  local theme="${1-:GitHub}"
   local found_files=$(rg --files --hidden -g '!.git/*')
-  local selected_file=$(echo $found_files | fzf --preview "batcat -n --color=always {} --theme='${theme}'")
+  local selected_file=$(echo $found_files | fzf --preview "batcat -n --color=always {}")
 
   if [[ ! -n $selected_file ]]; then
     return 1

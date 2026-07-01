@@ -56,18 +56,6 @@ function __cd_nx_project {
     return 30
   fi
 
-  if [[ -n $TMUX ]]; then
-    local project_basename=$(basename $project_root)
-
-    if [[ $selected_project =~ '^\.$' ]]; then
-      # special case: there's a project.json file in the root, which will be
-      # the case in a migrated project
-      tmux rename-window $project_basename
-    else
-      tmux rename-window "${project_basename}/${selected_project}"
-    fi
-  fi
-
   # cd to selected project
   builtin cd "${project_root}/${selected_project}"
   zle reset-prompt

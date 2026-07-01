@@ -41,11 +41,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- diagnostics
     vim.keymap.set('n', '<Leader>di', vim.diagnostic.open_float, kb_opts)
 
-    vim.keymap.set('n', 'gj', function()
+    vim.keymap.set('n', '[f', function()
       vim.diagnostic.jump({ float = true, count = -1 })
     end, kb_opts)
 
-    vim.keymap.set('n', 'gk', function()
+    vim.keymap.set('n', ']f', function()
       vim.diagnostic.jump({ float = true, count = 1 })
     end, kb_opts)
   end,

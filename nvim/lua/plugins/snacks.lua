@@ -32,25 +32,7 @@ return {
       -- layout = 'right',
       -- layout = 'select',
       -- layout = 'sidebar', -- i like this one
-      -- layout = 'telescope',
-      -- layout = 'top',
-      -- layout = 'vertical',
-      -- layout = 'vscode',
-      layout = {
-        hidden = { 'preview' },
-        layout = {
-          backdrop = false,
-          row = 1,
-          width = 0.5,
-          min_width = 80,
-          height = 0.5,
-          border = true,
-          box = 'vertical',
-          { win = 'input', height = 1, border = true, title = '{title} {live} {flags}', title_pos = 'center' },
-          { win = 'list', border = 'hpad' },
-          { win = 'preview', title = '{preview}', border = true },
-        },
-      },
+      layout = 'telescope',
       win = {
         input = {
           keys = {
@@ -63,11 +45,11 @@ return {
     };
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
+    vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
     vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
-    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.recent(picker_opts) end)
     vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
 
-    vim.keymap.set('n', '<leader>u', function() snacks.picker.projects({
+    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.projects({
       finder = 'recent_projects',
       scope_chdir = 'win',
       dev = {

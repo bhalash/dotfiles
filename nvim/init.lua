@@ -2,6 +2,7 @@
 
 -- Leaduhr
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Disable mouse interactions >_>
 vim.o.mouse = ''
