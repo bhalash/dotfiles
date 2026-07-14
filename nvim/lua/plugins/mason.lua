@@ -8,6 +8,7 @@ return {
       'jdtls',
       'jsonls',
       'lua_ls',
+      'pylsp',
       'tsgo',
       'vimls',
       'yamlls',
