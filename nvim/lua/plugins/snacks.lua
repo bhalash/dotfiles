@@ -84,9 +84,19 @@ return {
       },
     }) end)
 
+    vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({
+      layout = 'bottom',
+      win = {
+        input = {
+          keys = {
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          }
+        }
+      },
+    }) end)
+
     vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
     vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
-    vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({}) end)
   end
 }

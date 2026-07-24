@@ -18,9 +18,7 @@ return {
       },
     },
     sources = {
-      -- INFO(mgrealis 2026-02-26): monorepo is hella slow with 'path' enabled
-      -- default = { 'lsp', 'path', 'snippets', 'buffer' },
-      default = { 'lsp', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
     fuzzy = { implementation = 'prefer_rust_with_warning' }
   },
