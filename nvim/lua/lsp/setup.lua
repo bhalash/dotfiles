@@ -1,3 +1,11 @@
+if (vim.env.NODE_DIR ~= nil) then
+  -- Set custom node version for LSP tools. Needed on my work machine.
+  -- See: https://neovim.io/doc/user/provider/#provider-nodejs
+  -- See: https://jaketrent.com/post/set-node-version-nvim/
+  vim.g.node_host_prog = vim.env.NODE_DIR .. '/node'
+  vim.cmd("let $PATH = '" .. vim.env.NODE_DIR .. ":' . $PATH")
+end
+
 local group = vim.api.nvim_create_augroup('LspMappings', { clear = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
