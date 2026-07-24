@@ -25,9 +25,27 @@ function __cd_work_project {
 
   if [[ $selected_project != '' ]]; then
     builtin cd $selected_project
+    __set_tmux_window_name
   fi
 
   zle reset-prompt
+}
+
+# TODO(mark 2026-07-24): Find better home for this.
+function __set_tmux_window_name {
+  local dir=$(basename $PWD)
+
+  if [[ -n $TMUX ]]; then
+    # local project_basename=$(basename $project_root)
+
+    if [[ $selected_project =~ '^\.$' ]]; then
+      # special case: there's a project.json file in the root, which will be
+      # the case in a migrated project
+      # tmux rename-window $project_basename
+    else
+      tmux rename-window $dir
+    fi
+  fi
 }
 
 # Register Widget
