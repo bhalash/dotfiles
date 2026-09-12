@@ -15,10 +15,11 @@ return {
     notifier = { enabled = false },
     notify = { enabled = false },
     quickfile = { enabled = true },
-    scope = { enabled = true },
-    scroll = { enabled = true },
-    statuscolumn = { enabled = true },
+    scope = { enabled = false },
+    scroll = { enabled = false },
+    statuscolumn = { enabled = false },
     words = { enabled = true },
+    dim = { enabled = true },
     zen = { enabled = true },
   },
   config = function()
@@ -46,10 +47,9 @@ return {
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
-    vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
-    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
+    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.explorer() end)
 
-    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.projects({
+    vim.keymap.set('n', '<leader>o', function() snacks.picker.projects({
       finder = 'recent_projects',
       scope_chdir = 'win',
       dev = {
@@ -76,13 +76,16 @@ return {
     -- toggle zen mode
     vim.keymap.set('n', '<leader>z', function() snacks.zen({
       toggles = {
-        dim = false
+        dim = true
       },
       window = {
         width = 160,
         height = 1,
       },
     }) end)
+
+    -- toggle dim mode
+    -- vim.keymap.set('n', '<leader>d', function() snacks.dim({}) end)
 
     vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({
       layout = 'bottom',
@@ -95,6 +98,8 @@ return {
       },
     }) end)
 
+    vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
+    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
     vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
     vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
