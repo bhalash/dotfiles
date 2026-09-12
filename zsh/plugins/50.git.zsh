@@ -55,7 +55,7 @@ alias nk='__git_nuke_branch'
 
 function __git_change_branch {
   if __is_git_project; then
-    branch=$(__pick_git_branch)
+    branch=$(__pick_git_branch | sed -e 's,^\* ,,')
 
     if [[ $branch != '' ]]; then
       git checkout "${branch}"
@@ -63,9 +63,9 @@ function __git_change_branch {
 
     zle reset-prompt
   else
-    echo "cd: not a git project: ${PWD}"
+    echo "git: not a git project: ${PWD}"
   fi
 }
 
 zle -N __git_change_branch
-bindkey '^H' __git_change_branch # Bind to Ctrl+H
+bindkey '^B' __git_change_branch # Bind to Ctrl+B
