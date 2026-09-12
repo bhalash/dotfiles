@@ -20,13 +20,3 @@ iab /* /**<CR><CR>*/<Esc>2h2xka
 " Open help and man pages in a tab
 cab help tab help
 cab Man tab Man
-
-" Strip trailing whitespace before save
-augroup death_to_trailing
-  autocmd!
-  autocmd BufWritePre,FileWritePre *.html :%s/\s\+$//e
-  autocmd BufWritePre,FileWritePre *.lua :%s/\s\+$//e
-  autocmd BufWritePre,FileWritePre *.js :%s/\s\+$//e
-  autocmd BufWritePre,FileWritePre *.scss :%s/\s\+$//e
-  autocmd BufWritePre,FileWritePre *.ts :%s/\s\+$//e
-augroup end
