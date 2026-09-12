@@ -13,6 +13,7 @@ return {
         'angular',
         'bash',
         'css',
+        'groovy',
         'html',
         'javascript',
         'jsdoc',
