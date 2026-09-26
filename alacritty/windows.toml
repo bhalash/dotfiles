@@ -33,9 +33,14 @@ key = "Key2"
 mods = "Alt"
 
 [[keyboard.bindings]]
-action = "ToggleFullscreen"
+action = "ReceiveChar"
 key = "Enter"
 mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F"
+mods = "Control|Shift"
 
 [window]
 startup_mode = "Fullscreen"
