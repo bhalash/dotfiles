@@ -2,8 +2,6 @@
 
 # See: https://github.com/Aloxaf/fzf-tab
 
-# ! FZF {{{
-
 # See: https://github.com/junegunn/fzf#environment-variables
 export FZF_DEFAULT_COMMAND="rg --files --follow --hidden -g '!.git/*' -g '!.gitkeep'"
 export FZF_CTRL_T_COMMAND='rg --files --null | xargs -0 dirname | sort | uniq'
@@ -35,5 +33,3 @@ function __tab_cd_or_fzf {
 
 zle -N __tab_cd_or_fzf
 bindkey '^I' __tab_cd_or_fzf
-
-# }}}

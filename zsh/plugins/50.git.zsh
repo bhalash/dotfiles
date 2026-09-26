@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # Useful utilities for git and git projects.
 
 # is this a git project?
@@ -7,55 +6,19 @@ function __is_git_project {
   return $?
 }
 
-# Function: cd to git project root folder
-# ==============================================================================
-
-function __cd_git_root {
-  if __is_git_project; then
-    builtin cd "$(git rev-parse --show-toplevel)"
-
-    if [[ -n $TMUX ]]; then
-      tmux rename-window $(basename $PWD)
-    fi
-  else
-    echo "cd: not a git project: ${PWD}"
-  fi
-}
-
-function __pick_git_branch {
+# pick branch using fzf
+function __git_pick_branch {
   git branch \
     | sort -r \
     | fzf --height=~20% --layout=reverse \
-    | sed -e 's/^[ *]\+//' # strip ` * ` from current branch
+    | sed -e 's/^\*//;s/^[[:space:]]\+//' # strip leading `*` and whitespace
 }
 
-alias gr='__cd_git_root'
-
-# Function: Change Branch
-# ==============================================================================
-
-function __git_nuke_branch {
-  if __is_git_project; then
-    branch=$(__pick_git_branch)
-
-    if [[ $branch != '' ]]; then
-      git branch -D "${branch}"
-    fi
-
-    zle reset-prompt
-  else
-    echo "cd: not a git project: ${PWD}"
-  fi
-}
-
-alias nk='__git_nuke_branch'
-
-# Widget: Change Branch
-# ==============================================================================
+# ------------------------------------------------------------------------------
 
 function __git_change_branch {
   if __is_git_project; then
-    branch=$(__pick_git_branch | sed -e 's,^\* ,,')
+    branch=$(__git_pick_branch)
 
     if [[ $branch != '' ]]; then
       git checkout "${branch}"

@@ -31,7 +31,7 @@
   s = status
   t = stash
   aa = add .
-  bb = symbolic-ref --short HEAD
+  br = symbolic-ref --short HEAD
   branchname = symbolic-ref --short HEAD
   cp = cherry-pick
   # util
