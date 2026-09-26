@@ -76,7 +76,7 @@ vim.lsp.enable({
   'jdtls',
   'jsonls',
   'lua_ls',
-  'tsgo',
+  'tsc',
   'vimls',
   'yamlls',
 })

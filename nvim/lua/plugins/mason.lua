@@ -9,14 +9,14 @@ return {
       'jsonls',
       'lua_ls',
       'pylsp',
-      'tsgo',
+      'tsc',
       'vimls',
       'yamlls',
     },
     automatic_enable = {
       'html',
       'lua_ls',
-      'tsgo',
+      'tsc',
     },
   },
   dependencies = {
