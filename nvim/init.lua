@@ -119,6 +119,7 @@ vim.o.swapfile = false
 require'lazy.setup'
 require'lsp.setup'
 require'config.terminal'
+require'config.keybinds'
 require'config.helper_functions'
 
 -- }}}
