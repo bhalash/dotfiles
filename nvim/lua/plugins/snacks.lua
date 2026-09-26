@@ -8,18 +8,18 @@ return {
     -- refer to the configuration section below
     bigfile = { enabled = false },
     dashboard = { enabled = false },
+    dim = { enabled = true },
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
-    picker = { enabled = true },
     notifier = { enabled = false },
     notify = { enabled = false },
+    picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = false },
     scroll = { enabled = false },
     statuscolumn = { enabled = false },
     words = { enabled = true },
-    dim = { enabled = true },
     zen = { enabled = true },
   },
   config = function()
@@ -47,31 +47,8 @@ return {
 
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
-    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.explorer() end)
 
-    vim.keymap.set('n', '<leader>o', function() snacks.picker.projects({
-      finder = 'recent_projects',
-      scope_chdir = 'win',
-      dev = {
-        vim.env.DOTFILES,
-        vim.env.CONFIG_DIR,
-        vim.env.CODE_DIR,
-        vim.env.WORK_DIR,
-      },
-      patterns = {
-        '.git',
-        'nx.json',
-        'package.json',
-        'project.json'
-      },
-      win = {
-        input = {
-          keys = {
-            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
-          }
-        }
-      },
-    }) end)
+    vim.keymap.set('n', '<leader>p', function() snacks.picker.explorer() end)
 
     -- toggle zen mode
     vim.keymap.set('n', '<leader>z', function() snacks.zen({
@@ -98,9 +75,22 @@ return {
       },
     }) end)
 
-    vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
+    -- vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
+
+    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.buffers({
+      layout = 'sidebar',
+      win = {
+        input = {
+          keys = {
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+            ['<C-x>'] = { 'edit_split', mode = { 'i', 'n' } },
+            ['<C-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
+          }
+        }
+      },
+    }) end)
+
     vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
-    vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers(picker_opts) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
     vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
   end

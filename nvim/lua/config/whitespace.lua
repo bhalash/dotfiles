@@ -9,6 +9,8 @@ vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
     '*.ts',
     '*.vim',
     '*enkinsfile',
+    '*.xml',
+    '*enkinsfile*',
   },
   command = ':%s/\\s\\+$//e',
 })
