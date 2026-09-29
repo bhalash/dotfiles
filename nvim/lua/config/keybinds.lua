@@ -4,10 +4,6 @@ vim.keymap.set('n', '<C-s>', '<C-a>')
 -- Remap alternate-file to '', easier on my stupid keyboard
 vim.keymap.set({ 'n', 'v', 'o' }, "''", '<C-^>')
 
--- Page up and down on nav keys
-vim.keymap.set({ 'n', 'v', 'o' }, '<C-j>', '<PageDown>')
-vim.keymap.set({ 'n', 'v', 'o' }, '<C-k>', '<PageUp>')
-
 -- Use <Tab> to cycle through buffers in tab
 vim.keymap.set('n', '<Tab>', '<C-W>w')
 vim.keymap.set('n', '<S-Tab>', '<C-W>W')
@@ -66,3 +62,8 @@ end)
 -- sindrets/diffview.nvim
 vim.keymap.set("n", "<leader>,,", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "<leader>,.", ":DiffviewClose<CR>")
+
+-- open current file in vscode
+vim.keymap.set('n', '<leader>oo', function()
+  vim.fn.jobstart({ 'code', vim.fn.expand('%') })
+end)

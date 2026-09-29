@@ -45,10 +45,13 @@ return {
       },
     };
 
+    -- various pickers
     vim.keymap.set('n', '<leader><space>', function() snacks.picker.files(picker_opts) end)
     vim.keymap.set('n', '<leader><enter>', function() snacks.picker.recent(picker_opts) end)
-
-    vim.keymap.set('n', '<leader>p', function() snacks.picker.explorer() end)
+    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.explorer() end)
+    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
+    vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
+    vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
 
     -- toggle zen mode
     vim.keymap.set('n', '<leader>z', function() snacks.zen({
@@ -75,9 +78,7 @@ return {
       },
     }) end)
 
-    -- vim.keymap.set('n', '<leader>h', function() snacks.picker.smart(picker_opts) end)
-
-    vim.keymap.set('n', '<leader><tab>', function() snacks.picker.buffers({
+    vim.keymap.set('n', '<leader>b', function() snacks.picker.buffers({
       layout = 'sidebar',
       win = {
         input = {
@@ -89,9 +90,5 @@ return {
         }
       },
     }) end)
-
-    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines(picker_opts) end)
-    vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word(picker_opts) end)
-    vim.keymap.set('n', 'q:', function() snacks.picker.command_history(picker_opts) end)
   end
 }
