@@ -7,19 +7,26 @@ return {
     config = true,
   },
 
+  {
+    -- git
+    'airblade/vim-gitgutter',
+    'tpope/vim-fugitive',
+    'editorconfig/editorconfig-vim',
+  },
+
   'neovim/nvim-lspconfig',
 
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
   'bronson/vim-trailing-whitespace',
 
-  -- Provide additional text targets for di/a<char>:
-  -- , . ; : + - = ~ _ * # / | \ & $
+  -- Provide additional text targets for di/a<char>: , . ; : + - = ~ _ * # / | \ & $
   'wellle/targets.vim',
 
-  -- Provide motion keyed to go<motion> to sort stuff
+  -- provide motion keyed to gs<motion> to sort stuff
+  -- TODO(mark 2026-09-29): port to lua
   'bhalash/vim-sort-motion',
 
-  -- Treat indentations as a text object.
+  -- treat indentations as a text object <3
   {
     'kana/vim-textobj-indent',
     dependencies = { 'kana/vim-textobj-user' }
@@ -40,7 +47,7 @@ return {
     }
   },
 
-  -- Toggle comments
+  -- toggle comments
   {
     'numToStr/Comment.nvim',
     config = function()
@@ -59,10 +66,18 @@ return {
     end
   },
 
-  -- Show indentation
+  -- show indentation
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
+    opts = {
+      indent = {
+        char = '.',
+      },
+      scope = {
+        enabled = false
+      }
+    },
   },
 
   -- Fancy icons
@@ -78,6 +93,9 @@ return {
       require'nvim-ts-autotag'.setup()
     end
   },
+
+  -- Markdown preview, launch with :Vellum
+  'blackhat-7/vellum.nvim',
 
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },
