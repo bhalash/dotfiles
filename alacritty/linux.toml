@@ -9,7 +9,7 @@
 hide_when_typing = true
 
 [colors.primary]
-background = "0x0f111a"
+background = "0x1e1e2e"
 foreground = "0xe6edf3"
 
 [font]

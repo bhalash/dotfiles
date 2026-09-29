@@ -28,13 +28,11 @@ return {
       },
     },
     config = function(_, opts)
-      require('tokyonight').setup(opts)
+      -- require('tokyonight').setup(opts)
       vim.o.termguicolors = true
       vim.g.sonokai_style = 'maia'
-      vim.cmd.colorscheme 'tokyonight-storm'
-      -- vim.cmd.colorscheme 'material-deep-ocean'
+      vim.cmd.colorscheme 'catppuccin-mocha'
       -- Lighten the ColorColumn for better visibility
-      -- TODO(mark 2025-10-09): Brighten work laptop screen?
       vim.cmd([[hi ColorColumn guibg=#2d3454]])
       -- vim.cmd([[hi Comment guifg=#64f15f]]) -- vscode comment colour
       vim.cmd([[hi Comment guifg=#959cbc]])
