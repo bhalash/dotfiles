@@ -16,6 +16,19 @@ return {
 
   'neovim/nvim-lspconfig',
 
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {
+      enabled = false, -- don't render markdown by default
+      document = {
+        enabled = false,
+      },
+      completions = {
+        lsp = { enabled = true },
+      },
+    }
+  },
+
   -- RAWEAJEFLSEFASLefSJEFSefsef DEATH TO WHITESPACES
   'bronson/vim-trailing-whitespace',
 
@@ -70,14 +83,19 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    opts = {
-      indent = {
-        char = '.',
-      },
-      scope = {
-        enabled = false
+    config = function()
+      local opts = {
+        indent = {
+          char = '.',
+        },
+        scope = {
+          enabled = false
+        }
       }
-    },
+
+      vim.cmd([[hi IblIndent guifg=#1f2333]])   -- dim down indent markers
+      require'ibl'.setup(opts)
+    end
   },
 
   -- Fancy icons
@@ -93,9 +111,6 @@ return {
       require'nvim-ts-autotag'.setup()
     end
   },
-
-  -- Markdown rendering and preview.
-  'MeanderingProgrammer/render-markdown.nvim',
 
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },

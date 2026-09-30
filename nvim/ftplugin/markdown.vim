@@ -10,3 +10,7 @@ iab <buffer> <expr> d/ strftime('%Y-%m-%d')
 
 " Insert code block
 iab code/ ``````<ESC>2hi
+
+" Toggle markdown rendering.
+" See: https://github.com/MeanderingProgrammer/render-markdown.nvim
+nnoremap <silent><leader>t :RenderMarkdown toggle<CR>
