@@ -94,8 +94,8 @@ return {
     end
   },
 
-  -- Markdown preview, launch with :Vellum
-  'blackhat-7/vellum.nvim',
+  -- Markdown rendering and preview.
+  'MeanderingProgrammer/render-markdown.nvim',
 
   -- Weird-ass filetypes
   { 'hjson/vim-hjson', ft = 'hjson' },
