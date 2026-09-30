@@ -112,6 +112,9 @@ vim.o.undodir = '~.undo,~/.tmp,/tmp'
 -- Disable swap files, but set directories in case they *are* turned on
 vim.o.swapfile = false
 
+-- colours
+vim.o.termguicolors = true
+
 -- }}}
 
 -- lazy.nvim {{{
