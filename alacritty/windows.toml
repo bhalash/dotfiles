@@ -1,16 +1,11 @@
 # This is for Windows machine running WSL. This must be installed by
 # hand in %APPDATA%\alacritty\alacritty.toml.
 
-# Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
-[terminal]
-shell.program = 'C:\Program Files\WSL\wsl.exe'
-shell.args = ["--cd ~", "--exec /bin/zsh -l -c", "tmux attach || tmux"]
-
 [mouse]
 hide_when_typing = true
 
 [colors.primary]
-background = "0x1a1b26"
+background = "0x0f111a"
 foreground = "0xe6edf3"
 
 [font]
@@ -48,3 +43,8 @@ startup_mode = "Fullscreen"
 [window.padding]
 x = 5
 y = 5
+
+# Start tmux https://pawelgrzybek.com/autostart-tmux-on-alacritty-launch/
+[terminal]
+shell.program = 'C:\Program Files\WSL\wsl.exe'
+shell.args = ["--cd ~", "--exec /bin/zsh -l -c", "tmux attach || tmux"]

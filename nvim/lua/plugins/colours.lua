@@ -28,14 +28,10 @@ return {
       },
     },
     config = function(_, opts)
-      -- require('tokyonight').setup(opts)
-      vim.o.termguicolors = true
-      vim.g.sonokai_style = 'maia'
-      vim.cmd.colorscheme 'catppuccin-mocha'
-      -- Lighten the ColorColumn for better visibility
-      vim.cmd([[hi ColorColumn guibg=#2d3454]])
-      -- vim.cmd([[hi Comment guifg=#64f15f]]) -- vscode comment colour
-      vim.cmd([[hi Comment guifg=#959cbc]])
+      require('tokyonight').setup(opts)
+      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd([[hi ColorColumn guibg=#2d3454]]) -- Lighten the ColorColumn for better visibility
+      vim.cmd([[hi Comment guifg=#959cbc]])     -- brighten comments
     end
   },
 }
