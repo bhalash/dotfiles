@@ -48,7 +48,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, kb_opts)
 
     -- diagnostics
+
+    -- TODO(mark 2026-10-01): tweak these at work next week - could make key information more visible
     vim.keymap.set('n', '<Leader>i', vim.diagnostic.open_float, kb_opts)
+    vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
     vim.keymap.set('n', '<C-j>', function()
       vim.diagnostic.jump({ float = true, count = 1 })
@@ -57,17 +60,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<C-k>', function()
       vim.diagnostic.jump({ float = true, count = -1 })
     end, kb_opts)
+
+    -- TODO(mark 2026-10-01): tweak this at work next week - what's a good key?
+    vim.keymap.set('n', '<leader>n', function()
+      -- snacks.picker.diagnostics()
+      snacks.picker.diagnostics_buffer()
+    end)
   end,
 })
 
 -- Enable to show line diagnostics automatically in hover window when over issue.
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-vim.o.updatetime = 400
+vim.o.updatetime = 200
 
+-- TODO(mark 2026-10-01): tweak these at work - what's a good setup?
 vim.diagnostic.config({
-  float = { border = 'rounded' },
+  float = { border = 'single' },
   severity_sort = true,
-  virtual_text = false,
+  virtual_text = true,
 })
 
 vim.lsp.enable({
