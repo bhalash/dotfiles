@@ -85,15 +85,14 @@ return {
     main = 'ibl',
     config = function()
       local opts = {
-        indent = {
-          char = '.',
-        },
+        enabled = false,
         scope = {
           enabled = false
         }
       }
 
       vim.cmd([[hi IblIndent guifg=#1f2333]])   -- dim down indent markers
+      vim.keymap.set('n', '<leader>cl', ':IBLToggle<CR>')
       require'ibl'.setup(opts)
     end
   },

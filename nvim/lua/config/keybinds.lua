@@ -60,8 +60,8 @@ vim.keymap.set("v", "<leader>y", function()
 end)
 
 -- sindrets/diffview.nvim
-vim.keymap.set("n", "<leader>,,", ":DiffviewOpen<CR>")
-vim.keymap.set("n", "<leader>,.", ":DiffviewClose<CR>")
+-- vim.keymap.set('n', '<leader>,,', ':DiffviewOpen<CR>')
+-- vim.keymap.set('n', '<leader>,.', ':DiffviewClose<CR>')
 
 -- open current file in vscode
 vim.keymap.set('n', '<leader>oo', function()
