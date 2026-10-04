@@ -25,10 +25,15 @@ vim.keymap.set('n', '*', ':keepjumps normal! mi*`i<CR>')
 -- end)
 
 -- Colorcolumn
--- This function defaults to 80.
-vim.keymap.set('n', '<leader>cc', '<Plug>(dotfiles-toggle-colorcolumn)')
-vim.keymap.set('n', '<leader>cp', ':set colorcolumn=120<CR>')
-vim.keymap.set('n', '<leader>cg', ":execute 'set colorcolumn=' . col('.')<CR>")
+vim.keymap.set('n', '<leader>c8', function()
+  if vim.opt.colorcolumn['_value'] == '80' then
+    vim.opt.colorcolumn = ''
+  else
+    vim.opt.colorcolumn = '80'
+  end
+end)
+
+vim.keymap.set('n', '<leader>cc', ":execute 'set colorcolumn=' . col('.')<CR>")
 
 -- Find & Replace
 -- Stolen from Reddit - replace word under cursor
@@ -39,17 +44,19 @@ vim.keymap.set('n', '<CR>', 'ciw')
 vim.keymap.set('n', '<leader>*', ":%s,\\<<C-r>=expand(\"<cword>\")<CR>\\>,")
 vim.keymap.set('v', '<leader>*', ":s,\\<<C-r>=expand(\"<cword>\")<CR>\\>,")
 
+-- TODO(mark 2026-10-04): I don't use these much - free up the keys?
 vim.keymap.set("n", "<leader>a", ":%s,")
 vim.keymap.set("n", "<leader>A", ":s,")
 vim.keymap.set("v", "<leader>A", ":s,")
 
+-- TODO(mark 2026-10-04): I love this - do more?
 -- Take visual selection and search with it
-vim.keymap.set("v", "//", [=[y/\V<C-R>=escape(@",'/\')<CR><CR>]=])
+vim.keymap.set('v', "//", [=[y/\V<C-R>=escape(@",'/\')<CR><CR>]=])
 
 -- Yank
 -- These keys are awkward to reach in combination on my stupid keyboard
-vim.keymap.set("n", '"', '"+')
-vim.keymap.set("v", '"', '"+')
+vim.keymap.set("n", '+', '"+')
+vim.keymap.set("v", '+', '"+')
 
 -- Yank the whole file to system clipboard
 vim.keymap.set("n", "<leader>yy", ":%y+<CR>")

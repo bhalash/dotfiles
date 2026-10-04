@@ -123,6 +123,5 @@ require'config.lazy-setup'
 require'config.lsp-setup'
 require'config.terminal'
 require'config.keybinds'
-require'config.helper_functions'
 
 -- }}}

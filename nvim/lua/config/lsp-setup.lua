@@ -28,17 +28,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, kb_opts)
 
     vim.keymap.set('n', '<c-s-K>', vim.lsp.buf.signature_help, kb_opts)
+    vim.keymap.set('n', '1gD', vim.lsp.buf.type_definition, kb_opts)
 
-    -- TODO(mark 2026-09-29): why did i disable these?
-    -- vim.keymap.set('n', 'gD', function() vim.lsp.buf.implementation({}) end, kb_opts)
-    -- vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, kb_opts)
-    vim.keymap.set('n', '1gD', function() vim.lsp.buf.type_definition({}) end, kb_opts)
+    vim.keymap.set('n', 'gd', snacks.picker.lsp_declarations)
+    vim.keymap.set('n', 'gr', snacks.picker.lsp_references)
 
-    vim.keymap.set('n', 'gr', function() snacks.picker.lsp_references() end)
-    vim.keymap.set('n', 'gd', function() snacks.picker.lsp_definitions() end)
+    vim.keymap.set('n', '<c-]>', vim.lsp.buf.declaration, kb_opts)
 
-    vim.keymap.set('n', '<c-]>', function() vim.lsp.buf.declaration({}) end, kb_opts)
-
+    vim.keymap.set('n', '<leader>rd', snacks.picker.lsp_symbols)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, kb_opts)
     vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, kb_opts)
 
@@ -53,24 +50,42 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Leader>i', vim.diagnostic.open_float, kb_opts)
     vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
-    vim.keymap.set('n', '<C-j>', function()
-      vim.diagnostic.jump({ float = true, count = 1 })
-    end, kb_opts)
-
-    vim.keymap.set('n', '<C-k>', function()
-      vim.diagnostic.jump({ float = true, count = -1 })
-    end, kb_opts)
+    local function prev_diagnostic() vim.diagnostic.jump({ float = true, count = 1 }) end
+    local function next_diagnostic() vim.diagnostic.jump({ float = true, count = -1 }) end
 
     -- TODO(mark 2026-10-01): tweak this at work next week - what's a good key?
-    vim.keymap.set('n', '<leader>n', function()
+    local function buffer_diagnostics()
       -- snacks.picker.diagnostics()
-      snacks.picker.diagnostics_buffer()
-    end)
+
+      snacks.picker.diagnostics_buffer({
+        layout = 'bottom',
+        -- layout = 'dropdown',
+        -- layout = 'ivy_split',
+        -- layout = 'left',
+        -- layout = 'right',
+        -- layout = 'select',
+        -- layout = 'sidebar',
+        -- layout = 'telescope',
+        win = {
+          input = {
+            keys = {
+              ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+              ['<C-x>'] = { 'edit_split', mode = { 'i', 'n' } },
+              ['<C-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
+            }
+          }
+        },
+      })
+    end
+
+    vim.keymap.set('n', '[a', prev_diagnostic)
+    vim.keymap.set('n', ']a', next_diagnostic)
+    vim.keymap.set('n', '[A', buffer_diagnostics)
   end,
 })
 
 -- Enable to show line diagnostics automatically in hover window when over issue.
-vim.o.updatetime = 200
+vim.o.updatetime = 100
 
 -- TODO(mark 2026-10-01): tweak these at work - what's a good setup?
 vim.diagnostic.config({
