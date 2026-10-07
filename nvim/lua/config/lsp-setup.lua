@@ -78,15 +78,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
+    vim.keymap.set('n', '[A', buffer_diagnostics)
+
     -- qwerty
     vim.keymap.set('n', '[a', prev_diagnostic)
     vim.keymap.set('n', ']a', next_diagnostic)
 
     -- moonlander
-    vim.keymap.set('n', '[+', prev_diagnostic)
-    vim.keymap.set('n', ']+', next_diagnostic)
-
-    vim.keymap.set('n', '[A', buffer_diagnostics)
+    vim.keymap.set('n', 'g[', prev_diagnostic)
+    vim.keymap.set('n', 'g]', next_diagnostic)
   end,
 })
 

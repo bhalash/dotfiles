@@ -16,7 +16,3 @@ iab <expr> dl/ strftime('%Y-%m-%d')
 " Block comment
 " Vim helpfully inserts characters at the start of lines that I have to remove
 iab /* /**<CR><CR>*/<Esc>2h2xka
-
-" Open help and man pages in a tab
-cab help tab help
-cab Man tab Man
