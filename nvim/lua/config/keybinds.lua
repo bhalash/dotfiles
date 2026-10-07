@@ -70,7 +70,7 @@ end)
 -- vim.keymap.set('n', '<leader>,,', ':DiffviewOpen<CR>')
 -- vim.keymap.set('n', '<leader>,.', ':DiffviewClose<CR>')
 
--- open current file in vscode
+-- open current file in vscode with the working directory open as a folder
 vim.keymap.set('n', '<leader>oo', function()
-  vim.fn.jobstart({ 'code', vim.fn.expand('%') })
+  vim.fn.jobstart({ 'code', vim.fn.expand('%'), '--add', '.' })
 end)
