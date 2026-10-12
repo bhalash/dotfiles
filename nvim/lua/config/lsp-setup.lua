@@ -50,8 +50,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Leader>i', vim.diagnostic.open_float, kb_opts)
     vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
-    local function prev_diagnostic() vim.diagnostic.jump({ float = true, count = 1 }) end
-    local function next_diagnostic() vim.diagnostic.jump({ float = true, count = -1 }) end
+    local function prev_diagnostic() vim.diagnostic.jump({ float = true, count = -1 }) end
+    local function next_diagnostic() vim.diagnostic.jump({ float = true, count = 1 }) end
 
     -- TODO(mark 2026-10-01): tweak this at work next week - what's a good key?
     local function buffer_diagnostics()
