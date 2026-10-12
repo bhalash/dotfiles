@@ -72,5 +72,5 @@ end)
 
 -- open current file in vscode with the working directory open as a folder
 vim.keymap.set('n', '<leader>oo', function()
-  vim.fn.jobstart({ 'code', vim.fn.expand('%'), '--add', '.' })
+  vim.fn.jobstart({ 'code', vim.fn.expand('%'), '--add', '.', '-r' })
 end)
