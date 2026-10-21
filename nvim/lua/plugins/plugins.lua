@@ -63,7 +63,7 @@ return {
   -- toggle comments
   {
     'numToStr/Comment.nvim',
-    config = function()
+    load = function()
       local ft = require'Comment.ft'
       local comment = require'Comment'
 
@@ -76,24 +76,6 @@ return {
       .set('typescript', {'//%s', '/*%s*/'})
       .set('javascript', {'//%s', '/*%s*/'})
       .set('scss', {'//%s', '/*%s*/'})
-    end
-  },
-
-  -- show indentation
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    config = function()
-      local opts = {
-        enabled = false,
-        scope = {
-          enabled = false
-        }
-      }
-
-      vim.cmd([[hi IblIndent guifg=#1f2333]])   -- dim down indent markers
-      vim.keymap.set('n', '<leader>cl', ':IBLToggle<CR>')
-      require'ibl'.setup(opts)
     end
   },
 

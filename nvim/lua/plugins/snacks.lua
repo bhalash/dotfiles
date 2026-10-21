@@ -9,8 +9,16 @@ return {
     bigfile = { enabled = false },
     dashboard = { enabled = false },
     dim = { enabled = true },
-    explorer = { enabled = true },
-    indent = { enabled = true },
+    explorer = {
+      enabled = true
+    },
+    indent = {
+      enabled = true,
+      animate = {
+        enabled = false
+      }
+    },
+    ui_select = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = false },
     notify = { enabled = false },
@@ -22,7 +30,7 @@ return {
     words = { enabled = true },
     zen = { enabled = true },
   },
-  config = function()
+  init = function()
     local snacks = require'snacks'
 
     local picker_opts = {

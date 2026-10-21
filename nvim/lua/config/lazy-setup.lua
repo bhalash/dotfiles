@@ -30,6 +30,7 @@ require('lazy').setup {
   spec = {
     { import = 'plugins' },
   },
+  concurrency = 2,
   colorscheme = 'default',
   change_detection = {
     enabled = true,
