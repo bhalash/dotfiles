@@ -30,6 +30,7 @@ return {
     config = function(_, opts)
       require('tokyonight').setup(opts)
       vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd([[hi SpellBad gui=underline guifg=#fc2d83]]) -- TODO(mark 2026-10-21): tweak
       vim.cmd([[hi ColorColumn guibg=#2d3454]]) -- Lighten the ColorColumn for better visibility
       vim.cmd([[hi Comment guifg=#959cbc]])     -- brighten comments
     end

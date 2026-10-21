@@ -11,7 +11,6 @@ vim.keymap.set('n', '<S-Tab>', '<C-W>W')
 -- Split buffer
 vim.keymap.set('n', '<leader>v', ':vsp<CR>')
 vim.keymap.set('n', '<leader>x', ':sp<CR>')
-vim.keymap.set('n', '<leader>t', '<C-W>T')
 
 -- Clear highlighted search easier
 vim.keymap.set('n', "<BS>", ':nohlsearch<CR>')
@@ -74,3 +73,7 @@ end)
 vim.keymap.set('n', '<leader>oo', function()
   vim.fn.jobstart({ 'code', vim.fn.expand('%'), '--add', '.', '-r' })
 end)
+
+vim.keymap.set('n', 'zG', 'zg')
+vim.keymap.set('n', 'zg', '1z=')
+vim.keymap.set('n', '<leader>sp', ':setlocal spell!<CR>')
