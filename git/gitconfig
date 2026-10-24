@@ -21,6 +21,7 @@
   # commit
   m = commit --no-verify
   mm = commit -m --no-verify
+	commits = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
   cc = "!_save() { git add .; git commit -m \"$(date +'%Y-%m-%d %H:%M:%S'): saving work in flight\"; }; _save"
   # shorthands
   a = add
