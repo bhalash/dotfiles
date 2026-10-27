@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       'angularls',
       'cssls',
+      'bashls',
       'groovyls',
       'html',
       'jdtls',

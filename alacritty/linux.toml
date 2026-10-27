@@ -9,7 +9,8 @@
 hide_when_typing = true
 
 [colors.primary]
-background = "0x1e1e2e"
+# background = "0x1e1e2e"
+background = "0x242933"
 foreground = "0xe6edf3"
 
 [font]

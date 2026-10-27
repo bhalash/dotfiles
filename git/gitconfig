@@ -19,8 +19,8 @@
   rb = "!_rebase() { git pull origin ${1:-main} --rebase; }; _rebase"
   rbu = "!_rebase_push() { git pull origin ${1:-main} --rebase && git push --force; }; _rebase_push"
   # commit
-  m = commit --no-verify
-  mm = commit -m --no-verify
+  m = commit
+  mm = commit -m
 	commits = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
   cc = "!_save() { git add .; git commit -m \"$(date +'%Y-%m-%d %H:%M:%S'): saving work in flight\"; }; _save"
   # shorthands
