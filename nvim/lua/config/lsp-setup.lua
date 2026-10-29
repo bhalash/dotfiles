@@ -53,40 +53,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local function prev_diagnostic() vim.diagnostic.jump({ float = true, count = -1 }) end
     local function next_diagnostic() vim.diagnostic.jump({ float = true, count = 1 }) end
 
-    -- TODO(mark 2026-10-01): tweak this at work next week - what's a good key?
     local function buffer_diagnostics()
       -- snacks.picker.diagnostics()
-
-      snacks.picker.diagnostics_buffer({
-        layout = 'bottom',
-        -- layout = 'dropdown',
-        -- layout = 'ivy_split',
-        -- layout = 'left',
-        -- layout = 'right',
-        -- layout = 'select',
-        -- layout = 'sidebar',
-        -- layout = 'telescope',
-        win = {
-          input = {
-            keys = {
-              ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
-              ['<C-x>'] = { 'edit_split', mode = { 'i', 'n' } },
-              ['<C-v>'] = { 'edit_vsplit', mode = { 'i', 'n' } },
-            }
-          }
-        },
-      })
+      snacks.picker.diagnostics_buffer({ layout = 'bottom' })
     end
 
     vim.keymap.set('n', '[A', buffer_diagnostics)
-
-    -- qwerty
     vim.keymap.set('n', '[a', prev_diagnostic)
     vim.keymap.set('n', ']a', next_diagnostic)
-
-    -- moonlander
-    vim.keymap.set('n', 'g[', prev_diagnostic)
-    vim.keymap.set('n', 'g]', next_diagnostic)
   end,
 })
 
