@@ -74,6 +74,7 @@ vim.keymap.set('n', '<leader>oo', function()
   vim.fn.jobstart({ 'code', vim.fn.expand('%'), '--add', '.', '-r' })
 end)
 
+-- spellchecking
 vim.keymap.set('n', 'zG', 'zg')
 vim.keymap.set('n', 'zg', '1z=')
 vim.keymap.set('n', '<leader>sp', ':setlocal spell!<CR>')
