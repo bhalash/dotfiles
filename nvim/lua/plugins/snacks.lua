@@ -58,7 +58,7 @@ return {
     vim.keymap.set('n', '<leader>b', snacks.picker.buffers)
     vim.keymap.set('n', 'q:', snacks.picker.command_history)
 
-    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines({ layout = 'telescope' }) end)
+    vim.keymap.set('n', '<leader>/', function() snacks.picker.lines({ layout = 'select' }) end)
     vim.keymap.set('n', '<leader>g', function() snacks.picker.grep_word({ layout = 'telescope' }) end)
     vim.keymap.set('n', '<leader>m', function() snacks.picker.colorschemes({ layout = 'bottom' }) end)
 
