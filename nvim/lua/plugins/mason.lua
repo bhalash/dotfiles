@@ -9,6 +9,7 @@ return {
       'html',
       'jdtls',
       'jsonls',
+      'rust_analyzer',
       'lua_ls',
       'pylsp',
       'tsc',
