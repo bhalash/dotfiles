@@ -74,9 +74,15 @@ vim.diagnostic.config({
   virtual_text = true,
 })
 
+vim.lsp.config('bashls', {
+  filetypes = { 'bash', 'sh', 'zsh' }
+})
+
 vim.lsp.enable({
   'angularls',
+  'bashls',
   'cssls',
+  'groovyls',
   'html',
   'jdtls',
   'jsonls',
