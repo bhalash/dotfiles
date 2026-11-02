@@ -2,7 +2,11 @@
 # Register Folder Bookmarks for Easy Switching
 # ==============================================================================
 
-declare -a BOOKMARKS=("${DOTFILES}")
+declare -a BOOKMARKS=(
+  "${DOTFILES}"
+  "${XDG_CONFIG_HOME}/dotfiles"
+)
+
 export BOOKMARKS
 
 function __get_bookmark_list {
