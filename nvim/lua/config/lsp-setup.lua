@@ -84,7 +84,6 @@ vim.lsp.enable({
   'cssls',
   'groovyls',
   'html',
-  'jdtls',
   'jsonls',
   'lua_ls',
   'tsc',
