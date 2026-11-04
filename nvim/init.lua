@@ -1,4 +1,4 @@
--- Core Configuration {{{
+-- Core Configuration
 
 -- Leaduhr
 vim.g.mapleader = ' '
@@ -45,14 +45,9 @@ vim.o.visualbell = true
 -- Statusbar - good if you don't want to use a plugin.
 vim.o.statusline = [[[%{substitute(getcwd(), '^.*/', '', '')}] %{expand('%:t')} %h%m%r %y%=%{v:register} %-14.(%l,%c%V%) %P]]
 
--- Grep {{{
-
+-- grep
 vim.opt.grepprg = 'rg --vimgrep'
 vim.opt.grepformat = '%f:%l:%c:%m'
-
--- }}}
-
--- Scrolling! {{{
 
 -- Set padding when scrolling
 vim.o.scrolloff = 10
@@ -63,10 +58,6 @@ vim.o.ttyfast = true
 
 -- Highlight the current line and set the colour
 vim.o.cul = true
-
--- }}}
-
--- Completion and Indentation {{{
 
 -- Ignore common temp files and directories
 vim.o.wildignore = '*.cache,*/.tmp/*,node_modules'
@@ -93,9 +84,7 @@ vim.o.smartindent = true
 -- Align completeopt for LSP.
 vim.o.completeopt = 'menu,menuone,noinsert,noselect'
 
--- }}}
-
--- Saving, Filesystem and History {{{
+-- Saving, Filesystem and History
 
 -- Write file when it loses focus
 vim.o.autowrite = true
@@ -121,6 +110,7 @@ vim.o.termguicolors = true
 
 require'config.lazy-setup'
 require'config.lsp-setup'
+require'config.colours'
 require'config.terminal'
 require'config.keybinds'
 

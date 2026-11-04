@@ -28,7 +28,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   spec = {
-    { import = 'plugins' },
+    { import = 'specs' },
   },
   concurrency = 2,
   colorscheme = 'default',

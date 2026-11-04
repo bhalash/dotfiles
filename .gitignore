@@ -15,6 +15,9 @@ nvim/spell
 nvim/*.log
 vim
 
+# work stuff
+nvim/lua/specs/java.lua
+
 # vim session files
 Session.vim
 .session.vim
